@@ -29,7 +29,7 @@
 
         <div class="default-sidebar-brand">
             <a href="{{route('admin.dashboard')}}" class="logo justify-content-center">
-                <img src="/frontend/images/alphanewpay.webp"/>
+                <img src="/images/logo.webp"/>
             </a>
         </div>
 
