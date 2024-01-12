@@ -12,24 +12,24 @@
                                     <div class="field-placeholder">جستجو براساس شماره سفارش و قیمت <span
                                             class="text-danger">*</span></div>
                                 </div>
-                                {{ $courses->links('layouts.pagination-admin') }}
                             </div>
                             <table class="table v-middle">
                                 <thead>
                                 <tr>
                                     <th>#</th>
                                     <th>عنوان</th>
-                                    <th>سرفصل ها</th>
+                                    <th>دروس</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @forelse($courses as $course)
+                                @forelse($sections as $section)
+
                                     <tr>
-                                        <td>{{$course->id}}</td>
-                                        <td>{{$course->title}}</td>
+                                        <td>{{$section->id}}</td>
+                                        <td>{{$section->title}}</td>
                                         <td>
                                             <a class="btn btn-outline-warning"
-                                               href="{{route('admin.course.section',$course->id)}}">سرفصل ها</a>
+                                               href="{{route('admin.course.lecture',$section->id)}}">دروس</a>
                                         </td>
                                     </tr>
                                 @empty
@@ -37,7 +37,6 @@
                                 </tbody>
                             </table>
                         </div>
-                        {{ $courses->links('layouts.pagination-admin') }}
                     </div>
                 </div>
             </div>
