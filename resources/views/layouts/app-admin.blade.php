@@ -45,11 +45,6 @@
 </head>
 <body style="direction: rtl">
 
-<!-- Loading wrapper start -->
-<div id="loading-wrapper">
-    <div class="spinner-border"></div>
-    Loading...
-</div>
 
 <div class="page-wrapper">
 

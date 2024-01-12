@@ -1,3 +1,53 @@
-<div>
-    {{-- Close your eyes. Count to one. That is how long forever feels. --}}
+<div class="content-wrapper-scroll">
+    <div class="content-wrapper">
+        <div class="row gutters">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="field-wrapper w-25">
+                                    <input  style="background: #ffffff" class="form-control" type="text" wire:model.debounce.500ms="search">
+                                    <div class="field-placeholder">جستجو براساس شماره سفارش و قیمت <span class="text-danger">*</span></div>
+                                </div>
+                                {{ $courses->links('layouts.pagination-admin') }}
+                            </div>
+                            <table class="table v-middle">
+                                <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>عنوان</th>
+                                    <th>عملیات</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                @forelse($courses as $course)
+
+
+                                    <tr>
+                                        <td>{{$course->id}}</td>
+
+                                        <td>
+                                            {{$course->title}}
+
+                                        </td>
+
+
+                                        <td>
+                                            <a class="btn btn-outline-warning"
+                                               href="{{--{{route('admin.orders.detail',$course->id)}}--}}">جزییات</a>
+                                        </td>
+
+                                    </tr>
+                                @empty
+                                @endforelse
+                                </tbody>
+                            </table>
+                        </div>
+                        {{ $courses->links('layouts.pagination-admin') }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
