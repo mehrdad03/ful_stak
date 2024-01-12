@@ -29,6 +29,7 @@ Route::group(['prefix' => 'admin', /*'middleware' => 'auth:admin'*/], function (
     Route::name('admin.')->group(function () {
 
         Route::get('/dashboard', App\Livewire\Admin\Dashboard\Index::class)->name('dashboard');
+        Route::get('/course', App\Livewire\Admin\Course\Index::class)->name('course.index');
 
     });
 });
