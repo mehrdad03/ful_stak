@@ -14,12 +14,12 @@ class CategoriesTableSeeder extends Seeder
      */
     public function run()
     {
-        
+
 
         \DB::table('categories')->delete();
-        
+
         \DB::table('categories')->insert(array (
-            0 => 
+            0 =>
             array (
                 'id' => 3,
                 'url_slug' => 'frontend-road-map',
@@ -29,7 +29,7 @@ class CategoriesTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            1 => 
+            1 =>
             array (
                 'id' => 4,
                 'url_slug' => 'backend-road-map',
@@ -39,7 +39,7 @@ class CategoriesTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            2 => 
+            2 =>
             array (
                 'id' => 5,
                 'url_slug' => 'full-stack-road-map',
@@ -50,7 +50,7 @@ class CategoriesTableSeeder extends Seeder
                 'updated_at' => NULL,
             ),
         ));
-        
-        
+
+
     }
 }
