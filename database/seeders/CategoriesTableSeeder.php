@@ -22,7 +22,7 @@ class CategoriesTableSeeder extends Seeder
             0 =>
             array (
                 'id' => 3,
-                'url_slug' => 'client-road-map',
+                'url_slug' => 'frontend-road-map',
                 'title' => 'نفشه راه فرانت اند',
                 'category_id' => NULL,
                 'active' => 1,
