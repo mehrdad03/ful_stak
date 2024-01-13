@@ -36,7 +36,8 @@
                                             <form class="mt-2 d-inline-flex align-items-center p-1"
                                                   style="background: #575757;border-radius: 5px"
                                                   wire:submit="convertVideo({{$lecture->id}})">
-                                                <input style="display: -webkit-inline-box;" type="file">
+
+                                                <input style="display: -webkit-inline-box;" type="file" wire:model="video">
                                                 <button class="btn btn-sm btn-success" type="submit">
                                                     ذخیره
                                                     <div wire:loading
@@ -45,6 +46,11 @@
                                                 </button>
 
                                             </form>
+                                            @if($videoError and explode('_',$videoError)[0] == $lecture->id)
+
+                                                <span style="position: absolute;top: 7px;height: 75%;border-radius: 10px;width: 285px;background: #c65148f0!important;"
+                                                      class="alert alert-danger position-absolute d-flex align-items-center justify-content-center">{{@explode('_',$videoError)[1]}}</span>
+                                            @endif
                                         </td>
 
                                         <td>{{$lecture->title}}</td>

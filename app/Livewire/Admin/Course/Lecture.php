@@ -2,67 +2,58 @@
 
 namespace App\Livewire\Admin\Course;
 
+use App\Models\CourseLectureVideo;
 use App\Models\CourseSectionLecture;
-use FFMpeg\Format\Video\X264;
-
 use Illuminate\Support\Facades\Validator;
 use Livewire\Component;
 use Livewire\WithFileUploads;
-use ProtoneMedia\LaravelFFMpeg\Exporters\HLSExporter;
-use ProtoneMedia\LaravelFFMpeg\Support\FFMpeg;
+
 
 class Lecture extends Component
 {
     use WithFileUploads;
 
     public $lectures;
-    public $video;
+    public $video, $videoError;
 
 
     public function mount($sectionId)
     {
-
-        $this->lectures = CourseSectionLecture::query()->where('id', $sectionId)->get();
-
+        $this->lectures = CourseSectionLecture::query()->where('course_section_id', $sectionId)->get();
 
     }
 
-    public function convertVideo($formData)
+    public function convertVideo($lectureId, CourseSectionLecture $courseSectionLecture)
     {
 
-        dd($formData);
+
+        $formData['video'] = $this->video;
+        $formData['lectureId'] = $lectureId;
         $validator = Validator::make($formData, [
-            'video' => 'required|mimes:mp4,avi,flv,wmv', // 50KB Max
+            'video' => 'required|mimes:mp4,avi,flv,wmv',
+            'lectureId' => 'required|exists:course_section_lectures,id', // 50KB Max
         ], [
             '*.required' => 'فیلد ضروری',
-            'categoryThumbnail.image' => 'پسوندهای قابل قبول: webp ,jpeg ,jpg , png , gif',
-            'categoryThumbnail.max' => 'حجم مجاز 100 کیلوبایت',
+            'video.mimes' => 'پسوندهای قابل قبول: mp4,avi,flv,wmv',
+            'lectureId.exists' => 'ورودی نامعتبر',
         ]);
 
+        if ($validator->fails()) {
+            $error = $validator->errors()->first();
+            $this->videoError = $lectureId . '_' . $error;
+        } else {
+            $this->videoError = '';
+        }
+
+        $lecture = CourseSectionLecture::query()->where('id', $lectureId)->with('courseSection.course')->first();
+        $sectionTitle = $lecture->courseSection->title;
+        $courseTitle = $lecture->courseSection->course->title;
+        $lectureTitle = $lecture->title .'_'. $sectionTitle .'_'. $courseTitle;
         $validator->validate();
         $this->resetValidation();
-
-         $videoPath = $request->file('video')->store('public/videos');
-
-        // Define different qualities
-        $qualities = ['480p', '720p', '1080p'];
+        $courseSectionLecture->convertVideo($this->video, $lecture->courseSection->course->id, $lectureTitle);
 
 
-        // Storage::delete($videoPath);
-
-        $lowBitrate = (new X264)->setKiloBitrate(250);
-        $midBitrate = (new X264)->setKiloBitrate(500);
-        $highBitrate = (new X264)->setKiloBitrate(1000);
-
-        $encryptionKey = HLSExporter::generateEncryptionKey();
-
-        FFMpeg::open('/videos/test.mp4')
-            ->exportForHLS()
-            ->withEncryptionKey($encryptionKey)
-            ->addFormat($lowBitrate)
-            ->addFormat($midBitrate)
-            ->addFormat($highBitrate)
-            ->save('public/videos/adaptive_steve.m3u8');
     }
 
     public function render()
