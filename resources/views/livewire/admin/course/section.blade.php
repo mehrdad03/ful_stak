@@ -24,7 +24,7 @@
                                 <tbody>
                                 @forelse($sections as $section)
 
-                                    <tr>
+                                    <tr  wire:key="{{$section->id}}">
                                         <td>{{$section->id}}</td>
                                         <td>{{$section->title}}</td>
                                         <td>

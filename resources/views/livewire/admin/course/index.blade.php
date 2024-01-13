@@ -24,7 +24,7 @@
                                 </thead>
                                 <tbody>
                                 @forelse($courses as $course)
-                                    <tr>
+                                    <tr  wire:key="{{$course->id}}">
                                         <td>{{$course->id}}</td>
                                         <td>{{$course->title}}</td>
                                         <td>

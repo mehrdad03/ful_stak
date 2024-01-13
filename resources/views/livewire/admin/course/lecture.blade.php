@@ -17,15 +17,36 @@
                                 <thead>
                                 <tr>
                                     <th>#</th>
+                                    <th>ویدیو</th>
                                     <th>عنوان</th>
                                     <th>دروس</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 @forelse($lectures as $lecture)
-
-                                    <tr>
+                                    <tr >
                                         <td>{{$lecture->id}}</td>
+                                        <td>
+                                            <div class="media-box  align-items-center row">
+                                                <img src="/{{@$category->image->file}}"
+                                                     style="width: 307px;border-radius: 5%"
+                                                     class=" ms-2 media-avatar"
+                                                     alt="Product">
+                                            </div>
+                                            <form class="mt-2 d-inline-flex align-items-center p-1"
+                                                  style="background: #575757;border-radius: 5px"
+                                                  wire:submit="convertVideo({{$lecture->id}})">
+                                                <input style="display: -webkit-inline-box;" type="file">
+                                                <button class="btn btn-sm btn-success" type="submit">
+                                                    ذخیره
+                                                    <div wire:loading
+                                                         wire:target="convertVideo({{$lecture->id}})"
+                                                         class="spinner-border spinner-border-sm"></div>
+                                                </button>
+
+                                            </form>
+                                        </td>
+
                                         <td>{{$lecture->title}}</td>
                                         <td>
                                             <a class="btn btn-outline-warning"
