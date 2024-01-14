@@ -27,6 +27,7 @@
                                     <th>#</th>
                                     <th>عنوان</th>
                                     <th>سرفصل ها</th>
+                                    <th>عملیات</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -36,7 +37,29 @@
                                         <td>{{$course->title}}</td>
                                         <td>
                                             <a class="btn btn-outline-warning"
-                                               href="{{route('admin.course.section',$course->id)}}">سرفصل ها</a>
+                                               href="">سرفصل ها</a>
+                                        </td>
+                                        <td>
+                                            <a href="" target="_blank"
+                                               data-bs-toggle="tooltip" data-bs-placement="bottom"
+                                               data-bs-original-title="صفحه دسته بندی">
+                                                <i class="icon-open_in_new text-white ms-2"></i>
+                                            </a>
+                                            <a href=""
+                                               data-bs-toggle="tooltip" data-bs-placement="bottom"
+                                               data-bs-original-title="تنظیمات سئو">
+                                                <i class="icon-edit-2 text-white ms-2"></i>
+                                            </a>
+                                            <a href=""
+                                               data-bs-toggle="tooltip" data-bs-placement="bottom"
+                                               data-bs-original-title="ویژگی">
+                                                <i class="icon-add_box text-white ms-2"></i>
+                                            </a>
+                                            <a href=""
+                                               data-bs-toggle="tooltip" data-bs-placement="bottom"
+                                               data-bs-original-title="قوانین">
+                                                <i class="icon-attach_file text-danger ms-2"></i>
+                                            </a>
                                         </td>
                                     </tr>
                                 @empty
