@@ -2,14 +2,21 @@
     <div class="content-wrapper">
         <div class="row gutters">
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                @if(session('message'))
+                    <div class="alert alert-success">
+                        {{ session('message') }}
+                    </div>
+                @endif
                 <div class="card">
+
                     <div class="card-body">
+
                         <div class="table-responsive">
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="field-wrapper w-25">
                                     <input style="background: #ffffff" class="form-control" type="text"
                                            wire:model.debounce.500ms="search">
-                                    <div class="field-placeholder">جستجو براساس شماره سفارش و قیمت <span
+                                    <div class="field-placeholder">جستجو <span
                                             class="text-danger">*</span></div>
                                 </div>
                                 {{ $courses->links('layouts.pagination-admin') }}

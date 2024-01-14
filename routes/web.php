@@ -31,7 +31,7 @@ Route::group(['prefix' => 'admin', /*'middleware' => 'auth:admin'*/], function (
         Route::get('/courses', App\Livewire\Admin\Course\Index::class)->name('course.index');
         Route::get('/course/section/{courseId}', App\Livewire\Admin\Course\Section::class)->name('course.section');
         Route::get('/course/lecture/{sectionId}', App\Livewire\Admin\Course\Lecture::class)->name('course.lecture');
-        //Route::get('/course/lecture/video/{lectureId}', App\Livewire\Admin\Course\video::class)->name('course.video');
+        Route::get('/course/create', App\Livewire\Admin\Course\Create::class)->name('course.create');
 
         //Route::get('/course/video/{lectureId}', App\Livewire\Admin\Course\Index::class)->name('course.index');
 

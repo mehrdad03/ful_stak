@@ -14,11 +14,11 @@ return new class extends Migration
         Schema::create('courses', function (Blueprint $table) {
             $table->id();
             $table->string('title')->unique();
-            $table->string('url_slug')->unique();
-            $table->text('requirements');
-            $table->text('short_description');
-            $table->text('what_you_will_learn');
-            $table->longText('long_description');
+            $table->string('url_slug')->nullable()->unique();
+            $table->text('requirements')->nullable();
+            $table->text('short_description')->nullable();
+            $table->text('what_you_will_learn')->nullable();
+            $table->longText('long_description')->nullable();
             $table->foreignId('teacher_id')->constrained();
             $table->foreignId('category_id')->constrained();
             $table->boolean('active')->default(false);

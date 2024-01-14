@@ -23,7 +23,7 @@ class CategoriesTableSeeder extends Seeder
             array (
                 'id' => 3,
                 'url_slug' => 'frontend-road-map',
-                'title' => 'نفشه راه فرانت اند',
+                'title' => 'نقشه راه فرانت اند',
                 'category_id' => NULL,
                 'active' => 1,
                 'created_at' => NULL,
@@ -33,7 +33,7 @@ class CategoriesTableSeeder extends Seeder
             array (
                 'id' => 4,
                 'url_slug' => 'backend-road-map',
-                'title' => 'نفشه راه بک اند',
+                'title' => 'نقشه راه بک اند',
                 'category_id' => NULL,
                 'active' => 1,
                 'created_at' => NULL,
@@ -43,7 +43,7 @@ class CategoriesTableSeeder extends Seeder
             array (
                 'id' => 5,
                 'url_slug' => 'full-stack-road-map',
-                'title' => 'نفشه راه فول استک',
+                'title' => 'نقشه راه فول استک',
                 'category_id' => NULL,
                 'active' => 1,
                 'created_at' => NULL,
