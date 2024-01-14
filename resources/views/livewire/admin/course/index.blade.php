@@ -1,7 +1,7 @@
 <div class="content-wrapper-scroll">
     <style>
-        i{
-            font-size:20px!important;
+        i {
+            font-size: 20px !important;
         }
     </style>
     <div class="content-wrapper">
@@ -13,9 +13,7 @@
                     </div>
                 @endif
                 <div class="card">
-
                     <div class="card-body">
-
                         <div class="table-responsive">
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="field-wrapper w-25">
@@ -24,6 +22,7 @@
                                     <div class="field-placeholder">جستجو <span
                                             class="text-danger">*</span></div>
                                 </div>
+                                <a href="{{route('admin.course.create')}}"  wire:navigate  class="btn btn-success">افزودن دوره</a>
                                 {{ $courses->links('layouts.pagination-admin') }}
                             </div>
                             <table class="table v-middle">
@@ -37,25 +36,27 @@
                                 </thead>
                                 <tbody>
                                 @forelse($courses as $course)
-                                    <tr  wire:key="{{$course->id}}">
+                                    <tr wire:key="{{$course->id}}">
                                         <td>{{$course->id}}</td>
                                         <td>{{$course->title}}</td>
                                         <td>
-                                            <a class="btn btn-outline-warning"
+                                            <a class="btn btn-outline-warning" wire:navigate
                                                href="{{route('admin.course.section',$course->id)}}">سرفصل ها</a>
                                         </td>
                                         <td>
-                                            <a href="javascript:0" wire:confirm="با حذف این دوره فصول و دروس مرتبط با دوره هم حذف خواهند شد!"  wire:click="deleteCourse({{$course->id}})"
+                                            <a href="javascript:0"
+                                               wire:confirm="با حذف این دوره فصول و دروس مرتبط با دوره هم حذف خواهند شد!"
+                                               wire:click="deleteCourse({{$course->id}})"
                                                data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                data-bs-original-title="صفحه دسته بندی">
                                                 <i class="fa fa-trash text-danger  ms-2"></i>
                                             </a>
-                                            <a href=""
+                                            <a href="" wire:navigate
                                                data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                data-bs-original-title="تنظیمات سئو">
                                                 <i class="fa fa-pencil  text-white ms-2"></i>
                                             </a>
-                                            <a href="{{route('admin.course.create')}}?courseId={{$course->id}}"
+                                            <a wire:navigate href="{{route('admin.course.create')}}?courseId={{$course->id}}"
                                                data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                data-bs-original-title="ویرایش">
                                                 <i class="fa fa-edit  ms-2"></i>
