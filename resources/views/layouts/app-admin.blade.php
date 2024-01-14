@@ -41,6 +41,8 @@
     <link rel="stylesheet" href="/backend/dark/vendor/input-tags/tagsinput.css"/>
     <link rel="stylesheet" href="/backend/dark/vendor/notify/notify-flat.css">
     <link href="/frontend/css/lightbox.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="/backend/css/font-awesome.css">
+
 
 </head>
 <body style="direction: rtl">

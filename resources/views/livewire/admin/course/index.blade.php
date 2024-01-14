@@ -1,4 +1,9 @@
 <div class="content-wrapper-scroll">
+    <style>
+        i{
+            font-size:20px!important;
+        }
+    </style>
     <div class="content-wrapper">
         <div class="row gutters">
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
@@ -43,22 +48,21 @@
                                             <a href="" target="_blank"
                                                data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                data-bs-original-title="صفحه دسته بندی">
-                                                <i class="icon-open_in_new text-white ms-2"></i>
+                                                <i class="fa fa-trash text-danger  ms-2"></i>
                                             </a>
                                             <a href=""
                                                data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                data-bs-original-title="تنظیمات سئو">
-                                                <i class="icon-edit-2 text-white ms-2"></i>
+                                                <i class="fa fa-pencil  text-white ms-2"></i>
                                             </a>
                                             <a href=""
                                                data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                               data-bs-original-title="ویژگی">
-                                                <i class="icon-add_box text-white ms-2"></i>
+                                               data-bs-original-title="ویرایش">
+                                                <i class="fa fa-edit  ms-2"></i>
                                             </a>
                                             <a href=""
                                                data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                data-bs-original-title="قوانین">
-                                                <i class="icon-attach_file text-danger ms-2"></i>
                                             </a>
                                         </td>
                                     </tr>
