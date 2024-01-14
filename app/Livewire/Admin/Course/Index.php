@@ -12,6 +12,14 @@ class Index extends Component
 
     public $search = '';
 
+    public function deleteCourse($courseId)
+
+    {
+        Course::query()->where('id', $courseId)->delete();
+        $this->dispatch('swal:alert-success');
+
+    }
+
     public function render()
     {
         $courses = Course::query()->paginate(10);

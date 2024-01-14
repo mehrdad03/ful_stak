@@ -42,10 +42,10 @@
                                         <td>{{$course->title}}</td>
                                         <td>
                                             <a class="btn btn-outline-warning"
-                                               href="">سرفصل ها</a>
+                                               href="{{route('admin.course.section',$course->id)}}">سرفصل ها</a>
                                         </td>
                                         <td>
-                                            <a href="" target="_blank"
+                                            <a href="javascript:0" wire:confirm="با حذف این دوره فصول و دروس مرتبط با دوره هم حذف خواهند شد!"  wire:click="deleteCourse({{$course->id}})"
                                                data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                data-bs-original-title="صفحه دسته بندی">
                                                 <i class="fa fa-trash text-danger  ms-2"></i>
@@ -55,15 +55,12 @@
                                                data-bs-original-title="تنظیمات سئو">
                                                 <i class="fa fa-pencil  text-white ms-2"></i>
                                             </a>
-                                            <a href=""
+                                            <a href="{{route('admin.course.create')}}?courseId={{$course->id}}"
                                                data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                data-bs-original-title="ویرایش">
                                                 <i class="fa fa-edit  ms-2"></i>
                                             </a>
-                                            <a href=""
-                                               data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                               data-bs-original-title="قوانین">
-                                            </a>
+
                                         </td>
                                     </tr>
                                 @empty
@@ -77,4 +74,18 @@
             </div>
         </div>
     </div>
+    @push('script')
+        <script>
+            window.addEventListener('swal:alert-success', event => {
+                Swal.fire({
+                    position: 'content',
+                    icon: 'success',
+                    title: 'عملیات با موفقیت انجام شد',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+            })
+        </script>
+    @endpush
+
 </div>
