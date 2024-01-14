@@ -17,7 +17,7 @@ return new class extends Migration
             $table->integer('price');
             $table->text('features');
             $table->integer('duration');
-            $table->foreignId('subscription_plan_category_id')->constrained();
+            $table->foreignId('subscription_plan_category_id');
             $table->timestamps();
         });
     }

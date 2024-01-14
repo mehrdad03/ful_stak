@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('course_section_lectures', function (Blueprint $table) {
             $table->id();
             $table->string('title')->unique();
-            $table->foreignId('course_section_id')->constrained();
+            $table->foreignId('course_section_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
         });
     }

@@ -26,11 +26,12 @@ class Lecture extends Component
     public function convertVideo($lectureId, CourseSectionLecture $courseSectionLecture)
     {
 
-
+/*dd($this->video);*/
         $formData['video'] = $this->video;
         $formData['lectureId'] = $lectureId;
+
         $validator = Validator::make($formData, [
-            'video' => 'required|mimes:mp4,avi,flv,wmv',
+            'video' => 'required|mimes:mp4,avi,flv,wmv,mkv',
             'lectureId' => 'required|exists:course_section_lectures,id', // 50KB Max
         ], [
             '*.required' => 'فیلد ضروری',
@@ -51,7 +52,7 @@ class Lecture extends Component
         $lectureTitle = $lecture->title .'_'. $sectionTitle .'_'. $courseTitle;
         $validator->validate();
         $this->resetValidation();
-        $courseSectionLecture->convertVideo($this->video, $lecture->courseSection->course->id, $lectureTitle);
+        $courseSectionLecture->convertVideo($this->video, $lecture->courseSection->course->id, $lectureTitle,$lectureId);
 
 
     }

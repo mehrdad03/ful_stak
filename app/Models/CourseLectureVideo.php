@@ -10,4 +10,5 @@ use Illuminate\Database\Eloquent\Model;
 class CourseLectureVideo extends Model
 {
     use HasFactory;
+    protected $guarded=[];
 }

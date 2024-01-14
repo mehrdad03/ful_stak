@@ -5,48 +5,56 @@ namespace App\Models;
 use FFMpeg\Format\Video\X264;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\DB;
 use ProtoneMedia\LaravelFFMpeg\Exporters\HLSExporter;
 use ProtoneMedia\LaravelFFMpeg\Support\FFMpeg;
+
 
 class CourseSectionLecture extends Model
 {
     use HasFactory;
 
-    public function convertVideo($video, $courseId, $lectureTitle)
+    public function convertVideo($video, $courseId, $lectureTitle, $lectureId)
     {
 
+        DB::transaction(function () use ($video, $courseId, $lectureTitle, $lectureId) {
 
-        $path = 'public/videos/' . $courseId;
+            $path = 'videos/' . $courseId;
+            $videoName = $lectureTitle . '_' . time();
 
-        $videoName = $lectureTitle . '_' . time();
+            $videoPath = $video->store($path);
 
-        $videoPath = $video->store($path);
+            $encryptionKey = HLSExporter::generateEncryptionKey();
 
-        $lowBitrate = (new X264)->setKiloBitrate(250);
-        $midBitrate = (new X264)->setKiloBitrate(500);
-        $highBitrate = (new X264)->setKiloBitrate(1000);
 
-        $encryptionKey = HLSExporter::generateEncryptionKey();
-        $savePath = $path . '/' . $videoName . '.m3u8';
+            //get video duration
+            $media = FFMpeg::open($videoPath);
+            $durationInSeconds = $media->getDurationInSeconds(); // returns an int
 
-        FFMpeg::open($videoPath)
-            ->exportForHLS()
-            ->withEncryptionKey($encryptionKey)
-            ->addFormat($lowBitrate)
-            ->addFormat($midBitrate)
-            ->addFormat($highBitrate)
-            ->save($savePath);
 
-        Storage::delete($videoPath);
 
-        CourseLectureVideo::query()->updateOrCreate(
-            [
+            $savePath = $path . '/' . $videoName . '.m3u8';
+            FFMpeg::open($videoPath)
+                ->exportForHLS()
+                ->withEncryptionKey($encryptionKey)
+                ->addFormat(new X264('aac', 'libx264'))
+                ->toDisk('ftp')
+                ->save($savePath);
 
-            ], [
+             //delete video from local
+          //  Storage::delete($videoPath);
 
-            ]
-        );
+
+            CourseLectureVideo::query()->updateOrCreate(
+                [
+                    'course_section_lecture_id' => $lectureId,
+
+                ], [
+                    'duration' => $durationInSeconds,
+                    'path' => config('app.ftp_url') . '/' . $savePath,
+                ]
+            );
+        });
 
     }
 
