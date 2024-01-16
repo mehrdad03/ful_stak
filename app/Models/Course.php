@@ -28,4 +28,32 @@ class Course extends Model
             ]
         );
     }
+
+    public function submitSeo($formData, $courseId)
+    {
+
+
+        \App\Models\Course::query()->where('id', $courseId)->update([
+            'long_description' => $formData['editor1'],
+            'url_slug' => $formData['slug'],
+        ]);
+        \App\Models\SeoItem::query()->updateOrCreate(
+            [
+                'ref_id' => $courseId,
+                'type' => 'course',
+            ]
+            ,
+            [
+                'meta_name' => $formData['meta_name'],
+                'meta_description' => $formData['meta_description'],
+
+            ]
+        );
+
+    }
+
+    public function seo()
+    {
+        return $this->belongsTo(SeoItem::class, 'id','ref_id');
+    }
 }

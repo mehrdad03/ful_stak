@@ -126,6 +126,7 @@
 <!-- Custom Data tables -->
 <script src="/backend/vendor/datatables/custom/custom-datatables.js"></script>
 <script src="/frontend/js/lightbox.js"></script>
+<script src="https://cdn.ckeditor.com/4.22.1/full/ckeditor.js"></script>
 @stack('script')
 
 </body>

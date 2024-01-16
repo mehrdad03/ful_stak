@@ -4,18 +4,58 @@ namespace App\Livewire\Admin\Course;
 
 
 use App\Models\CourseSection;
+use Illuminate\Support\Facades\Validator;
 use Livewire\Component;
 
 class Section extends Component
 {
-    public $sections;
+
+    public $title, $course_id,$sectionId=0;
+    protected $listeners = ['delete'];
+
     public function mount($courseId)
     {
-        $this->sections = CourseSection::query()->where('id', $courseId)->get();
+
+        $this->course_id = $courseId;
     }
 
+    public function saveSection($formData, CourseSection $courseSection)
+    {
+        $validator = Validator::make($formData, [
+            'title' => 'required | string',
+        ], [
+            '*.required' => ' فیلد ضروری است.',
+            '*.string' => ' فیلد باید حروف باشد.',
+        ]);
+        $validator->validate();
+        $this->resetValidation();
+        $courseSection->saveSection($formData, $this->sectionId, $this->course_id);
+        $this->reset('title');
+        $this->sectionId=0;
+
+
+        $this->dispatch('swal:alert-success');
+    }
+
+    public function editSection($section_id)
+    {
+
+        $section = CourseSection::query()->where('id', $section_id)->first();
+        $this->title = $section->title;
+        $this->sectionId = $section->id;
+
+
+    }
+
+    public function delete($section_id)
+    {
+        CourseSection::query()->where('id', $section_id)->delete();
+        $this->dispatch('swal:alert-success');
+    }
     public function render()
     {
-        return view('livewire.admin.course.section')->layout('layouts.app-admin');
+        $sections = CourseSection::query()->where('course_id', $this->course_id)->get();
+
+        return view('livewire.admin.course.section',['sections'=>$sections])->layout('layouts.app-admin');
     }
 }

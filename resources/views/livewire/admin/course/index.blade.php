@@ -51,7 +51,7 @@
                                                data-bs-original-title="صفحه دسته بندی">
                                                 <i class="fa fa-trash text-danger  ms-2"></i>
                                             </a>
-                                            <a href="" wire:navigate
+                                            <a href="{{route('admin.course.seo',$course->id)}}"
                                                data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                data-bs-original-title="تنظیمات سئو">
                                                 <i class="fa fa-pencil  text-white ms-2"></i>

@@ -33,6 +33,7 @@ Route::group(['prefix' => 'admin', /*'middleware' => 'auth:admin'*/], function (
         Route::get('/course/lecture/{sectionId}', App\Livewire\Admin\Course\Lecture::class)->name('course.lecture');
         Route::get('/course/create', App\Livewire\Admin\Course\Create::class)->name('course.create');
         Route::get('/course/{courseId}/seo', App\Livewire\Admin\Course\Seo::class)->name('course.seo');
+        Route::post('/ck-upload', [\App\Http\Livewire\Admin\Ck\Upload::class,'upload'])->name('ck-upload');
 
         //Route::get('/course/video/{lectureId}', App\Livewire\Admin\Course\Index::class)->name('course.index');
 
