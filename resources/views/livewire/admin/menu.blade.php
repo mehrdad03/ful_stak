@@ -44,7 +44,7 @@
                     </li>
                     <li  class="{{$rout_name=='admin.course.index'?'active':''}}">
                         <a href="{{route('admin.course.index')}}" class="current-page">
-                            <i class="icon-alarm_on"></i>
+refa                            <i class="fa fa-video-camera"></i>
                             <span class="menu-text">دوره ها</span>
                         </a>
                     </li>
