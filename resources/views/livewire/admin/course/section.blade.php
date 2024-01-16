@@ -22,7 +22,10 @@
         <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12">
             <div class="card position-sticky" style="top: 0">
                 <div class="card-header">
-                    <div class="card-title">افزودن سرفصل</div>
+                    <div class="card-title">
+                        افزودن سرفصل:
+                        {{$courseTitle}}
+                    </div>
                 </div>
                 <div class="card-body">
                     <form wire:submit.prevent="saveSection(Object.fromEntries(new FormData($event.target)))">
@@ -80,7 +83,9 @@
                                     <tr role="row" class="odd" wire:key="{{$section->id}}">
                                         <td>{{ $section->id }}</td>
                                         <td>{{ $section->title }}</td>
-                                        <td><a wire:navigate href="{{route('admin.course.section.lecture',$section->id)}}" class="btn btn-sm btn-outline-warning">دروس</a></td>
+                                        <td><a wire:navigate
+                                               href="{{route('admin.course.section.lecture',$section->id)}}"
+                                               class="btn btn-sm btn-outline-warning">دروس</a></td>
 
                                         <td>
                                             <div class="actions t1">
@@ -90,7 +95,9 @@
                                                    data-bs-original-title="ویرایش">
                                                     <i class="fa fa-edit text-info ms-2"></i>
                                                 </a>
-                                                <a href="javascript:0" wire:confirm="با حذف این فصل دروس مرتبط با این درس هم حذف خواهند شد!" wire:click="delete({{$section->id}})"
+                                                <a href="javascript:0"
+                                                   wire:confirm="با حذف این فصل دروس مرتبط با این درس هم حذف خواهند شد!"
+                                                   wire:click="delete({{$section->id}})"
                                                    data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                    data-bs-original-title="حذف">
                                                     <i class="fa fa-trash text-danger ms-2"></i>

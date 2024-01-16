@@ -3,6 +3,7 @@
 namespace App\Livewire\Admin\Course;
 
 
+use App\Models\Course;
 use App\Models\CourseSection;
 use Illuminate\Support\Facades\Validator;
 use Livewire\Component;
@@ -11,12 +12,14 @@ class Section extends Component
 {
 
     public $title, $course_id,$sectionId=0;
+    public $courseTitle;
     protected $listeners = ['delete'];
 
     public function mount($courseId)
     {
 
         $this->course_id = $courseId;
+        $this->courseTitle=Course::query()->where('id',$courseId)->pluck('title')->first();
     }
 
     public function saveSection($formData, CourseSection $courseSection)
