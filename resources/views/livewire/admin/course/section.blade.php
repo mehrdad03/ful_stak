@@ -66,6 +66,9 @@
                                     <th>
                                         عنوان
                                     </th>
+                                    <th>
+                                        دروس
+                                    </th>
                                     <th class="sorting" tabindex="0" aria-controls="copy-print-csv" rowspan="1"
                                         colspan="1" aria-label="Actions: activate to sort column ascending"
                                         style="width: 71.276px;">عملیات
@@ -77,6 +80,7 @@
                                     <tr role="row" class="odd" wire:key="{{$section->id}}">
                                         <td>{{ $section->id }}</td>
                                         <td>{{ $section->title }}</td>
+                                        <td><a wire:navigate href="{{route('admin.course.section.lecture',$section->id)}}" class="btn btn-sm btn-outline-warning">دروس</a></td>
 
                                         <td>
                                             <div class="actions t1">

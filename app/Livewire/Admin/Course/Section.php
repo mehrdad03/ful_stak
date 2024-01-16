@@ -42,7 +42,6 @@ class Section extends Component
         $this->title = $section->title;
         $this->sectionId = $section->id;
 
-
     }
 
     public function delete($section_id)
@@ -53,7 +52,6 @@ class Section extends Component
     public function render()
     {
         $sections = CourseSection::query()->where('course_id', $this->course_id)->get();
-
         return view('livewire.admin.course.section',['sections'=>$sections])->layout('layouts.app-admin');
     }
 }

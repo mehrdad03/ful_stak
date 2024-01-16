@@ -13,6 +13,7 @@ use ProtoneMedia\LaravelFFMpeg\Support\FFMpeg;
 class CourseSectionLecture extends Model
 {
     use HasFactory;
+    protected $guarded=[];
 
     public function convertVideo($video, $courseId, $lectureTitle, $lectureId)
     {
@@ -61,5 +62,19 @@ class CourseSectionLecture extends Model
     public function courseSection()
     {
         return $this->belongsTo(CourseSection::class);
+    }
+
+    public function saveLecture($formData, $lectureId,$section_id)
+    {
+        CourseSectionLecture::query()->updateOrCreate(
+            [
+                'id' => $lectureId
+            ]
+            ,
+            [
+                'title' => $formData['title'],
+                'course_section_id' => $section_id,
+            ]
+        );
     }
 }

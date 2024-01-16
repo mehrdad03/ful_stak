@@ -2,7 +2,7 @@
 
 namespace App\Livewire\Admin\Course;
 
-use App\Models\CourseLectureVideo;
+use App\Models\CourseSection;
 use App\Models\CourseSectionLecture;
 use Illuminate\Support\Facades\Validator;
 use Livewire\Component;
@@ -13,13 +13,15 @@ class Lecture extends Component
 {
     use WithFileUploads;
 
-    public $lectures;
+    public $lectures,$lectureId=0,$sectionId,$title,$lecture;
     public $video, $videoError;
+    public $sectionTitle;
 
 
     public function mount($sectionId)
     {
-        $this->lectures = CourseSectionLecture::query()->where('course_section_id', $sectionId)->get();
+        $this->sectionId=$sectionId;
+        $this->sectionTitle=CourseSection::query()->where('id',$sectionId)->pluck('title')->first();
 
     }
 
@@ -56,10 +58,40 @@ class Lecture extends Component
 
 
     }
+    public function saveLecture($formData, CourseSectionLecture $courseSectionLecture)
+    {
+        $validator = Validator::make($formData, [
+            'title' => 'required | string',
+        ], [
+            '*.required' => ' فیلد ضروری است.',
+            '*.string' => ' فیلد باید حروف باشد.',
+        ]);
+        $validator->validate();
+        $this->resetValidation();
+        $courseSectionLecture->saveLecture($formData,$this->lectureId, $this->sectionId);
+        $this->reset('title');
+        $this->dispatch('swal:alert-success');
+        $this->redirect('/admin/course/section/'.$this->sectionId.'/lecture');
+    }
+
+    public function editLecture($lecture_id)
+    {
+
+        $lecture = CourseSectionLecture::query()->where('id', $lecture_id)->first();
+        $this->title = $lecture->title;
+        $this->lectureId = $lecture_id;
+
+    }
+
+    public function delete($section_id)
+    {
+        CourseSectionLecture::query()->where('id', $section_id)->delete();
+        $this->dispatch('swal:alert-success');
+    }
 
     public function render()
     {
-
-        return view('livewire.admin.course.lecture')->layout('layouts.app-admin');
+        $lectures=$this->lectures  = CourseSectionLecture::query()->where('course_section_id', $this->sectionId)->get();
+        return view('livewire.admin.course.lecture', ['lectures' => $lectures])->layout('layouts.app-admin');
     }
 }
