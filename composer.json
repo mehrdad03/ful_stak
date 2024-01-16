@@ -12,6 +12,7 @@
         "laravel/tinker": "^2.8",
         "league/flysystem-ftp": "3.0",
         "livewire/livewire": "^3.3",
+        "morilog/jalali": "3.*",
         "orangehill/iseed": "^3.0",
         "pbmedia/laravel-ffmpeg": "^8.4"
     },

@@ -44,8 +44,14 @@
                     </li>
                     <li  class="{{$rout_name=='admin.course.index'?'active':''}}">
                         <a href="{{route('admin.course.index')}}" class="current-page">
-refa                            <i class="fa fa-video-camera"></i>
+                            <i class="fa fa-video-camera"></i>
                             <span class="menu-text">دوره ها</span>
+                        </a>
+                    </li>
+                    <li class="{{$rout_name=='admin.users'?'active':''}}">
+                        <a href="{{route('admin.users')}}" class="current-page">
+                            <i class="fa fa-users"></i>
+                            <span class="menu-text">کاربران</span>
                         </a>
                     </li>
                     {{-- <li {{$adminType!=1 ? 'hidden':'' }} class="default-sidebar-dropdown position-relative @if($rout_name=='admin.service.index' or $rout_name=='admin.service.create') active @endif">
