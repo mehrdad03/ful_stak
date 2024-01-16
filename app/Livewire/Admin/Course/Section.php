@@ -31,10 +31,8 @@ class Section extends Component
         $this->resetValidation();
         $courseSection->saveSection($formData, $this->sectionId, $this->course_id);
         $this->reset('title');
-        $this->sectionId=0;
-
-
         $this->dispatch('swal:alert-success');
+         $this->redirect('/admin/course/'.$this->course_id.'/section');
     }
 
     public function editSection($section_id)
