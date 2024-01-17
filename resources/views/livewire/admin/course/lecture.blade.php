@@ -25,7 +25,7 @@
                     <div class="card-header">
                         <div class="card-title">
                             ویرایش دورس فصل :
-                            {{$sectionTitle}}
+                            {{$section->title}}
                         </div>
                     </div>
                     <div class="card-body">
@@ -58,8 +58,8 @@
                         <div class="table-responsive">
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="field-wrapper w-25">
-                                    <input style="background: #ffffff" class="form-control" type="text"
-                                           wire:model.debounce.500ms="search">
+                                    {{--<input style="background: #ffffff" class="form-control" type="text"
+                                           wire:model.debounce.500ms="search">--}}
                                     <div class="field-placeholder">جستجو <span
                                             class="text-danger">*</span></div>
                                 </div>
@@ -84,12 +84,13 @@
                                                      class=" ms-2 media-avatar"
                                                      alt="Product">
                                             </div>
-                                            <form class="mt-2 d-inline-flex align-items-center p-1"
+                                            <form class="mt-2 d-inline-flex align-items-center p-1" enctype="multipart/form-data"
                                                   style="background: #575757;border-radius: 5px"
-                                                  wire:submit="convertVideo({{$lecture->id}})">
+                                                 action="{{route('admin.upload-video',[$lecture->courseSection->course->id,$lecture->title,$lecture->id])}}" method="post">
+                                                @csrf
 
-                                                <input style="display: -webkit-inline-box;" type="file"
-                                                       wire:model="video">
+                                                <input style="display: -webkit-inline-box;" type="file" name="video"
+                                                    >
                                                 <button class="btn btn-sm btn-success" type="submit">
                                                     ذخیره
                                                     <div wire:loading
@@ -98,11 +99,12 @@
                                                 </button>
 
                                             </form>
+                                            {{@explode('_',$videoError)[1]}}
                                             @if($videoError and explode('_',$videoError)[0] == $lecture->id)
 
-                                                <span
+                                               {{-- <span
                                                     style="position: absolute;top: 7px;height: 75%;border-radius: 10px;width: 285px;background: #c65148f0!important;"
-                                                    class="alert alert-danger position-absolute d-flex align-items-center justify-content-center">{{@explode('_',$videoError)[1]}}</span>
+                                                    class="alert alert-danger position-absolute d-flex align-items-center justify-content-center">{{@explode('_',$videoError)[1]}}</span>--}}
                                             @endif
                                         </td>
 

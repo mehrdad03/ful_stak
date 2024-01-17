@@ -15,20 +15,20 @@ class Lecture extends Component
 
     public $lectures,$lectureId=0,$sectionId,$title,$lecture;
     public $video, $videoError;
-    public $sectionTitle;
+    public $section;
 
 
     public function mount($sectionId)
     {
         $this->sectionId=$sectionId;
-        $this->sectionTitle=CourseSection::query()->where('id',$sectionId)->pluck('title')->first();
+        $this->section=CourseSection::query()->where('id',$sectionId)->first();
 
     }
 
-    public function convertVideo($lectureId, CourseSectionLecture $courseSectionLecture)
+   /* public function convertVideo($lectureId, CourseSectionLecture $courseSectionLecture)
     {
 
-/*dd($this->video);*/
+
         $formData['video'] = $this->video;
         $formData['lectureId'] = $lectureId;
 
@@ -52,12 +52,12 @@ class Lecture extends Component
         $sectionTitle = $lecture->courseSection->title;
         $courseTitle = $lecture->courseSection->course->title;
         $lectureTitle = $lecture->title .'_'. $sectionTitle .'_'. $courseTitle;
-        $validator->validate();
+       $validator->validate();
         $this->resetValidation();
         $courseSectionLecture->convertVideo($this->video, $lecture->courseSection->course->id, $lectureTitle,$lectureId);
 
 
-    }
+    }*/
     public function saveLecture($formData, CourseSectionLecture $courseSectionLecture)
     {
         $validator = Validator::make($formData, [

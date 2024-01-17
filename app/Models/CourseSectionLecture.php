@@ -6,8 +6,10 @@ use FFMpeg\Format\Video\X264;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 use ProtoneMedia\LaravelFFMpeg\Exporters\HLSExporter;
 use ProtoneMedia\LaravelFFMpeg\Support\FFMpeg;
+use Symfony\Component\Process\Process;
 
 
 class CourseSectionLecture extends Model
@@ -15,17 +17,18 @@ class CourseSectionLecture extends Model
     use HasFactory;
     protected $guarded=[];
 
-    public function convertVideo($video, $courseId, $lectureTitle, $lectureId)
+    /*public function convertVideo($video, $courseId, $lectureTitle, $lectureId)
     {
 
         DB::transaction(function () use ($video, $courseId, $lectureTitle, $lectureId) {
 
-            $path = 'videos/' . $courseId;
+            $path = 'public/videos/' . $courseId;
             $videoName = $lectureTitle . '_' . time();
 
-            $videoPath = $video->store($path);
+            dd($video);
+            $videoPath =  Storage::disk('local')->put($path,  $video);
+           $videoPath = $video->store($path);
 
-            $encryptionKey = HLSExporter::generateEncryptionKey();
 
 
             //get video duration
@@ -37,13 +40,12 @@ class CourseSectionLecture extends Model
             $savePath = $path . '/' . $videoName . '.m3u8';
             FFMpeg::open($videoPath)
                 ->exportForHLS()
-                ->withEncryptionKey($encryptionKey)
                 ->addFormat(new X264('aac', 'libx264'))
                 ->toDisk('ftp')
                 ->save($savePath);
 
              //delete video from local
-          //  Storage::delete($videoPath);
+           Storage::delete($videoPath);
 
 
             CourseLectureVideo::query()->updateOrCreate(
@@ -57,7 +59,7 @@ class CourseSectionLecture extends Model
             );
         });
 
-    }
+    }*/
 
     public function courseSection()
     {
