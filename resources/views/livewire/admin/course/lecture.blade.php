@@ -57,12 +57,12 @@
                     <div class="card-body">
                         <div class="table-responsive">
                             <div class="d-flex justify-content-between align-items-center">
-                                <div class="field-wrapper w-25">
-                                    {{--<input style="background: #ffffff" class="form-control" type="text"
-                                           wire:model.debounce.500ms="search">--}}
+                               {{-- <div class="field-wrapper w-25">
+                                    <input style="background: #ffffff" class="form-control" type="text"
+                                           wire:model.debounce.500ms="search">
                                     <div class="field-placeholder">جستجو <span
                                             class="text-danger">*</span></div>
-                                </div>
+                                </div>--}}
                             </div>
                             <table class="table v-middle">
                                 <thead>
