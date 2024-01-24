@@ -30,6 +30,7 @@
                                 <tr>
                                     <th>#</th>
                                     <th>عنوان</th>
+                                    <th>دسته بندی</th>
                                     <th>سرفصل ها</th>
                                     <th>عملیات</th>
                                 </tr>
@@ -39,6 +40,7 @@
                                     <tr wire:key="{{$course->id}}">
                                         <td>{{$course->id}}</td>
                                         <td>{{$course->title}}</td>
+                                        <td>{{$course->category->title}}</td>
                                         <td>
                                             <a class="btn btn-outline-warning" wire:navigate
                                                href="{{route('admin.course.section',$course->id)}}">سرفصل ها</a>

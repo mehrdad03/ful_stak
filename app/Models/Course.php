@@ -52,8 +52,13 @@ class Course extends Model
 
     }
 
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
+
     public function seo()
     {
-        return $this->belongsTo(SeoItem::class, 'id','ref_id');
+        return $this->belongsTo(SeoItem::class, 'id', 'ref_id');
     }
 }
