@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('courses', function (Blueprint $table) {
             $table->id();
             $table->string('title')->unique();
+            $table->bigInteger('price')->default(0);
+            $table->integer('discount')->default(0);
             $table->string('url_slug')->nullable()->unique();
             $table->text('requirements')->nullable();
             $table->text('short_description')->nullable();
