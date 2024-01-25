@@ -14,12 +14,14 @@ class Course extends Model
     public function createCourse($formData)
     {
 
-        $course = Course::query()->updateOrCreate(
+        Course::query()->updateOrCreate(
             [
                 'id' => $formData['courseId']
             ],
             [
                 'title' => $formData['title'],
+                'price' => $formData['price'],
+                'discount' => $formData['discount'],
                 'category_id' => $formData['categoryId'],
                 'teacher_id' => $formData['teacherId'],
                 'short_description' => $formData['short_description'],
