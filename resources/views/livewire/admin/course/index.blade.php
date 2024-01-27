@@ -29,6 +29,7 @@
                                 <thead>
                                 <tr>
                                     <th>#</th>
+                                    <th>ID</th>
                                     <th>عنوان</th>
                                     <th>دسته بندی</th>
                                     <th>سرفصل ها</th>
@@ -38,6 +39,7 @@
                                 <tbody>
                                 @forelse($courses as $course)
                                     <tr wire:key="{{$course->id}}">
+                                        <td>{{$loop->index+1}}</td>
                                         <td>{{$course->id}}</td>
                                         <td>{{$course->title}}</td>
                                         <td>{{$course->category->title}}</td>

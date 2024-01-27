@@ -68,6 +68,7 @@
                                 <thead>
                                 <tr>
                                     <th>#</th>
+                                    <th>ID</th>
                                     <th>ویدیو</th>
                                     <th>عنوان</th>
                                     <th>عملیات</th>
@@ -76,7 +77,9 @@
                                 <tbody>
                                 @forelse($lectures as $lecture)
                                     <tr>
+                                        <td>{{$loop->index+1}}</td>
                                         <td>{{$lecture->id}}</td>
+
                                         <td>
                                             <div class="media-box  align-items-center row">
                                                 <img src="/{{@$category->image->file}}"

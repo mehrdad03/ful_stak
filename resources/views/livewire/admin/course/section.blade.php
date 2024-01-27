@@ -61,26 +61,17 @@
                                    aria-describedby="copy-print-csv_info">
                                 <thead>
                                 <tr role="row">
-                                    <th class="sorting_asc" tabindex="0" aria-controls="copy-print-csv" rowspan="1"
-                                        colspan="1" aria-sort="ascending"
-                                        aria-label="Products: activate to sort column descending"
-                                        style="width: 50px;">ID
-                                    </th>
-                                    <th>
-                                        عنوان
-                                    </th>
-                                    <th>
-                                        دروس
-                                    </th>
-                                    <th class="sorting" tabindex="0" aria-controls="copy-print-csv" rowspan="1"
-                                        colspan="1" aria-label="Actions: activate to sort column ascending"
-                                        style="width: 71.276px;">عملیات
-                                    </th>
+                                    <th>#</th>
+                                    <th>ID</th>
+                                    <th>عنوان</th>
+                                    <th>دروس</th>
+                                    <th>عملیات</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 @foreach($sections as $section)
                                     <tr role="row" class="odd" wire:key="{{$section->id}}">
+                                        <td>{{$loop->index+1}}</td>
                                         <td>{{ $section->id }}</td>
                                         <td>{{ $section->title }}</td>
                                         <td><a wire:navigate
