@@ -21,6 +21,8 @@ Route::group(['prefix' => 'auth', 'middleware' => 'guest:web'], function () {
         Route::get('/client', \App\Livewire\Client\Auth\Index::class);
         Route::get('/gmail', [\App\Livewire\Client\Auth\Index::class, 'redirectToProvider'])->name('.gmail');
         Route::get('/gmail/callback', [\App\Livewire\Client\Auth\Index::class, 'handleProviderCallback'])->name('.gmail.callback');
+        //Route::get('/github', [\App\Livewire\Client\Auth\Index::class, 'redirectToGithubProvider'])->name('.github');
+        //Route::get('/github/callback', [\App\Livewire\Client\Auth\Index::class, 'handleGithubProviderCallback'])->name('.github.callback');
 
     });
 

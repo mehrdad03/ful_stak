@@ -37,6 +37,25 @@ class Index extends Component
         return redirect()->route('client.home');
     }
 
+
+    /*
+     * github oath
+     * */
+
+    public function redirectToGithubProvider()
+    {
+        return Socialite::driver('github')->redirect();
+    }
+
+    public function handleGithubProviderCallback(User $user)
+    {
+        $githubUser = Socialite::driver('github')->stateless()->user();
+
+        $user->checkUser($githubUser,'github');
+
+        return redirect()->route('client.home');
+
+    }
     public function render()
     {
         return view('livewire.client.auth.index');

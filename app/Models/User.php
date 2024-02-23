@@ -38,8 +38,9 @@ class User extends Authenticatable
     ];
 
 
-    public function checkUser($user)
+    public function checkUser($user, $loginType = 'google')
     {
+
         $check = User::query()->where('email', $user['email'])->first();
 
         if (!$check) {
@@ -58,8 +59,6 @@ class User extends Authenticatable
         }
 
     }
-
-
 
 
 }
