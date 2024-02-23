@@ -4,6 +4,10 @@
 
     @php
         $rout_name=\Illuminate\Support\Facades\Route::current()->getName();
+        $class='';
+        if ($rout_name!='client.pricing'){
+            $class='container my-5';
+        }
     @endphp
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -25,7 +29,7 @@
     <canvas id="matrix"></canvas>
 @endif
 
-<main class="container my-5">
+<main class="{{$class}}">
     {{$slot}}
 </main>
 
