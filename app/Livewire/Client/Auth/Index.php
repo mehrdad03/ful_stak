@@ -32,8 +32,6 @@ class Index extends Component
     {
         $gmailUser = Socialite::driver('google')->stateless()->user();
         $user->checkUser($gmailUser);
-        //$previousUrl = Session::pull('previous_url', route('client.home')); // اگر آخرین route موجود نبود، به route خانه ریدایرکت کن
-        //return redirect()->intended($previousUrl);
         return redirect()->route('client.home');
     }
 

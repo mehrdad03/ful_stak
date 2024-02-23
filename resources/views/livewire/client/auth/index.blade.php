@@ -1,24 +1,20 @@
 @push('links')
     <link rel="stylesheet" href="/frontend/css/login.css" />
 @endpush
-@auth
-    awdawdawdawdawdawdawdawdawdawdawdawdawdawd
-@endauth
-
 <div
     class="form d-flex flex-column align-items-center justify-content-center">
     <img src="/frontend/assets/images/logo.png" alt="logo" class="logo" />
     <!-- PhoneNumber Input -->
     <form action="/" id="form">
         <div class="my-1 mt-4 my-md-3">
-            <h1 class="text-white fs-5">ورود یا عضویت</h1>
+            <h1 class="text-white fs-4 text-center">ورود یا عضویت در فول استک</h1>
             <div class="d-flex flex-column my-2 ">
-                <label for="phoneNumber" class="text-white">تلفن</label>
+                <label for="phoneNumber" class="m-2 fw-bold text-white">شماره موبایل</label>
                 <input
                     type="number"
                     name="phoneNumber"
                     id="phoneNumber"
-                    placeholder="شماره تلفن خود را وارد کنید" />
+                    placeholder="شماره موبایل خود را وارد کنید" />
                 <span id="error" class="text-danger"></span>
             </div>
             <div class="d-flex justify-content-center align-items-center">
@@ -28,13 +24,13 @@
             </div>
         </div>
     </form>
-    <p class="text-white">ورود و ادامه با</p>
+    <p class="text-white">و یا </p>
     <!-- Login Btns -->
     <div class="d-flex gap-2 align-items-center justify-content-between w-100">
         <!-- Gmail Login -->
         <a
             href="{{route('auth.client.gmail')}}"
-            class="d-flex bg-white align-items-center px-3 py-2 rounded-3 w-100 justify-content-center">
+            class="d-flex bg-white align-items-center p-3 rounded-3 w-100 justify-content-center">
             <svg
                 width="24"
                 height="24"
@@ -62,10 +58,12 @@
                 </defs>
             </svg>
             <p class="text-black fw-semibold m-0 mx-sm-4  d-md-block">
-                ورود با گوگل
+                ورود و ثبت نام با گوگل
             </p>
         </a>
+
     </div>
+
 </div>
 @push('scripts')
     <script defer src="/frontend/js/login.js"></script>
