@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', \App\Livewire\Client\Home\Index::class)->name('client.home');
 Route::get('/pricing', \App\Livewire\Client\Pricing\Index::class)->name('client.pricing');
+Route::get('/course', \App\Livewire\Client\Course\Index::class)->name('client.course');
 
 
 

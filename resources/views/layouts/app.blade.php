@@ -13,7 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <!-- Bootstrap css  -->
     <link
-        href="/backend/css/bootstrap.rtl.min.css" rel="stylesheet"/>
+        href="/frontend/css/bootstrap.min.css" rel="stylesheet"/>
     <!-- main css  -->
     <link rel="stylesheet" href="/frontend/css/main.css"/>
     @stack('links')
@@ -40,7 +40,7 @@
 <!-- jquery -->
 <script src="/backend/js/jquery.min.js"></script>
 <!-- Bootstrap js  -->
-<script src="/backend/js/bootstrap.bundle.min.js"></script>
+<script src="/frontend/js/bootstrap.bundle.min.js"></script>
 <!-- Main js  -->
 <script defer src="/frontend/js/main.js"></script>
 
