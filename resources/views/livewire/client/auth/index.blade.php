@@ -57,7 +57,7 @@
         </a>
         <!-- Gmail Login -->
         <a
-            href="#"
+            href="{{route('auth.client.gmail')}}"
             class="d-flex bg-white align-items-center px-3 py-2 rounded-3">
             <svg
                 width="24"

@@ -17,6 +17,8 @@ Route::group(['prefix' => 'auth', 'middleware' => 'guest:web'], function () {
 
     Route::name('auth.client')->group(function () {
         Route::get('/client', \App\Livewire\Client\Auth\Index::class);
+        Route::get('/gmail', [\App\Livewire\Client\Auth\Index::class, 'redirectToProvider'])->name('.gmail');
+        Route::get('/gmail/callback', [\App\Livewire\Client\Auth\Index::class, 'handleProviderCallback'])->name('.gmail.callback');
 
     });
 
