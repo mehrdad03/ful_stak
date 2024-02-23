@@ -9,7 +9,7 @@
     <form action="/" id="form">
         <div class="my-1 mt-4 my-md-3">
             <h1 class="text-white fs-5">ورود یا عضویت</h1>
-            <div class="d-flex flex-column my-2 my-md-4">
+            <div class="d-flex flex-column my-2 ">
                 <label for="phoneNumber" class="text-white">تلفن</label>
                 <input
                     type="number"
@@ -27,11 +27,11 @@
     </form>
     <p class="text-white">ورود و ادامه با</p>
     <!-- Login Btns -->
-    <div class="d-flex gap-5 align-items-center">
+    <div class="d-flex gap-2 align-items-center justify-content-between">
         <!-- Github Login -->
         <a
             href="#"
-            class="d-flex gap-3 bg-white align-items-center px-3 py-2 rounded-3">
+            class="d-flex bg-white align-items-center px-3 py-2 rounded-3">
             <svg
                 width="24"
                 height="24"
@@ -51,14 +51,14 @@
                     </clipPath>
                 </defs>
             </svg>
-            <p class="text-black fw-semibold m-0 mx-sm-4 d-none d-md-block">
+            <p class="text-black fw-semibold m-0 mx-sm-4  d-md-block">
                 Github
             </p>
         </a>
         <!-- Gmail Login -->
         <a
             href="#"
-            class="d-flex gap-3 bg-white align-items-center px-3 py-2 rounded-3">
+            class="d-flex bg-white align-items-center px-3 py-2 rounded-3">
             <svg
                 width="24"
                 height="24"
@@ -85,7 +85,7 @@
                     </clipPath>
                 </defs>
             </svg>
-            <p class="text-black fw-semibold m-0 mx-sm-4 d-none d-md-block">
+            <p class="text-black fw-semibold m-0 mx-sm-4  d-md-block">
                 Gmail
             </p>
         </a>

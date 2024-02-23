@@ -67,7 +67,6 @@ main .form #submit:disabled {
   transition: all 0.4s;
 }
 main .form #submit {
-  width: 50%;
   opacity: 1;
   cursor: pointer;
 }

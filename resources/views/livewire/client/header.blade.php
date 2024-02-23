@@ -6,7 +6,7 @@
                     <img src="/frontend/assets/images/menu.png" alt="menu" />
                 </div>
                 <!-- logo -->
-                <a class="navbar-brand" href="#">
+                <a  class="navbar-brand" href="{{route('client.home')}}">
                     <img src="/frontend/assets/images/logo.png" alt="logo" class="logo" />
                 </a>
                 <ul class="navbar-nav d-none d-lg-flex gap-4">
