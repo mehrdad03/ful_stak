@@ -1,0 +1,161 @@
+main {
+  margin: 8% 0;
+}
+
+/* roadmap text */
+.tRoad {
+  margin-top: -50px;
+}
+.video {
+  width: 80%;
+  height: 250px;
+  border-top: 2px solid #23bf64;
+  border-radius: 30px;
+}
+
+/* Fisrt Roadmap */
+#firstRoadmap {
+  margin: 10% 0;
+}
+#firstRoadmap .road {
+  margin-top: -42px;
+}
+#firstRoadmap .road a {
+  background-color: #23bf64;
+  clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
+  transition: all 0.4s ease-in-out;
+}
+#firstRoadmap .road a:hover {
+  background-color: #159148;
+}
+
+/* Main Roadmap */
+#mainRoadmap .roadNav h3 {
+  border: 2px dashed rgba(255, 255, 255, 0.6);
+}
+#mainRoadmap .roadNav span {
+  width: 1px;
+  height: 100px;
+  margin: 0;
+  border-right: 2px dashed rgba(255, 255, 255, 0.6);
+}
+#mainRoadmap .Roadvideo {
+  margin-left: -300px;
+  margin-top: 55px;
+}
+#mainRoadmap iframe {
+  border-radius: 100%;
+  border: none;
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  left: 57px;
+}
+#mainRoadmap .RoadCourse {
+  background: linear-gradient(
+    330deg,
+    rgba(35, 191, 101, 0) 0%,
+    rgba(35, 191, 101, 1) 100%
+  );
+  max-width: 350px;
+}
+#mainRoadmap .leftRoadmap {
+  margin-top: 320px;
+}
+#mainRoadmap .leftRoadmap .Roadvideo {
+  margin-left: 0;
+  margin-right: -300px;
+}
+#mainRoadmap .leftRoadmap .Roadvideo iframe {
+  right: 57px;
+}
+#mainRoadmap .rightRoadmap {
+  display: flex;
+  flex-direction: column;
+  row-gap: 320px;
+}
+#mainRoadmap .leftRoadmap {
+  display: flex;
+  flex-direction: column;
+  row-gap: 320px;
+}
+@media screen and (max-width: 320px) {
+  h1 {
+    font-size: 20px;
+  }
+  h1 .tRoad svg {
+    width: 30px;
+    padding-top: 15px;
+  }
+  h1 + p {
+    width: 100% !important;
+    font-size: 14px;
+  }
+  .video {
+    width: 100%;
+    height: 170px !important;
+  }
+}
+@media screen and (min-width: 320px) {
+  #mainRoadmap .roadNav span {
+    width: 6% !important;
+    margin-right: -75% !important;
+  }
+}
+@media screen and (min-width: 375px) {
+  #mainRoadmap .roadNav span {
+    width: 14% !important;
+    margin-right: -70% !important;
+  }
+}
+@media screen and (min-width: 425px) {
+  #mainRoadmap .roadNav span {
+    width: 17% !important;
+    margin-right: -69% !important;
+  }
+}
+@media screen and (min-width: 768px) {
+  #mainRoadmap .roadNav span {
+    width: 14% !important;
+    margin-right: -46.2% !important;
+  }
+}
+@media screen and (min-width: 1024px) {
+  #mainRoadmap .roadNav span {
+    width: 1px !important;
+    margin-right: 0 !important;
+  }
+}
+@media screen and (max-width: 768px) {
+  main {
+    margin: 25% 0;
+  }
+  .video {
+    height: 235px;
+    margin-bottom: 5%;
+  }
+  #firstRoadmap .road a {
+    font-size: 12px;
+  }
+  #mainRoadmap .RoadCourse p,
+  button {
+    font-size: 12px;
+  }
+  #mainRoadmap .RoadCourse h3 {
+    font-size: 20px;
+  }
+  #mainRoadmap .roadNav:nth-of-type(2n) h3 {
+    margin-top: -40px;
+  }
+  #mainRoadmap .roadNav h3 {
+    margin-bottom: -40px;
+  }
+  #mainRoadmap .roadNav span {
+    height: 140px;
+    border-top: 2px dashed rgba(255, 255, 255, 0.6);
+  }
+  #mainRoadmap .roadNav:nth-of-type(2n) span {
+    border-top: none;
+    border-bottom: 2px dashed rgba(255, 255, 255, 0.6);
+  }
+}

@@ -1,0 +1,205 @@
+html,
+body {
+  background: linear-gradient(
+      187deg,
+      rgba(11, 20, 27, 0.2) 73.64%,
+      rgba(11, 20, 27, 0.2) 100%
+    ),
+    linear-gradient(
+      187deg,
+      rgba(11, 20, 27, 0.05) 0%,
+      rgba(11, 20, 27, 0.2) 34.3%
+    ),
+    #20222f !important;
+}
+main {
+  margin: 8% 0;
+}
+main h2 {
+  border-radius: 24px;
+  background: #0b141b;
+  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.54),
+    0px 11px 11px 0px rgba(0, 0, 0, 0.47), 0px 24px 15px 0px rgba(0, 0, 0, 0.28),
+    0px 43px 17px 0px rgba(0, 0, 0, 0.08), 0px 68px 19px 0px rgba(0, 0, 0, 0.01);
+}
+
+.modal-open{
+  padding-right: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.stack_btns {
+  border-radius: 24px;
+  background: #0b141b;
+  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.54),
+    0px 11px 11px 0px rgba(0, 0, 0, 0.47), 0px 24px 15px 0px rgba(0, 0, 0, 0.28),
+    0px 43px 17px 0px rgba(0, 0, 0, 0.08), 0px 68px 19px 0px rgba(0, 0, 0, 0.01);
+}
+.stack_btns > li {
+  cursor: pointer;
+  border-radius: 24px;
+  background-color: #0b141b;
+  transition: all 0.2s;
+}
+.tab {
+  background-color: #23bf65 !important;
+  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.54),
+    0px 11px 11px 0px rgba(0, 0, 0, 0.47), 0px 24px 15px 0px rgba(0, 0, 0, 0.28),
+    0px 43px 17px 0px rgba(0, 0, 0, 0.08), 0px 68px 19px 0px rgba(0, 0, 0, 0.01);
+}
+.price_title {
+  margin: 10% 0 2% 0;
+}
+.price_title h3 {
+  color: transparent;
+  text-align: center;
+  -webkit-text-stroke-width: 0.5px;
+  -webkit-text-stroke-color: #23bf65;
+}
+.price_title img:nth-child(3) {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+.priceCard > div {
+  border-radius: 40px;
+  border-right: 2px solid #23bf65;
+  background: linear-gradient(
+    123deg,
+    rgba(20, 32, 140, 0.21) -25.55%,
+    rgba(35, 191, 101, 0.11) 166.85%
+  );
+  box-shadow: 0px 6px 12px 0px rgba(0, 0, 0, 0.59),
+    0px 22px 22px 0px rgba(0, 0, 0, 0.51), 0px 50px 30px 0px rgba(0, 0, 0, 0.3),
+    0px 89px 36px 0px rgba(0, 0, 0, 0.09),
+    0px 139px 39px 0px rgba(0, 0, 0, 0.01);
+  backdrop-filter: blur(12.5px);
+}
+.priceCard div:nth-child(2) {
+  margin-top: -10%;
+}
+.titleCard {
+  border: 1px solid #23bf65;
+  border-radius: 20px;
+  margin: 14px 0;
+  background-color: #181d27;
+}
+.titleCard > span {
+  background-color: #23bf65;
+  border-radius: 20px;
+}
+.propertyFont {
+  font-size: 13px;
+}
+.suggest {
+  margin-top: -5%;
+  border-radius: 100px;
+  background: #5c0404;
+  box-shadow: 0px 11px 11px 0px rgba(0, 0, 0, 0.86) inset;
+}
+
+.modal{
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.modal-content {
+  border-radius: 40px;
+  background: linear-gradient(124deg, rgba(20, 32, 140, 0.21) -25.59%, rgba(35, 191, 101, 0.11) 121.5%);
+  backdrop-filter: blur(10px);
+}
+.btn-close{
+  background-color: #23bf65;
+}
+.modalHeader img {
+  width: 11%;
+}
+.modalHeader img:nth-child(3) {
+  transform: scaleX(-1);
+}
+.refCode {
+  border: 1px solid #23bf65;
+  border-radius: 40px;
+  background-color: #20222f;
+}
+.refCode button {
+  padding: 6px 0;
+  text-align: center;
+  color: white;
+}
+.refCode span{
+  margin: 0;
+  color: white;
+  font-size: 13px;
+  padding-right: 5px;
+  font-weight: 500;
+}
+.modal h4 + p{
+  font-size: 13px;
+}
+.refCode input {
+  outline: none;
+  border: none;
+  background-color: #20222f;
+  color: #fff;
+  width: 100px;
+}
+
+@media screen and (max-width: 425px) {
+  main h2 {
+    margin-top: 20% !important;
+    font-size: 15px;
+  }
+  .stackBtn > li {
+    font-size: 15px;
+    padding: 15px 9px !important;
+  }
+  .frontImg > img {
+    width: 250px !important;
+  }
+  .modal h4 + p{
+    font-size: 15px;
+    text-align: center;
+  }
+  .refCode span{
+    font-size: 13px;
+    margin: 4px 0;
+  }
+  .prices{
+    padding: 0 !important;
+  }
+  .prices div p{
+    font-size: 16px;
+  }
+  .modal a {
+    width: 100%;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 768px) {
+  main h2 {
+    margin-top: 10%;
+  }
+  .stackBtn {
+    margin: 0 auto !important;
+  }
+  .stack_btns {
+    display: flex;
+    margin: 30% 0;
+  }
+  main h4 {
+    font-size: 17px;
+  }
+  main h4 + p {
+    font-size: 14px;
+  }
+  .frontImg {
+    display: flex;
+    justify-content: ce;
+  }
+  .frontImg > img {
+    width: 350px;
+  }
+  .priceCard .suggest > p {
+    font-size: 15px;
+  }
+}

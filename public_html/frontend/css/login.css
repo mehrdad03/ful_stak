@@ -1,0 +1,86 @@
+#matrix {
+  opacity: 0.4;
+}
+.logo {
+  width: 112px;
+  height: 28px;
+}
+a {
+  text-decoration: none !important;
+  transition: all 0.4s;
+}
+a:hover {
+  opacity: 0.4;
+}
+main {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000 !important;
+}
+main .form {
+  padding: 50px;
+  border-radius: 40px;
+  border: 1px solid #23bf65;
+  background: linear-gradient(124deg, #303445 0%, rgba(48, 52, 69, 0) 100%);
+  backdrop-filter: blur(12.5px);
+}
+main .form h5 {
+  font-weight: 500;
+}
+main .form #phoneNumber {
+  width: 300px;
+  height: 40px;
+  font-size: 13px;
+  font-weight: bold;
+  padding-right: 10px;
+  border-radius: 10px;
+  appearance: none;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+input[type="number"] {
+  -moz-appearance: textfield; /* Firefox */
+}
+main .form #phoneNumber::placeholder {
+  font-size: 12px;
+  margin-right: 20px;
+  color: #a7a7a7;
+}
+main .form button {
+  width: 100%;
+  border-radius: 10px;
+  font-size: 14px;
+  background-color: #23bf65;
+}
+main .form #submit:disabled {
+  width: 40%;
+  cursor: not-allowed;
+  opacity: 0.5;
+  transition: all 0.4s;
+}
+main .form #submit {
+  width: 50%;
+  opacity: 1;
+  cursor: pointer;
+}
+#error{
+  font-size: 15px;
+  margin-top: 10px;
+}
+
+@media screen and (max-width: 425px) {
+  main .form {
+    padding: 20px 30px;
+  }
+  main .form #phoneNumber {
+    width: 250px;
+  }
+}
