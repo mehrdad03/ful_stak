@@ -1,6 +1,9 @@
 @push('links')
     <link rel="stylesheet" href="/frontend/css/login.css" />
 @endpush
+@auth
+    awdawdawdawdawdawdawdawdawdawdawdawdawdawd
+@endauth
 
 <div
     class="form d-flex flex-column align-items-center justify-content-center">

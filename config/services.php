@@ -30,5 +30,15 @@ return [
         'secret' => env('AWS_SECRET_ACCESS_KEY'),
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
+    'github' => [
+        'client_id' => env('GITHUB_CLIENT_ID'),
+        'client_secret' => env('GITHUB_CLIENT_SECRET'),
+        'redirect' => 'http://example.com/callback-url',
+    ],
+    'google' => [
+        'client_id' => '457293891231-no8g9ke1ofk1ngvk6v40bn01ibk19k5f.apps.googleusercontent.com',
+        'client_secret' => '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',
+        'redirect' => 'http://127.0.0.1:8000/auth/gmail/callback',
+    ],
 
 ];

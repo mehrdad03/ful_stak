@@ -41,12 +41,14 @@ class User extends Authenticatable
     public function checkUser($user)
     {
         $check = User::query()->where('email', $user['email'])->first();
+
         if (!$check) {
             $newUser = User::query()->create([
                 'email' => $user['email'],
                 'picture' => $user['picture'],
                 'name' => $user['name'],
             ]);
+
             Auth::login($newUser, true);
             //  Notification::send(Auth::user(), new WelcomeMessage($user['name']));
         } else {
@@ -54,6 +56,7 @@ class User extends Authenticatable
             // Notification::send(Auth::user(), new WelcomeMessage($user['name']));
 
         }
+
     }
 
 
