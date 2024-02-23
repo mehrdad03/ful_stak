@@ -9,6 +9,7 @@ Route::get('/', \App\Livewire\Client\Home\Index::class)->name('client.home');
 Route::get('/pricing', \App\Livewire\Client\Pricing\Index::class)->name('client.pricing');
 
 
+
 /*********** Client Login  & Register *************/
 
 Route::group(['prefix' => 'auth', 'middleware' => 'guest:web'], function () {

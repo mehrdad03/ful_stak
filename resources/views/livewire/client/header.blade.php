@@ -28,7 +28,7 @@
                     </li>
                 </ul>
                 <a
-                    href="./pages/Login.html"
+                    href="{{route('auth.client')}}"
                     class="main-btn text-white px-3 py-2 d-inline-flex justify-content-center">
                     <span class="d-block">ورود &nbsp;</span>
                     <span class="d-none d-sm-block"> و عضویت</span>
