@@ -29,7 +29,10 @@ class CourseSection extends Model
             ]
         );
     }
-
+    public function sectionLectures()
+    {
+        return $this->hasMany(CourseSectionLecture::class);
+    }
 
 }
 

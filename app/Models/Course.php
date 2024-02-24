@@ -63,4 +63,11 @@ class Course extends Model
     {
         return $this->belongsTo(SeoItem::class, 'id', 'ref_id');
     }
+
+    public function sections()
+    {
+        return $this->hasMany(CourseSection::class);
+    }
+
+
 }

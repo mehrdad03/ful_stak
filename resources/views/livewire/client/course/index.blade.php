@@ -28,19 +28,19 @@
             <img src="/frontend/assets/images/hr.png" alt="HR" class="hr" />
 
             <!-- Course Season -->
-            <livewire:client.course.season/>
+            <livewire:client.course.season :sections="$course->sections"/>
 
             <!-- hr -->
             <img src="/frontend/assets/images/hr.png" alt="HR" class="hr" />
 
             <!-- course Needs -->
 
-            <livewire:client.course.requirments/>
+            <livewire:client.course.requirments :requirements="$course->requirements" />
             <!-- hr -->
             <img src="/frontend/assets/images/hr.png" alt="HR" class="hr" />
 
             <!-- Course Explain -->
-            <livewire:client.course.description/>
+            <livewire:client.course.description :description="$course->description"/>
 
             <!-- hr -->
             <img src="/frontend/assets/images/hr.png" alt="HR" class="hr" />

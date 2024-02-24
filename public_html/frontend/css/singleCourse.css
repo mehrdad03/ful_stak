@@ -84,6 +84,10 @@ main {
   align-items: center;
   justify-content: center;
 }
+
+#mainContent .season .acc .acc-num .index{
+  color: var(--background-color) ;
+}
 #mainContent .season .acc:last-of-type {
   border-right: 0;
 }
@@ -95,10 +99,11 @@ main {
   height: 20px;
 }
 /* Accordion content */
+
 #mainContent .season .acc .acc-item .acc-content {
   width: 90%;
   border-top: 2px solid #ffffff80;
-  padding: 20px;
+  padding: 20px 0;
   margin: 20px auto;
 }
 #mainContent .season .acc .acc-item.active {
