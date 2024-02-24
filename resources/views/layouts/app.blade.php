@@ -6,7 +6,7 @@
         $rout_name=\Illuminate\Support\Facades\Route::current()->getName();
         $class='';
         if ($rout_name!='client.pricing'){
-            $class='container my-5';
+            $class='container';
         }
     @endphp
     <meta charset="UTF-8"/>

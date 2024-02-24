@@ -298,7 +298,7 @@ textarea {
 
 @media screen and (max-width: 768px) {
   main {
-    margin: 40% 0 !important;
+    margin: 28% 0 !important;
   }
   iframe {
     height: 300px;
