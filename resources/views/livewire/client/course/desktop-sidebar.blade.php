@@ -10,7 +10,7 @@
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowfullscreen></iframe>
         <!-- ==== Course features ==== -->
-        <div class="p-3">
+        <div class="p-4">
             <h5>ویژگی های این دوره :</h5>
             <ul>
                 <li class="d-flex gap-2 mt-3">
@@ -88,7 +88,7 @@
             </ul>
         </div>
         <!-- ==== How to Buy ==== -->
-        <h3 class="my-4 fw-bold px-3">بهای تهیه دوره از طریق:</h3>
+        <h3 class="my-4 fw-bold px-4">بهای تهیه دوره از طریق:</h3>
         <!-- ==== Buy Details ==== -->
         <div
             class="d-flex flex-column justify-content-between align-items-center px-3 mb-4">

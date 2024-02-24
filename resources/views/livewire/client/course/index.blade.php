@@ -13,7 +13,8 @@
         <!-- ========= Main Content =========-->
         <div id="mainContent" class="col col-lg-8">
             <!-- Title Text -->
-            <livewire:client.course.title/>
+
+            <livewire:client.course.title   :title="$course->title" :short_description="$course->short_description" />
             <!-- mobile version Course Detail -->
             <livewire:client.course.mobile-course-detail/>
             <!-- mobile version Course Master Box -->
@@ -21,7 +22,7 @@
             <!-- mobile version Subscription -->
             <livewire:client.course.mobile-subscription/>
             <!-- Course Features -->
-            <livewire:client.course.features/>
+            <livewire:client.course.features :what_you_will_learn="$course->what_you_will_learn"/>
 
             <!-- hr -->
             <img src="/frontend/assets/images/hr.png" alt="HR" class="hr" />

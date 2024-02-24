@@ -1,5 +1,5 @@
 <section class="text-white">
-    <h3 class="text-primary fs-2 mb-5">نیازمندی های آموزش</h3>
+    <h3 class="text-primary fs-2 mb-5">پیش نیازها</h3>
     <div class="d-flex flex-column gap-3">
         <div
             class="needItem d-flex align-items-center justify-content-start gap-2">
