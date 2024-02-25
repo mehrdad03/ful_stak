@@ -70,4 +70,5 @@ class Course extends Model
     }
 
 
+
 }

@@ -11,7 +11,7 @@ class Index extends Component
 
     public function mount(Course $course)
     {
-       // dd($course->with('sections'));
+
         $this->course = $course->with('sections.sectionLectures.sectionLectureVideos')->firstOrFail();
     }
 

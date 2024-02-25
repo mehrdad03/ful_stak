@@ -46,7 +46,7 @@
             <img src="/frontend/assets/images/hr.png" alt="HR" class="hr" />
 
             <!-- ======= Course Slider ======= -->
-            <livewire:client.course.courses-slider/>
+            <livewire:client.course.courses-slider :cSlug="$course->url_slug" />
 
             <!-- hr -->
             <img src="/frontend/assets/images/hr.png" alt="HR" class="hr" />
