@@ -14,7 +14,7 @@
                 <path
                     stroke-linecap="round"
                     stroke-linejoin="round"
-                    d="M12 4.5v15m7.5-7.5h-15" />
+                    d="M12 4.5v15m7.5-7.5h-15"/>
             </svg>
             <p class="m-0">طرح سوال جدید</p>
             <svg
@@ -27,7 +27,7 @@
                 <path
                     stroke-linecap="round"
                     stroke-linejoin="round"
-                    d="M12 4.5v15m7.5-7.5h-15" />
+                    d="M12 4.5v15m7.5-7.5h-15"/>
             </svg>
         </button>
         <button
@@ -37,10 +37,10 @@
     </div>
 
     <!-- New Question -->
-    <div class="newQ">
+    <div class="newQ p-4">
         <!-- title -->
         <div
-            class="d-flex justify-content-center column-gap-2 border-bottom pb-4">
+            class="d-flex justify-content-center column-gap-2 border-bottom py-3">
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -51,7 +51,7 @@
                 <path
                     stroke-linecap="round"
                     stroke-linejoin="round"
-                    d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 5.25h.008v.008H12v-.008Z" />
+                    d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 5.25h.008v.008H12v-.008Z"/>
             </svg>
             <p class="m-0 text-white">
                 سوال خود را میتوانید در کادر پایین مطرح کنید ، پاسخ به سوال
@@ -67,51 +67,52 @@
                 <path
                     stroke-linecap="round"
                     stroke-linejoin="round"
-                    d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 5.25h.008v.008H12v-.008Z" />
+                    d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 5.25h.008v.008H12v-.008Z"/>
             </svg>
         </div>
-        <!-- Firstname and Lastname -->
-        <form action="#">
-            <div class="d-flex text-center w-100 my-4">
-                <!-- first name -->
-                <div class="text-white w-50 d-flex flex-column px-5">
-                    <label for="firstName">نام:</label>
-                    <input type="text" class="py-2" />
-                </div>
-                <!-- last Name -->
-                <div class="text-white w-50 d-flex flex-column px-5">
-                    <label for="lastName">نام خانوادگی:</label>
-                    <input type="text" class="py-2" />
-                </div>
-            </div>
-            <!-- Email -->
-            <div class="text-white w-100 d-flex flex-column px-5">
-                <label for="email" class="text-center mt-3">ایمیل:</label>
-                <input type="email" class="py-2" />
-            </div>
-            <!-- Question -->
-            <div class="text-white w-100 d-flex flex-column px-5">
-                <label for="question" class="my-3">سوال:</label>
-                <textarea
-                    name="question"
-                    id=""
-                    cols="30"
-                    rows="10"></textarea>
-            </div>
 
-            <!-- buttons -->
+        @if(!auth()->check())
+            <!-- Auth alert -->
             <div
-                class="w-100 mt-5 d-flex justify-content-center column-gap-3">
-                <button
-                    class="text-white bg-danger px-4 py-1 rounded-4 closeQ"
-                    type="button">
-                    انصراف
-                </button>
-                <button class="main-btn text-white px-4 py-1" type="submit">
-                    ثبت
-                </button>
+                class="bg-warning fw-bold mt-3  w-100 d-flex align-items-center justify-content-between   rounded-2 p-3">
+                <p class="m-0">
+                    برای ارسال دیدگاه لازم است وارد شده یا ثبت‌نام کنید
+                </p>
+                <a href="{{route('auth.client')}}">
+                    ورود یا ثبت‌نام
+                </a>
             </div>
-        </form>
+        @endif
+
+        @auth
+            <form action="#" class="px-4 pb-2">
+
+
+                <!-- Question -->
+                <div class="text-white w-100 d-flex flex-column ">
+                    <label for="question" class="my-3">سوال:</label>
+                    <textarea
+                        name="question"
+                        id="question"
+                        cols="30"
+                        rows="10" class="p-3" placeholder="متن مورد نظر خود رو وراد کنید . . ."></textarea>
+                </div>
+
+
+                <!-- buttons -->
+                <div
+                    class="w-100 mt-2 d-flex justify-content-end mt-4 column-gap-3">
+                    <button
+                        class="text-white bg-danger px-4 py-1 rounded-4 closeQ"
+                        type="button">
+                        انصراف
+                    </button>
+                    <button class="main-btn text-white px-4 py-1" type="submit">
+                        ثبت
+                    </button>
+                </div>
+            </form>
+        @endauth
     </div>
 
     <!-- question -->
@@ -122,7 +123,7 @@
                 <img
                     src="/frontend/assets/images/master.jpg"
                     alt="avatar"
-                    class="avatar rounded-5" />
+                    class="avatar rounded-5"/>
                 <div>
                     <h6 class="text-white m-0">متین حسن کاویاری</h6>
                     <p class="m-0 text-white-50">یک هفته پیش</p>
@@ -133,7 +134,7 @@
             </button>
         </div>
         <p class="m-0 pt-3 p-lg-5 text-white">
-            سلام وقتتون بخیر <br />
+            سلام وقتتون بخیر <br/>
             جاوا اسکریپت چیه و چه کاربردی داره؟
         </p>
     </div>
@@ -141,7 +142,7 @@
     <img
         src="/frontend/assets/images/ans.png"
         alt="answer"
-        class="ansBorder" />
+        class="ansBorder"/>
     <!-- answer -->
     <div class="answer bg-primary btn-innerShadow rounded-4 p-1 p-lg-4 w-75">
         <div
@@ -150,7 +151,7 @@
                 <img
                     src="/frontend/assets/images/master.jpg"
                     alt="avatar"
-                    class="avatar rounded-5" />
+                    class="avatar rounded-5"/>
                 <div>
                     <h6 class="text-white m-0">مهرداد داداشی</h6>
                     <p class="m-0 text-white-50">یک هفته پیش</p>
@@ -171,7 +172,7 @@
     <img
         src="/frontend/assets/images/ans.png"
         alt="answer"
-        class="ansBorder" />
+        class="ansBorder"/>
     <!-- Question answer -->
     <div class="mt-0 question">
         <div
@@ -180,7 +181,7 @@
                 <img
                     src="/frontend/assets/images/master.jpg"
                     alt="avatar"
-                    class="avatar rounded-5" />
+                    class="avatar rounded-5"/>
                 <div>
                     <h6 class="text-white m-0">متین حسن کاویاری</h6>
                     <p class="m-0 text-white-50">یک هفته پیش</p>
@@ -191,7 +192,7 @@
             </button>
         </div>
         <p class="m-0 pt-3 p-lg-5 text-white">
-            سلام وقتتون بخیر <br />
+            سلام وقتتون بخیر <br/>
             جاوا اسکریپت چیه و چه کاربردی داره؟
         </p>
     </div>

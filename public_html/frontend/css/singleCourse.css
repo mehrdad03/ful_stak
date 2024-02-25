@@ -167,7 +167,10 @@ main {
   );
   border-radius: 20px;
   margin: 4% 0;
-  padding: 20px;
+}
+
+#questions .newQ textarea::placeholder {
+    color: #fff;
 }
 #questions .newQ input,
 textarea {
