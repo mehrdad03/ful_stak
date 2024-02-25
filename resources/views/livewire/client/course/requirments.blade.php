@@ -5,7 +5,7 @@
             <div
                 class="needItem d-flex align-items-center justify-content-start gap-2">
                 <span></span>
-                <p class="fw-medium m-0 fw-bold">
+                <p class="fw-medium m-0 fw-normal">
                     {{$item}}
                 </p>
             </div>

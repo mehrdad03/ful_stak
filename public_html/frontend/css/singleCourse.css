@@ -311,6 +311,11 @@ textarea {
   #mainContent div {
     padding: 0;
   }
+
+    #mainContent .lecture-info,
+    #mainContent .section-info {
+      display: none!important;
+    }
   #mainContent h1 {
     font-size: 20px;
   }

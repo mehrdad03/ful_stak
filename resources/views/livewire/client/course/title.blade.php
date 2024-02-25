@@ -12,7 +12,7 @@
 
     </h1>
     <!-- Subtitle -->
-    <h4 class="my-4 text-end fw-light lh-base">
+    <h4 class="my-4 text-end fw-light lh-base fs-5">
         {{$short_description}}
     </h4>
     <!-- Score and learners -->

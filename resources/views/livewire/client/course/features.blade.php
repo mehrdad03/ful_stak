@@ -1,4 +1,4 @@
-<section class="features text-white mt-5 mx-0 ms-5 ">
+<section class="features text-white mt-5 mx-0 ">
     @php
         $what_you_will_learn=collect(explode('_',$what_you_will_learn))->split(2);
 

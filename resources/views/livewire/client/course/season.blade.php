@@ -65,7 +65,7 @@
                         <p class="w50 m-0 text-primary fw-bold px-2">{{$section->title}}</p>
                         <!-- section details -->
                         <div
-                            class="w-50 d-flex align-items-center justify-content-around justify-content-md-end">
+                            class="w-50 d-flex align-items-center justify-content-around justify-content-md-end section-info">
                             <div
                                 class="d-flex justify-content-center align-items-start py-3 w-75">
                                 <div class="courseDetails w-50">
@@ -159,7 +159,7 @@
                                 </svg>
                                 <p class="text-white m-0">{{$lecture->title}}</p>
                             </div>
-                            <div class="d-flex column-gap-2 align-items-center">
+                            <div class="d-flex column-gap-2 align-items-center lecture-info ">
                                 <p class="m-0 text-white fw-bold">پیش نمایش</p>
                                 <p class="m-0 text-primary fw-bold">{{@date('s : i',$lecture->sectionLectureVideos->duration)}}</p>
                             </div>
