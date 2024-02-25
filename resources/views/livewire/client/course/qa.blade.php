@@ -115,85 +115,54 @@
         @endauth
     </div>
 
-    <!-- question -->
-    <div class="mt-5 question">
-        <div
-            class="d-flex justify-content-between align-items-center px-1 px-lg-4 pb-4 border-bottom">
-            <div class="d-flex align-items-center column-gap-3">
-                <img
-                    src="/frontend/assets/images/master.jpg"
-                    alt="avatar"
-                    class="avatar rounded-5"/>
-                <div>
-                    <h6 class="text-white m-0">متین حسن کاویاری</h6>
-                    <p class="m-0 text-white-50">یک هفته پیش</p>
+    @forelse($comments as $comment)
+
+        <!-- question -->
+        <div class="mt-5 question">
+            <div
+                class="d-flex justify-content-between align-items-center px-1 px-lg-4 pb-3 border-bottom">
+                <div class="d-flex align-items-center column-gap-3">
+                    <img
+                        src="{{$comment->user->picture}}"
+                        alt="avatar"
+                        class="avatar rounded-5 rounded-5 border border-white border-4"/>
+                    <div>
+                        <h6 class="text-white m-0">{{$comment->user->name}}</h6>
+                        <p class="m-0 text-white-50">{{$comment->created_at->diffForHumans()}}</p>
+                    </div>
                 </div>
             </div>
-            <button class="main-btn text-white px-2 px-lg-5 py-1">
-                پاسخ
-            </button>
+            <p class="m-0 pt-3 p-lg-5 text-white">
+                {{$comment->comment}}
+            </p>
         </div>
-        <p class="m-0 pt-3 p-lg-5 text-white">
-            سلام وقتتون بخیر <br/>
-            جاوا اسکریپت چیه و چه کاربردی داره؟
-        </p>
-    </div>
-    <!-- Answer Border -->
-    <img
-        src="/frontend/assets/images/ans.png"
-        alt="answer"
-        class="ansBorder"/>
-    <!-- answer -->
-    <div class="answer bg-primary btn-innerShadow rounded-4 p-1 p-lg-4 w-75">
-        <div
-            class="d-flex justify-content-between align-items-center px-4 pb-4 border-bottom">
-            <div class="d-flex align-items-center column-gap-3">
-                <img
-                    src="/frontend/assets/images/master.jpg"
-                    alt="avatar"
-                    class="avatar rounded-5"/>
-                <div>
-                    <h6 class="text-white m-0">مهرداد داداشی</h6>
-                    <p class="m-0 text-white-50">یک هفته پیش</p>
+        <!-- Answer Border -->
+        @if($comment->answer)
+            <img
+                src="/frontend/assets/images/ans.png"
+                alt="answer"
+                class="ansBorder"/>
+            <!-- answer -->
+            <div class="answer bg-primary btn-innerShadow rounded-4 p-1 p-lg-4 w-75">
+                <div
+                    class="d-flex justify-content-between align-items-center px-4 pb-3 border-bottom">
+                    <div class="d-flex align-items-center column-gap-3">
+                        <img
+                            src="{{@$comment->user->picture}}"
+                            alt="avatar"
+                            class="avatar rounded-5 rounded-5 border border-white border-4"/>
+                        <div>
+                            <h6 class="text-white m-0">{{@$comment->user->name}}</h6>
+                            <p class="m-0 text-white-50">{{@$comment->created_at->diffForHumans()}}</p>
+                        </div>
+                    </div>
                 </div>
+                <p class="m-0 p-3 text-white">
+                    {{$comment->answer->comment}}
+                </p>
             </div>
-            <button class="main-btn text-white px-2 px-lg-5 py-1">
-                پاسخ
-            </button>
-        </div>
-        <p class="m-0 p-3 text-white">
-            جاوا اسکریپت یک زبان برنامه‌نویسی کلاینت-ساید می‌باشد که برای
-            تعامل با وبسایت‌ها و ایجاد ویژگی‌های پویا در صفحات وب به کار
-            می‌رود. این زبان به صورت اصلی در مرورگرها اجرا می‌شود و می‌تواند
-            DOM (مدل اسناد شیء) را تغییر دهد و رفتارهای کاربر را کنترل کند.
-        </p>
-    </div>
-    <!-- Answer Border -->
-    <img
-        src="/frontend/assets/images/ans.png"
-        alt="answer"
-        class="ansBorder"/>
-    <!-- Question answer -->
-    <div class="mt-0 question">
-        <div
-            class="d-flex justify-content-between align-items-center px-1 px-lg-4 pb-4 border-bottom">
-            <div class="d-flex align-items-center column-gap-3">
-                <img
-                    src="/frontend/assets/images/master.jpg"
-                    alt="avatar"
-                    class="avatar rounded-5"/>
-                <div>
-                    <h6 class="text-white m-0">متین حسن کاویاری</h6>
-                    <p class="m-0 text-white-50">یک هفته پیش</p>
-                </div>
-            </div>
-            <button class="main-btn text-white px-2 px-lg-5 py-1">
-                پاسخ
-            </button>
-        </div>
-        <p class="m-0 pt-3 p-lg-5 text-white">
-            سلام وقتتون بخیر <br/>
-            جاوا اسکریپت چیه و چه کاربردی داره؟
-        </p>
-    </div>
+        @endif
+    @empty
+    @endforelse
+
 </section>

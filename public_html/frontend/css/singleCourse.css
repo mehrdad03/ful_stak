@@ -201,7 +201,7 @@ textarea {
   margin: -4% 16.5% 0;
 }
 #questions .ansBorder:nth-last-of-type(1) {
-  transform: rotate(-90deg);
+  transform: rotate(360deg);
 }
 #questions .ans {
   min-height: 120px;

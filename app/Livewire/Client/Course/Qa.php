@@ -3,13 +3,31 @@
 namespace App\Livewire\Client\Course;
 
 use App\Models\Comment;
+use App\Models\Course;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use Livewire\Component;
 
 class Qa extends Component
 {
+
     public $cSlug;
+    public $comments;
+
+    public function mount()
+    {
+
+        $courseId = Course::query()->where('url_slug', $this->cSlug)->pluck('id')->first();
+        $this->comments=Comment::query()
+            ->where([
+                'course_id'=>$courseId,
+                'status'=>true,
+                'comment_id'=>0,
+            ])
+            ->with('answer','user:id,name,picture')
+            ->get();
+
+    }
     public function submitCourseComment($formData,Comment $comment)
     {
         $validator = Validator::make($formData, [
