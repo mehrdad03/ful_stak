@@ -89,19 +89,30 @@
 
 
                 <!-- Question -->
-                <div class="text-white w-100 d-flex flex-column ">
+                <div class="text-white w-100 d-flex flex-column  {{session('message') ? 'd-none' : ''}}">
                     <label for="comment" class="my-3">سوال:</label>
                     <textarea
                         name="comment"
                         id="comment"
-                        cols="30"
+                        cols="30" maxlength="700"
                         rows="10" class="p-3" placeholder="متن مورد نظر خود رو وراد کنید . . ."></textarea>
                 </div>
 
+                @error('comment')
+                <div
+                    class="alert alert-danger rounded-2 mt-3 " wire:loading.remove>{{ $message }}</div>
+                @enderror
+
+                @if(session('message'))
+                    <div class="alert alert-success mt-3">
+
+                        {{ session('message') }}
+                    </div>
+                @endif
 
                 <!-- buttons -->
                 <div
-                    class="w-100 mt-2 d-flex justify-content-end mt-4 column-gap-3">
+                    class="w-100 mt-2 d-flex justify-content-end mt-4 column-gap-3 {{session('message') ? 'd-none' : ''}}">
                     <button
                         class="text-white bg-danger px-4 py-1 rounded-4 closeQ"
                         type="button">

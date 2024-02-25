@@ -31,10 +31,10 @@ class Qa extends Component
     public function submitCourseComment($formData,Comment $comment)
     {
         $validator = Validator::make($formData, [
-            'comment' => 'required|min:10|max: 100',
+            'comment' => 'required|min:10|max: 700',
         ], [
             '*.required' => 'فیلد ضروری',
-            'comment.max' => 'حداکثر تعداد کاراکتر : 50',
+            'comment.max' => 'حداکثر تعداد کاراکتر : 700',
             'comment.min' => 'حداقل تعداد کاراکتر : 10',
 
         ]);
@@ -43,6 +43,9 @@ class Qa extends Component
         $this->resetValidation();
 
         $comment->submitCourseComment($formData,$this->cSlug);
+
+        session()->flash('message', 'نظر شما با موفقیت ثبت شد بعد از تایید نمایش داده خواهد شد!');
+
 
 
 
