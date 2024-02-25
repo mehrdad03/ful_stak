@@ -85,15 +85,15 @@
         @endif
 
         @auth
-            <form action="#" class="px-4 pb-2">
+            <form wire:submit="submitCourseComment(Object.fromEntries(new FormData($event.target)))" class="px-4 pb-2">
 
 
                 <!-- Question -->
                 <div class="text-white w-100 d-flex flex-column ">
-                    <label for="question" class="my-3">سوال:</label>
+                    <label for="comment" class="my-3">سوال:</label>
                     <textarea
-                        name="question"
-                        id="question"
+                        name="comment"
+                        id="comment"
                         cols="30"
                         rows="10" class="p-3" placeholder="متن مورد نظر خود رو وراد کنید . . ."></textarea>
                 </div>
