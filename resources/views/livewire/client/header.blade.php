@@ -10,18 +10,19 @@
                     <img src="/frontend/assets/images/logo.png" alt="logo" class="logo" />
                 </a>
                 <ul class="navbar-nav d-none d-lg-flex gap-4">
+
                     <li class="nav-item">
                         <a class="nav-link text-white fs-6" href="#">صفحه اصلی</a>
                         <span class="nav-border"></span>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white fs-6" href="#">دوره های آموزشی</a>
-                        <span class="nav-border"></span>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white fs-6" href="#">نقشه راه برنامه نویسی</a>
-                        <span class="nav-border"></span>
-                    </li>
+                    @foreach($categories as $category)
+                        <li class="nav-item">
+                            <a class="nav-link text-white fs-6" href="#">{{$category->title}}</a>
+                            <span class="nav-border"></span>
+                        </li>
+                    @endforeach
+
+
                     <li class="nav-item">
                         <a class="nav-link text-white fs-6" href="#">بلاگ</a>
                         <span class="nav-border"></span>
