@@ -60,7 +60,7 @@
             </div>
             <ul class="navbar-nav gap-4 mt-5">
                 <li class="nav-item text-primary">
-                    <div class="d-flex align-items-center gap-2 pe-2">
+                    <div class="d-flex align-items-center gap-2 pe-4">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             fill="none"
@@ -78,7 +78,7 @@
                     <span class="nav-border"></span>
                 </li>
                 <li class="nav-item text-white">
-                    <div class="d-flex align-items-center gap-2 pe-2">
+                    <div class="d-flex align-items-center gap-2 pe-4">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             fill="none"
@@ -98,7 +98,7 @@
                     </div>
                 </li>
                 <li class="nav-item text-white">
-                    <div class="d-flex align-items-center gap-2 pe-2">
+                    <div class="d-flex align-items-center gap-2 pe-4">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             fill="none"
@@ -116,7 +116,7 @@
                     </div>
                 </li>
                 <li class="nav-item text-white">
-                    <div class="d-flex align-items-center gap-2 pe-2">
+                    <div class="d-flex align-items-center gap-2 pe-4">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             fill="none"
