@@ -13,7 +13,7 @@ class RoadMap extends Component
     public function mount($category)
     {
         $this->category = $category;
-        if (!in_array($category, ['fullstack-road-map', 'backend-road-map', 'frontend-road-map'])) {
+        if (!in_array($category, ['fullstack', 'backend', 'frontend'])) {
             abort(404);
         }
     }
@@ -22,11 +22,11 @@ class RoadMap extends Component
     {
 
         $view = '';
-        if ($this->category == 'frontend-road-map') {
+        if ($this->category == 'frontend') {
             $view = 'frontend-road-map';
-        }elseif ($this->category == 'backend-road-map'){
+        }elseif ($this->category == 'backend'){
             $view = 'backend-road-map';
-        } elseif ($this->category == 'fullstack-road-map') {
+        } elseif ($this->category == 'fullstack') {
             $view = 'fullstack-road-map';
         }
 
