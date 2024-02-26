@@ -75,6 +75,7 @@ nav {
 .main-btn {
   background-color: var(--primary-color);
   border-radius: 20px;
+    cursor: pointer;
 }
 .main-btn:hover {
   background-color: #23bf64b6;

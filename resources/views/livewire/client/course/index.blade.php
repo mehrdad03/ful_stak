@@ -56,7 +56,7 @@
         </div>
 
         <!-- ========= Desktop Side Bar ========= -->
-        <livewire:client.course.desktop-sidebar/>
+        <livewire:client.course.desktop-sidebar :price="$course->price" />
     </div>
 </div>
 @push('scripts')

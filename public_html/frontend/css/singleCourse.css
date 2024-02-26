@@ -403,12 +403,12 @@ iframe {
   background-color: #0b141b;
   border-radius: 20px;
 }
+
+.courseDet .price {
+  font-size: 3rem;
+}
 .courseDet .productBuy div {
   padding: 8px;
-}
-.courseDet .productBuy span {
-  background-color: #23bf64;
-  border-radius: 20px;
 }
 #sideBar .sideVector {
   padding: 0 20%;
