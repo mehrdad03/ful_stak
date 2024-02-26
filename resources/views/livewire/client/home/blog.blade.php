@@ -3,7 +3,7 @@
         class="row flex-column flex-lg-row align-items-center justify-content-between">
         <!-- Title -->
         <div class="col col-lg-2 text-center">
-            <h2 class="title-text fs-2">وبلاگ تیم ما</h2>
+            <h2 class="title-text fs-2">بلاگ تیم ما</h2>
             <p class="text-white fw-semibold">
                 جاده‌نامه ایده‌ها در دنیای پیشرفت توسعه وب
             </p>

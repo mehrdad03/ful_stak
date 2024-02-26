@@ -1,4 +1,4 @@
-<div class="d-flex align-items-center gap-1 my-4">
+<div class="d-flex align-items-center gap-1 ">
     <!-- Home -->
     <a
         href="../index.html"
