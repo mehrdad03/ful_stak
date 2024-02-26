@@ -1,11 +1,11 @@
 @font-face {
   font-family: "peyda";
-  src: url("/assets/fonts/peyda-extralight.ttf");
+  src: url("../assets/fonts/peyda-extralight.ttf");
   font-weight: 100;
 }
 @font-face {
   font-family: "peyda";
-  src: url("/assets/fonts/Peyda-Regular.ttf");
+  src: url("../assets/fonts/Peyda-Regular.ttf");
   font-weight: 400;
 }
 @font-face {
