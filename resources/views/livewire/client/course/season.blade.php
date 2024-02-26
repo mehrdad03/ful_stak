@@ -1,5 +1,5 @@
 <section
-    class="season d-flex flex-column justify-content-center align-items-center">
+    class="season d-flex flex-column justify-content-center align-items-center" id="season">
     <h3 class="text-primary fs-2 mb-lg-5">سرفصل دوره ها</h3>
     <div
         class="w-100 d-flex justify-content-lg-end justify-content-center totalDet my-5">

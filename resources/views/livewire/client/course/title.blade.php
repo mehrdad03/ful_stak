@@ -42,6 +42,6 @@
     </section>
 
     <!-- watch seasons -->
-    <a href="#" class="main-btn text-white px-2 px-lg-4 py-2 fw-medium"
+    <a href="#season" class="main-btn text-white px-2 px-lg-4 py-2 fw-medium"
     >مشاهده سرفصل های دوره</a>
 </div>
