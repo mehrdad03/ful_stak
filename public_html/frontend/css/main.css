@@ -181,7 +181,7 @@ header {
   position: absolute;
   top: 0;
   right: -100%;
-  width: 200px;
+  width: 65%;
   height: 100vh;
   z-index: 9999;
   background-color: var(--nav-color);

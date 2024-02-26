@@ -9,6 +9,13 @@ Route::get('/', \App\Livewire\Client\Home\Index::class)->name('client.home');
 Route::get('/pricing', \App\Livewire\Client\Pricing\Index::class)->name('client.pricing');
 Route::get('/course/{course:url_slug}', \App\Livewire\Client\Course\Index::class)->name('client.course');
 Route::get('/auth/client/logout', [\App\Livewire\Client\Auth\Index::class, 'clientLogout'])->name('client.logout')->middleware('auth:web');
+
+
+Route::get('/road-map/{category:url_slug}', \App\Livewire\Client\Category\RoadMap::class)->name('client.category.road-map');
+
+
+
+
 Route::get('/basket', App\Livewire\Client\Basket\Index::class)->name('client.basket');
 
 

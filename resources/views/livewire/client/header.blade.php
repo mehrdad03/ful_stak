@@ -22,7 +22,6 @@
                         </li>
                     @endforeach
 
-
                     <li class="nav-item">
                         <a class="nav-link text-white fs-6" href="#">بلاگ</a>
                         <span class="nav-border"></span>
@@ -59,7 +58,7 @@
                     </svg>
                 </div>
             </div>
-            <ul class="navbar-nav gap-4 mt-5">
+            <ul class="navbar-nav gap-4 mt-3">
                 <li class="nav-item text-primary">
                     <div class="d-flex align-items-center gap-2 pe-4">
                         <svg
