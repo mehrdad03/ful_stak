@@ -29,3 +29,8 @@ $(document).ready(function () {
     $(this).toggleClass("active");
   });
 });
+
+//Profile After Auth
+$(".profile button").on("click", function () {
+    $('.popover').toggleClass('active');
+});
