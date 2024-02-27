@@ -1237,6 +1237,7 @@
     <img src="/frontend/assets/images/hr.png" alt="HR" class="hr" />
 
     <!-- Q and A -->
+
     <section id="faq">
         <!-- Title -->
         <h2 class="title-text fs-2 text-center mb-5">پرسش و پاسخ</h2>
