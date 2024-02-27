@@ -5,7 +5,7 @@
 <div>
 
     <!-- Crumble tabs -->
-    <livewire:client.course.crumble/>
+    <livewire:client.course.crumble  :title="$course->title" />
     <!-- video on mobile -->
     <livewire:client.course.mobile-video/>
     <!-- Main Row -->
