@@ -77,8 +77,8 @@ $user=\Illuminate\Support\Facades\Auth::user();
                             </div>
                             <ul class="d-flex flex-column p-0 mt-2 mb-0">
                                 <!-- profile -->
-                                <li class="py-3 pe-3 fw-medium">
-                                    <a href="#" class="d-flex align-items-center column-gap-2">
+                                <li class=" pe-3 fw-medium">
+                                    <a href="#" class="d-flex align-items-center column-gap-2 py-3">
                                         <svg
                                             width="24"
                                             height="24"
@@ -100,8 +100,8 @@ $user=\Illuminate\Support\Facades\Auth::user();
                                     </a>
                                 </li>
                                 <!-- my Course -->
-                                <li class="py-3 pe-3 fw-medium">
-                                    <a href="#" class="d-flex align-items-center column-gap-2">
+                                <li class="pe-3 fw-medium">
+                                    <a href="#" class=" py-3  d-flex align-items-center column-gap-2">
                                         <svg
                                             width="24"
                                             height="24"
@@ -144,8 +144,8 @@ $user=\Illuminate\Support\Facades\Auth::user();
                                     </a>
                                 </li>
                                 <!-- bookmarks -->
-                                <li class="py-3 pe-3 fw-medium">
-                                    <a href="#" class="d-flex align-items-center column-gap-2">
+                                <li class=" pe-3 fw-medium">
+                                    <a href="#" class="py-3 d-flex align-items-center column-gap-2">
                                         <svg
                                             width="24"
                                             height="24"
@@ -163,8 +163,8 @@ $user=\Illuminate\Support\Facades\Auth::user();
                                     </a>
                                 </li>
                                 <!-- logout -->
-                                <li class="py-3 pe-3 fw-medium">
-                                    <a href="{{route('client.logout')}}" class="d-flex align-items-center column-gap-2">
+                                <li class=" pe-3 fw-medium">
+                                    <a href="{{route('client.logout')}}" class=" py-3 d-flex align-items-center column-gap-2">
                                         <svg
                                             width="24"
                                             height="24"
