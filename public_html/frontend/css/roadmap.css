@@ -59,6 +59,22 @@ main {
   );
   max-width: 350px;
 }
+
+#mainRoadmap .RoadCourse .course-title-html{
+color:#f16529 ;
+}
+
+#mainRoadmap .RoadCourse .course-title-css {
+    color: #f16529;
+}#mainRoadmap .RoadCourse .course-title-bootstrap {
+    color: #673ab7;
+}#mainRoadmap .RoadCourse .course-title-js{
+    color: #ffd600;
+}#mainRoadmap .RoadCourse .course-title-github {
+    color: #000000;
+}#mainRoadmap .RoadCourse .course-title-vue {
+    color: #35495e;
+}
 #mainRoadmap .leftRoadmap {
   margin-top: 320px;
 }

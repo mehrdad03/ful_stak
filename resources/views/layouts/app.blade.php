@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-
+    <meta name="enamad" content="830265" />
     @php
         $rout_name=\Illuminate\Support\Facades\Route::current()->getName();
         $class='';
