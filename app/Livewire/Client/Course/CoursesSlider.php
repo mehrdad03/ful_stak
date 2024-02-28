@@ -4,16 +4,16 @@ namespace App\Livewire\Client\Course;
 
 use App\Models\Comment;
 use App\Models\Course;
+use Illuminate\Support\Facades\Session;
 use Livewire\Component;
 
 class CoursesSlider extends Component
 {
 
-public $cSlug;
 public $sameCourses;
     public function mount()
     {
-        $sameCoursesCategoryId = Course::query()->where('url_slug', $this->cSlug)->pluck('category_id')->first();
+        $sameCoursesCategoryId = Course::query()->where('id', Session::get('courseId'))->pluck('category_id')->first();
         $this->sameCourses = Course::query()
             ->where('category_id',$sameCoursesCategoryId )
             ->select('id','title','short_description','url_slug')->get();

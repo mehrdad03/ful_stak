@@ -35,7 +35,8 @@ class CourseSection extends Model
     }
     public function sectionLectureVideoTotalDuration($sectionId)
     {
-        return CourseLectureVideo::query()->where('id',$sectionId)->sum('duration');
+
+        return CourseLectureVideo::query()->where('course_section_id',$sectionId)->sum('duration');
     }
 
 }

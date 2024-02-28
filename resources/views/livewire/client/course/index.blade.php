@@ -28,7 +28,7 @@
             <img src="/frontend/assets/images/hr.png" alt="HR" class="hr" />
 
             <!-- Course Season -->
-            <livewire:client.course.season :sections="$course->sections" :cSlug="$course->url_slug"/>
+            <livewire:client.course.season :sections="$course->sections" />
 
             <!-- hr -->
             <img src="/frontend/assets/images/hr.png" alt="HR" class="hr" />
@@ -46,17 +46,17 @@
             <img src="/frontend/assets/images/hr.png" alt="HR" class="hr" />
 
             <!-- ======= Course Slider ======= -->
-            <livewire:client.course.courses-slider :cSlug="$course->url_slug" />
+            <livewire:client.course.courses-slider  />
 
             <!-- hr -->
             <img src="/frontend/assets/images/hr.png" alt="HR" class="hr" />
 
             <!-- ======= Q & A ======= -->
-            <livewire:client.course.qa :cSlug="$course->url_slug" />
+            <livewire:client.course.qa />
         </div>
 
         <!-- ========= Desktop Side Bar ========= -->
-        <livewire:client.course.desktop-sidebar :price="$course->price" :cSlug="$course->url_slug" />
+        <livewire:client.course.desktop-sidebar :price="$course->price"  />
     </div>
 </div>
 @push('scripts')
