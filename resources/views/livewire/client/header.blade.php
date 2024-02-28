@@ -15,7 +15,7 @@ $user=\Illuminate\Support\Facades\Auth::user();
                 <ul class="navbar-nav d-none d-lg-flex gap-4">
 
                     <li class="nav-item">
-                        <a class="nav-link text-white fs-6" href="#">صفحه اصلی</a>
+                        <a class="nav-link text-white fs-6" href="{{route('client.home')}}">صفحه اصلی</a>
                         <span class="nav-border"></span>
                     </li>
                     @foreach($categories as $category)
@@ -35,10 +35,11 @@ $user=\Illuminate\Support\Facades\Auth::user();
                 @auth
                     <!-- ===== User logged in ===== -->
                     <div class="profile position-relative d-flex align-items-center column-gap-3">
-                        <a href="#">
+                        <a href="{{route('client.basket')}}" class="position-relative">
+                            <span class="header-basket d-flex align-items-center justify-content-center fw-normal">3</span>
                             <svg
-                                width="24"
-                                height="24"
+                                width="26"
+                                height="26"
                                 viewBox="0 0 24 24"
                                 fill="none"
                                 xmlns="http://www.w3.org/2000/svg">

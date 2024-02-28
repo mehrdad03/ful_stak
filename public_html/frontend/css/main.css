@@ -129,6 +129,19 @@ header {
   z-index: 99999;
   transition: all 0.1s ease-in;
 }
+
+header .header-basket {
+    position: absolute;
+    background: #e81c4d;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    color: #fff;
+    left: 15px;
+    top: -14px;
+    z-index: -1;
+    font-size: 13px;
+}
 .header {
   height: 80px;
   background-color: var(--nav-color);
