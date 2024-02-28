@@ -3,6 +3,7 @@
 namespace App\Livewire\Client\Course;
 
 use App\Models\Course;
+use Illuminate\Support\Facades\Session;
 use Livewire\Component;
 
 class Index extends Component
@@ -11,8 +12,10 @@ class Index extends Component
 
     public function mount(Course $course)
     {
-
-        $this->course = $course->with('sections.sectionLectures.sectionLectureVideos')->firstOrFail();
+        Session::forget('courseId');
+        $course=$this->course = $course->with('sections.sectionLectures.sectionLectureVideos')->firstOrFail();
+        //save CourseId into the session to send components
+        Session::push('courseId',$course->id);
     }
 
     public function render()

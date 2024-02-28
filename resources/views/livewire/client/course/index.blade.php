@@ -28,7 +28,7 @@
             <img src="/frontend/assets/images/hr.png" alt="HR" class="hr" />
 
             <!-- Course Season -->
-            <livewire:client.course.season :sections="$course->sections"/>
+            <livewire:client.course.season :sections="$course->sections" :cSlug="$course->url_slug"/>
 
             <!-- hr -->
             <img src="/frontend/assets/images/hr.png" alt="HR" class="hr" />
