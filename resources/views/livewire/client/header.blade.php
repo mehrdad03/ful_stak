@@ -36,7 +36,7 @@ $user=\Illuminate\Support\Facades\Auth::user();
                     <!-- ===== User logged in ===== -->
                     <div class="profile position-relative d-flex align-items-center column-gap-3">
                         <a href="{{route('client.basket')}}" class="position-relative">
-                            <span class="header-basket d-flex align-items-center justify-content-center fw-normal">3</span>
+                            <span class="header-basket d-flex align-items-center justify-content-center fw-normal">{{$basket}}</span>
                             <svg
                                 width="26"
                                 height="26"

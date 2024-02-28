@@ -23,8 +23,9 @@ class DesktopSidebar extends Component
 
     public function addToBasket(Basket $basket)
     {
-        $basket->addToBasket($this->course);
+       $basket= $basket->addToBasket($this->course);
         //$this->redirectRoute('client.basket');
+        $this->dispatch('update-basket',count:$basket->count());
 
     }
 
