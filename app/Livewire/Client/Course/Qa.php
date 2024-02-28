@@ -41,7 +41,8 @@ class Qa extends Component
         $validator->validate();
         $this->resetValidation();
 
-        $comment->submitCourseComment($formData,$this->cSlug);
+        //session output is
+        $comment->submitCourseComment($formData,Session::get('courseId'));
 
         session()->flash('message', 'نظر شما با موفقیت ثبت شد بعد از تایید نمایش داده خواهد شد!');
 
