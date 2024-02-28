@@ -20,6 +20,6 @@ class DatabaseSeeder extends Seeder
         $this->call(CoursesTableSeeder::class);
         $this->call(CourseSectionsTableSeeder::class);
         $this->call(CourseSectionLecturesTableSeeder::class);
-        $this->call(CourseLectureVideosTableSeeder::class);
+     //   $this->call(CourseLectureVideosTableSeeder::class);
     }
 }
