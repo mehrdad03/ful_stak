@@ -1,0 +1,90 @@
+html,body{
+    background-color: #20222F !important;
+}
+main {
+  margin: 8% 0;
+}
+.course {
+  background: #0b141b;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 17px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+  margin: 20px 0;
+}
+.course img {
+  max-width: 150px;
+  max-height: 150px;
+  border-radius: 4px;
+}
+.course .delete {
+  width: 40px;
+  height: 40px;
+  color: red;
+  border: 1px solid red;
+  border-radius: 100%;
+  padding: 7px;
+  transition: all 0.1s ease-in;
+  background-color: transparent;
+}
+.course .delete svg {
+    width: 20px;
+  transition: all 0.2s ease-in;
+}
+.course .delete:hover {
+  background: red;
+}
+.course .delete:hover svg {
+  color: white;
+}
+
+.payment {
+  background: #0b141b;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 17px;
+  padding: 20px;
+}
+.payment button{
+    transition: all .1s ease-in;
+}
+.payment button:hover{
+    background-color: #fff !important;
+    color: #23bf64 !important;
+    border-radius: 10px !important;
+}
+
+.price{
+    border-top: 1px dashed #23bf64;
+    border-bottom: 1px dashed #23bf64;
+}
+
+@media screen and (max-width: 768px) {
+    main {
+        margin: 30% 0;
+    }
+    .course{
+        flex-direction: column;
+    }
+    .course img {
+        margin-bottom: 10px;
+    }
+    .course h4 {
+        font-size: 20px;
+    }
+    .course p{
+        font-size: 14px;
+        text-align: center;
+        padding: 8px 0;
+    }
+    .payment input {
+        width: 50% !important;
+    }
+    .payment input::placeholder{
+        font-size: 10px;
+    }
+    .payment svg{
+        width: 40px;
+    }
+}
