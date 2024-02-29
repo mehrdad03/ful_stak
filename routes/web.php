@@ -41,7 +41,7 @@ Route::group(['prefix' => 'auth', 'middleware' => 'guest:web'], function () {
 
 /*********** ADMIN PANEL *************/
 
-Route::group(['prefix' => 'admin', /*'middleware' => 'auth:admin'*/], function () {
+Route::group(['prefix' => 'admin', 'middleware' => 'auth:admin'], function () {
 
     Route::name('admin.')->group(function () {
         Route::get('/dashboard', App\Livewire\Admin\Dashboard\Index::class)->name('dashboard');
