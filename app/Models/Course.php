@@ -79,11 +79,12 @@ class Course extends Model
 
         $extension = $courseThumbnail->extension();
         $image_name = Str::random(10) . time() . '.' . $extension;
-        $path = 'public/course-covers/';
-        $courseThumbnail->storeAs(path: $path,name:$image_name);
-
-        $this->insertImageToFileTable1($path.'/'.$image_name, $courseId);
+        $path = '/public/course-covers/';
+        $courseThumbnail->storeAs(path: $path, name: $image_name);
+        $databasePath = '/storage/course-covers/';
+        $this->insertImageToFileTable1($databasePath . '/' . $image_name, $courseId);
     }
+
     public function insertImageToFileTable1($path, $courseId)
     {
         return \App\Models\Media::query()->updateOrCreate(
@@ -95,6 +96,11 @@ class Course extends Model
                 'path' => $path,
             ]
         );
+    }
+
+    public function cover()
+    {
+        return $this->belongsTo(Media::class, 'id', 'course_id');
     }
 
 

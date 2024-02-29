@@ -67,7 +67,7 @@ class Index extends Component
     public function render()
     {
         $courses = Course::query()
-            ->with('category')
+            ->with('category','cover')
             ->orderBy('category_id')->paginate(20);
         return view('livewire.admin.course.index',
             ['courses' => $courses]
