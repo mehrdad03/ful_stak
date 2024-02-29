@@ -323,7 +323,7 @@
                                 fill="white" />
                         </svg>
                         <h3 class="text-white fw-bold my-3">
-                            آموزش <span class="course-title-html">Bootstrap</span>
+                            آموزش <span class="course-title-bootstrap">Bootstrap</span>
                         </h3>
                         <p class="text-white fw-medium">
                             در ایستگاه سوم از مسیر آموزش فرانت اند به آموزش Boot strap
@@ -424,7 +424,7 @@
                             </g>
                         </svg>
                         <h3 class="text-white fw-bold my-3">
-                            آموزش <span class="course-title-html">Github</span>
+                            آموزش <span class="course-title-github">Github</span>
                         </h3>
                         <p class="text-white fw-medium">
                             در ایستگاه پنجم از مسیر آموزش فرانت اند به آموزش Github میرسیم
@@ -516,7 +516,7 @@
                                 fill="#33AADD" />
                         </svg>
                         <h3 class="text-white fw-bold my-3">
-                            آموزش <span class="course-title-html">CSS</span>
+                            آموزش <span class="course-title-css">CSS</span>
                         </h3>
                         <p class="text-white fw-medium">
                             در ایستگاه دوم از مسیر آموزش فرانت اند به آموزش css میرسیم که
@@ -621,7 +621,7 @@
                         </svg>
 
                         <h3 class="text-white fw-bold my-3">
-                            آموزش <span class="course-title-html">javascript</span>
+                            آموزش <span class="course-title-js">javascript</span>
                         </h3>
                         <p class="text-white fw-medium">
                             در ایستگاه چهارم از مسیر آموزش فرانت اند به آموزش js میرسیم که
@@ -712,7 +712,7 @@
                                 fill="#41B883" />
                         </svg>
                         <h3 class="text-white fw-bold my-3">
-                            آموزش <span class="course-title-html">Vue Js</span>
+                            آموزش <span class="course-title-vue">Vue Js</span>
                         </h3>
                         <p class="text-white fw-medium">
                             در ایستگاه آخر از مسیر آموزش فرانت اند به آموزش Vue.jsمیرسیم

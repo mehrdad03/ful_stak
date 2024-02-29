@@ -9,10 +9,9 @@ main {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 17px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   padding: 20px;
-  margin: 20px 0;
 }
 .course img {
   max-width: 150px;
@@ -20,8 +19,8 @@ main {
   border-radius: 4px;
 }
 .course .delete {
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   color: red;
   border: 1px solid red;
   border-radius: 100%;
@@ -40,6 +39,10 @@ main {
   color: white;
 }
 
+.course .price {
+   font-size: 1.7rem;
+}
+
 .payment {
   background: #0b141b;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -55,7 +58,7 @@ main {
     border-radius: 10px !important;
 }
 
-.price{
+.payment .price{
     border-top: 1px dashed #23bf64;
     border-bottom: 1px dashed #23bf64;
 }

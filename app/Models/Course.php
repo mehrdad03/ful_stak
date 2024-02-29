@@ -120,5 +120,10 @@ class Course extends Model
         return $this->belongsTo(Media::class, 'id', 'course_id');
     }
 
+    public function teacher()
+    {
+        return $this->belongsTo(User::class);
+    }
+
 
 }

@@ -14,9 +14,9 @@
         <div class="row justify-content-between align-items-center">
             <div class="col-xl-3 frontImg flex-column gap-4">
                 <img src="/frontend/assets/images/front.png" alt="front picture" />
-                <button class="main-btn text-white px-4 py-2 btn-innerShadow">
-                    مسیر فرانت اند
-                </button>
+                <a href="{{route('client.category.road-map','frontend')}}" class="main-btn text-white px-4 py-2">
+                    نقشه راه فرانت اند
+                </a>
             </div>
             <div
                 class="col-xl-6 frontSection d-none d-xl-flex justify-content-center align-content-center flex-column">
@@ -53,8 +53,8 @@
                 </div>
                 <div class="col-xl-3 backImg flex-column gap-4">
                     <img src="/frontend/assets/images/back.png" alt="back picture" />
-                    <button class="main-btn text-white px-4 py-2 btn-innerShadow">
-                        مسیر بک اند
+                    <button class="main-btn text-white px-4 py-2 ">
+                        نقشه راه بک اند
                     </button>
                 </div>
             </div>
@@ -74,8 +74,8 @@
                     <img
                         src="/frontend/assets/images/practice.png"
                         alt="practice picture" />
-                    <button class="main-btn text-white px-4 py-2 btn-innerShadow">
-                        راه تمرین
+                    <button class="main-btn text-white px-4 py-2 ">
+                        نقشه راه فول استک
                     </button>
                 </div>
                 <div

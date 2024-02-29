@@ -3,7 +3,7 @@
     @php
     $title=explode('_',$title);
     $currentYear=date('Y');
- @endphp
+    @endphp
     <h1 class="fw-bold text-end">
         {{$title[0]}}
         <span class="text-primary">{{$title[1]}}</span>
