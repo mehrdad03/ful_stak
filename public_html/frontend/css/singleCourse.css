@@ -25,7 +25,13 @@ main {
 #mainContent .features p {
   font-size: 1rem;
 }
+/* intro video */
+.intro-video{
+    height: 200px;
+}
+
 /* Course Season */
+
 #mainContent .season .totalDet {
   margin-left: 10%;
   margin-bottom: 2%;

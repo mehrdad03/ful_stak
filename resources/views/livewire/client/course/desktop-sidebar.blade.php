@@ -3,7 +3,7 @@
     <div class="courseDet text-white pb-5">
         <!-- ==== Intro Video ==== -->
         <iframe
-            class="d-none d-lg-block"
+            class="d-none d-lg-block intro-video"
             src="https://www.youtube.com/embed/QHBVA_7bSRg?si=8WJSsEfdxlxMKZ_5"
             title="YouTube video player"
             frameborder="0"
