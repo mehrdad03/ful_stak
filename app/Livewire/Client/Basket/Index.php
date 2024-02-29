@@ -9,6 +9,7 @@ use Livewire\Component;
 class Index extends Component
 {
     public $basket;
+    public $userBasketTotalPrice;
 
     public function mount()
     {
@@ -16,7 +17,11 @@ class Index extends Component
             ->with('course.teacher')
             ->where('user_id', Auth::id())->get();
 
-
+        $userBasketTotalPrice = 0;
+        foreach ($this->basket as $item) {
+            $userBasketTotalPrice += $item->course->price;
+        }
+        $this->userBasketTotalPrice = $userBasketTotalPrice;
 
 
     }
