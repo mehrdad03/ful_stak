@@ -4,6 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
+use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Imagick\Driver;
+
 
 class Course extends Model
 {
@@ -69,6 +74,28 @@ class Course extends Model
         return $this->hasMany(CourseSection::class);
     }
 
+    public function courseThumbnail($courseId, $oldPhoto, $courseThumbnail)
+    {
+
+        $extension = $courseThumbnail->extension();
+        $image_name = 'image_course_' . $courseId . '_' . '_course_' . Str::random(10) . time() . '.' . $extension;
+        $path = 'public/course/' . $courseId ;
+        $courseThumbnail->storeAs(path: $path,name:$image_name);
+
+        $this->insertImageToFileTable1($path, $courseId);
+    }
+    public function insertImageToFileTable1($path, $service_id)
+    {
+        /*return \App\Models\File::query()->updateOrCreate(
+            [
+                'service_id' => $service_id,
+                'type' => 'category',
+            ],
+            [
+                'file' => $path,
+            ]
+        );*/
+    }
 
 
 }
