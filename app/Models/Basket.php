@@ -19,9 +19,6 @@ class Basket extends Model
                 'user_id'=>Auth::id(),
                 'course_id'=>$course->id
             ],
-            [
-                'price'=>$course->price
-            ]
         );
 
     }
