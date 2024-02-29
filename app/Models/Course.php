@@ -78,23 +78,23 @@ class Course extends Model
     {
 
         $extension = $courseThumbnail->extension();
-        $image_name = 'image_course_' . $courseId . '_' . '_course_' . Str::random(10) . time() . '.' . $extension;
-        $path = 'public/course/' . $courseId ;
+        $image_name = Str::random(10) . time() . '.' . $extension;
+        $path = 'public/course-covers/';
         $courseThumbnail->storeAs(path: $path,name:$image_name);
 
-        $this->insertImageToFileTable1($path, $courseId);
+        $this->insertImageToFileTable1($path.'/'.$image_name, $courseId);
     }
-    public function insertImageToFileTable1($path, $service_id)
+    public function insertImageToFileTable1($path, $courseId)
     {
-        /*return \App\Models\File::query()->updateOrCreate(
+        return \App\Models\Media::query()->updateOrCreate(
             [
-                'service_id' => $service_id,
-                'type' => 'category',
+                'course_id' => $courseId,
+                'type' => 'course_id',
             ],
             [
-                'file' => $path,
+                'path' => $path,
             ]
-        );*/
+        );
     }
 
 
