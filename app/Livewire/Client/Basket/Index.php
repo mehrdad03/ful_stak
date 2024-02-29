@@ -3,13 +3,16 @@
 namespace App\Livewire\Client\Basket;
 
 use App\Models\Basket;
+use App\Trait\calculation;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
 class Index extends Component
 {
+    use calculation;
+
     public $basket;
-    public $userBasketTotalPrice;
+    public $payment;
 
     public function mount()
     {
@@ -17,12 +20,8 @@ class Index extends Component
             ->with('course.teacher')
             ->where('user_id', Auth::id())->get();
 
-        $userBasketTotalPrice = 0;
-        foreach ($this->basket as $item) {
-            $userBasketTotalPrice += $item->course->price;
-        }
-        $this->userBasketTotalPrice = $userBasketTotalPrice;
-
+         //from calculation trait
+        $this->payment = $this->CalculateUserBasketPrice($this->basket);
 
     }
 

@@ -5,7 +5,7 @@
 
               $currentYear=date('Y');
         @endphp
-        <div class="course mb-3">
+        <div class="course mb-4">
            <div class="d-flex align-items-center right ">
                <img src="/frontend/assets/images/course1.png" alt="course img"/>
                <!-- course & master name -->

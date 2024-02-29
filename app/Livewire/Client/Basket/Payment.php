@@ -6,7 +6,8 @@ use Livewire\Component;
 
 class Payment extends Component
 {
-    public $userBasketTotalPrice;
+    public $payment;
+
 
     public function render()
     {
