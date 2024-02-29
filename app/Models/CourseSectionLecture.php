@@ -16,51 +16,6 @@ class CourseSectionLecture extends Model
 {
     use HasFactory;
     protected $guarded=[];
-
-    /*public function convertVideo($video, $courseId, $lectureTitle, $lectureId)
-    {
-
-        DB::transaction(function () use ($video, $courseId, $lectureTitle, $lectureId) {
-
-            $path = 'public/videos/' . $courseId;
-            $videoName = $lectureTitle . '_' . time();
-
-            dd($video);
-            $videoPath =  Storage::disk('local')->put($path,  $video);
-           $videoPath = $video->store($path);
-
-
-
-            //get video duration
-            $media = FFMpeg::open($videoPath);
-            $durationInSeconds = $media->getDurationInSeconds(); // returns an int
-
-
-
-            $savePath = $path . '/' . $videoName . '.m3u8';
-            FFMpeg::open($videoPath)
-                ->exportForHLS()
-                ->addFormat(new X264('aac', 'libx264'))
-                ->toDisk('ftp')
-                ->save($savePath);
-
-             //delete video from local
-           Storage::delete($videoPath);
-
-
-            CourseLectureVideo::query()->updateOrCreate(
-                [
-                    'course_section_lecture_id' => $lectureId,
-
-                ], [
-                    'duration' => $durationInSeconds,
-                    'path' => config('app.ftp_url') . '/' . $savePath,
-                ]
-            );
-        });
-
-    }*/
-
     public function courseSection()
     {
         return $this->belongsTo(CourseSection::class);

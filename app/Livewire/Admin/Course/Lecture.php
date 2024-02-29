@@ -21,43 +21,10 @@ class Lecture extends Component
     public function mount($sectionId)
     {
         $this->sectionId=$sectionId;
-        $this->section=CourseSection::query()->where('id',$sectionId)->first();
+        $this->section=CourseSection::query()
+            ->where('id',$sectionId)->first();
 
     }
-
-   /* public function convertVideo($lectureId, CourseSectionLecture $courseSectionLecture)
-    {
-
-
-        $formData['video'] = $this->video;
-        $formData['lectureId'] = $lectureId;
-
-        $validator = Validator::make($formData, [
-            'video' => 'required|mimes:mp4,avi,flv,wmv,mkv',
-            'lectureId' => 'required|exists:course_section_lectures,id', // 50KB Max
-        ], [
-            '*.required' => 'فیلد ضروری',
-            'video.mimes' => 'پسوندهای قابل قبول: mp4,avi,flv,wmv',
-            'lectureId.exists' => 'ورودی نامعتبر',
-        ]);
-
-        if ($validator->fails()) {
-            $error = $validator->errors()->first();
-            $this->videoError = $lectureId . '_' . $error;
-        } else {
-            $this->videoError = '';
-        }
-
-        $lecture = CourseSectionLecture::query()->where('id', $lectureId)->with('courseSection.course')->first();
-        $sectionTitle = $lecture->courseSection->title;
-        $courseTitle = $lecture->courseSection->course->title;
-        $lectureTitle = $lecture->title .'_'. $sectionTitle .'_'. $courseTitle;
-       $validator->validate();
-        $this->resetValidation();
-        $courseSectionLecture->convertVideo($this->video, $lecture->courseSection->course->id, $lectureTitle,$lectureId);
-
-
-    }*/
     public function saveLecture($formData, CourseSectionLecture $courseSectionLecture)
     {
         $validator = Validator::make($formData, [
@@ -91,7 +58,9 @@ class Lecture extends Component
 
     public function render()
     {
-        $lectures=$this->lectures  = CourseSectionLecture::query()->where('course_section_id', $this->sectionId)->get();
+        $lectures=$this->lectures  = CourseSectionLecture::query()->where('course_section_id', $this->sectionId)
+            ->with('courseSection')
+            ->get();
         return view('livewire.admin.course.lecture', ['lectures' => $lectures])->layout('layouts.app-admin');
     }
 }
