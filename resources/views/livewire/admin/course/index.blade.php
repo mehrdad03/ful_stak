@@ -44,14 +44,14 @@
                                         <td>{{$course->id}}</td>
                                         <td class="sorting_1">
                                             <div class="media-box  align-items-center row">
-                                                <img src="{{asset(@$course->cover->path)}}"
+                                                <img src="{{@$course->cover->path}}"
                                                      style="width: 307px;border-radius: 5%"
                                                      class=" ms-2 media-avatar"
                                                      alt="Product">
                                             </div>
                                             <form class="mt-2 d-inline-flex align-items-center p-1"
                                                   style="background: #575757;border-radius: 5px"
-                                                  wire:submit="categoryThumbnail({{$course->id}},'{{@$course->image->file}}')">
+                                                  wire:submit="categoryThumbnail({{$course->id}},'{{@$course->cover->path}}')">
                                                 <input style="display: -webkit-inline-box;" type="file"
                                                        wire:model="courseThumbnail">
                                                 <button class="btn btn-sm btn-success" type="submit">
