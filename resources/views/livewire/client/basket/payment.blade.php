@@ -9,7 +9,7 @@
         <div class="my-2">
             <p class="m-0 text-white fw-medium">کد تخفیف</p>
             <div
-                class="d-flex align-content-center justify-content-around my-2">
+                class="d-flex align-items-center justify-content-around my-2">
                 <svg
                     width="24"
                     height="24"
@@ -50,7 +50,7 @@
                 <input
                     type="text"
                     placeholder="کد تخفیف را وارد کنید"
-                    class="bg-secondary rounded-2 w-75 pe-2 text-white"/>
+                    class="bg-secondary rounded-2 w-100 mx-2 pe-2 text-white p-1"/>
                 <button class="bg-primary text-white px-3 py-1 rounded-2">
                     ثبت
                 </button>
@@ -61,7 +61,7 @@
             <!-- Total -->
             <div class="d-flex align-items-center justify-content-between">
                 <p class="text-white fw-bold">جمع کل</p>
-                <p class="text-white fw-semibold">
+                <p class="text-white fw-semibold fs-5">
                     {{number_format($payment['userBasketTotalPrice'])}} <span class="me-2 text-primary fw-medium">
                         <svg class="mr-2" width="25" height="27" viewBox="0 0 25 27" fill="none"
                              xmlns="http://www.w3.org/2000/svg">
@@ -75,7 +75,7 @@
             <!-- Discount -->
             <div class="d-flex align-items-center justify-content-between">
                 <p class="text-white fw-medium"> تخفیف</p>
-                <p class=" fw-semibold text-danger">
+                <p class=" fw-semibold text-danger fs-5">
                     {{number_format($payment['userBasketTotalDiscount'])}}
                     <span class="me-2 fw-medium text-danger"><svg class="mr-2" width="25" height="27"
                                                                   viewBox="0 0 25 27" fill="none"
@@ -91,7 +91,7 @@
         <!-- have to pay -->
         <div class="d-flex align-items-center justify-content-between">
             <p class="text-white fw-bold">مبلغ قابل پرداخت</p>
-            <p class="text-white fw-semibold">
+            <p class="text-white fw-semibold fs-4">
                 {{number_format($payment['userBasketTotalPrice']-$payment['userBasketTotalDiscount'])}} <span class="me-2 text-primary fw-medium">
                     <svg class="mr-2" width="25" height="27" viewBox="0 0 25 27" fill="none"
                          xmlns="http://www.w3.org/2000/svg">

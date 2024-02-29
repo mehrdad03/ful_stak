@@ -25,7 +25,7 @@
             <!-- course price -->
            <div class="d-flex align-items-center left">
                <p class="m-0 text-white fw-medium d-flex align-items-center mx-4">
-                   <span class="price">{{number_format($item->course->price)}}</span>
+                   <span class="fs-4">{{number_format($item->course->price)}}</span>
                    <span class="text-primary me-2">
                     <svg class="mr-2" width="25" height="27" viewBox="0 0 25 27" fill="none"
                          xmlns="http://www.w3.org/2000/svg">
