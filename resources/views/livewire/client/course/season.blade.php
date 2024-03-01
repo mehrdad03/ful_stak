@@ -131,7 +131,10 @@
                                 <p class="text-white m-0">{{$lecture->title}}</p>
                             </div>
                             <div class="d-flex column-gap-2 align-items-center lecture-info ">
-                                <p class="m-0 text-white fw-bold">پیش نمایش</p>
+                                @if($lecture->free)
+                                    <a href="" class="m-0 text-white fw-normal">پیش نمایش</a>
+                                @endif
+
                                 <p class="m-0 text-primary fw-bold">{{@date('s : i',$lecture->duration)}}</p>
                             </div>
                         </div>
