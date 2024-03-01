@@ -7,7 +7,7 @@
               $currentYear=date('Y');
         @endphp
         <div class="course mb-4">
-            <div class="d-flex align-items-center right ">
+            <a href="{{route('client.course',$item->course->url_slug)}}" class="d-flex align-items-center right ">
                 <img src="/frontend/assets/images/course1.png" alt="course img"/>
                 <!-- course & master name -->
                 <div class="me-4">
@@ -22,7 +22,7 @@
                         مدرس دوره : <span class="text-primary">{{@$item->course->teacher->name}}</span>
                     </p>
                 </div>
-            </div>
+            </a>
             <!-- course price -->
             <div class="d-flex align-items-center left">
                 <p class="m-0 text-white fw-medium d-flex align-items-center mx-4">
