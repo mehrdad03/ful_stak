@@ -21,8 +21,9 @@ class CourseSectionLecture extends Model
         return $this->belongsTo(CourseSection::class);
     }
 
-    public function saveLecture($formData, $lectureId,$section_id)
+    public function saveLecture($formData, $lectureId,$section_id,$courseId)
     {
+
         CourseSectionLecture::query()->updateOrCreate(
             [
                 'id' => $lectureId
@@ -31,6 +32,7 @@ class CourseSectionLecture extends Model
             [
                 'title' => $formData['title'],
                 'course_section_id' => $section_id,
+                'course_id' => $courseId,
             ]
         );
     }

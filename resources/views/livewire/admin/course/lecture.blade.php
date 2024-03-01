@@ -89,7 +89,7 @@
                                             </div>
                                             <form class="mt-2 d-inline-flex align-items-center p-1" enctype="multipart/form-data"
                                                   style="background: #575757;border-radius: 5px"
-                                                 action="{{route('admin.upload-video',[$lecture->courseSection->course->id,$lecture->title,$lecture->id])}}" method="post">
+                                                 action="{{route('admin.upload-video',[$lecture->courseSection->course->id,$lecture->title,$lecture->id,$lecture->courseSection->id])}}" method="post">
                                                 @csrf
 
                                                 <input style="display: -webkit-inline-box;" type="file" name="video"
