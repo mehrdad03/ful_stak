@@ -1,4 +1,5 @@
 <div class="col-12 col-md-6 col-lg-8 align-items-start">
+
     @forelse($items as $item)
         @php
             $title=explode('_',$item->course->title);
@@ -17,8 +18,8 @@
                         <span class="me-1">|</span>
                         <span class="me-1 text-primary">{{$currentYear}}</span>
                     </h5>
-                    <p class="m-0 text-white fw-normal">
-                        مدرس دوره: <span class="text-primary">{{@$item->teacher->name}}</span>
+                    <p class="m-0 text-white fw-normal mt-3" >
+                        مدرس دوره : <span class="text-primary">{{@$item->course->teacher->name}}</span>
                     </p>
                 </div>
             </div>
