@@ -101,22 +101,22 @@
             <!-- Roadmap -->
             <div
                 class="road d-flex justify-content-center flex-row-reverse flex-wrap row-gap-4">
-                <a href="#" class="px-4 py-3 px-lg-5 py-lg-3 text-white fw-bold"
+                <a href="#html" class="px-4 py-3 px-lg-5 py-lg-3 text-white fw-bold"
                 >HTML</a
                 >
-                <a href="#" class="px-4 py-3 px-lg-5 py-lg-3 text-white fw-bold"
+                <a href="#css" class="px-4 py-3 px-lg-5 py-lg-3 text-white fw-bold"
                 >CSS</a
                 >
-                <a href="#" class="px-4 py-3 px-lg-5 py-lg-3 text-white fw-bold"
+                <a href="#bootstrap" class="px-4 py-3 px-lg-5 py-lg-3 text-white fw-bold"
                 >Bootstrap</a
                 >
-                <a href="#" class="px-4 py-3 px-lg-5 py-lg-3 text-white fw-bold"
+                <a href="#javascript" class="px-4 py-3 px-lg-5 py-lg-3 text-white fw-bold"
                 >Javascript</a
                 >
-                <a href="#" class="px-4 py-3 px-lg-5 py-lg-3 text-white fw-bold"
+                <a href="#github" class="px-4 py-3 px-lg-5 py-lg-3 text-white fw-bold"
                 >Github</a
                 >
-                <a href="#" class="px-4 py-3 px-lg-5 py-lg-3 text-white fw-bold"
+                <a href="#vue" class="px-4 py-3 px-lg-5 py-lg-3 text-white fw-bold"
                 >Vue.js</a
                 >
             </div>
@@ -141,7 +141,7 @@
             <!-- Right side -->
             <div class="rightRoadmap">
                 <!-- HTML -->
-                <div
+                <div id="html"
                     class="d-flex flex-row-reverse justify-content-center align-items-center">
                     <!-- Course Video -->
                     <div
@@ -224,9 +224,9 @@
                             در ایستگاه اول از مسیر آموزش فرانت اند به آموزش html میرسیم که
                             به طور کامل برای شما توضیح داده خواهد شد
                         </p>
-                        <button class="main-btn px-3 py-2 btn-innerShadow text-white">
+                        <a href="{{route('client.course','html-tutorial')}}" class="main-btn px-3 py-2  text-white">
                             مشاهده دوره
-                        </button>
+                        </a>
                     </div>
                 </div>
                 <!-- Bootstrap -->
@@ -293,7 +293,7 @@
                             allowfullscreen></iframe>
                     </div>
                     <!-- Course -->
-                    <div
+                    <div id="bootstrap"
                         class="RoadCourse rounded-4 d-flex flex-column p-4 justify-content-center align-items-center">
                         <svg
                             width="54"
@@ -329,13 +329,13 @@
                             در ایستگاه سوم از مسیر آموزش فرانت اند به آموزش Boot strap
                             میرسیم که به طور کامل برای شما توضیح داده خواهد شد
                         </p>
-                        <button class="main-btn px-3 py-2 btn-innerShadow text-white">
+                        <button class="main-btn px-3 py-2  text-white">
                             مشاهده دوره
                         </button>
                     </div>
                 </div>
                 <!-- Github -->
-                <div
+                <div id="github"
                     class="d-flex flex-row-reverse justify-content-center align-items-center">
                     <!-- Course Video -->
                     <div
@@ -430,7 +430,7 @@
                             در ایستگاه پنجم از مسیر آموزش فرانت اند به آموزش Github میرسیم
                             که به طور کامل برای شما توضیح داده خواهد شد
                         </p>
-                        <button class="main-btn px-3 py-2 btn-innerShadow text-white">
+                        <button class="main-btn px-3 py-2  text-white">
                             مشاهده دوره
                         </button>
                     </div>
@@ -441,7 +441,7 @@
             <!-- Left side -->
             <div class="leftRoadmap">
                 <!-- CSS -->
-                <div
+                <div id="css"
                     class="d-flex flex-row justify-content-center align-items-center">
                     <!-- Course Video -->
                     <div
@@ -522,13 +522,13 @@
                             در ایستگاه دوم از مسیر آموزش فرانت اند به آموزش css میرسیم که
                             به طور کامل برای شما توضیح داده خواهد شد
                         </p>
-                        <button class="main-btn px-3 py-2 btn-innerShadow text-white">
+                        <button class="main-btn px-3 py-2  text-white">
                             مشاهده دوره
                         </button>
                     </div>
                 </div>
                 <!-- javascript -->
-                <div
+                <div id="javascript"
                     class="d-flex flex-row justify-content-center align-items-center">
                     <!-- Course Video -->
                     <div
@@ -627,13 +627,13 @@
                             در ایستگاه چهارم از مسیر آموزش فرانت اند به آموزش js میرسیم که
                             به طور کامل برای شما توضیح داده خواهد شد
                         </p>
-                        <button class="main-btn px-3 py-2 btn-innerShadow text-white">
+                        <button class="main-btn px-3 py-2  text-white">
                             مشاهده دوره
                         </button>
                     </div>
                 </div>
                 <!-- Vue.js -->
-                <div
+                <div id="vue"
                     class="d-flex flex-row justify-content-center align-items-center">
                     <!-- Course Video -->
                     <div
@@ -718,7 +718,7 @@
                             در ایستگاه آخر از مسیر آموزش فرانت اند به آموزش Vue.jsمیرسیم
                             که به طور کامل برای شما توضیح داده خواهد شد
                         </p>
-                        <button class="main-btn px-3 py-2 btn-innerShadow text-white">
+                        <button class="main-btn px-3 py-2  text-white">
                             مشاهده دوره
                         </button>
                     </div>
@@ -795,7 +795,7 @@
                                 در ایستگاه اول از مسیر آموزش فرانت اند به آموزش html میرسیم
                                 که به طور کامل برای شما توضیح داده خواهد شد
                             </p>
-                            <button class="main-btn px-3 py-2 btn-innerShadow text-white">
+                            <button class="main-btn px-3 py-2  text-white">
                                 مشاهده دوره
                             </button>
                         </div>
@@ -882,7 +882,7 @@
                                 در ایستگاه اول از مسیر آموزش فرانت اند به آموزش html میرسیم
                                 که به طور کامل برای شما توضیح داده خواهد شد
                             </p>
-                            <button class="main-btn px-3 py-2 btn-innerShadow text-white">
+                            <button class="main-btn px-3 py-2  text-white">
                                 مشاهده دوره
                             </button>
                         </div>
@@ -967,7 +967,7 @@
                                 در ایستگاه اول از مسیر آموزش فرانت اند به آموزش html میرسیم
                                 که به طور کامل برای شما توضیح داده خواهد شد
                             </p>
-                            <button class="main-btn px-3 py-2 btn-innerShadow text-white">
+                            <button class="main-btn px-3 py-2  text-white">
                                 مشاهده دوره
                             </button>
                         </div>
@@ -1056,7 +1056,7 @@
                                 در ایستگاه اول از مسیر آموزش فرانت اند به آموزش html میرسیم
                                 که به طور کامل برای شما توضیح داده خواهد شد
                             </p>
-                            <button class="main-btn px-3 py-2 btn-innerShadow text-white">
+                            <button class="main-btn px-3 py-2  text-white">
                                 مشاهده دوره
                             </button>
                         </div>
@@ -1141,7 +1141,7 @@
                                 در ایستگاه اول از مسیر آموزش فرانت اند به آموزش html میرسیم
                                 که به طور کامل برای شما توضیح داده خواهد شد
                             </p>
-                            <button class="main-btn px-3 py-2 btn-innerShadow text-white">
+                            <button class="main-btn px-3 py-2  text-white">
                                 مشاهده دوره
                             </button>
                         </div>
@@ -1215,7 +1215,7 @@
                                 در ایستگاه اول از مسیر آموزش فرانت اند به آموزش html میرسیم
                                 که به طور کامل برای شما توضیح داده خواهد شد
                             </p>
-                            <button class="main-btn px-3 py-2 btn-innerShadow text-white">
+                            <button class="main-btn px-3 py-2  text-white">
                                 مشاهده دوره
                             </button>
                         </div>
@@ -1265,7 +1265,7 @@
                             </svg>
                         </div>
                     </div>
-                    <div class="content btn-innerShadow">
+                    <div class="content ">
                         <p class="text-white p-4">
                             لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
                             استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و
@@ -1303,7 +1303,7 @@
                             </svg>
                         </div>
                     </div>
-                    <div class="content btn-innerShadow">
+                    <div class="content ">
                         <p class="text-white p-4">
                             لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
                             استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و
@@ -1341,7 +1341,7 @@
                             </svg>
                         </div>
                     </div>
-                    <div class="content btn-innerShadow">
+                    <div class="content ">
                         <p class="text-white p-4">
                             لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
                             استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و
@@ -1379,7 +1379,7 @@
                             </svg>
                         </div>
                     </div>
-                    <div class="content btn-innerShadow">
+                    <div class="content ">
                         <p class="text-white p-4">
                             لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
                             استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و
@@ -1417,7 +1417,7 @@
                             </svg>
                         </div>
                     </div>
-                    <div class="content btn-innerShadow">
+                    <div class="content ">
                         <p class="text-white p-4">
                             لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
                             استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و
@@ -1455,7 +1455,7 @@
                             </svg>
                         </div>
                     </div>
-                    <div class="content btn-innerShadow">
+                    <div class="content ">
                         <p class="text-white p-4">
                             لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
                             استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و
@@ -1493,7 +1493,7 @@
                             </svg>
                         </div>
                     </div>
-                    <div class="content btn-innerShadow">
+                    <div class="content ">
                         <p class="text-white p-4">
                             لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
                             استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و
