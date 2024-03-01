@@ -20,7 +20,7 @@ class Index extends Component
             ->with('course.teacher')
             ->where('user_id', Auth::id())->get();
 
-         //from calculation trait
+        //from trait
         $this->payment = $this->CalculateUserBasketPrice($this->basket);
 
     }

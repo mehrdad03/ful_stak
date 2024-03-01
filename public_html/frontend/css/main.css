@@ -56,6 +56,22 @@ nav {
   border-radius: 40px;
 }
 
+/*loader*/
+.loader {
+    width: 130px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 3px solid #ffffff;
+    border-right-color: #0f0233;
+    animation: l2 1s infinite linear;
+}
+
+@keyframes l2 {
+    to {
+        transform: rotate(1turn)
+    }
+}
+
 /* Utilities */
 .text-primary {
   color: var(--primary-color) !important;

@@ -6,27 +6,27 @@
               $currentYear=date('Y');
         @endphp
         <div class="course mb-4">
-           <div class="d-flex align-items-center right ">
-               <img src="/frontend/assets/images/course1.png" alt="course img"/>
-               <!-- course & master name -->
-               <div class="me-4">
-                   <h5 class="text-white fw-bold">
-                       {{@$title[0]}}
-                       <span class="text-primary">{{@$title[1]}}</span>
-                       {{@$title[2]}}
-                       <span class="me-1">|</span>
-                       <span class="me-1 text-primary">{{$currentYear}}</span>
-                   </h5>
-                   <p class="m-0 text-white fw-normal">
-                       مدرس دوره: <span class="text-primary">{{@$item->teacher->name}}</span>
-                   </p>
-               </div>
-           </div>
+            <div class="d-flex align-items-center right ">
+                <img src="/frontend/assets/images/course1.png" alt="course img"/>
+                <!-- course & master name -->
+                <div class="me-4">
+                    <h5 class="text-white fw-bold">
+                        {{@$title[0]}}
+                        <span class="text-primary">{{@$title[1]}}</span>
+                        {{@$title[2]}}
+                        <span class="me-1">|</span>
+                        <span class="me-1 text-primary">{{$currentYear}}</span>
+                    </h5>
+                    <p class="m-0 text-white fw-normal">
+                        مدرس دوره: <span class="text-primary">{{@$item->teacher->name}}</span>
+                    </p>
+                </div>
+            </div>
             <!-- course price -->
-           <div class="d-flex align-items-center left">
-               <p class="m-0 text-white fw-medium d-flex align-items-center mx-4">
-                   <span class="fs-4">{{number_format($item->course->price)}}</span>
-                   <span class="text-primary me-2">
+            <div class="d-flex align-items-center left">
+                <p class="m-0 text-white fw-medium d-flex align-items-center mx-4">
+                    <span class="fs-4">{{number_format($item->course->price)}}</span>
+                    <span class="text-primary me-2">
                     <svg class="mr-2" width="25" height="27" viewBox="0 0 25 27" fill="none"
                          xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -34,24 +34,60 @@
                                 fill="currentColor"></path>
                         </svg>
                 </span>
-               </p>
+                </p>
 
-               <button class="delete d-flex align-items-center">
-                   <svg
-                       xmlns="http://www.w3.org/2000/svg"
-                       fill="none"
-                       viewBox="0 0 24 24"
-                       stroke-width="1.5"
-                       stroke="currentColor"
-                       class="w-6 h-6">
-                       <path
-                           stroke-linecap="round"
-                           stroke-linejoin="round"
-                           d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0"/>
-                   </svg>
-               </button>
-           </div>
+                <button class="delete d-flex align-items-center justify-content-center" wire:click="deleteConfirm({{$item->id}})">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        class="w-6 h-6">
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0"/>
+                    </svg>
+
+                    <div class="loader"
+                         wire:loading
+                         wire:target="deleteConfirm({{$item->id}})"></div>
+                </button>
+            </div>
         </div>
     @empty
     @endforelse
+
+    @push('scripts')
+        @script
+        <script>
+            window.addEventListener('swal:confirm', event => {
+                Swal.fire({
+                    title: 'آیا از حذف دوره مطمئن هستید؟ ',
+                    icon: 'warning',
+                    color: '#fff',
+                    background: '#20222F',
+                    showCancelButton: true,
+                    confirmButtonColor: '#2c2c2c',
+                    cancelButtonColor: '#23bf65',
+                    confirmButtonText: 'حذف کن',
+                    cancelButtonText: 'لغو',
+                }).then((result) => {
+                    if (result.isConfirmed) {
+
+                        if (event.detail.id !== 0) {
+                            $wire.dispatch('deleteCourse', {id: event.detail[0]['id']});
+
+                        } else {
+                            /*$wire.dispatch('delete');*/
+                        }
+
+
+                    }
+                });
+            });
+        </script>
+        @endscript
+    @endpush
 </div>
