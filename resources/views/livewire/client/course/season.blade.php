@@ -88,7 +88,7 @@
                                     </svg>
 
                                     <p class="m-0 text-primary fw-medium">
-                                        {{@date('H:i',$section->sectionLectureVideoTotalDuration($section->id))}}
+                                      {{--  {{@date('H:i',$section->lecture($section->id))}}--}}
 
                                     </p>
                                 </div>
@@ -132,7 +132,7 @@
                             </div>
                             <div class="d-flex column-gap-2 align-items-center lecture-info ">
                                 <p class="m-0 text-white fw-bold">پیش نمایش</p>
-                                <p class="m-0 text-primary fw-bold">{{@date('s : i',$lecture->sectionLectureVideos->duration)}}</p>
+                                <p class="m-0 text-primary fw-bold">{{@date('s : i',$lecture->duration)}}</p>
                             </div>
                         </div>
                     @endforeach

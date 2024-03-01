@@ -12,19 +12,13 @@ use function Laravel\Prompts\select;
 class DesktopSidebar extends Component
 {
     public $price;
-    public $course;
+    public $courseId;
     public $checkCourseInBasket;
 
-    public function mount()
-    {
-        $this->course = Course::query()->where('id', Session::get('courseId'))->select('id', 'price')->first();
-
-    }
 
     public function addToBasket(Basket $basket)
     {
-       $basket= $basket->addToBasket($this->course);
-        //$this->redirectRoute('client.basket');
+       $basket= $basket->addToBasket($this->courseId);
         $this->dispatch('update-basket',count:$basket->count());
 
     }
@@ -32,7 +26,7 @@ class DesktopSidebar extends Component
     public function render()
     {
         $this->checkCourseInBasket = Basket::query()->where([
-            'course_id' => $this->course->id,
+            'course_id' => $this->courseId,
             'user_id' => Auth::id(),
         ])->exists();
         return view('livewire.client.course.desktop-sidebar');

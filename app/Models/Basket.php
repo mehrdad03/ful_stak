@@ -12,12 +12,12 @@ class Basket extends Model
 
     protected $guarded = [];
 
-    public function addToBasket($course)
+    public function addToBasket($courseId)
     {
        return Basket::query()->updateOrCreate(
             [
                 'user_id'=>Auth::id(),
-                'course_id'=>$course->id
+                'course_id'=>$courseId
             ],
         );
 

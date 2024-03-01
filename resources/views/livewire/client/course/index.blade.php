@@ -28,7 +28,7 @@
             <img src="/frontend/assets/images/hr.png" alt="HR" class="hr" />
 
             <!-- Course Season -->
-            <livewire:client.course.season :sections="$course->sections" />
+            <livewire:client.course.season :sections="$course->sections"  :courseId="$course->id" />
 
             <!-- hr -->
             <img src="/frontend/assets/images/hr.png" alt="HR" class="hr" />
@@ -56,7 +56,7 @@
         </div>
 
         <!-- ========= Desktop Side Bar ========= -->
-        <livewire:client.course.desktop-sidebar :price="$course->price"  />
+        <livewire:client.course.desktop-sidebar :price="$course->price" :courseId="$course->id"  />
     </div>
 </div>
 @push('scripts')

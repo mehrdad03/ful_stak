@@ -36,8 +36,5 @@ class CourseSectionLecture extends Model
             ]
         );
     }
-    public function sectionLectureVideos()
-    {
-        return $this->belongsTo(CourseLectureVideo::class,'id','course_section_lecture_id' );
-    }
+
 }

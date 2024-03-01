@@ -33,11 +33,7 @@ class CourseSection extends Model
     {
         return $this->hasMany(CourseSectionLecture::class);
     }
-    public function sectionLectureVideoTotalDuration($sectionId)
-    {
 
-        return CourseLectureVideo::query()->where('course_section_id',$sectionId)->sum('duration');
-    }
 
 }
 

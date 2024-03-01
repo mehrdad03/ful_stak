@@ -3,19 +3,21 @@
 namespace App\Livewire\Client\Course;
 
 use App\Models\CourseLectureVideo;
+use App\Models\CourseSection;
+use App\Models\CourseSectionLecture;
 use Illuminate\Support\Facades\Session;
 use Livewire\Component;
 
 class Season extends Component
 {
-    public $sections;
+    public $sections,$courseId;
     public $sectionLectures;
     public $courseTotalDuration;
 
     public function mount()
     {
         // Session is declared in the course index component
-        $this->courseTotalDuration = CourseLectureVideo::query()->where('course_id', Session::get('courseId'))->sum('duration');
+       $this->courseTotalDuration = CourseSectionLecture::query()->where('course_id', $this->courseId)->sum('duration');
 
     }
     public function render()
