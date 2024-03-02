@@ -1,5 +1,5 @@
 <div class="instagram p-4 d-flex flex-column flex-sm-row justify-content-center align-items-center">
-        <img src="./assets/images/instagram.png" alt="instagram icon" />
+        <img src="/frontend/assets/images/instagram.png" alt="instagram icon" />
         <div>
           <h2 class="text-white fw-bolder">اینستاگرام</h2>
           <p class="text-white fw-bold">

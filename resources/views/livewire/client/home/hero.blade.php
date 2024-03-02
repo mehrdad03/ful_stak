@@ -11,7 +11,7 @@
                 alt="hero section image" />
         </div>
         <!-- Hero Title  -->
-        <div class="col-lg-6">
+        <div class="col-lg-6 z-1">
             <h1 class="text-white">
                 کد نویسی و طراحی، جاده‌ای به دنیایی از خلاقیت و توانمندی‌های
                 بی‌پایان...
@@ -19,7 +19,7 @@
             <div
                 class="d-flex justify-content-center justify-content-lg-end my-5 me-5 me-md-0 ps-md-3">
                 <a href="#roadmap" class="main-btn text-white px-3 py-2">
-                    مشاهده مسیر آموزش
+                    مشاهده نفشه راه برنامه نویسی وب
                 </a>
             </div>
             <div
