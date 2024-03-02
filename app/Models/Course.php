@@ -79,10 +79,11 @@ class Course extends Model
 
         $extension = $courseThumbnail->extension();
         $image_name = Str::random(10) . time() . '.' . $extension;
-        $path = '/public/course-covers/';
+        $path = '/public/cover-image/';
         $courseThumbnail->storeAs(path: $path, name: $image_name);
-        $databasePath = '/storage/course-covers';
+        $databasePath = '/storage/cover-image';
         $this->insertImageToFileTable1($databasePath . '/' . $image_name, $courseId);
+
         if ($oldPhoto){
             $this->removeOldImage($oldPhoto);
         }
@@ -107,7 +108,7 @@ class Course extends Model
         return \App\Models\Media::query()->updateOrCreate(
             [
                 'course_id' => $courseId,
-                'type' => 'course_id',
+                'type' => 'cover-image',
             ],
             [
                 'path' => $path,

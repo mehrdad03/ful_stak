@@ -30,6 +30,8 @@
                                 <tr>
                                     <th>#</th>
                                     <th>ID</th>
+                                    <th>تصویر کاور</th>
+                                    <th>ویدیو کاور</th>
                                     <th>کاور</th>
                                     <th>عنوان</th>
                                     <th>دسته بندی</th>
@@ -59,6 +61,31 @@
                                                     <div wire:loading
                                                          wire:target="courseThumbnail({{$course->id}},'{{@$course->image->file}}')"
                                                          class="spinner-border spinner-border-sm"></div>
+                                                </button>
+
+                                            </form>
+                                            @if($courseThumbnailError and explode('_',$courseThumbnailError)[0] == $course->id)
+
+                                                <span style="position: absolute;top: 7px;height: 75%;border-radius: 10px;width: 285px;background: #c65148f0!important;"
+                                                      class="alert alert-danger position-absolute d-flex align-items-center justify-content-center">{{@explode('_',$courseThumbnailError)[1]}}</span>
+                                            @endif
+                                        </td>
+                                        <td class="sorting_1">
+                                            <div class="media-box  align-items-center row">
+                                                <img src="{{@$course->cover->path}}"
+                                                     style="width: 307px;border-radius: 5%"
+                                                     class=" ms-2 media-avatar"
+                                                     alt="Product">
+                                            </div>
+                                            <form class="mt-2 d-inline-flex align-items-center p-1" method="post" enctype="multipart/form-data"
+                                                  style="background: #575757;border-radius: 5px"
+                                                  action="{{route('admin.upload-video',$course->id)}}">
+                                                @csrf
+                                                <input style="display: -webkit-inline-box;" type="file" name="video"
+                                                      {{-- wire:model="courseCoverVideo"--}}>
+                                                <button class="btn btn-sm btn-success" type="submit">
+                                                    ذخیره
+
                                                 </button>
 
                                             </form>

@@ -19,7 +19,7 @@
             <div
                 class="d-flex justify-content-center justify-content-lg-end my-5 me-5 me-md-0 ps-md-3">
                 <a href="#roadmap" class="main-btn text-white px-3 py-2">
-                    مشاهده نفشه راه برنامه نویسی وب
+                    مشاهده نقشه راه
                 </a>
             </div>
             <div
