@@ -19,6 +19,7 @@ class Transaction extends Model
         if ($status) {
             $referenceId = $response->referenceId();
             $cardPan = $response->cardPan();
+            Basket::query()->where('user_id',Auth::id())->delete();
         }
         Transaction::query()->create([
             'user_id' => Auth::id(),
