@@ -260,7 +260,7 @@ header .header-basket {
 .profile .popover  h6,.profile .popover h6+p {
     display: -webkit-box;
     -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
+    /*-webkit-box-orient: vertical;*/
     overflow: hidden;
     height: 23px;
     width: 140px;
