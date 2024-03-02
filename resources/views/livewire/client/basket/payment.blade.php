@@ -1,5 +1,5 @@
 <div class="col-12 col-md-6 col-lg-4 ">
-    <div class="payment">
+    <div class="payment bg-secondary">
         <!-- title -->
         <div class="d-flex align-items-center justify-content-around">
             <h2 class="title-text">اطلاعات پرداخت</h2>

@@ -649,6 +649,23 @@ header .header-basket {
   width: 100px;
   height: 100px;
 }
+/* instagram banner */
+.instagram {
+  margin-top: 20%;
+  background: linear-gradient(
+    123.75deg,
+    #f3632e 0%,
+    #d62c73 46.5%,
+    #9132c0 100%
+  );
+  border-radius: 40px;
+}
+.instalink svg {
+  transition: all 0.3s ease-in-out;
+}
+.instalink:hover > svg {
+  transform: translateX(-10px);
+}
 @media screen and (max-width: 1024px) {
   #blog {
     width: 95.7vw;

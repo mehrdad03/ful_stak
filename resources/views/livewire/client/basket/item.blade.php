@@ -6,7 +6,7 @@
 
               $currentYear=date('Y');
         @endphp
-        <div class="course mb-4">
+        <div class="course mb-4 bg-secondary">
             <a href="{{route('client.course',$item->course->url_slug)}}" class="d-flex align-items-center right ">
                 <img src="/frontend/assets/images/course1.png" alt="course img"/>
                 <!-- course & master name -->
