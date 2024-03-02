@@ -15,6 +15,8 @@
     <link href="/frontend/css/bootstrap.min.css" rel="stylesheet"/>
     <!-- Sweet alert css  -->
     <script src="/backend/js/sweetalert2@11.js"></script>
+
+    <link rel="stylesheet" href="/frontend/css/video-js.css">
     <!-- main css  -->
     <link rel="stylesheet" href="/frontend/css/main.css"/>
     @stack('links')
@@ -46,6 +48,7 @@
 <script defer src="/frontend/js/main.js"></script>
 <!-- Sweet alert js  -->
 <script src="/backend/js/sweetalert2@11.js"></script>
+<script defer src="/frontend/js/video.min.js"></script>
 
 @stack('scripts')
 

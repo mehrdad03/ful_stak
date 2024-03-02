@@ -82,10 +82,23 @@
 
                                         <td>
                                             <div class="media-box  align-items-center row">
-                                                <img src="/{{@$category->image->file}}"
-                                                     style="width: 307px;border-radius: 5%"
-                                                     class=" ms-2 media-avatar"
-                                                     alt="Product">
+                                                <video
+                                                    id="my-video"
+                                                    class="video-js"
+                                                    controls
+                                                    preload="auto"
+                                                    poster="MY_VIDEO_POSTER.jpg"
+                                                    data-setup="{}"
+                                                >
+                                                    <source src="https://dl.ful-stak.dev/course/videos/2/qkgSUpVhwq_1709301437_0_1000.m3u8"  />
+                                                    <p class="vjs-no-js">
+                                                        To view this video please enable JavaScript, and consider upgrading to a
+                                                        web browser that
+                                                        <a href="https://videojs.com/html5-video-support/" target="_blank"
+                                                        >supports HTML5 video</a
+                                                        >
+                                                    </p>
+                                                </video>
                                             </div>
                                             <form class="mt-2 d-inline-flex align-items-center p-1" enctype="multipart/form-data"
                                                   style="background: #575757;border-radius: 5px"

@@ -19,7 +19,7 @@ class uploadVideo extends Controller
 
         DB::transaction(function () use ($video, $courseId, $lectureId,$sectionId) {
 
-            $path = 'videos/' . $courseId;
+            $path = 'course/videos/'.$courseId;
             $videoName = Str::random(10) . '_' . time();
 
             /*dd($video);*/
@@ -55,6 +55,8 @@ class uploadVideo extends Controller
                 ]
             );
         });
+
+        return redirect()->back();
 
 
     }
