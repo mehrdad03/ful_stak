@@ -23,6 +23,9 @@
     <!-- ========== blog Section ========== -->
     <livewire:client.home.blog/>
 
+    <!-- ========== social Banner ========== -->
+    <livewire:client.home.social-banner/>
+
     <!-- hr -->
     <img src="/frontend/assets/images/hr.png" alt="HR" class="hr" />
 

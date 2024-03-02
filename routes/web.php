@@ -1,5 +1,11 @@
 <?php
 
+use App\Livewire\Client\Profile\Comments;
+use App\Livewire\Client\Profile\Dashboard;
+use App\Livewire\Client\Profile\Financial;
+use App\Livewire\Client\Profile\Messages;
+use App\Livewire\Client\Profile\MyCourses;
+use App\Livewire\Client\Profile\Questions;
 use Illuminate\Support\Facades\Route;
 
 
@@ -38,7 +44,18 @@ Route::group(['prefix' => 'auth', 'middleware' => 'guest:web'], function () {
 
 /*********** Client Profile  *************/
 
+Route::group(['prefix' => 'profile', /*'middleware' => 'guest:web'*/], function () {
 
+    Route::name('client.profile')->group(function () {
+        Route::get('/dashboard', Dashboard::class)->name('dashboard');
+        Route::get('/my-courses', MyCourses::class)->name('my-courses');
+        Route::get('/questions', Questions::class)->name('questions');
+        Route::get('/financial', Financial::class)->name('financial');
+        Route::get('/messages', Messages::class)->name('messages');
+        Route::get('/comments', Comments::class)->name('comments');
+    });
+
+});
 /*********** ADMIN PANEL *************/
 
 Route::group(['prefix' => 'admin', /*'middleware' => 'auth:admin'*/], function () {
