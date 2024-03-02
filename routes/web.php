@@ -23,6 +23,8 @@ Route::get('/road-map/{category:url_slug}', \App\Livewire\Client\Category\RoadMa
 
 
 Route::get('/basket', App\Livewire\Client\Basket\Index::class)->name('client.basket');
+Route::get('/payment/verify', [App\Livewire\Client\Basket\Index::class,'zarinPalPayment'])->name('client.zarinpal.verify');
+
 
 
 

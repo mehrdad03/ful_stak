@@ -102,7 +102,7 @@
                 </span>
             </p>
         </div>
-        <button
+        <button wire:click="submitOrder"
             type="button"
             class="w-100 bg-primary text-white fw-bolder py-2 rounded-5">
             پرداخت

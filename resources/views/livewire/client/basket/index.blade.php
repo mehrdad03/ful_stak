@@ -6,7 +6,7 @@
     <!-- ===== Courses ===== -->
     <livewire:client.basket.item :items="$basket"/>
     <!-- ===== payment ===== -->
-    <livewire:client.basket.payment :payment="$payment"/>
+    <livewire:client.basket.payment :payment="$payment" :basket="$basket"/>
 
 </div>
 

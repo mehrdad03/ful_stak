@@ -17,6 +17,7 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained();
             $table->unsignedInteger('amount');
             $table->string('trans_id');
+            $table->string('cardPan');
             $table->boolean('status')->default(false);
             $table->timestamps();
         });
