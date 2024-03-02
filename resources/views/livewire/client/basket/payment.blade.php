@@ -50,7 +50,7 @@
                 <input
                     type="text"
                     placeholder="کد تخفیف را وارد کنید"
-                    class="bg-secondary rounded-2 w-100 mx-2 pe-3 text-white p-1"/>
+                    class="bg-light  rounded-2 w-100 mx-2 pe-3 text-secondary p-1 text-center  " />
                 <button class="bg-primary text-white px-3 py-1 rounded-2">
                     ثبت
                 </button>
