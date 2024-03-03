@@ -44,7 +44,7 @@
                     <div class="dropdown-menu dropdown-menu-end md" aria-labelledby="userSettings">
                         <div class="header-profile-actions">
 
-                            <a href="{{--{{route('auth.admin.logout')}}--}}"><i class="icon-log-out1"></i>خروج</a>
+                            <a href="{{route('auth.admin.logout')}}"><i class="icon-log-out1"></i>خروج</a>
                         </div>
                     </div>
                 </li>
