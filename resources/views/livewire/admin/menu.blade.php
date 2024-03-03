@@ -37,23 +37,30 @@
             <div class="default-sidebar-menu">
                 <ul>
                     <li {{@$adminType!=1 ? 'hidden':'' }} class="{{@$rout_name=='admin.dashboard'?'active':''}}">
-                        <a href="{{--{{route('admin.dashboard')}}--}}" class="current-page">
+                        <a wire:navigate="" href="{{--{{route('admin.dashboard')}}--}}" class="current-page">
                             <i class="icon-home2"></i>
                             <span class="menu-text">داشبورد</span>
                         </a>
                     </li>
                     <li  class="{{$rout_name=='admin.course.index'?'active':''}}">
-                        <a href="{{route('admin.course.index')}}" class="current-page">
+                        <a wire:navigate="" href="{{route('admin.course.index')}}" class="current-page">
                             <i class="fa fa-video-camera"></i>
                             <span class="menu-text">دوره ها</span>
                         </a>
                     </li>
                     <li class="{{$rout_name=='admin.users'?'active':''}}">
-                        <a href="{{route('admin.users')}}" class="current-page">
+                        <a wire:navigate="" href="{{route('admin.users')}}" class="current-page">
                             <i class="fa fa-users"></i>
                             <span class="menu-text">کاربران</span>
                         </a>
                     </li>
+                    <li class="{{$rout_name=='admin.orders'?'active':''}}">
+                        <a wire:navigate="" href="{{route('admin.orders')}}" class="current-page">
+                            <i class="fa fa-users"></i>
+                            <span class="menu-text">سفارشات</span>
+                        </a>
+                    </li>
+
                     {{-- <li {{$adminType!=1 ? 'hidden':'' }} class="default-sidebar-dropdown position-relative @if($rout_name=='admin.service.index' or $rout_name=='admin.service.create') active @endif">
                          <a href="#">
                              <i class="icon-image"></i>
@@ -77,56 +84,7 @@
                          </div>
                      </li>
 
-                     <li {{$adminType!=1 ? 'hidden':'' }} class="default-sidebar-dropdown {{$rout_name=='admin.orders.index'?'active':''}}">
-                         <a class="position-relative" href="#">
-                             <i class="icon-shopping-cart"></i>
-                             <span class="menu-text">سفارشات</span>
-                             <span style="position: absolute;left: 45px;top: 18px;"
-                                   class="badge rounded-pill bg-badge bg-primary me-2 ">
-                                            {{$totalOrders}}
-                                         </span>
-                             @if($pendingOrders!=0)
-                                 <span style="position: absolute;left: 79px;top: 18px;"
-                                       class="badge rounded-pill bg-badge bg-light me-2 ">
-                                            {{$pendingOrders}}
-                                         </span>
-                             @endif
-                         </a>
-                         <div class="default-sidebar-submenu">
-                             <ul>
-                                 <li>
-                                     <a href="/admin/orders/?status=all"
-                                        class="{{@$_GET['status']=='all'?'current-page':''}}">کل سفارشات</a>
-                                 </li>
-                                 @forelse($statuses as $status)
 
-                                     @php
-                                         $class='';
-                                         if ($status->title=='درحال بررسی'){
-                                             $class='light';
-                                         }elseif ($status->title=='تحویل شده'){
-                                             $class='success';
-                                         }elseif ($status->title=='مرجوع شده'){
-                                             $class='warning';
-                                         }elseif ($status->title=='لغو شده'){
-                                             $class='danger';
-                                         }
-
-                                     @endphp
-                                     <li class="position-relative">
-                                         <a class=" {{ @$_GET['status']==$status->id?'current-page':''}}"
-                                            href="/admin/orders/?status={{$status->id}}">{{$status->title}}
-                                         </a>
-                                         <span style="position: absolute;left: 25px;top: 10px;"
-                                               class="badge rounded-pill bg-{{$class}} me-2 ">
-                                             {{$status->orders_with_status_count}}
-                                         </span>
-                                     </li>
-                                 @empty
-                                 @endforelse
-                             </ul>
-                         </div>
-                     </li>
                      <li {{$adminType!=1 ? 'hidden':'' }} class="default-sidebar-dropdown {{$rout_name=='admin.transactions.index'?'active':''}}">
                          <a class="position-relative" href="#">
                              <i class="icon-list"></i>

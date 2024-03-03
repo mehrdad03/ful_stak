@@ -14,12 +14,12 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        
+
 
         \DB::table('users')->delete();
-        
+
         \DB::table('users')->insert(array (
-            0 => 
+            0 =>
             array (
                 'id' => 1,
                 'name' => 'مهرداد داداشی',
@@ -27,10 +27,10 @@ class UsersTableSeeder extends Seeder
                 'picture' => 'dawd',
                 'mobile' => '09904421184',
                 'remember_token' => 'QQaYePMCfTWuZeJQTcffl3Isq6oZoX3hkoppbfy80L8bwXPx4iKDSAUeE1x9',
-                'created_at' => NULL,
+                'created_at' => '2024-03-03 08:51:34',
                 'updated_at' => NULL,
             ),
-            1 => 
+            1 =>
             array (
                 'id' => 3,
                 'name' => 'mehrdad dadashi',
@@ -41,7 +41,7 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2024-02-23 11:28:20',
                 'updated_at' => '2024-02-23 11:28:20',
             ),
-            2 => 
+            2 =>
             array (
                 'id' => 4,
                 'name' => 'alphanewverse properties',
@@ -52,7 +52,7 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2024-02-23 11:29:01',
                 'updated_at' => '2024-02-23 11:29:01',
             ),
-            3 => 
+            3 =>
             array (
                 'id' => 5,
                 'name' => 'farnoosh moradi',
@@ -63,7 +63,7 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2024-02-23 12:20:17',
                 'updated_at' => '2024-02-23 12:20:17',
             ),
-            4 => 
+            4 =>
             array (
                 'id' => 6,
                 'name' => 'Sana hosseini',
@@ -75,7 +75,7 @@ class UsersTableSeeder extends Seeder
                 'updated_at' => '2024-02-23 12:46:19',
             ),
         ));
-        
-        
+
+
     }
 }
