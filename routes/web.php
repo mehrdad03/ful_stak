@@ -69,6 +69,9 @@ Route::group(['prefix' => 'profile', 'middleware' => 'auth'], function () {
 
 });
 /*********** ADMIN PANEL *************/
+Route::get('auth/admin/logout', [\App\Livewire\Admin\Auth\Index::class, 'adminLogout'])->name('auth.admin.logout')->middleware('auth:admin');
+Route::get('Ful-stack.dev/on5H)D;ES;EWWJ&/auth', App\Livewire\Admin\Auth\Index::class)->name('auth.admin');
+
 
 Route::group(['prefix' => 'admin', /*'middleware' => 'auth:admin'*/], function () {
 
