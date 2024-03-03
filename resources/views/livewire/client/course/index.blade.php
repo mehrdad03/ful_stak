@@ -52,7 +52,7 @@
             <img src="/frontend/assets/images/hr.png" alt="HR" class="hr" />
 
             <!-- ======= Q & A ======= -->
-            <livewire:client.course.qa />
+            <livewire:client.course.qa :courseId="$course->id" />
         </div>
 
         <!-- ========= Desktop Side Bar ========= -->

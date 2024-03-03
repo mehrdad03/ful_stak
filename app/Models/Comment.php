@@ -29,7 +29,7 @@ class Comment extends Model
         //session output is : array:1 [0 => 2]
         Comment::query()->create([
             'comment' => $formData['comment'],
-            'course_id' => $courseId[0],
+            'course_id' => $courseId,
             'user_id' => Auth::id(),
         ]);
     }
