@@ -8,9 +8,11 @@ use Livewire\WithPagination;
 
 class Index extends Component
 {
+    use WithPagination;
+    public $search = '';
     public function render()
     {
-        $orders = Order::query()->with('user', 'category');
+        $orders = Order::query()->with('orderItems.course','transaction','user');
 
         if ($_GET and $_GET['status'] != 'all') {
             $orders = $orders->where('status_id', $_GET['status'])->latest();
@@ -27,8 +29,6 @@ class Index extends Component
                 ->Where('number', 'like', '%' . $this->search . '%')
                 ->orWhere('price', 'like', '%' . $this->search . '%');
         }
-
-
         return view('livewire.admin.order.index', [
             'orders' => $orders->paginate(10),
         ])->layout('layouts.app-admin');

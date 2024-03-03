@@ -15,7 +15,7 @@ class Order extends Model
 
     protected $guarded = [];
 
-    public function submitOrder($payInfo, $basket)
+    public function submitOrder($payInfo, $basket): void
     {
 
         $basketAmount = $payInfo['userBasketTotalPrice'];
@@ -51,7 +51,7 @@ class Order extends Model
         });
     }
 
-    function orderNumber()
+    function orderNumber(): int
     {
         do {
             $randomCode = rand(1000, 1000000);
@@ -63,14 +63,19 @@ class Order extends Model
 
     }
 
-    public function user()
+    public function user(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
-        return $this->belongsTo(User::class, 'user_id');
+        return $this->belongsTo(User::class);
     }
 
-    public function OrderItems()
+    public function orderItems(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
         return $this->hasMany(OrderItem::class);
+    }
+
+    public function transaction(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(Transaction::class,'id','order_id');
     }
 
 }

@@ -16,7 +16,7 @@ return new class extends Migration {
             $table->unsignedInteger('amount');
             $table->unsignedInteger('discount')->default(0);
             $table->text('description')->nullable();
-            $table->boolean('status')->default(false);
+            $table->boolean('status')->default(true);
             $table->unsignedInteger('order_number')->default(false);
             $table->boolean('pay_status')->default(false);
             $table->timestamps();
