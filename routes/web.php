@@ -22,6 +22,7 @@ use App\Livewire\Admin\Course\Lecture as adminCourseLecture;
 use App\Livewire\Admin\Course\Create as adminCourseCreate;
 use App\Livewire\Admin\Course\Seo as adminCourseSeo;
 use App\Livewire\Admin\User\Index as adminUserIndex;
+use App\Livewire\Admin\Order\Index as adminOrderIndex;
 use Illuminate\Support\Facades\Route;
 
 
@@ -85,6 +86,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth:admin'], function () {
         Route::get('/course/{courseId}/seo', adminCourseSeo::class)->name('course.seo');
         Route::post('/ck-upload', [adminVideoCkUpload::class, 'upload'])->name('ck-upload');
         Route::get('/users', adminUserIndex::class)->name('users');
+        Route::get('/orders', adminOrderIndex::class)->name('orders');
         Route::post('/upload-video/{courseId?}/{lectureId?}/{sectionId?}', [adminCourseVideoUpload::class, 'uploadVideo'])->name('upload-video');
     });
 });

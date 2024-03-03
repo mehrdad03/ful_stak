@@ -13,7 +13,7 @@ class Order extends Model
 {
     use HasFactory, PaymentGateway;
 
-    protected $guarded=[];
+    protected $guarded = [];
 
     public function submitOrder($payInfo, $basket)
     {
@@ -25,9 +25,9 @@ class Order extends Model
 
             $order = Order::query()->create([
                 'user_id' => Auth::id(),
-                'amount' => $basketAmount-$basketDiscount,
+                'amount' => $basketAmount - $basketDiscount,
                 'discount' => $basketDiscount,
-                'order_number' => orderNumber(),
+                'order_number' => $this->orderNumber(),
             ]);
 
             foreach ($basket as $item) {
@@ -41,25 +41,39 @@ class Order extends Model
 
 
             Session::forget(['zarinPalAmount', 'zarinPalOrderNumber', 'zarinPalOrderId']);
-            Session::put('zarinPalAmount', $basketAmount-$basketDiscount);
+            Session::put('zarinPalAmount', $basketAmount - $basketDiscount);
             Session::put('zarinPalOrderNumber', $order->number);
             Session::put('zarinPalOrderId', $order->id);
 
             // $this->saveScreenshotToFile($screenshot, $order->id, $order->number);
-           $this->zarinPalRequest( $basketAmount-$basketDiscount);
+            $this->zarinPalRequest($basketAmount - $basketDiscount);
 
         });
     }
+
+    function orderNumber()
+    {
+        do {
+            $randomCode = rand(1000, 1000000);
+
+            $checkCode = Order::query()->where('order_number', $randomCode)->first();
+        } while ($checkCode);
+
+        return $randomCode;
+
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
+
+    public function OrderItems()
+    {
+        return $this->hasMany(OrderItem::class);
+    }
+
 }
 
-function orderNumber()
-{
-    do {
-        $randomCode = rand(1000, 1000000);
 
-        $checkCode =Order::query()->where('order_number', $randomCode)->first();
-    } while ($checkCode);
 
-    return $randomCode;
-
-}
