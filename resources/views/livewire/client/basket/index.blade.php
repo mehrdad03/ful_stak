@@ -13,6 +13,5 @@
        @include('livewire.client.basket.empty-basket')
     @endif
 
-
 </div>
 

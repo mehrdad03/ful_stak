@@ -23,6 +23,7 @@ use App\Livewire\Admin\Course\Create as adminCourseCreate;
 use App\Livewire\Admin\Course\Seo as adminCourseSeo;
 use App\Livewire\Admin\User\Index as adminUserIndex;
 use App\Livewire\Admin\Order\Index as adminOrderIndex;
+use App\Livewire\Admin\Transaction\Index as adminTransactionIndex;
 use Illuminate\Support\Facades\Route;
 
 
@@ -32,14 +33,9 @@ Route::get('/', Index::class)->name('client.home');
 Route::get('/pricing', pricingIndex::class)->name('client.pricing');
 Route::get('/course/{course:url_slug}', courseIndex::class)->name('client.course');
 Route::get('/auth/client/logout', [authIndex::class, 'clientLogout'])->name('client.logout')->middleware('auth:web');
-
-
 Route::get('/road-map/{category:url_slug}', RoadMap::class)->name('client.category.road-map');
-
-
 Route::get('/cart', basketIndex::class)->name('client.basket')->middleware('auth');
 Route::get('/payment/verify', [basketIndex::class, 'zarinPalPayment'])->name('client.zarinpal.verify')->middleware('auth');
-
 
 /*********** Client Login  & Register *************/
 
@@ -70,10 +66,11 @@ Route::group(['prefix' => 'profile', 'middleware' => 'auth'], function () {
     });
 
 });
+
 /*********** ADMIN PANEL *************/
+
 Route::get('auth/admin/logout', [adminAuthIndex::class, 'adminLogout'])->name('auth.admin.logout')->middleware('auth:admin');
 Route::get('Ful-stack.dev/on5H)D;ES;EWWJ&/auth', adminAuthIndex::class)->name('auth.admin');
-
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth:admin'], function () {
 
@@ -87,6 +84,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth:admin'], function () {
         Route::post('/ck-upload', [adminVideoCkUpload::class, 'upload'])->name('ck-upload');
         Route::get('/users', adminUserIndex::class)->name('users');
         Route::get('/orders', adminOrderIndex::class)->name('orders');
+        Route::get('/transactions', adminTransactionIndex::class)->name('transactions');
         Route::post('/upload-video/{courseId?}/{lectureId?}/{sectionId?}', [adminCourseVideoUpload::class, 'uploadVideo'])->name('upload-video');
     });
 });

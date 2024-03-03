@@ -60,6 +60,48 @@
                             <span class="menu-text">سفارشات</span>
                         </a>
                     </li>
+                    <li class="default-sidebar-dropdown {{$rout_name=='admin.transactions.index'?'active':''}}">
+                        <a class="position-relative" href="#">
+                            <i class="icon-list"></i>
+                            <span class="menu-text">تراکنشها</span>
+                            <span style="position: absolute;left: 45px;top: 18px;"
+                                  class="badge rounded-pill bg-badge bg-primary me-2 ">
+                                            {{$totalTransactions}}
+                                         </span>
+                            @if($failedTransactions!=0)
+                                <span style="position: absolute;left: 79px;top: 18px;"
+                                      class="badge rounded-pill bg-badge btn-danger me-2 ">
+                                            {{$failedTransactions}}
+                                         </span>
+                            @endif
+                        </a>
+                        <div class="default-sidebar-submenu">
+                            <ul>
+                                <li>
+                                    <a href="/admin/transactions/?status=all"
+                                       class="{{@$_GET['status']=='all'?'current-page':''}}">کل تراکنشها</a>
+                                </li>
+                                <li class="position-relative">
+                                    <a class=" {{ @$_GET['status']==1?'current-page':''}}"
+                                       href="/admin/transactions/?status=1">موفق
+                                    </a>
+                                    <span style="position: absolute;left: 25px;top: 10px;"
+                                          class="badge rounded-pill bg-success me-2 ">
+                                             {{$successTransactions}}
+                                         </span>
+                                </li>
+                                <li class="position-relative">
+                                    <a class=" {{ @$_GET['status']==0?'current-page':''}}"
+                                       href="/admin/transactions/?status=0">ناموفق
+                                    </a>
+                                    <span style="position: absolute;left: 25px;top: 10px;"
+                                          class="badge rounded-pill bg-danger me-2 ">
+                                             {{$failedTransactions}}
+                                         </span>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
 
                     {{-- <li {{$adminType!=1 ? 'hidden':'' }} class="default-sidebar-dropdown position-relative @if($rout_name=='admin.service.index' or $rout_name=='admin.service.create') active @endif">
                          <a href="#">

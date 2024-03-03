@@ -12,9 +12,7 @@ class Index extends Component
 
     public function mount(Course $course)
     {
-
         $this->course = $course->load('sections.sectionLectures');
-
     }
 
     public function render()
