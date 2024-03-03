@@ -12,8 +12,8 @@ class Index extends Component
 
     public function mount(Course $course)
     {
-        Session::forget('courseId');
-        $this->course = $course->with('sections.sectionLectures')->firstOrFail();
+
+        $this->course = $course->load('sections.sectionLectures');
 
     }
 
