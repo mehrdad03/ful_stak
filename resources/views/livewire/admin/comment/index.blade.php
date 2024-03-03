@@ -8,8 +8,10 @@
                         <div class="table-responsive">
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="field-wrapper w-25">
-                                    <input  style="background: #ffffff" class="form-control" type="text" wire:model.debounce.500ms="search">
-                                    <div class="field-placeholder">جستجو براساس شماره سفارش و قیمت <span class="text-danger">*</span></div>
+                                    <input style="background: #ffffff" class="form-control" type="text"
+                                           wire:model.debounce.500ms="search">
+                                    <div class="field-placeholder">جستجو براساس شماره سفارش و قیمت <span
+                                            class="text-danger">*</span></div>
                                 </div>
                                 {{ $comments->links('layouts.pagination-admin') }}
                             </div>
@@ -42,7 +44,7 @@
                                         }
 
                                     @endphp
-                                    <tr>
+                                    <tr wire:key="{{$loop->index}}">
                                         <td>{{$loop->index+1}}</td>
 
                                         <td>{{$comment->comment}}</td>
@@ -59,9 +61,10 @@
                                             </div>
                                         </td>
                                         <td>
-                                            <a href="{{$comment->course->url_slug}}" target="_blank">{{@$comment->course->title}}</a>
+                                            <a href="{{$comment->course->url_slug}}"
+                                               target="_blank">{{@$comment->course->title}}</a>
                                         </td>
-                                        <td>
+                                        <td wire:ignore.self>
                                             {{--<span class="badge bg-{{$class}}">{{$comment->status->title}}</span>--}}
                                             {{jdate($comment->created_at)->format('d M Y | h:i')}}
                                             <br>
@@ -71,7 +74,14 @@
                                             <i class="fa fa-{{$iconClass}} fs-3  text-{{$class}}"></i>
                                         </td>
                                         <td>
-
+                                            <div class="form-switch">
+                                                <input class="form-check-input" type="checkbox"
+                                                       style="width: 3rem;height: 1.5rem"
+                                                       id="showEmailNotifications"
+                                                       wire:change="changeStatus({{$comment->id}},{{$comment->user_id}})"
+                                                    {{$comment->status?'checked=""' : ''}}>
+                                                <label class="form-check-label" for="showEmailNotifications"></label>
+                                            </div>
                                         </td>
 
                                     </tr>
