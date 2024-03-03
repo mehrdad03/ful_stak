@@ -24,7 +24,6 @@
                                     <th>ثیت شده در</th>
                                     <th>وضعیت سفارش</th>
                                     <th>وضعیت پرداخت</th>
-                                    <th>عملیات</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -76,7 +75,6 @@
                                                     {{@$order->user->mobile}}
                                                 </div>
                                             </div>
-
                                         </td>
                                         <td>
                                             {{--<span class="badge bg-{{$class}}">{{$order->status->title}}</span>--}}
@@ -89,10 +87,6 @@
                                         </td>
                                         <td>
                                             <i class="fa fa-{{$tr_iconClass}} fs-3  text-{{$tr_class}}"></i>
-                                        </td>
-                                        <td>
-                                            <a class="btn btn-outline-warning"
-                                               href="{{--{{route('admin.orders.detail',$order->id)}}--}}">جزییات</a>
                                         </td>
 
                                     </tr>
