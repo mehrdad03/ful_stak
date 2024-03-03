@@ -86,7 +86,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth:admin'], function () {
         Route::get('/users', adminUserIndex::class)->name('users');
         Route::get('/orders', adminOrderIndex::class)->name('orders');
         Route::get('/transactions', adminTransactionIndex::class)->name('transactions');
-        Route::get('/transactions', adminCommentIndex::class)->name('comments');
+        Route::get('/comments', adminCommentIndex::class)->name('comments');
         Route::post('/upload-video/{courseId?}/{lectureId?}/{sectionId?}', [adminCourseVideoUpload::class, 'uploadVideo'])->name('upload-video');
     });
 });

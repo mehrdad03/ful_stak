@@ -24,6 +24,12 @@ class Comment extends Model
 
     }
 
+    public function course(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(Course::class,'course_id');
+
+    }
+
     public function submitCourseComment($formData, $courseId): void
     {
         //session output is : array:1 [0 => 2]

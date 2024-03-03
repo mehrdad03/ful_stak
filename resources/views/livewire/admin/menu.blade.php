@@ -42,7 +42,7 @@
                             <span class="menu-text">داشبورد</span>
                         </a>
                     </li>
-                    <li  class="{{$rout_name=='admin.course.index'?'active':''}}">
+                    <li class="{{$rout_name=='admin.course.index'?'active':''}}">
                         <a wire:navigate="" href="{{route('admin.course.index')}}" class="current-page">
                             <i class="fa fa-video-camera"></i>
                             <span class="menu-text">دوره ها</span>
@@ -98,6 +98,30 @@
                                           class="badge rounded-pill bg-danger me-2 ">
                                              {{$failedTransactions}}
                                          </span>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="default-sidebar-dropdown {{$rout_name=='admin.comments.index'?'active':''}}">
+                        <a class="position-relative" href="{{route('admin.comments')}}">
+                            <i class="icon-list"></i>
+                            <span class="menu-text">نظرات دوره ها</span>
+                            <span style="position: absolute;left: 45px;top: 18px;"
+                                  class="badge rounded-pill bg-badge bg-primary me-2 ">
+                                            {{$totalTransactions}}
+                                         </span>
+                            @if($failedTransactions!=0)
+                                <span style="position: absolute;left: 79px;top: 18px;"
+                                      class="badge rounded-pill bg-badge btn-danger me-2 ">
+                                            {{$failedTransactions}}
+                                         </span>
+                            @endif
+                        </a>
+                        <div class="default-sidebar-submenu">
+                            <ul>
+                                <li>
+                                    <a href="/admin/comments/?status=all"
+                                       class="{{@$_GET['status']=='all'?'current-page':''}}">نظرات دوره ها</a>
                                 </li>
                             </ul>
                         </div>
