@@ -14,6 +14,7 @@ use App\Livewire\Client\Profile\Financial;
 use App\Livewire\Client\Profile\Messages;
 use App\Livewire\Client\Profile\MyCourses;
 use App\Livewire\Client\Profile\Questions;
+use App\Livewire\Admin\Auth\Index as adminAuthIndex;
 use App\Livewire\Admin\Dashboard\Index as adminDashboardIndex;
 use App\Livewire\Admin\Course\Index as adminCourseIndex;
 use App\Livewire\Admin\Course\Section as adminCourseSection;
@@ -69,11 +70,11 @@ Route::group(['prefix' => 'profile', 'middleware' => 'auth'], function () {
 
 });
 /*********** ADMIN PANEL *************/
-Route::get('auth/admin/logout', [\App\Livewire\Admin\Auth\Index::class, 'adminLogout'])->name('auth.admin.logout')->middleware('auth:admin');
-Route::get('Ful-stack.dev/on5H)D;ES;EWWJ&/auth', App\Livewire\Admin\Auth\Index::class)->name('auth.admin');
+Route::get('auth/admin/logout', [adminAuthIndex::class, 'adminLogout'])->name('auth.admin.logout')->middleware('auth:admin');
+Route::get('Ful-stack.dev/on5H)D;ES;EWWJ&/auth', adminAuthIndex::class)->name('auth.admin');
 
 
-Route::group(['prefix' => 'admin', /*'middleware' => 'auth:admin'*/], function () {
+Route::group(['prefix' => 'admin', 'middleware' => 'auth:admin'], function () {
 
     Route::name('admin.')->group(function () {
         Route::get('/dashboard', adminDashboardIndex::class)->name('dashboard');
