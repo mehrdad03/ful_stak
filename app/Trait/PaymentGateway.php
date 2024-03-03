@@ -45,10 +45,8 @@ trait PaymentGateway
 
         $transactions = new Transaction();
         if (!$response->success()) {
-            //return $response->error()->message();
 
             $transactions->savePaymentInfo($response, false, $amount, $orderId);
-
 
         } else {
             $this->status = true;
