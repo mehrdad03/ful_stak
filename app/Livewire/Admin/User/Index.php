@@ -9,7 +9,7 @@ class Index extends Component
 {
     public function render()
     {
-        $users = User::query()->paginate(10);
+        $users = User::query()->withCount('orders')->paginate(10);
         return view('livewire.admin.user.index',['users'=>$users])->layout('layouts.app-admin');
     }
 }

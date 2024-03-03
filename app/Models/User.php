@@ -38,7 +38,7 @@ class User extends Authenticatable
     ];
 
 
-    public function checkUser($user, $loginType = 'google')
+    public function checkUser($user, $loginType = 'google'): void
     {
 
         $check = User::query()->where('email', $user['email'])->first();
@@ -59,6 +59,10 @@ class User extends Authenticatable
         }
 
     }
+    public function orders(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Order::class);
 
+    }
 
 }
