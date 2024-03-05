@@ -25,6 +25,7 @@ use App\Livewire\Admin\User\Index as adminUserIndex;
 use App\Livewire\Admin\Order\Index as adminOrderIndex;
 use App\Livewire\Admin\Transaction\Index as adminTransactionIndex;
 use App\Livewire\Admin\Comment\Index as adminCommentIndex;
+use App\Livewire\Admin\Comment\Answer as adminCommentAnswer;
 use Illuminate\Support\Facades\Route;
 
 
@@ -87,6 +88,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth:admin'], function () {
         Route::get('/orders', adminOrderIndex::class)->name('orders');
         Route::get('/transactions', adminTransactionIndex::class)->name('transactions');
         Route::get('/comments', adminCommentIndex::class)->name('comments');
+        Route::get('/comments/{comment}/answer', adminCommentAnswer::class)->name('comments.answer');
         Route::post('/upload-video/{courseId?}/{lectureId?}/{sectionId?}', [adminCourseVideoUpload::class, 'uploadVideo'])->name('upload-video');
     });
 });
