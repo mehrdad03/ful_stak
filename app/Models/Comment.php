@@ -38,16 +38,24 @@ class Comment extends Model
 
     public function submitCourseComment($formData, $courseId): void
     {
-        //session output is : array:1 [0 => 2]
         Comment::query()->create([
             'comment' => $formData['comment'],
             'course_id' => $courseId,
             'user_id' => Auth::id(),
         ]);
     }
-    public function submitAdminCommentAnswer($answer,$courseId, $commentId,$answerId)
-    {
 
+    public function submitCourseCommentAnswer($formData,$comment_id, $courseId): void
+    {
+        Comment::query()->create([
+            'comment' => $formData['answer'],
+            'course_id' => $courseId,
+            'user_id' => Auth::id(),
+            'comment_id' => $comment_id,
+        ]);
+    }
+    public function submitAdminCommentAnswer($answer,$courseId, $commentId,$answerId): void
+    {
         \App\Models\Comment::query()->updateOrCreate(
             [
                 'id' => $answerId,
