@@ -3,7 +3,7 @@
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
             <div class="card">
                 <div class="card-body">
-                    <div wire:ignore class="table-responsive">
+                    <div class="table-responsive">
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="field-wrapper">
                                 <input style="background: #ffffff" class="form-control" type="text"
