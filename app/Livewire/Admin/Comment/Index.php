@@ -10,6 +10,8 @@ class Index extends Component
 {
     use WithPagination;
 
+    public $search = '';
+
     public function changeStatus($commentId): void
     {
 
@@ -28,13 +30,21 @@ class Index extends Component
     public function render()
     {
         $comments = Comment::query()
-            ->where('comment_id','=',0)
-            ->with('user', 'course:url_slug,id,title','answers')
-            ->latest()
-            ->paginate(10);
+            ->where('comment_id', '=', 0)
+            ->with('user', 'course:url_slug,id,title', 'answers')
+            ->latest();
+
+
+        if ($this->search) {
+            $comments = $comments
+                ->Where('comment', 'like', '%' . $this->search . '%')
+                ->orWhereHas('user', function ($query) {
+                    $query->where('name', 'like', '%' . $this->search . '%');
+                });
+        }
 
         return view('livewire.admin.comment.index', [
-            'comments' => $comments
+            'comments' => $comments->paginate(10)
         ])->layout('layouts.app-admin');
     }
 }

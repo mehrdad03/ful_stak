@@ -26,8 +26,11 @@ class Index extends Component
 
         if ($this->search) {
             $orders = $orders
-                ->Where('number', 'like', '%' . $this->search . '%')
-                ->orWhere('price', 'like', '%' . $this->search . '%');
+                ->Where('order_number', 'like', '%' . $this->search . '%')
+                ->orWhere('amount', 'like', '%' . $this->search . '%')
+                ->orWhereHas('user', function ($query) {
+                    $query->where('name', 'like', '%' . $this->search . '%');
+                });
         }
         return view('livewire.admin.order.index', [
             'orders' => $orders->paginate(10),

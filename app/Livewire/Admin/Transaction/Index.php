@@ -26,7 +26,10 @@ class Index extends Component
             $transactions = $transactions
                 ->Where('amount', 'like', '%' . $this->search . '%')
                 ->orWhere('referenceId', 'like', '%' . $this->search . '%')
-                ->orWhere('cardPan', 'like', '%' . $this->search . '%');
+                ->orWhere('cardPan', 'like', '%' . $this->search . '%')
+                ->orWhereHas('user', function ($query) {
+                    $query->where('name', 'like', '%' . $this->search . '%');
+                });
         }
 
         return view('livewire.admin.transaction.index', [

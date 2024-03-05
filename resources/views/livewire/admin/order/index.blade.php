@@ -8,7 +8,7 @@
                         <div class="table-responsive">
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="field-wrapper w-25">
-                                    <input  style="background: #ffffff" class="form-control" type="text" wire:model.debounce.500ms="search">
+                                    <input  style="background: #ffffff" class="form-control" type="text" wire:model.live.debounce.150ms="search">
                                     <div class="field-placeholder">جستجو براساس شماره سفارش و قیمت <span class="text-danger">*</span></div>
                                 </div>
                                 {{ $orders->links('layouts.pagination-admin') }}

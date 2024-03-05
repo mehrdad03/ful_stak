@@ -7,7 +7,7 @@
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="field-wrapper">
                                 <input style="background: #ffffff" class="form-control" type="text"
-                                       wire:model.debounce.500ms="search">
+                                       wire:model.live.debounce.150ms="search">
                                 <div class="field-placeholder">جستجو <span class="text-danger">*</span></div>
                             </div>
                             {{ $users->links('layouts.pagination-admin') }}
