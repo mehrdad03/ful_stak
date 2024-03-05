@@ -25,6 +25,7 @@
                                     <th>ثیت شده در</th>
                                     <th>وضعیت نمایش</th>
                                     <th>وضعیت پرداخت</th>
+                                    <th>پاسخ</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -83,7 +84,11 @@
                                                 <label class="form-check-label" for="showEmailNotifications"></label>
                                             </div>
                                         </td>
-
+                                        <td>
+                                            <a wire:navigate href="{{route('admin.comments.answer',$comment->id)}}">
+                                                <i class="fa fa-edit fs-3"></i>
+                                            </a>
+                                        </td>
                                     </tr>
                                 @empty
                                 @endforelse
