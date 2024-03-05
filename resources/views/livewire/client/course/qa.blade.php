@@ -86,8 +86,6 @@
 
         @auth
             <form wire:submit="submitCourseComment(Object.fromEntries(new FormData($event.target)))" class="px-4 pb-2">
-
-
                 <!-- Question -->
                 <div class="text-white w-100 d-flex flex-column  {{session('message') ? 'd-none' : ''}}">
                     <label for="comment" class="my-3">سوال:</label>
@@ -143,21 +141,22 @@
                         <p class="m-0 text-white-50">{{@$comment->created_at->diffForHumans()}}</p>
                     </div>
                 </div>
-                <button class="main-btn text-white px-2 px-lg-5 py-1">
+                <a href="#answer_{{$comment->id}}" class="main-btn text-white px-2 px-lg-5 py-1 reply" >
                     پاسخ
-                </button>
+                </a>
             </div>
             <p class="m-0 pt-3 p-lg-5 text-white">
                 {{$comment->comment}}
             </p>
-            <div class="newwQ px-4 py-0" style="">
+            <div class="newA px-4 py-0" id="answer_{{$comment->id}}" wire:ignore.self >
                 <!-- title -->
                 <hr class="text-light">
+
                 <form
                     wire:submit="submitCourseCommentAnswer(Object.fromEntries(new FormData($event.target)),{{$comment->id}})"
-                    class="px-4 pb-2">
+                    class=" pb-2">
                     <!-- Question -->
-                    <div class="text-white w-100 d-flex flex-column  ">
+                    <div class="text-white w-100 d-flex flex-column  {{session('answer_message') ? 'd-none' : ''}}" >
                         <label for="answer" class="my-3">پاسخ به این دیدگاه</label>
                         <textarea name="answer" id="answer" cols="30" maxlength="700" rows="10" class="p-3"
                                   placeholder="متن مورد نظر خود رو وراد کنید . . ."></textarea>
@@ -167,16 +166,16 @@
                         class="alert alert-danger rounded-2 mt-3 " wire:loading.remove>{{ $message }}</div>
                     @enderror
 
-                    @if(session('message'))
+                    @if(session('answer_message'))
                         <div class="alert alert-success mt-3">
 
-                            {{ session('message') }}
+                            {{ session('answer_message') }}
                         </div>
                     @endif
 
 
                     <!-- buttons -->
-                    <div class="w-100 mt-2 d-flex justify-content-end mt-4 column-gap-3 ">
+                    <div class="w-100 mt-2 d-flex justify-content-end mt-4 column-gap-3 {{session('answer_message') ? 'd-none' : ''}} ">
                         <button class="text-white bg-danger px-4 py-1 rounded-4 closeQ" type="button">
                             انصراف
                         </button>
@@ -195,7 +194,7 @@
                     alt="answer"
                     class="ansBorder"/>
                 <!-- answer -->
-                <div class="answer bg-primary btn-innerShadow rounded-4 p-1 p-lg-4 w-75">
+                <div class="answer bg-primary btn-innerShadow rounded-4 p-1 p-lg-4 w-75 mb-5">
                     <div
                         class="d-flex justify-content-between align-items-center px-4 pb-3 border-bottom">
                         <div class="d-flex align-items-center column-gap-3">

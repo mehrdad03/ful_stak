@@ -5,6 +5,7 @@ namespace App\Livewire\Client\Course;
 use App\Models\Comment;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\ValidationException;
 use Livewire\Component;
 
 class Qa extends Component
@@ -21,14 +22,20 @@ class Qa extends Component
                 'status' => true,
                 'comment_id' => 0,
             ])
-            ->with('answer', 'user:id,name,picture')
+            ->with('answers',function ($query) {
+                $query->where('status', true);
+            }, 'user:id,name,picture')
             ->latest()
             ->get();
 
     }
 
-    public function submitCourseComment($formData, Comment $comment)
+    /**
+     * @throws ValidationException
+     */
+    public function submitCourseComment($formData, Comment $comment): void
     {
+
         $validator = Validator::make($formData, [
             'comment' => 'required|min:10|max: 700',
         ], [
@@ -45,6 +52,36 @@ class Qa extends Component
         $comment->submitCourseComment($formData, $this->courseId);
 
         session()->flash('message', 'نظر شما با موفقیت ثبت شد بعد از تایید نمایش داده خواهد شد!');
+
+
+    }
+
+    /**
+     * @throws ValidationException
+     */
+    public function submitCourseCommentAnswer($formData, $comment_id, Comment $comment): void
+    {
+
+        $formData['comment_id']=$comment_id;
+
+        $validator = Validator::make($formData, [
+            'answer' => 'required|min:10|max: 700',
+            'comment_id' => 'required|exists:comments,id',
+        ], [
+            '*.required' => 'فیلد ضروری',
+            'answer.max' => 'حداکثر تعداد کاراکتر : 700',
+            'answer.min' => 'حداقل تعداد کاراکتر : 10',
+            'answer.exists' => 'نامعتبر',
+
+        ]);
+
+        $validator->validate();
+        $this->resetValidation();
+
+        //session output is
+        $comment->submitCourseCommentAnswer($formData,$comment_id, $this->courseId);
+
+        session()->flash('answer_message', 'نظر شما با موفقیت ثبت شد بعد از تایید نمایش داده خواهد شد!');
 
 
     }

@@ -175,6 +175,10 @@ main {
   margin: 4% 0;
 }
 
+#questions .newA {
+ display: none;
+}
+
 #questions .newQ textarea::placeholder {
     color: #fff;
 }
