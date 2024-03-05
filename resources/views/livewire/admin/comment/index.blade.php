@@ -145,7 +145,7 @@
                                                     <input class="form-check-input" type="checkbox"
                                                            style="width: 3rem;height: 1.5rem;cursor:pointer;"
                                                            id="showEmailNotifications"
-                                                           wire:change="changeStatus({{$item->id}},{{@$item->adminUser->id}})"
+                                                           wire:change="changeStatus({{$item->id}})"
                                                         {{$item->status?'checked=""' : ''}}>
                                                     <label class="form-check-label"
                                                            for="showEmailNotifications"></label>

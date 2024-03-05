@@ -10,15 +10,12 @@ class Index extends Component
 {
     use WithPagination;
 
-    public function changeStatus($commentId, $userId): void
+    public function changeStatus($commentId): void
     {
 
-
         $comment = Comment::query()->where([
-            'user_id' => $userId,
             'id' => $commentId,
         ])->first();
-
 
         if ($comment->status) {
             $comment->update(['status' => false]);
