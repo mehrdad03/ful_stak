@@ -29,7 +29,6 @@ class Seo extends Component
         } else {
             $formData['editor1'] = $this->description;
         }
-        dd($formData);
         $validator = Validator::make($formData, [
             'editor1' => 'required|min:100',
             'meta_name' => 'required|min:5',

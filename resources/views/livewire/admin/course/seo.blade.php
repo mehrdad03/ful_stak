@@ -107,7 +107,7 @@
 
 
         <script>
-            document.addEventListener('livewire:navigated', () => {
+            document.addEventListener('livewire:init', () => {
                 const editor = CKEDITOR.replace('editor1', {
                     filebrowserUploadUrl: "{{route('admin.ck-upload', ['_token' => csrf_token() ])}}",
                     filebrowserUploadMethod: 'form',

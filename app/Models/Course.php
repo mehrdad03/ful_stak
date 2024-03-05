@@ -4,11 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
-use Intervention\Image\ImageManager;
-use Intervention\Image\Drivers\Imagick\Driver;
-
 
 class Course extends Model
 {
@@ -84,15 +81,16 @@ class Course extends Model
         $databasePath = '/storage/cover-image';
         $this->insertImageToFileTable1($databasePath . '/' . $image_name, $courseId);
 
-        if ($oldPhoto){
+        if ($oldPhoto) {
             $this->removeOldImage($oldPhoto);
         }
 
     }
+
     public function removeOldImage($oldPhoto): void
     {
 
-       unlink(public_path($oldPhoto));
+        unlink(public_path($oldPhoto));
 
 
         /*   return \App\Models\File::query()->where([
@@ -103,6 +101,7 @@ class Course extends Model
 
 
     }
+
     public function insertImageToFileTable1($path, $courseId)
     {
         return \App\Models\Media::query()->updateOrCreate(
@@ -125,6 +124,5 @@ class Course extends Model
     {
         return $this->belongsTo(User::class);
     }
-
 
 }

@@ -10,8 +10,9 @@ class Index extends Component
 {
     use WithPagination;
 
-    public function changeStatus($commentId, $userId)
+    public function changeStatus($commentId, $userId): void
     {
+
 
         $comment = Comment::query()->where([
             'user_id' => $userId,
@@ -29,7 +30,11 @@ class Index extends Component
 
     public function render()
     {
-        $comments = Comment::query()->with('user', 'course:url_slug,id,title')->latest()->paginate(10);
+        $comments = Comment::query()
+            ->where('comment_id','=',0)
+            ->with('user', 'course:url_slug,id,title','answers')
+            ->latest()
+            ->paginate(10);
 
         return view('livewire.admin.comment.index', [
             'comments' => $comments
