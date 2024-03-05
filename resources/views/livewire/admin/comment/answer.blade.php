@@ -17,14 +17,14 @@
                 <div class="card">
                     <div class="card-body">
 
-                        <form id="myForm" wire:submit.prevent="submit(Object.fromEntries(new FormData($event.target)))">
+                        <form id="myForm" wire:submit="submit(Object.fromEntries(new FormData($event.target)))">
                             <div class="row gutters">
 
 
                                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ma-t">
                                     <h4 class="mb-4">پاسخ کامنت دوره ی : {{$comment->course->title}}</h4>
                                     <div class="bg-warning mb-5 p-4 text-secondary fw-normal fs-5">
-                                        {{@$comment->answer->comment}}
+                                        {{@$comment->comment}}
                                     </div>
 
                                     <div class="field-wrapper" wire:ignore>
@@ -35,7 +35,7 @@
 
                                         <textarea id="editor1"
                                                   class="form-control @error('description') error-input-border @enderror"
-                                                  name="editor1">{{@$comment->long_description}}</textarea>
+                                                  name="editor1">{{@$comment->answer->comment}}</textarea>
                                     </div>
                                     @foreach ($errors->get('editor1') as $message)
                                         <span wire:loading.remove
@@ -58,10 +58,8 @@
     </div>
     @push('script')
 
-
-
         <script>
-            document.addEventListener('livewire:navigated', () => {
+            document.addEventListener('livewire:init', () => {
                 const editor = CKEDITOR.replace('editor1', {
                     filebrowserUploadUrl: "{{route('admin.ck-upload', ['_token' => csrf_token() ])}}",
                     filebrowserUploadMethod: 'form',

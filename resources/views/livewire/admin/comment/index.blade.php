@@ -52,7 +52,11 @@
                                     @endphp
                                     <tr wire:key="{{$loop->index}}">
                                         <td>{{$loop->index+1}}</td>
-                                        <td>{{$comment->comment}}</td>
+                                        <td >
+                                            <p style="  max-width: 200px;overflow: hidden; text-overflow: ellipsis;white-space: nowrap;">
+                                                {{$comment->comment}}
+                                            </p>
+                                         </td>
                                         <td>
                                             <div class="d-flex align-items-center">
                                                 <div><img width="50" src="{{$comment->user->picture}}" alt=""></div>
@@ -115,10 +119,10 @@
                                             <td>{{$item->comment}}</td>
                                             <td>
                                                 <div class="d-flex align-items-center">
-                                                    <div><img width="50" src="{{@$item->user->picture}}" alt=""></div>
+                                                    <div><img width="50" src="{{@$item->adminUser->picture}}" alt=""></div>
                                                     <div class="me-2">
                                                         پاسخ توسط :
-                                                        {{@$item->user->name}}
+                                                        {{@$item->adminUser->name}}
 
                                                     </div>
                                                 </div>
@@ -141,7 +145,7 @@
                                                     <input class="form-check-input" type="checkbox"
                                                            style="width: 3rem;height: 1.5rem;cursor:pointer;"
                                                            id="showEmailNotifications"
-                                                           wire:change="changeStatus({{$item->id}},{{@$item->user->id}})"
+                                                           wire:change="changeStatus({{$item->id}},{{@$item->adminUser->id}})"
                                                         {{$item->status?'checked=""' : ''}}>
                                                     <label class="form-check-label"
                                                            for="showEmailNotifications"></label>

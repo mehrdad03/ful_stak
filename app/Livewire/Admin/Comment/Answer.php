@@ -23,8 +23,6 @@ class Answer extends Component
     public function submit($formData, Comment $comment): void
     {
 
-
-
         if ($this->description == null or $this->description == '') {
 
             $formData['editor1'] = @$this->comment->answer->comment;

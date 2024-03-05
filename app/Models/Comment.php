@@ -14,7 +14,7 @@ class Comment extends Model
 
     public function answer(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
-        return $this->belongsTo(Comment::class, 'id', 'comment_id');
+        return $this->belongsTo(Comment::class, 'id','comment_id');
 
     }
 
@@ -32,7 +32,7 @@ class Comment extends Model
 
     public function course(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
-        return $this->belongsTo(Course::class, 'course_id');
+        return $this->belongsTo(Course::class,'course_id');
 
     }
 
@@ -45,8 +45,7 @@ class Comment extends Model
             'user_id' => Auth::id(),
         ]);
     }
-
-    public function submitAdminCommentAnswer($answer, $courseId, $commentId, $answerId)
+    public function submitAdminCommentAnswer($answer,$courseId, $commentId,$answerId)
     {
 
         \App\Models\Comment::query()->updateOrCreate(
@@ -55,7 +54,7 @@ class Comment extends Model
             ]
             ,
             [
-                'comment' => $answer,
+                'comment' =>$answer,
                 'user_id' => Auth::guard('admin')->id(),
                 'comment_id' => $commentId,
                 'course_id' => $courseId,
