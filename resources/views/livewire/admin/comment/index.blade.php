@@ -64,7 +64,7 @@
                                             <a href="{{$comment->course->url_slug}}"
                                                target="_blank">{{@$comment->course->title}}</a>
                                         </td>
-                                        <td wire:ignore.self>
+                                        <td wire:ignore>
                                             {{--<span class="badge bg-{{$class}}">{{$comment->status->title}}</span>--}}
                                             {{jdate($comment->created_at)->format('d M Y | h:i')}}
                                             <br>
@@ -76,7 +76,7 @@
                                         <td>
                                             <div class="form-switch">
                                                 <input class="form-check-input" type="checkbox"
-                                                       style="width: 3rem;height: 1.5rem"
+                                                       style="width: 3rem;height: 1.5rem;cursor:pointer;"
                                                        id="showEmailNotifications"
                                                        wire:change="changeStatus({{$comment->id}},{{$comment->user_id}})"
                                                     {{$comment->status?'checked=""' : ''}}>
