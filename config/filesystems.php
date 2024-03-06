@@ -63,7 +63,6 @@ return [
             'visibility' => 'public',
             'root' => '/',
             'timeout' => 100000,
-
         ],
 
     ],

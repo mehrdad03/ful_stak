@@ -7,32 +7,28 @@ use App\Models\Media;
 use FFMpeg\Format\Video\X264;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use ProtoneMedia\LaravelFFMpeg\Support\FFMpeg;
 
 class uploadVideo extends Controller
 {
-    function uploadVideo(Request $request, $courseId=null, $lectureId=null,$sectionId=null)
+    function uploadVideo(Request $request, $courseId = null, $lectureId = null, $sectionId = null): \Illuminate\Http\RedirectResponse
     {
 
         $video = $request->file('video');
+        $videoName = Str::random(10) . '_' . time();
 
-        if ($sectionId){
-            DB::transaction(function () use ($video, $courseId, $lectureId,$sectionId) {
+        if ($sectionId) {
+            DB::transaction(function () use ($video, $courseId, $lectureId, $sectionId, $videoName) {
 
-                $path = 'course/videos/'.$courseId;
-                $videoName = Str::random(10) . '_' . time();
-
-                /*dd($video);*/
+                $path = 'course/videos/' . $courseId;
                 $videoPath = Storage::disk('local')->put($path, $video);
-                //       $videoPath = $video->store($path);
-
 
                 //get video duration
                 $media = FFMpeg::open($videoPath);
                 $durationInSeconds = $media->getDurationInSeconds(); // returns an int
-
 
                 $savePath = $path . '/' . $videoName . '.m3u8';
                 FFMpeg::open($videoPath)
@@ -47,7 +43,6 @@ class uploadVideo extends Controller
                 CourseSectionLecture::query()->updateOrCreate(
                     [
                         'id' => $lectureId,
-
                     ], [
 
                         'course_section_id' => $sectionId,
@@ -57,40 +52,28 @@ class uploadVideo extends Controller
                     ]
                 );
             });
-        }else{
-            DB::transaction(function () use ($request,$video, $courseId) {
+        } else {
+            DB::transaction(function () use ($request, $video, $courseId, $videoName) {
 
+                $path = '/course/' . $courseId . '/cover-video';
+                //delete old video hls files
+                File::deleteDirectory(public_path($path));
 
-
-
-                $path = '/public/course/cover-video';
-                $databasePath = '/storage/course/cover-video';
-
-                $videoName = Str::random(10) . '_' . time();
-
-                /*dd($video);*/
-                $videoPath = Storage::disk('local')->put($path, $video);
-                //       $videoPath = $video->store($path);
-
-
-                //get video duration
-                $media = FFMpeg::open($videoPath);
-                $durationInSeconds = $media->getDurationInSeconds(); // returns an int
-
-
+                $videoPath = Storage::disk('public')->put($path, $video);
                 $savePath = $path . '/' . $videoName . '.m3u8';
-                FFMpeg::open($videoPath)
+
+
+                FFMpeg::fromDisk('public')->open($videoPath)
                     ->exportForHLS()
                     ->addFormat(new X264('aac', 'libx264'))
-                    ->toDisk('ftp')
+                    ->toDisk('public')
                     ->save($savePath);
 
                 //delete video from local
-                Storage::delete($videoPath);
-                $this->insertVideoToMediaTable($path . '/' . $videoPath, $courseId);
+                File::delete(public_path($videoPath));
+                $this->insertVideoToMediaTable($savePath, $courseId);
             });
         }
-
 
 
         return redirect()->back();
@@ -98,7 +81,7 @@ class uploadVideo extends Controller
 
     }
 
-    public function insertVideoToMediaTable($path, $courseId)
+    public function insertVideoToMediaTable($path, $courseId): \Illuminate\Database\Eloquent\Model|\Illuminate\Database\Eloquent\Builder
     {
         return \App\Models\Media::query()->updateOrCreate(
             [
@@ -110,7 +93,6 @@ class uploadVideo extends Controller
             ]
         );
     }
-
 
 
 }

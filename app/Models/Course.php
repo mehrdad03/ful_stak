@@ -88,17 +88,7 @@ class Course extends Model
 
     public function removeOldImage($oldPhoto): void
     {
-
         unlink(public_path($oldPhoto));
-
-
-        /*   return \App\Models\File::query()->where([
-               'service_id' => $categoryId,
-               'type' => 'category',
-               'file' => $oldPhoto,
-           ])->delete();*/
-
-
     }
 
     public function insertImageToFileTable1($path, $courseId)
