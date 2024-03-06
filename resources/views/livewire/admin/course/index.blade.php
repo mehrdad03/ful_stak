@@ -46,7 +46,7 @@
                                         <td>{{$course->id}}</td>
                                         <td class="sorting_1">
                                             <div class="media-box  align-items-center row">
-                                                <img src="{{@$course->cover->path}}"
+                                                <img src="{{config('app.ftp_url').@$course->cover->path}}"
                                                      style="width: 307px;border-radius: 5%"
                                                      class=" ms-2 media-avatar"
                                                      alt="Product">

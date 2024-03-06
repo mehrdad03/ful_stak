@@ -39,7 +39,7 @@
 @if($rout_name!='auth.client')
     <livewire:client.footer/>
 @endif
-
+<script defer src="/frontend/js/video.min.js"></script>
 <!-- jquery -->
 <script src="/backend/js/jquery.min.js"></script>
 <!-- Bootstrap js  -->
@@ -48,7 +48,7 @@
 <script defer src="/frontend/js/main.js"></script>
 <!-- Sweet alert js  -->
 <script src="/backend/js/sweetalert2@11.js"></script>
-<script defer src="/frontend/js/video.min.js"></script>
+
 
 <script type="text/javascript">
     ["keydown","touchmove","touchstart","mouseover"].forEach(function(v){window.addEventListener(v,function(){if(!window.isGoftinoAdded){window.isGoftinoAdded=1;var i="ZXyTzX",d=document,g=d.createElement("script"),s="https://www.goftino.com/widget/"+i,l=localStorage.getItem("goftino_"+i);g.type="text/javascript",g.async=!0,g.src=l?s+"?o="+l:s;d.getElementsByTagName("head")[0].appendChild(g);}})});

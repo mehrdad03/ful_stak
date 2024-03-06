@@ -66,7 +66,6 @@ Route::group(['prefix' => 'profile', 'middleware' => 'auth'], function () {
         Route::get('/messages', Messages::class)->name('messages');
         Route::get('/comments', Comments::class)->name('comments');
     });
-
 });
 
 /*********** ADMIN PANEL *************/
@@ -74,7 +73,7 @@ Route::group(['prefix' => 'profile', 'middleware' => 'auth'], function () {
 Route::get('auth/admin/logout', [adminAuthIndex::class, 'adminLogout'])->name('auth.admin.logout')->middleware('auth:admin');
 Route::get('Ful-stack.dev/on5H)D;ES;EWWJ&/auth', adminAuthIndex::class)->name('auth.admin');
 
-Route::group(['prefix' => 'admin', 'middleware' => 'auth:admin'], function () {
+Route::group(['prefix' => 'admin', /*'middleware' => 'auth:admin'*/], function () {
 
     Route::name('admin.')->group(function () {
         Route::get('/dashboard', adminDashboardIndex::class)->name('dashboard');

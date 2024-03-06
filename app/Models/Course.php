@@ -76,10 +76,9 @@ class Course extends Model
 
         $extension = $courseThumbnail->extension();
         $image_name = Str::random(10) . time() . '.' . $extension;
-        $path = '/public/cover-image/';
-        $courseThumbnail->storeAs(path: $path, name: $image_name);
-        $databasePath = '/storage/cover-image';
-        $this->insertImageToFileTable1($databasePath . '/' . $image_name, $courseId);
+        $path = '/course/'.$courseId.'/cover-image';
+        $courseThumbnail->storeAs($path, $image_name, 'public');
+        $this->insertImageToFileTable1($path . '/' . $image_name, $courseId);
 
         if ($oldPhoto) {
             $this->removeOldImage($oldPhoto);
