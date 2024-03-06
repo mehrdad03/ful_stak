@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 class Course extends Model
@@ -73,23 +74,21 @@ class Course extends Model
 
     public function courseThumbnail($courseId, $oldPhoto, $courseThumbnail)
     {
-
         $extension = $courseThumbnail->extension();
         $image_name = Str::random(10) . time() . '.' . $extension;
-        $path = '/course/'.$courseId.'/cover-image';
-        $courseThumbnail->storeAs($path, $image_name, 'public');
+        $path = '/course/' . $courseId . '/cover-image';
+        $courseThumbnail->storeAs($path, $image_name, 'ftp');
         $this->insertImageToFileTable1($path . '/' . $image_name, $courseId);
 
-        if ($oldPhoto) {
-            $this->removeOldImage($oldPhoto);
-        }
-
+         if ($oldPhoto) {
+             $this->removeOldImage($oldPhoto);
+         }
     }
 
     public function removeOldImage($oldPhoto): void
     {
+        Storage::disk('ftp')->delete($oldPhoto);
 
-        unlink(public_path($oldPhoto));
     }
 
     public function insertImageToFileTable1($path, $courseId)
@@ -107,12 +106,12 @@ class Course extends Model
 
     public function coverVideo()
     {
-        return $this->belongsTo(Media::class, 'id', 'course_id')->where('type','=','cover-video');
+        return $this->belongsTo(Media::class, 'id', 'course_id')->where('type', '=', 'cover-video');
     }
 
     public function coverImage()
     {
-        return $this->belongsTo(Media::class, 'id', 'course_id')->where('type','=','cover-image');
+        return $this->belongsTo(Media::class, 'id', 'course_id')->where('type', '=', 'cover-image');
     }
 
     public function teacher()

@@ -72,27 +72,7 @@
                                         </td>
                                         <td class="sorting_1">
                                             <div class="media-box  align-items-center row">
-                                                <video
-                                                    id="my-video"
-                                                    class="video-js"
-                                                    controls
-                                                    preload="auto"
-                                                    width="640"
-                                                    height="264"
-                                                    poster="MY_VIDEO_POSTER.jpg"
-                                                    data-setup="{}"
-                                                >
 
-                                                    <source src="http://185.24.252.75/test_3.m3u8" data-d="/course/2/cover-video/Oizary0LSs_1709721953.m3u8" />
-
-                                                    <p class="vjs-no-js">
-                                                        To view this video please enable JavaScript, and consider upgrading to a
-                                                        web browser that
-                                                        <a href="https://videojs.com/html5-video-support/" target="_blank"
-                                                        >supports HTML5 video</a
-                                                        >
-                                                    </p>
-                                                </video>
                                             </div>
                                             <form class="mt-2 d-inline-flex align-items-center p-1" method="post" enctype="multipart/form-data"
                                                   style="background: #575757;border-radius: 5px"

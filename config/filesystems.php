@@ -38,7 +38,7 @@ return [
 
         'public' => [
             'driver' => 'local',
-            'root' => public_path(),
+            'root' => storage_path('app/public'),
             'url' => env('APP_URL') . '/storage',
             'visibility' => 'public',
             'throw' => false,
@@ -61,8 +61,9 @@ return [
             'username' => env('FTP_USERNAME'),
             'password' => env('FTP_PASSWORD'),
             'visibility' => 'public',
-            'root' => '/',
+            'root' => '/public_html',
             'timeout' => 100000,
+
         ],
 
     ],

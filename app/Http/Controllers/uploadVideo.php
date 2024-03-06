@@ -59,15 +59,8 @@ class uploadVideo extends Controller
                 //delete old video hls files
                 File::deleteDirectory(public_path($path));
 
-                $videoPath = Storage::disk('public')->put($path, $video);
+                $videoPath = Storage::disk('ftp')->put($path, $video);
                 $savePath = $path . '/' . $videoName . '.m3u8';
-
-
-                FFMpeg::fromDisk('public')->open($videoPath)
-                    ->exportForHLS()
-                    ->addFormat(new X264('aac', 'libx264'))
-                    ->toDisk('public')
-                    ->save($savePath);
 
                 //delete video from local
                 File::delete(public_path($videoPath));
@@ -83,7 +76,7 @@ class uploadVideo extends Controller
 
     public function insertVideoToMediaTable($path, $courseId): \Illuminate\Database\Eloquent\Model|\Illuminate\Database\Eloquent\Builder
     {
-        return \App\Models\Media::query()->updateOrCreate(
+        return Media::query()->updateOrCreate(
             [
                 'course_id' => $courseId,
                 'type' => 'cover-video',
