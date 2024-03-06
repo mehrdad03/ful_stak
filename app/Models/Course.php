@@ -88,6 +88,7 @@ class Course extends Model
 
     public function removeOldImage($oldPhoto): void
     {
+
         unlink(public_path($oldPhoto));
     }
 
@@ -104,9 +105,14 @@ class Course extends Model
         );
     }
 
-    public function cover()
+    public function coverVideo()
     {
-        return $this->belongsTo(Media::class, 'id', 'course_id');
+        return $this->belongsTo(Media::class, 'id', 'course_id')->where('type','=','cover-video');
+    }
+
+    public function coverImage()
+    {
+        return $this->belongsTo(Media::class, 'id', 'course_id')->where('type','=','cover-image');
     }
 
     public function teacher()

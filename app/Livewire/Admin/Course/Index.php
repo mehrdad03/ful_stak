@@ -16,7 +16,8 @@ class Index extends Component
 
     public $search = '';
     public $fileExtension, $extensions = ['jpeg', 'jpg', 'png', 'gif'], $oldPhoto = '', $file;
-    public $courseThumbnail,$courseThumbnailError;
+    public $courseThumbnail, $courseThumbnailError;
+
     public function updatedFile()
     {
         $this->oldPhoto = '';
@@ -30,16 +31,17 @@ class Index extends Component
             'file.image' => 'پسوندهای قابل قبول: webp ,jpeg ,jpg , png , gif',
         ]);
     }
+
     public function categoryThumbnail($courseId, $oldPhoto, Course $course,)
     {
 
-        $this->courseThumbnailError='';
+        $this->courseThumbnailError = '';
 
         $formData['courseThumbnail'] = $this->courseThumbnail;
 
         $validator = Validator::make($formData, [
             'courseThumbnail' => 'required|image|mimes:jpeg,png,jpg,gif,webp', // 50KB Max
-        ],[
+        ], [
             '*.required' => 'فیلد ضروری',
             'courseThumbnail.image' => 'پسوندهای قابل قبول: webp ,jpeg ,jpg , png , gif',
             'courseThumbnail.max' => 'حجم مجاز 100 کیلوبایت',
@@ -47,8 +49,8 @@ class Index extends Component
 
         if ($validator->fails()) {
             $error = $validator->errors()->first();
-            $this->courseThumbnailError = $courseId.'_'.$error;
-        }else{
+            $this->courseThumbnailError = $courseId . '_' . $error;
+        } else {
             $this->courseThumbnailError = '';
         }
         $validator->validate();
@@ -56,6 +58,7 @@ class Index extends Component
         $course->courseThumbnail($courseId, $oldPhoto, $this->courseThumbnail);
 
     }
+
     public function deleteCourse($courseId)
 
     {
@@ -67,10 +70,12 @@ class Index extends Component
     public function render()
     {
         $courses = Course::query()
-            ->with('category','cover')
-            ->orderBy('category_id')->paginate(20);
-        return view('livewire.admin.course.index',
-            ['courses' => $courses]
+            ->with('category', 'coverImage', 'coverVideo')
+            ->orderBy('category_id');
+
+        return view('livewire.admin.course.index', [
+                'courses' => $courses->paginate(10)
+            ]
         )->layout('layouts.app-admin')->title('دوره ها');
     }
 }
