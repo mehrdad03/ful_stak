@@ -321,9 +321,9 @@ textarea {
   iframe {
     height: 300px;
   }
-  #mainContent div {
+ /* #mainContent div {
     padding: 0;
-  }
+  }*/
 
     #mainContent .lecture-info,
     #mainContent .section-info {
@@ -459,7 +459,7 @@ iframe {
 }
 /* Subscription */
 .mSubscription {
-  background-color: #0b141b;
+  background-color: var(--primary-color);
   padding: 20px;
 }
 .mSubscription p {

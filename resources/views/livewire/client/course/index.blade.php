@@ -20,7 +20,7 @@
             <!-- mobile version Course Master Box -->
             <livewire:client.course.mobile-about-master/>
             <!-- mobile version Subscription -->
-            <livewire:client.course.mobile-subscription/>
+            @include('livewire.client.course.mobile-subscription')
             <!-- Course Features -->
             <livewire:client.course.features :what_you_will_learn="$course->what_you_will_learn"/>
 
