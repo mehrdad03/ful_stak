@@ -16,7 +16,7 @@
                     stroke-linejoin="round"
                     d="M12 4.5v15m7.5-7.5h-15"/>
             </svg>
-            <p class="m-0">طرح سوال جدید</p>
+            <p class="m-0">طرح سؤال جدید</p>
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -148,42 +148,56 @@
             <p class="m-0 pt-3 p-lg-5 text-white">
                 {{$comment->comment}}
             </p>
+
             <div class="newA px-4 py-0" id="answer_{{$comment->id}}" wire:ignore.self >
                 <!-- title -->
                 <hr class="text-light">
-
-                <form
-                    wire:submit="submitCourseCommentAnswer(Object.fromEntries(new FormData($event.target)),{{$comment->id}})"
-                    class=" pb-2">
-                    <!-- Question -->
-                    <div class="text-white w-100 d-flex flex-column  {{session('answer_message') ? 'd-none' : ''}}" >
-                        <label for="answer" class="my-3">پاسخ به این دیدگاه</label>
-                        <textarea name="answer" id="answer" cols="30" maxlength="700" rows="10" class="p-3"
-                                  placeholder="متن مورد نظر خود رو وراد کنید . . ."></textarea>
-                    </div>
-                    @error('answer')
-                    <div
-                        class="alert alert-danger rounded-2 mt-3 " wire:loading.remove>{{ $message }}</div>
-                    @enderror
-
-                    @if(session('answer_message'))
-                        <div class="alert alert-success mt-3">
-
-                            {{ session('answer_message') }}
+                @auth
+                    <form
+                        wire:submit="submitCourseCommentAnswer(Object.fromEntries(new FormData($event.target)),{{$comment->id}})"
+                        class=" pb-2">
+                        <!-- Question -->
+                        <div class="text-white w-100 d-flex flex-column  {{session('answer_message') ? 'd-none' : ''}}" >
+                            <label for="answer" class="my-3">پاسخ به این دیدگاه</label>
+                            <textarea name="answer" id="answer" cols="30" maxlength="700" rows="10" class="p-3"
+                                      placeholder="متن مورد نظر خود رو وراد کنید . . ."></textarea>
                         </div>
-                    @endif
+                        @error('answer')
+                        <div
+                            class="alert alert-danger rounded-2 mt-3 " wire:loading.remove>{{ $message }}</div>
+                        @enderror
+
+                        @if(session('answer_message'))
+                            <div class="alert alert-success mt-3">
+
+                                {{ session('answer_message') }}
+                            </div>
+                        @endif
 
 
-                    <!-- buttons -->
-                    <div class="w-100 mt-2 d-flex justify-content-end mt-4 column-gap-3 {{session('answer_message') ? 'd-none' : ''}} ">
-                        <button class="text-white bg-danger px-4 py-1 rounded-4 closeQ" type="button">
-                            انصراف
-                        </button>
-                        <button class="main-btn text-white px-4 py-1" type="submit">
-                            ثبت
-                        </button>
+                        <!-- buttons -->
+                        <div class="w-100 mt-2 d-flex justify-content-end mt-4 column-gap-3 {{session('answer_message') ? 'd-none' : ''}} ">
+                            <button class="text-white bg-danger px-4 py-1 rounded-4 closeQ" type="button">
+                                انصراف
+                            </button>
+                            <button class="main-btn text-white px-4 py-1" type="submit">
+                                ثبت
+                            </button>
+                        </div>
+                    </form>
+                @else
+                    <!-- Auth alert -->
+                    <div
+                        class="bg-warning fw-bold mt-3  w-100 d-flex align-items-center justify-content-between   rounded-2 p-3">
+                        <p class="m-0">
+                            برای ارسال دیدگاه لازم است وارد شده یا ثبت‌نام کنید
+                        </p>
+                        <a href="{{route('auth.client')}}">
+                            ورود یا ثبت‌نام
+                        </a>
                     </div>
-                </form>
+                @endauth
+
             </div>
         </div>
 

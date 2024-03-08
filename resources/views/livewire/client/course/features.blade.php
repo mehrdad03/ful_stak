@@ -1,6 +1,6 @@
 <section class="features text-white mt-5 mx-0 ">
     @php
-        $what_you_will_learn=collect(explode('_',$what_you_will_learn))->split(2);
+        $what_you_will_learn=collect(explode('_',$course->what_you_will_learn))->split(2);
 
     @endphp
     <h4 class="text-primary fw-bold my-4 text-center">

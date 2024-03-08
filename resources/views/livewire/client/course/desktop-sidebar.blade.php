@@ -1,7 +1,7 @@
 <aside id="sideBar" class="d-none d-lg-block col col-lg-4 sticky-top">
     <!-- ====== Course Details ====== -->
     <div class="courseDet text-white pb-5">
-        <video
+        {{--<video
             id="my-video"
             class="video-js"
             controls
@@ -19,7 +19,7 @@
                 >supports HTML5 video</a
                 >
             </p>
-        </video>
+        </video>--}}
         <!-- ==== Course features ==== -->
         <div class="p-4">
             <h5>ویژگی های این دوره :</h5>
@@ -106,7 +106,7 @@
                 class="w-100 d-flex flex-column align-items-center">
                 <!-- Price -->
                 <div class="d-flex flex-column align-items-center">
-                    <p class="m-0 fw-bold price">{{number_format($price)}}
+                    <p class="m-0 fw-bold price">{{number_format($course->price)}}
                         <svg class="mr-2" width="25" height="27" viewBox="0 0 25 27" fill="none"
                              xmlns="http://www.w3.org/2000/svg">
                             <path

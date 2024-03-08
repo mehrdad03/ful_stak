@@ -1,4 +1,4 @@
-<section class="swiper mySwiper">
+<section class="swiper mySwiper" wire:ignore>
     <h3 class="text-primary fs-2 mb-5">دوره های آموزشی دیگر</h3>
     <div class="swiper-wrapper">
         @forelse($sameCourses as $course)

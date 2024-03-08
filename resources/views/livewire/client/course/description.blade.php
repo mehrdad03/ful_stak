@@ -6,7 +6,7 @@
     </div>
     <!-- explain Text -->
     <div class="exText text-white">
-       {{$description}}
+       {{$course->description}}
     </div>
     <!-- More explain -->
     <div class="more d-flex justify-content-center align-items-center">

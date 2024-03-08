@@ -16,7 +16,7 @@
                     stroke-linejoin="round"
                     d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z"/>
             </svg>
-            <p class="m-0 text-primary fw-medium">{{$sections->count()}} فصل</p>
+            <p class="m-0 text-primary fw-medium">{{$course->sections->count()}} فصل</p>
         </div>
         <div class="courseDetails mx-1">
             <svg
@@ -42,7 +42,7 @@
     <!-- ======= accordions ======= -->
     <!-- n 1 -->
 
-    @foreach($sections as $section)
+    @foreach($course->sections as $section)
         <div class="acc w-100">
             <div class="acc-num"><p class="m-0 index">{{$loop->index+1}}</p></div>
             <div class="acc-item w-100 {{$loop->index==0 ? 'active' :'' }}">

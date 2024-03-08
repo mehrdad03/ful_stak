@@ -1,7 +1,7 @@
 <div class="my-5  text-center text-white px-2">
     <!-- Main Headline -->
     @php
-    $title=explode('_',$title);
+    $title=explode('_',$course->title);
     $currentYear=date('Y');
     @endphp
     <h1 class="fw-bold text-end">
@@ -13,7 +13,7 @@
     </h1>
     <!-- Subtitle -->
     <h4 class="my-4 text-end fw-light lh-base fs-5">
-        {{$short_description}}
+        {{$course->short_description}}
     </h4>
     <!-- Score and learners -->
     <section

@@ -78,6 +78,6 @@
     <!-- JavaScript -->
     <a href="../index.html" class="d-flex gap-1 text-primary fw-medium">
 
-        <p class="m-0">{{$title}}</p>
+        <p class="m-0">{{$course->title}}</p>
     </a>
 </div>

@@ -3,60 +3,42 @@
     <link rel="stylesheet" href="/frontend/css/swiper-bundle.min.css" />
 @endpush
 <div>
-
     <!-- Crumble tabs -->
-    <livewire:client.course.crumble  :title="$course->title" />
+    @include('livewire.client.course.crumble')
     <!-- video on mobile -->
-    <livewire:client.course.mobile-video/>
+    @include('livewire.client.course.mobile-video')
     <!-- Main Row -->
     <div class="row flex-column-reverse flex-lg-row">
         <!-- ========= Main Content =========-->
         <div id="mainContent" class="col col-lg-8">
             <!-- Title Text -->
-
-            <livewire:client.course.title   :title="$course->title" :short_description="$course->short_description" />
+            @include('livewire.client.course.title')
             <!-- mobile version Course Detail -->
-            <livewire:client.course.mobile-course-detail/>
+            @include('livewire.client.course.mobile-course-detail')
             <!-- mobile version Course Master Box -->
-            <livewire:client.course.mobile-about-master/>
+            @include('livewire.client.course.mobile-about-master')
             <!-- mobile version Subscription -->
             @include('livewire.client.course.mobile-subscription')
             <!-- Course Features -->
-            <livewire:client.course.features :what_you_will_learn="$course->what_you_will_learn"/>
-
-            <!-- hr -->
+            @include('livewire.client.course.features')
             <img src="/frontend/assets/images/hr.png" alt="HR" class="hr" />
-
             <!-- Course Season -->
-            <livewire:client.course.season :sections="$course->sections"  :courseId="$course->id" />
-
-            <!-- hr -->
+            @include('livewire.client.course.season')
             <img src="/frontend/assets/images/hr.png" alt="HR" class="hr" />
-
             <!-- course Needs -->
-
-            <livewire:client.course.requirments :requirements="$course->requirements" />
-            <!-- hr -->
+            @include('livewire.client.course.requirments')
             <img src="/frontend/assets/images/hr.png" alt="HR" class="hr" />
-
             <!-- Course Explain -->
-            <livewire:client.course.description :description="$course->description"/>
-
-            <!-- hr -->
+            @include('livewire.client.course.description')
             <img src="/frontend/assets/images/hr.png" alt="HR" class="hr" />
-
             <!-- ======= Course Slider ======= -->
-            <livewire:client.course.courses-slider  />
-
-            <!-- hr -->
+            @include('livewire.client.course.courses-slider')
             <img src="/frontend/assets/images/hr.png" alt="HR" class="hr" />
-
             <!-- ======= Q & A ======= -->
-            <livewire:client.course.qa :courseId="$course->id" />
+            @include('livewire.client.course.qa')
         </div>
-
         <!-- ========= Desktop Side Bar ========= -->
-        <livewire:client.course.desktop-sidebar :price="$course->price" :courseId="$course->id"  />
+        @include('livewire.client.course.desktop-sidebar')
     </div>
 </div>
 @push('scripts')
