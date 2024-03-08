@@ -1,0 +1,179 @@
+.sidebar {
+  max-height: 750px;
+}
+.sidebar .profileImg {
+  width: 100px;
+  margin: 4% 0;
+  border-radius: 100%;
+}
+.sidebar > div {
+  border-bottom: 2px dashed #23bf64;
+}
+.sidebar ul li {
+  position: relative;
+  margin: 15px 0;
+  padding: 10px 20px;
+}
+.sidebar ul li.active {
+  background: #0b141b;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+.sidebar ul li.active::before {
+  content: "";
+  position: absolute;
+  top: -40px;
+  left: 4px;
+  width: 50px;
+  height: 40px;
+  border-bottom-left-radius: 20px;
+  box-shadow: -5px 5px 0 5px #0b141b;
+  background-color: transparent;
+}
+.sidebar ul li.active::after {
+  content: "";
+  position: absolute;
+  bottom: -40px;
+  left: 4px;
+  width: 50px;
+  height: 40px;
+  border-top-left-radius: 20px;
+  box-shadow: -5px -5px 0 5px #0b141b;
+  background-color: transparent;
+}
+.sidebar ul li a {
+  display: flex;
+  align-items: center;
+  gap: 0 10px;
+}
+.sidebar ul li a .text {
+  font-weight: 700;
+  color: #fff;
+}
+
+/* Main Content */
+.topMenu > div {
+  margin: 20px 0;
+  border-left: 1px dashed #23bf64;
+}
+.topMenu > div:nth-last-of-type(1) {
+  border-left: 0;
+}
+h4 span {
+  width: 15px;
+  height: 15px;
+  background: #23bf64;
+  border-radius: 100%;
+}
+.title {
+  border-bottom: 1px dashed #23bf64;
+}
+
+/* Questions */
+.question {
+  border: 1px dashed #23bf64;
+  width: 60%;
+  border-radius: 20px;
+  margin: 2%;
+}
+
+.coursbtn button {
+  background: transparent;
+  transition: all 0.2s ease-out;
+}
+.coursbtn button:hover {
+  background-color: #0b141b;
+  opacity: 0.8;
+}
+.coursbtn button.active {
+  background-color: #0b141b;
+  font-weight: 700;
+}
+iframe {
+  max-width: 100%;
+}
+
+@media screen and (max-width: 425px) {
+  .sidebar {
+    width: 88px !important;
+  }
+  .question > img {
+    display: none;
+  }
+}
+@media screen and (max-width: 768px) {
+  main {
+    margin: 100px 0;
+  }
+  .sidebar {
+    width: 150px;
+  }
+  .sidebar ul li a {
+    max-height: 40px;
+  }
+  .sidebar ul li a .text {
+    display: none;
+  }
+  .sidebar ul li {
+    margin: 0;
+    margin-right: 8px;
+    padding: 12px;
+  }
+  .sidebar ul li.active::before {
+    width: 30px;
+  }
+  .sidebar ul li.active::after {
+    width: 30px;
+  }
+  .topMenu {
+    max-width: 75%;
+    margin: 0 auto;
+  }
+  .topMenu div img {
+    width: 40px;
+  }
+  .topMenu div p {
+    font-size: 12px;
+  }
+  .topMenu div h5 {
+    font-size: 14px;
+  }
+  .profileImg {
+    width: 60px !important;
+    margin-top: 20px !important;
+  }
+  .sidebar h5 {
+    font-size: 14px;
+    margin: 10px 0;
+  }
+  .sidebar p {
+    font-size: 13px;
+  }
+  .topMenu > div {
+    border-left: none;
+  }
+  .circle-chart {
+    width: 30px !important;
+    height: 30px !important;
+  }
+  .question {
+    width: 100%;
+  }
+  .question > img {
+    width: 30%;
+  }
+  .question h5 {
+    font-size: 1rem;
+  }
+  .question p {
+    font-size: 0.8rem;
+    max-width: 70%;
+    margin: 8px 0;
+  }
+  .coursbtn svg {
+    width: 20px;
+  }
+  .coursbtn p {
+    font-size: 13px;
+  }
+}
