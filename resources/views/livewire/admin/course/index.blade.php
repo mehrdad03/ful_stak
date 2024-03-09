@@ -72,7 +72,10 @@
                                         </td>
                                         <td class="sorting_1">
                                             <div class="media-box  align-items-center row">
-
+                                                <video width="320" height="240" controls>
+                                                    <source src="{{config('app.ftp_url').@$course->coverVideo->path }}" type="video/mp4">
+                                                    Your browser does not support the video tag.
+                                                </video>
                                             </div>
                                             <form class="mt-2 d-inline-flex align-items-center p-1" method="post" enctype="multipart/form-data"
                                                   style="background: #575757;border-radius: 5px"

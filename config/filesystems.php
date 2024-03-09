@@ -62,7 +62,10 @@ return [
             'password' => env('FTP_PASSWORD'),
             'visibility' => 'public',
             'root' => '/public_html',
-            'timeout' => 100000,
+            'timeout' => 10000,
+            /*'passive' => false,
+            'ignorePassiveAddress' => true,*/
+
 
         ],
 

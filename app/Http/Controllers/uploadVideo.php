@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Course;
 use App\Models\CourseSectionLecture;
 use App\Models\Media;
 use FFMpeg\Format\Video\X264;
@@ -17,11 +18,17 @@ class uploadVideo extends Controller
     function uploadVideo(Request $request, $courseId = null, $lectureId = null, $sectionId = null): \Illuminate\Http\RedirectResponse
     {
 
+        $oldVideoPath = Media::query()->where([
+            'course_id' => $courseId,
+            'type' => 'cover-video',
+        ])->pluck('path')->first();
+
         $video = $request->file('video');
-        $videoName = Str::random(10) . '_' . time();
+        $extension = $video->extension();
+        $videoName = Str::random(10) . '_' . time() . '.' . $extension;
 
         if ($sectionId) {
-            DB::transaction(function () use ($video, $courseId, $lectureId, $sectionId, $videoName) {
+            DB::transaction(function () use ($video, $courseId, $lectureId, $sectionId, $videoName,$oldVideoPath) {
 
                 $path = 'course/videos/' . $courseId;
                 $videoPath = Storage::disk('local')->put($path, $video);
@@ -30,15 +37,7 @@ class uploadVideo extends Controller
                 $media = FFMpeg::open($videoPath);
                 $durationInSeconds = $media->getDurationInSeconds(); // returns an int
 
-                $savePath = $path . '/' . $videoName . '.m3u8';
-                FFMpeg::open($videoPath)
-                    ->exportForHLS()
-                    ->addFormat(new X264('aac', 'libx264'))
-                    ->toDisk('ftp')
-                    ->save($savePath);
-
-                //delete video from local
-                Storage::delete($videoPath);
+                $savePath = $path . '/' . $videoName . '.mp4';
 
                 CourseSectionLecture::query()->updateOrCreate(
                     [
@@ -47,23 +46,24 @@ class uploadVideo extends Controller
 
                         'course_section_id' => $sectionId,
                         'course_id' => $courseId,
-                        'video_path' => config('app.ftp_url') . '/' . $savePath,
+                        'video_path' => $savePath,
                         'duration' => $durationInSeconds,
                     ]
                 );
             });
         } else {
-            DB::transaction(function () use ($request, $video, $courseId, $videoName) {
+            DB::transaction(function () use ($request, $video, $courseId, $videoName,$oldVideoPath) {
 
                 $path = '/course/' . $courseId . '/cover-video';
-                //delete old video hls files
-                File::deleteDirectory(public_path($path));
 
-                $videoPath = Storage::disk('ftp')->put($path, $video);
-                $savePath = $path . '/' . $videoName . '.m3u8';
+                //delete old video files
+                if ($oldVideoPath) {
+                    Storage::disk('ftp')->delete($oldVideoPath);
+                }
 
-                //delete video from local
-                File::delete(public_path($videoPath));
+                $savePath = $path . '/' . $videoName;
+                $video->storeAs($path, $videoName, 'ftp');
+
                 $this->insertVideoToMediaTable($savePath, $courseId);
             });
         }
