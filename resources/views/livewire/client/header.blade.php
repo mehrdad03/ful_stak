@@ -79,7 +79,7 @@ $user=\Illuminate\Support\Facades\Auth::user();
                             <ul class="d-flex flex-column p-0 mt-2 mb-0">
                                 <!-- profile -->
                                 <li class=" pe-3 fw-medium">
-                                    <a href="#" class="d-flex align-items-center column-gap-2 py-3">
+                                    <a href="{{route('client.profile.dashboard')}}" class="d-flex align-items-center column-gap-2 py-3">
                                         <svg
                                             width="24"
                                             height="24"
@@ -102,7 +102,7 @@ $user=\Illuminate\Support\Facades\Auth::user();
                                 </li>
                                 <!-- my Course -->
                                 <li class="pe-3 fw-medium">
-                                    <a href="{{route('client.profile.dashboard')}}" class=" py-3  d-flex align-items-center column-gap-2">
+                                    <a href="{{route('client.profile.my-courses')}}" class=" py-3  d-flex align-items-center column-gap-2">
                                         <svg
                                             width="24"
                                             height="24"
