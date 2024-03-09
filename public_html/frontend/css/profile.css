@@ -101,11 +101,7 @@ iframe {
   border-bottom: 1px solid #23bf64;
 }
 
-
 @media screen and (max-width: 425px) {
-  .sidebar {
-    width: 88px !important;
-  }
   .question > img {
     display: none;
   }
@@ -115,24 +111,39 @@ iframe {
     margin: 100px 0;
   }
   .sidebar {
-    width: 150px;
+    width: 300px;
+    height: 100vh !important;
+    position: absolute;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    top: 0;
+    bottom: 0;
+    right: -500px;
+    z-index: 999999;
+    transition: all 0.4s ease-in;
+    box-shadow: -9px 10px 66px -5px rgba(0, 0, 0, 0.7);
+    -webkit-box-shadow: -9px 10px 66px -5px rgba(0, 0, 0, 0.7);
+    -moz-box-shadow: -9px 10px 66px -5px rgba(0, 0, 0, 0.7);
+  }
+  .modal-backdrop{
+    z-index: 99999;
+    opacity: .5;
+  }
+  .sidebar ul div{
+    margin-right: 12px;
   }
   .sidebar ul li a {
     max-height: 40px;
   }
-  .sidebar ul li a .text {
-    display: none;
-  }
   .sidebar ul li {
     margin: 0;
-    margin-right: 8px;
     padding: 12px;
   }
   .sidebar ul li.active::before {
-    width: 30px;
+    display: none;
   }
   .sidebar ul li.active::after {
-    width: 30px;
+    display: none;
   }
   .topMenu {
     max-width: 75%;
@@ -185,7 +196,7 @@ iframe {
   .coursbtn p {
     font-size: 13px;
   }
-  h4{
+  h4 {
     font-size: 14px;
     font-weight: bold;
   }
@@ -197,10 +208,10 @@ iframe {
     font-size: 12px;
     font-weight: bold;
   }
-  #table p{
+  #table p {
     font-size: 13px;
   }
-  .tr{
+  .tr {
     margin-top: 10px;
   }
   .thead p {

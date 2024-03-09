@@ -2,7 +2,15 @@
     $prefix=\Illuminate\Support\Facades\Route::current()->getPrefix();
     $rout_name=\Illuminate\Support\Facades\Route::current()->getName();
 @endphp
+
+<div>
+<span class="modal-backdrop"></span>
 <div class="sidebar bg-secondary rounded-4 col-2">
+<span class="d-flex justify-content-end mt-4 d-md-none text-primary" id="close">
+            <svg width="30" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+            </svg>            
+          </span>
     <div class="d-flex flex-column align-items-center my-2">
         <img
             src="{{\Illuminate\Support\Facades\Auth::user()->picture}}"
@@ -13,7 +21,7 @@
     </div>
 
     <ul class="p-0">
-        <div class="me-3 w-100">
+        <div class="me-md-3 w-100">
             <!-- dashboard -->
             <li class="{{@$rout_name=='client.profile.dashboard'?'active':''}}">
                 <a href="{{route('client.profile.dashboard')}}">
@@ -224,4 +232,5 @@
             </li>
         </div>
     </ul>
+</div>
 </div>
