@@ -102,7 +102,7 @@ $user=\Illuminate\Support\Facades\Auth::user();
                                 </li>
                                 <!-- my Course -->
                                 <li class="pe-3 fw-medium">
-                                    <a href="#" class=" py-3  d-flex align-items-center column-gap-2">
+                                    <a href="{{route('client.profile.dashboard')}}" class=" py-3  d-flex align-items-center column-gap-2">
                                         <svg
                                             width="24"
                                             height="24"
@@ -140,7 +140,6 @@ $user=\Illuminate\Support\Facades\Auth::user();
                                                 stroke-linecap="round"
                                                 stroke-linejoin="round"/>
                                         </svg>
-
                                         <p class="m-0 text-white">دوره های من</p>
                                     </a>
                                 </li>

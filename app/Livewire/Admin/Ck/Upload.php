@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\Admin\Ck;
+namespace App\Livewire\Admin\Ck;
 
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;

@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\uploadVideo as adminCourseVideoUpload;
-use App\Http\Livewire\Admin\Ck\Upload as adminVideoCkUpload;
+use App\Livewire\Admin\Ck\Upload as adminVideoCkUpload;
 use App\Livewire\Client\Category\RoadMap;
 use App\Livewire\Client\Home\Index;
 use App\Livewire\Client\Pricing\Index as pricingIndex;
@@ -58,7 +58,7 @@ Route::group(['prefix' => 'auth', 'middleware' => 'guest:web'], function () {
 
 Route::group(['prefix' => 'profile', 'middleware' => 'auth'], function () {
 
-    Route::name('client.profile')->group(function () {
+    Route::name('client.profile.')->group(function () {
         Route::get('/dashboard', Dashboard::class)->name('dashboard');
         Route::get('/my-courses', MyCourses::class)->name('my-courses');
         Route::get('/questions', Questions::class)->name('questions');
