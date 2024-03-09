@@ -1,5 +1,6 @@
 @push('links')
     <link rel="stylesheet" href="/frontend/css/profile.css"/>
+    <link rel="stylesheet" href="/frontend/css/progresscircle.css"/>
 @endpush
 
 <div class="row container mx-auto">
@@ -449,7 +450,6 @@
                       <div
                         class="circlechart text-primary"
                         data-percentage="20">
-                        20%
                       </div>
                     </div>
                   </div>
@@ -613,3 +613,8 @@
           </section>
         </div>
       </div>
+
+      @push('scripts')
+<script src="/frontend/js/profile.js"></script>
+<script src="/frontend/js/progresscircle.js"></script>
+@endpush

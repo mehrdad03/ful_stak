@@ -1,3 +1,6 @@
+main {
+  margin: 6% 0;
+}
 .sidebar {
   max-height: 750px;
 }
@@ -93,6 +96,12 @@ iframe {
   max-width: 100%;
 }
 
+/* payment */
+.thead {
+  border-bottom: 1px solid #23bf64;
+}
+
+
 @media screen and (max-width: 425px) {
   .sidebar {
     width: 88px !important;
@@ -175,5 +184,26 @@ iframe {
   }
   .coursbtn p {
     font-size: 13px;
+  }
+  h4{
+    font-size: 14px;
+    font-weight: bold;
+  }
+  h4 span {
+    width: 10px;
+    height: 10px;
+  }
+  h4 + a p {
+    font-size: 12px;
+    font-weight: bold;
+  }
+  #table p{
+    font-size: 13px;
+  }
+  .tr{
+    margin-top: 10px;
+  }
+  .thead p {
+    font-size: 10px;
   }
 }
