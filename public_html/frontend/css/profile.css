@@ -53,6 +53,8 @@ main {
 .sidebar ul li a .text {
   font-weight: 700;
   color: #fff;
+  font-size: 15px;
+  white-space: nowrap;
 }
 
 /* Main Content */

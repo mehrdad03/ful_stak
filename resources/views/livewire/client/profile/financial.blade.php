@@ -2,12 +2,12 @@
     <link rel="stylesheet" href="/frontend/css/profile.css"/>
 @endpush
 
-<div class="row container p-md-0 mx-auto mx-md-0">
+<div class="row container p-lg-0 mx-auto mx-lg-0">
         <!-- ====== sidebar ====== -->
     @include('livewire.client.profile.sidebar')
 
         <!-- ===== main content ===== -->
-        <div class="col-10">
+        <div class="col col-lg-10 p-0">
           <!-- main payment section -->
           <section>
             <!-- title -->
@@ -115,3 +115,8 @@
           </section>
         </div>
       </div>
+
+      @push('scripts')
+<script src="/frontend/js/profile.js"></script>
+<script src="/frontend/js/progresscircle.js"></script>
+@endpush
