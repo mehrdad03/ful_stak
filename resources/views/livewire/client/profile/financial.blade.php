@@ -2,7 +2,7 @@
     <link rel="stylesheet" href="/frontend/css/profile.css"/>
 @endpush
 
-<div class="row container p-0">
+<div class="row container p-md-0 mx-auto mx-md-0">
         <!-- ====== sidebar ====== -->
     @include('livewire.client.profile.sidebar')
 

@@ -3,12 +3,12 @@
     <link rel="stylesheet" href="/frontend/css/progresscircle.css"/>
 @endpush
 
-<div class="row container p-0">
+<div class="row container p-lg-0 mx-auto mx-lg-0">
         <!-- ====== sidebar ====== -->
     @include('livewire.client.profile.sidebar')
 
         <!-- ====== main content ====== -->
-        <div class="col-10">
+        <div class="col col-lg-10 p-0">
                     <!-- top menu -->
                     @include('livewire.client.profile.status')
           <!-- course Type btn -->

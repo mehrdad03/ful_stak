@@ -3,7 +3,7 @@
     $rout_name=\Illuminate\Support\Facades\Route::current()->getName();
 @endphp
 
-<div class="col-2">
+<div class="col-lg-2">
 <span class="modal-backdrop"></span>
 <div class="sidebar bg-secondary rounded-4 p-3">
         <span class="d-flex justify-content-end mt-4 d-md-none text-primary" id="close">
