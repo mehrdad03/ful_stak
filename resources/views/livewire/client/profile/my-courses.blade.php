@@ -9,6 +9,8 @@
 
         <!-- ====== main content ====== -->
         <div class="col">
+                    <!-- top menu -->
+                    @include('livewire.client.profile.status')
           <!-- course Type btn -->
           <div class="coursbtn rounded-4 py-3 px-4 my-5 d-flex flex-column gap-3 flex-lg-row justify-content-around align-items-center bg-secondary">
             <button

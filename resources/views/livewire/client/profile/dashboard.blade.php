@@ -3,112 +3,40 @@
     <link rel="stylesheet" href="/frontend/css/progresscircle.css"/>
 @endpush
 
-<div class="row container mx-auto">
+<div class="row container">
         <!-- ====== sidebar ====== -->
     @include('livewire.client.profile.sidebar')
 
-        <!-- ====== main content ====== -->
-        <div class="col">
-
-          <!-- course Type btn -->
-          <div class="coursbtn rounded-4 py-3 px-4 my-5 d-flex flex-column gap-3 flex-lg-row justify-content-around align-items-center bg-secondary">
-            <button
-              type="button"
-              class="px-4 py-3 active rounded-4 d-flex align-items-center column-gap-2">
+         <!-- ====== main content ====== -->
+         <div class="col">
+          <!-- top menu -->
+          @include('livewire.client.profile.status')
+          <!-- course btn -->
+          <div
+            class="mt-5 d-flex flex-column flex-lg-row justify-content-between align-items-center">
+            <h4 class="text-primary d-flex align-items-center column-gap-2">
+              <span></span>دوره های جاری
+            </h4>
+            <a
+              href="#"
+              class="d-flex align-items-center column-gap-2 instalink">
+              <p class="text-primary m-0">تمامی دوره های جاری</p>
               <svg
-                width="22"
-                height="18"
-                viewBox="0 0 22 18"
+                width="25"
+                xmlns="http://www.w3.org/2000/svg"
                 fill="none"
-                xmlns="http://www.w3.org/2000/svg">
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="text-primary">
                 <path
-                  d="M1 13.1C1.96089 13.296 2.84294 13.7702 3.53638 14.4636C4.22982 15.1571 4.70403 16.0391 4.9 17M1 9.05C3.03079 9.27586 4.92428 10.186 6.36911 11.6309C7.81395 13.0757 8.72414 14.9692 8.95 17M1 5V3C1 2.46957 1.21071 1.96086 1.58579 1.58579C1.96086 1.21071 2.46957 1 3 1H19C19.5304 1 20.0391 1.21071 20.4142 1.58579C20.7893 1.96086 21 2.46957 21 3V15C21 15.5304 20.7893 16.0391 20.4142 16.4142C20.0391 16.7893 19.5304 17 19 17H13"
-                  stroke="#23BF65"
-                  stroke-width="2"
                   stroke-linecap="round"
-                  stroke-linejoin="round" />
-                <path
-                  d="M1 17H1.01"
-                  stroke="#23BF65"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round" />
+                  stroke-linejoin="round"
+                  d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18" />
               </svg>
-              <p class="m-0 text-white">دوره های جاری</p>
-            </button>
-            <button
-              type="button"
-              class="px-4 py-3 rounded-4 d-flex align-items-center column-gap-2">
-              <svg
-                width="22"
-                height="18"
-                viewBox="0 0 22 18"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M1 13.1C1.96089 13.296 2.84294 13.7702 3.53638 14.4636C4.22982 15.1571 4.70403 16.0391 4.9 17M1 9.05C3.03079 9.27586 4.92428 10.186 6.36911 11.6309C7.81395 13.0757 8.72414 14.9692 8.95 17M1 5V3C1 2.46957 1.21071 1.96086 1.58579 1.58579C1.96086 1.21071 2.46957 1 3 1H19C19.5304 1 20.0391 1.21071 20.4142 1.58579C20.7893 1.96086 21 2.46957 21 3V15C21 15.5304 20.7893 16.0391 20.4142 16.4142C20.0391 16.7893 19.5304 17 19 17H13"
-                  stroke="#23BF65"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round" />
-                <path
-                  d="M1 17H1.01"
-                  stroke="#23BF65"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round" />
-              </svg>
-              <p class="m-0 text-white">دوره های خریداری شده</p>
-            </button>
-            <button
-              type="button"
-              class="px-4 py-3 rounded-4 d-flex align-items-center column-gap-2">
-              <svg
-                width="22"
-                height="18"
-                viewBox="0 0 22 18"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M1 13.1C1.96089 13.296 2.84294 13.7702 3.53638 14.4636C4.22982 15.1571 4.70403 16.0391 4.9 17M1 9.05C3.03079 9.27586 4.92428 10.186 6.36911 11.6309C7.81395 13.0757 8.72414 14.9692 8.95 17M1 5V3C1 2.46957 1.21071 1.96086 1.58579 1.58579C1.96086 1.21071 2.46957 1 3 1H19C19.5304 1 20.0391 1.21071 20.4142 1.58579C20.7893 1.96086 21 2.46957 21 3V15C21 15.5304 20.7893 16.0391 20.4142 16.4142C20.0391 16.7893 19.5304 17 19 17H13"
-                  stroke="#23BF65"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round" />
-                <path
-                  d="M1 17H1.01"
-                  stroke="#23BF65"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round" />
-              </svg>
-              <p class="m-0 text-white">دوره های گذرانده شده</p>
-            </button>
-            <button
-              type="button"
-              class="px-4 py-3 rounded-4 d-flex align-items-center column-gap-2">
-              <svg
-                width="22"
-                height="18"
-                viewBox="0 0 22 18"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M1 13.1C1.96089 13.296 2.84294 13.7702 3.53638 14.4636C4.22982 15.1571 4.70403 16.0391 4.9 17M1 9.05C3.03079 9.27586 4.92428 10.186 6.36911 11.6309C7.81395 13.0757 8.72414 14.9692 8.95 17M1 5V3C1 2.46957 1.21071 1.96086 1.58579 1.58579C1.96086 1.21071 2.46957 1 3 1H19C19.5304 1 20.0391 1.21071 20.4142 1.58579C20.7893 1.96086 21 2.46957 21 3V15C21 15.5304 20.7893 16.0391 20.4142 16.4142C20.0391 16.7893 19.5304 17 19 17H13"
-                  stroke="#23BF65"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round" />
-                <path
-                  d="M1 17H1.01"
-                  stroke="#23BF65"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round" />
-              </svg>
-              <p class="m-0 text-white">دوره های غیر فعال</p>
-            </button>
+            </a>
           </div>
+
           <!-- My Courses -->
           <section>
             <div
@@ -344,6 +272,42 @@
                         data-percentage="30"></div>
                     </div>
                   </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Q & A -->
+          <section class="mt-5">
+            <h4 class="text-primary d-flex align-items-center column-gap-2">
+              <span></span>پرسش و پاسخ
+            </h4>
+
+            <div class="question w-75 d-flex align-items-center column-gap-4 p-3">
+              <img
+                src="/frontend/assets/images/questions.png"
+                alt="question mark" />
+              <div>
+                <h5 class="text-white fw-medium">اشکالت رو برطرف کن</h5>
+                <p class="m-0 text-white">
+                  سوال خود را مطرح کنید و منتظر پاسخ آن از طرف مدرس دوره باشید
+                  تا مشکل شمل برطرف شود
+                </p>
+                <div class="d-flex align-items-center column-gap-1">
+                  <p class="m-0 text-primary">ارسال اولین پرسش</p>
+                  <svg
+                    width="25"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="text-primary">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M15.75 19.5 8.25 12l7.5-7.5" />
+                  </svg>
                 </div>
               </div>
             </div>
