@@ -8,7 +8,7 @@
     @include('livewire.client.profile.sidebar')
 
          <!-- ====== main content ====== -->
-         <div class="col-10">
+         <div class="col-10 p-0">
           <!-- top menu -->
           @include('livewire.client.profile.status')
           <!-- course btn -->
