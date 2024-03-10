@@ -2,12 +2,12 @@
     <link rel="stylesheet" href="/frontend/css/profile.css"/>
 @endpush
 
-<div class="row flex-nowrap container mx-auto">
+<div class="row container p-0">
         <!-- ====== sidebar ====== -->
     @include('livewire.client.profile.sidebar')
 
         <!-- ===== main content ===== -->
-        <div class="col">
+        <div class="col-10">
           <!-- main payment section -->
           <section>
             <!-- title -->

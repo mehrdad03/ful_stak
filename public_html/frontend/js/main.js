@@ -2,7 +2,7 @@ $(document).ready(function () {
   $(window).scroll(function () {
     var scroll = $(window).scrollTop();
 
-    if (scroll >= 200) {
+    if (scroll >= 100) {
       $("#header").addClass("header");
     } else $("#header").removeClass("header");
   });

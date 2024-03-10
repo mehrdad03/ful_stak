@@ -12,17 +12,17 @@ main {
 .sidebar > div {
   border-bottom: 2px dashed #23bf64;
 }
-.sidebar ul li {
+.sidebar ul div li {
   position: relative;
   margin: 15px 0;
   padding: 10px 20px;
 }
-.sidebar ul li.active {
+.sidebar ul div li.active {
   background: #0b141b;
   border-top-right-radius: 30px;
   border-bottom-right-radius: 30px;
 }
-.sidebar ul li.active::before {
+.sidebar ul div li.active::before {
   content: "";
   position: absolute;
   top: -40px;
@@ -33,7 +33,7 @@ main {
   box-shadow: -5px 5px 0 5px #0b141b;
   background-color: transparent;
 }
-.sidebar ul li.active::after {
+.sidebar ul div li.active::after {
   content: "";
   position: absolute;
   bottom: -40px;
@@ -41,7 +41,7 @@ main {
   width: 50px;
   height: 40px;
   border-top-left-radius: 20px;
-  box-shadow: -5px -5px 0 5px #0b141b;
+  box-shadow: -5px -5px 0 5px #0b141b !important;
   background-color: transparent;
 }
 .sidebar ul li a {
@@ -78,10 +78,13 @@ h4 span {
   border-radius: 20px;
   margin: 2%;
 }
-
+/* my-course coursBTN */
 .coursbtn button {
   background: transparent;
   transition: all 0.2s ease-out;
+}
+.coursbtn button p {
+  font-size: 13px;
 }
 .coursbtn button:hover {
   background-color: #0b141b;

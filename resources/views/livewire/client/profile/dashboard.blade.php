@@ -3,17 +3,16 @@
     <link rel="stylesheet" href="/frontend/css/progresscircle.css"/>
 @endpush
 
-<div class="row container">
+<div class="row container p-0">
         <!-- ====== sidebar ====== -->
     @include('livewire.client.profile.sidebar')
 
          <!-- ====== main content ====== -->
-         <div class="col">
+         <div class="col-10">
           <!-- top menu -->
           @include('livewire.client.profile.status')
           <!-- course btn -->
-          <div
-            class="mt-5 d-flex flex-column flex-lg-row justify-content-between align-items-center">
+          <div class="mt-5 d-flex justify-content-between align-items-center">
             <h4 class="text-primary d-flex align-items-center column-gap-2">
               <span></span>دوره های جاری
             </h4>

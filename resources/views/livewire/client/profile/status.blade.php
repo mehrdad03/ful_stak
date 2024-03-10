@@ -1,7 +1,3 @@
-@push('links')
-    <link rel="stylesheet" href="/frontend/css/profile.css"/>
-@endpush
-
 <div class="topMenu bg-secondary rounded-4 d-flex flex-wrap gap-2 px-2 justify-content-around align-items-center">
             <!-- still learning -->
             <div class="d-flex flex-column flex-lg-row align-items-center column-gap-3">

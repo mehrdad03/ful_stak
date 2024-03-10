@@ -3,16 +3,16 @@
     <link rel="stylesheet" href="/frontend/css/progresscircle.css"/>
 @endpush
 
-<div class="row container mx-auto">
+<div class="row container p-0">
         <!-- ====== sidebar ====== -->
     @include('livewire.client.profile.sidebar')
 
         <!-- ====== main content ====== -->
-        <div class="col">
+        <div class="col-10">
                     <!-- top menu -->
                     @include('livewire.client.profile.status')
           <!-- course Type btn -->
-          <div class="coursbtn rounded-4 py-3 px-4 my-5 d-flex flex-column gap-3 flex-lg-row justify-content-around align-items-center bg-secondary">
+          <div class="coursbtn w-75 rounded-4 p-2 my-5 mx-auto d-flex flex-column gap-3 gap-md-1 flex-lg-row justify-content-around align-items-center bg-secondary">
             <button
               type="button"
               class="px-4 py-3 active rounded-4 d-flex align-items-center column-gap-2">
