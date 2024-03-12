@@ -351,7 +351,7 @@
         </div>
       </div>
 
-      @push('scripts')
+@push('scripts')
 <script src="/frontend/js/profile.js"></script>
 <script src="/frontend/js/progresscircle.js"></script>
 @endpush
