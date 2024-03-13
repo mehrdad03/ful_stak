@@ -7,7 +7,7 @@
     @include('livewire.client.profile.sidebar')
 
         <!-- ===== main content ===== -->
-        <div class="col col-lg-10 p-0">
+        <div class="col col-lg-10 p-0 px-lg-4">
           <!-- main payment section -->
           <section>
             <!-- title -->

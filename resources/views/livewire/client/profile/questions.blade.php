@@ -7,7 +7,7 @@
     @include('livewire.client.profile.sidebar')
 
         <!-- ====== main content ====== -->
-        <div class="col col-lg-10 p-0">
+        <div class="col col-lg-10 p-0 px-lg-4">
                     <!-- top menu -->
                     @include('livewire.client.profile.status')
 
@@ -79,8 +79,6 @@
         </div>
       </div>
 
-
       @push('scripts')
 <script src="/frontend/js/profile.js"></script>
-<script src="/frontend/js/progresscircle.js"></script>
 @endpush
