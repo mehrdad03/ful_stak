@@ -229,4 +229,7 @@ iframe {
     .thead p {
         font-size: 10px;
     }
+    .comment > div h6,p {
+        font-size: 13px;
+    }
 }

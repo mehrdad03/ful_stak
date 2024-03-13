@@ -135,7 +135,7 @@
           <section class="comment d-flex flex-wrap align-items-center justify-content-center gap-3">
             <div class="bg-secondary rounded-3 p-4">
                 <div class="d-flex align-items-center column-gap-2 p-3">
-                    <img src="../../assets/images/react.png" alt="react logo" width="50">
+                    <img src="/frontend/assets/images/react.png" alt="react logo" width="50">
                     <h6 class="m-0 text-white fw-bold">تکنیک ها و مهارت های مورد نیاز برای بهبود کدنویسی در فرانت اند ...</h6>
                 </div>
                 <!-- comment -->
@@ -149,7 +149,7 @@
             </div>
             <div class="bg-secondary rounded-3 p-4">
                 <div class="d-flex align-items-center column-gap-2 p-3">
-                    <img src="../../assets/images/react.png" alt="react logo" width="50">
+                    <img src="/frontend/assets/images/react.png" alt="react logo" width="50">
                     <h6 class="m-0 text-white fw-bold">تکنیک ها و مهارت های مورد نیاز برای بهبود کدنویسی در فرانت اند ...</h6>
                 </div>
                 <!-- comment -->
@@ -163,7 +163,7 @@
             </div>
             <div class="bg-secondary rounded-3 p-4">
                 <div class="d-flex align-items-center column-gap-2 p-3">
-                    <img src="../../assets/images/react.png" alt="react logo" width="50">
+                    <img src="/frontend/assets/images/react.png" alt="react logo" width="50">
                     <h6 class="m-0 text-white fw-bold">تکنیک ها و مهارت های مورد نیاز برای بهبود کدنویسی در فرانت اند ...</h6>
                 </div>
                 <!-- comment -->
@@ -177,7 +177,7 @@
             </div>
             <div class="bg-secondary rounded-3 p-4">
                 <div class="d-flex align-items-center column-gap-2 p-3">
-                    <img src="../../assets/images/react.png" alt="react logo" width="50">
+                    <img src="/frontend/assets/images/react.png" alt="react logo" width="50">
                     <h6 class="m-0 text-white fw-bold">تکنیک ها و مهارت های مورد نیاز برای بهبود کدنویسی در فرانت اند ...</h6>
                 </div>
                 <!-- comment -->
