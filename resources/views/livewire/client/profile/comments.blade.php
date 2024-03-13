@@ -192,8 +192,8 @@
           </section>
 
         </div>
-      </div>
+</div>
 
-      @push('scripts')
+@push('scripts')
 <script src="/frontend/js/profile.js"></script>
 @endpush

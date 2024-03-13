@@ -107,10 +107,10 @@ iframe {
 }
 
 /* comments */
-.comment > div{
+.comment > div {
     max-width: 370px;
 }
-  
+
 @media screen and (max-width: 425px) {
     .question > img {
         display: none;
@@ -229,7 +229,15 @@ iframe {
     .thead p {
         font-size: 10px;
     }
-    .comment > div h6,p {
+    .comment > div h6,
+    p {
         font-size: 13px;
+    }
+    .message {
+        width: 100% !important;
+    }
+    .messageP {
+        max-height: 200px;
+        overflow-y: scroll;
     }
 }

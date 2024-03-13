@@ -77,8 +77,8 @@
             <h2 class="text-secondary fw-bolder">هیچ نتیجه ای یافت نشد</h2>
           </div>
         </div>
-      </div>
+</div>
 
-      @push('scripts')
+@push('scripts')
 <script src="/frontend/js/profile.js"></script>
 @endpush

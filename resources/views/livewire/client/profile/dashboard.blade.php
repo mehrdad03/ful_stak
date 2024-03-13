@@ -312,7 +312,7 @@
             </div>
           </section>
         </div>
-      </div>
+</div>
 
 @push('scripts')
 <script src="/frontend/js/profile.js"></script>

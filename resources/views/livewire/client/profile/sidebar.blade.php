@@ -4,7 +4,7 @@
 @endphp
 
 <div class="col-lg-2">
-<span class="modal-backdrop"></span>
+<!-- <span class="modal-backdrop"></span> -->
 <div class="sidebar bg-secondary rounded-4 p-3">
         <span class="d-flex justify-content-end mt-4 d-md-none text-primary" id="close">
             <svg width="30" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
