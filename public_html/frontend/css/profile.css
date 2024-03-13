@@ -111,6 +111,12 @@ iframe {
     max-width: 370px;
 }
 
+/* question */
+.userQ p,
+button {
+    font-size: 13px;
+}
+
 @media screen and (max-width: 425px) {
     .question > img {
         display: none;
@@ -239,5 +245,8 @@ iframe {
     .messageP {
         max-height: 200px;
         overflow-y: scroll;
+    }
+    .userQ .qCourse {
+        width: 100% !important;
     }
 }

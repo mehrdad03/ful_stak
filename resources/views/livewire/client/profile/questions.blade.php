@@ -11,9 +11,9 @@
                     <!-- top menu -->
                     @include('livewire.client.profile.status')
 
-                              <!-- course Type btn -->
+          <!-- course Type btn -->
           <div
-            class="coursbtn qbtn w-50 mx-auto rounded-4 py-3 px-4 my-5 d-flex flex-wrap gap-3 justify-content-around align-items-center bg-secondary">
+            class="coursbtn w-50 mx-auto rounded-4 py-3 px-4 my-5 d-flex flex-wrap gap-3 justify-content-around align-items-center bg-secondary">
             <button
               type="button"
               class="px-4 py-3 active rounded-4 d-flex justify-content-center align-items-center column-gap-2">
@@ -36,8 +36,7 @@
                   stroke-linecap="round"
                   stroke-linejoin="round" />
               </svg>
-
-              <p class="m-0 text-white">پیغام مدیریت</p>
+              <p class="m-0 text-white">پرسش های جاری</p>
             </button>
             <button
               type="button"
@@ -49,33 +48,103 @@
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg">
                 <path
-                  d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                  d="M12 19L19 12L22 15L15 22L12 19Z"
                   stroke="#23BF65"
                   stroke-width="2"
                   stroke-linecap="round"
                   stroke-linejoin="round" />
                 <path
-                  d="M10 8L16 12L10 16V8Z"
+                  d="M18 13L16.5 5.5L2 2L5.5 16.5L13 18L18 13Z"
+                  stroke="#23BF65"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round" />
+                <path
+                  d="M2 2L9.586 9.586"
+                  stroke="#23BF65"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round" />
+                <path
+                  d="M11 13C12.1046 13 13 12.1046 13 11C13 9.89543 12.1046 9 11 9C9.89543 9 9 9.89543 9 11C9 12.1046 9.89543 13 11 13Z"
                   stroke="#23BF65"
                   stroke-width="2"
                   stroke-linecap="round"
                   stroke-linejoin="round" />
               </svg>
 
-              <p class="m-0 text-white">پیغام کاربر</p>
+              <p class="m-0 text-white">پاسخ</p>
             </button>
           </div>
 
           <!-- === if it wasn't any question === -->
-          <div
-            class="w-100 d-flex flex-column justify-content-center align-items-center gap-3">
-            <img
-              src="/frontend/assets/images/nothing.png"
-              alt="no question"
-              class="w-25" />
+          <!-- <div
+                              class="w-100 d-flex flex-column justify-content-center align-items-center gap-3">
+                              <img
+                                src="/frontend/assets/images/nothing.png"
+                                alt="no question"
+                                class="w-25" />
+                  
+                              <h2 class="text-secondary fw-bolder">هیچ نتیجه ای یافت نشد</h2>
+                            </div> -->
 
-            <h2 class="text-secondary fw-bolder">هیچ نتیجه ای یافت نشد</h2>
-          </div>
+          <!-- ==== Questions ==== -->
+          <section class="d-flex flex-column align-items-center gap-3">
+            <!-- question -->
+            <div class="userQ w-75 rounded-4 bg-secondary p-lg-4 p-3">
+              <div class="d-flex flex-column flex-md-row gap-3 justify-content-between align-items-center border-bottom pb-4">
+                <div class="d-flex align-items-center column-gap-2">
+                  <img
+                    src="../../assets/images/master.jpg"
+                    alt="user profile image"
+                    width="50"
+                    height="50"
+                    class="rounded-5" />
+                  <div class="d-flex flex-column">
+                    <p class="text-white fw-bold m-0">متین حسن کاوریاری</p>
+                    <p class="text-white-50 m-0">یک هفته پیش</p>
+                  </div>
+                </div>
+                <button class="bg-primary text-white px-3 py-2 rounded-5">مشاهده گفت و گو</button>
+              </div>
+              <!-- question text -->
+                <p class="text-white mt-3 m-0 fw-semibold p-md-4">
+                  سلام وقتتون بخیر، جاوا اسکریپت چیست و چه کاربردی داره؟
+                </p>
+
+                <div class="qCourse w-50 mx-auto mt-4 bg-dark rounded-3 p-2 text-center">
+                  <p class="text-white m-0">این پرسش مربوط به بخش : <span class="text-primary">آموزش جاوا اسگریپت</span></p>
+                </div>
+            </div>
+            <!-- question -->
+            <div class="userQ w-75 rounded-4 bg-secondary p-lg-4 p-3">
+              <div class="d-flex flex-column flex-md-row gap-3 justify-content-between align-items-center border-bottom pb-4">
+                <div class="d-flex align-items-center column-gap-2">
+                  <img
+                    src="../../assets/images/master.jpg"
+                    alt="user profile image"
+                    width="50"
+                    height="50"
+                    class="rounded-5" />
+                  <div class="d-flex flex-column">
+                    <p class="text-white fw-bold m-0">متین حسن کاوریاری</p>
+                    <p class="text-white-50 m-0">یک هفته پیش</p>
+                  </div>
+                </div>
+                <button class="bg-primary text-white px-3 py-2 rounded-5">مشاهده گفت و گو</button>
+              </div>
+              <!-- question text -->
+                <p class="text-white mt-3 m-0 fw-semibold p-md-4">
+                  سلام وقتتون بخیر، جاوا اسکریپت چیست و چه کاربردی داره؟
+                </p>
+
+                <div class="qCourse w-50 mx-auto mt-4 bg-dark rounded-3 p-2 text-center">
+                  <p class="text-white m-0">این پرسش مربوط به بخش : <span class="text-primary">آموزش جاوا اسگریپت</span></p>
+                </div>
+            </div>
+          </section>
+          
+
         </div>
 </div>
 
