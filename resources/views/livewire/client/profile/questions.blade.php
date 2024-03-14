@@ -89,9 +89,9 @@
                             </div> -->
 
           <!-- ==== Questions ==== -->
-          <section class="row">
+          <section>
             <!-- question -->
-            <div class="userQ  rounded-4 bg-secondary m-2 p-lg-4 p-3">
+            <div class="userQ  rounded-4 bg-secondary mb-2 p-lg-4 p-3">
               <div class="d-flex flex-column flex-md-row gap-3 justify-content-between align-items-center border-bottom pb-4">
                 <div class="d-flex align-items-center column-gap-2">
                   <img
@@ -117,7 +117,7 @@
                 </div>
             </div>
             <!-- question -->
-            <div class="userQ  rounded-4 bg-secondary m-2 p-lg-4 p-3">
+            <div class="userQ  rounded-4 bg-secondary mb-2 p-lg-4 p-3">
               <div class="d-flex flex-column flex-md-row gap-3 justify-content-between align-items-center border-bottom pb-4">
                 <div class="d-flex align-items-center column-gap-2">
                   <img

@@ -67,9 +67,9 @@
           </div>
 
           <!-- === messagess === -->
-          <section class="d-flex flex-column align-items-center gap-4">
+          <section>
             <!-- message -->
-            <div class="message bg-secondary w-75 p-3 rounded-3">
+            <div class="message bg-secondary mb-3  p-3 rounded-3">
               <div class="bg-dark px-lg-5 px-3 py-4 rounded-4">
                 <h6 class="text-white mb-4">
                   سلام <span class="fw-bold">متین </span> عزیز ,
@@ -156,7 +156,7 @@
               </div>
             </div>
             <!-- message -->
-            <div class="message bg-secondary w-75 p-3 rounded-3">
+            <div class="message bg-secondary  mb-3 p-3 rounded-3">
                 <div class="bg-dark px-lg-5 px-3 py-4 rounded-4">
                   <h6 class="text-white mb-4">
                     سلام <span class="fw-bold">متین </span> عزیز ,
