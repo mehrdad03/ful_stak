@@ -84,14 +84,14 @@
                                 src="/frontend/assets/images/nothing.png"
                                 alt="no question"
                                 class="w-25" />
-                  
+
                               <h2 class="text-secondary fw-bolder">هیچ نتیجه ای یافت نشد</h2>
                             </div> -->
 
           <!-- ==== Questions ==== -->
-          <section class="d-flex flex-column align-items-center gap-3">
+          <section class="row">
             <!-- question -->
-            <div class="userQ w-75 rounded-4 bg-secondary p-lg-4 p-3">
+            <div class="userQ  rounded-4 bg-secondary m-2 p-lg-4 p-3">
               <div class="d-flex flex-column flex-md-row gap-3 justify-content-between align-items-center border-bottom pb-4">
                 <div class="d-flex align-items-center column-gap-2">
                   <img
@@ -117,7 +117,7 @@
                 </div>
             </div>
             <!-- question -->
-            <div class="userQ w-75 rounded-4 bg-secondary p-lg-4 p-3">
+            <div class="userQ  rounded-4 bg-secondary m-2 p-lg-4 p-3">
               <div class="d-flex flex-column flex-md-row gap-3 justify-content-between align-items-center border-bottom pb-4">
                 <div class="d-flex align-items-center column-gap-2">
                   <img
@@ -143,7 +143,7 @@
                 </div>
             </div>
           </section>
-          
+
 
         </div>
 </div>
