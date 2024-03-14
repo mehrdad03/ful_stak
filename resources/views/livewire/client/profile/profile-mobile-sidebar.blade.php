@@ -112,7 +112,7 @@
                 stroke-linejoin="round" />
         </svg>
 
-        <a class="nav-link text-white fs-6" href="{{route('client.profile.questions')}}">پرسش و پاسخ</a>
+        <a class="nav-link text-white fs-6" href="{{route('client.profile.questions')}}">پرسش ها</a>
     </div>
 </li>
 <li class="nav-item text-white {{@$rout_name=='client.profile.financial'?'active':''}}">
