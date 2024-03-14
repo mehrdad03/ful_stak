@@ -16,7 +16,7 @@ main {
 .sidebar ul div li {
     position: relative;
     margin: 15px 0;
-    padding: 10px 20px;
+    padding: 10px;
 }
 .sidebar ul div li.active {
     background: #0b141b;
@@ -107,9 +107,9 @@ iframe {
 }
 
 /* comments */
-.comment > div {
+/*.comment > div {
     max-width: 370px;
-}
+}*/
 
 /* question */
 .userQ p,

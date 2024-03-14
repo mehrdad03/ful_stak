@@ -12,7 +12,7 @@
                     @include('livewire.client.profile.status')
 
                  <!-- course Type btn -->
-                 <div class="coursbtn w-75 mx-auto rounded-4 py-3 px-4 my-5 d-flex flex-wrap gap-3 justify-content-around align-items-center bg-secondary">
+                 <div class="coursbtn mx-auto w-75  rounded-4 py-3 px-4 my-5 d-flex flex-wrap gap-3 justify-content-around align-items-center bg-secondary">
             <!-- weblog -->
             <button
               type="button"
@@ -131,9 +131,9 @@
             </button>
           </div>
 
-          <!-- === coments === -->
-          <section class="comment d-flex flex-wrap align-items-center justify-content-center gap-3">
-            <div class="bg-secondary rounded-3 p-4">
+          <!-- === comments === -->
+          <section class="comment row">
+            <div class="col-md-12 bg-secondary rounded-3 m-2 p-4">
                 <div class="d-flex align-items-center column-gap-2 p-3">
                     <img src="/frontend/assets/images/react.png" alt="react logo" width="50">
                     <h6 class="m-0 text-white fw-bold">تکنیک ها و مهارت های مورد نیاز برای بهبود کدنویسی در فرانت اند ...</h6>
@@ -147,7 +147,7 @@
                     <p class="m-0 text-white my-4 me-5">بسیار مفید بود ، متشکر از شما</p>
                 </div>
             </div>
-            <div class="bg-secondary rounded-3 p-4">
+            <div class="col-md-12 bg-secondary rounded-3 m-2 p-4">
                 <div class="d-flex align-items-center column-gap-2 p-3">
                     <img src="/frontend/assets/images/react.png" alt="react logo" width="50">
                     <h6 class="m-0 text-white fw-bold">تکنیک ها و مهارت های مورد نیاز برای بهبود کدنویسی در فرانت اند ...</h6>
@@ -161,7 +161,7 @@
                     <p class="m-0 text-white my-4 me-5">بسیار مفید بود ، متشکر از شما</p>
                 </div>
             </div>
-            <div class="bg-secondary rounded-3 p-4">
+            <div class="col-md-12 bg-secondary rounded-3 m-2 p-4">
                 <div class="d-flex align-items-center column-gap-2 p-3">
                     <img src="/frontend/assets/images/react.png" alt="react logo" width="50">
                     <h6 class="m-0 text-white fw-bold">تکنیک ها و مهارت های مورد نیاز برای بهبود کدنویسی در فرانت اند ...</h6>
@@ -175,7 +175,7 @@
                     <p class="m-0 text-white my-4 me-5">بسیار مفید بود ، متشکر از شما</p>
                 </div>
             </div>
-            <div class="bg-secondary rounded-3 p-4">
+            <div class="col-md-12 bg-secondary rounded-3 m-2 p-4">
                 <div class="d-flex align-items-center column-gap-2 p-3">
                     <img src="/frontend/assets/images/react.png" alt="react logo" width="50">
                     <h6 class="m-0 text-white fw-bold">تکنیک ها و مهارت های مورد نیاز برای بهبود کدنویسی در فرانت اند ...</h6>
