@@ -241,9 +241,9 @@
             <ul class="navbar-nav gap-4 mt-3">
 
                 @if($mobile && $prefix=='profile')
-                    @include('livewire.client.home.primary-mobile-menu')
-                @else
                     @include('livewire.client.profile.profile-mobile-sidebar')
+                @else
+                    @include('livewire.client.home.primary-mobile-menu')
                 @endif
 
             </ul>
