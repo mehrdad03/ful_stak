@@ -52,7 +52,7 @@
                 <div class="mx-md-5 pb-3">
                   <!-- failed payment -->
                   <div
-                    class="tr d-flex flex-wrap flex-md-nowrap flex-md-row align-items-start gap-3 align-items-md-center justify-content-between rounded-4 mb-3 p-2 p-md-3 bg-danger">
+                    class="tr d-flex flex-wrap flex-md-nowrap flex-md-row align-items-start gap-3 align-items-md-center justify-content-between mb-3 p-2 p-md-3 bg-danger">
                     <p class="m-0">550055</p>
                     <p class="m-0">
                       خرید دوره لغو شد <span class="mx-5"></span>
@@ -63,7 +63,7 @@
                   </div>
                   <!-- success payment -->
                   <div
-                    class="tr d-flex flex-wrap flex-md-nowrap flex-md-row align-items-start gap-3 align-items-md-center justify-content-between rounded-4 mb-3 p-2 p-md-3 bg-success">
+                    class="tr d-flex flex-wrap flex-md-nowrap flex-md-row align-items-start gap-3 align-items-md-center justify-content-between mb-3 p-2 p-md-3 bg-success">
                     <p class="m-0">550055</p>
                     <p class="m-0">
                       خرید با موفقیت انجام شد
@@ -75,7 +75,7 @@
                   </div>
                   <!-- success payment -->
                   <div
-                    class="tr d-flex flex-wrap flex-md-nowrap flex-md-row align-items-start gap-3 align-items-md-center justify-content-between rounded-4 mb-3 p-2 p-md-3 bg-success">
+                    class="tr d-flex flex-wrap flex-md-nowrap flex-md-row align-items-start gap-3 align-items-md-center justify-content-between mb-3 p-2 p-md-3 bg-success">
                     <p class="m-0">550055</p>
                     <p class="m-0">
                       خرید با موفقیت انجام شد
@@ -87,7 +87,7 @@
                   </div>
                   <!-- success payment -->
                   <div
-                    class="tr d-flex flex-wrap flex-md-nowrap flex-md-row align-items-start gap-3 align-items-md-center justify-content-between rounded-4 mb-3 p-2 p-md-3 bg-success">
+                    class="tr d-flex flex-wrap flex-md-nowrap flex-md-row align-items-start gap-3 align-items-md-center justify-content-between mb-3 p-2 p-md-3 bg-success">
                     <p class="m-0">550055</p>
                     <p class="m-0">
                       خرید با موفقیت انجام شد
@@ -99,7 +99,7 @@
                   </div>
                   <!-- success payment -->
                   <div
-                    class="tr d-flex flex-wrap flex-md-nowrap flex-md-row align-items-start gap-3 align-items-md-center justify-content-between rounded-4 mb-3 p-2 p-md-3 bg-success">
+                    class="tr d-flex flex-wrap flex-md-nowrap flex-md-row align-items-start gap-3 align-items-md-center justify-content-between  mb-3 p-2 p-md-3 bg-success">
                     <p class="m-0">550055</p>
                     <p class="m-0">
                       خرید با موفقیت انجام شد
