@@ -2,7 +2,6 @@
 
 namespace App\Livewire\Client\Profile;
 
-use App\Models\Order;
 use App\Models\OrderItem;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
@@ -15,7 +14,8 @@ class Dashboard extends Component
     {
         $this->latestCourses = OrderItem::query()
             ->where([
-                'user_id' => Auth::id()
+                'user_id' => Auth::id(),
+                'pay_status' => true,
             ])
             ->with('course:id,title,url_slug')
             ->latest()->take(3)->get();

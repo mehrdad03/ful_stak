@@ -17,7 +17,7 @@
             <h4 class="text-primary d-flex align-items-center column-gap-2">
                 <span></span>دوره های جاری
             </h4>
-            @if($latestCourses->count()>3)
+
                 <a
                     href="{{route('client.profile.my-courses')}}"
                     class="d-flex align-items-center column-gap-2 instalink">
@@ -36,7 +36,7 @@
                             d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18"/>
                     </svg>
                 </a>
-            @endif
+
 
         </div>
 
