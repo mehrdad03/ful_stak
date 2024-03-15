@@ -3,6 +3,7 @@
 namespace App\Livewire\Client\Profile;
 
 use App\Models\Order;
+use App\Models\OrderItem;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
@@ -12,12 +13,13 @@ class Dashboard extends Component
 
     public function mount(): void
     {
-        $this->latestCourses = Order::query()
+        $this->latestCourses = OrderItem::query()
             ->where([
                 'user_id' => Auth::id()
             ])
-            ->with('orderItems.course')
+            ->with('course:id,title,url_slug')
             ->latest()->take(3)->get();
+
 
     }
 

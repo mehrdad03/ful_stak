@@ -33,6 +33,7 @@ class Order extends Model
             foreach ($basket as $item) {
                 OrderItem::query()->create([
                     'order_id' => $order->id,
+                    'user_id' => Auth::id(),
                     'course_id' => $item->course_id,
                     'price' => $item->course->price,
                     'discount' => $item->course->discount,
