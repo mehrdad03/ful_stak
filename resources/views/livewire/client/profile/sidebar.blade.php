@@ -122,7 +122,7 @@
                                 stroke-linejoin="round" />
                         </svg>
                     </div>
-                    <div class="text">پرسش و پاسخ</div>
+                    <div class="text">پرسش ها</div>
                 </a>
             </li>
             <!-- payment -->
