@@ -24,7 +24,7 @@ class UsersTableSeeder extends Seeder
                 'id' => 1,
                 'name' => 'مهرداد داداشی',
                 'email' => 'mehrdad.dadashi@gmail.com',
-                'picture' => 'dawd',
+                'picture' => 'https://lh3.googleusercontent.com/a/ACg8ocJ-6CNVAJ37h9M5ID8VALHMN-eaoMv39ywpkUq7kU132w=s96-c',
                 'mobile' => '09904421184',
                 'remember_token' => 'QQaYePMCfTWuZeJQTcffl3Isq6oZoX3hkoppbfy80L8bwXPx4iKDSAUeE1x9',
                 'created_at' => '2024-03-03 08:51:34',

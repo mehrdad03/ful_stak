@@ -12,7 +12,8 @@ class Financial extends Component
 
     public function mount()
     {
-        $this->transactions = Transaction::query()->where('user_id', Auth::id())
+        $this->transactions = Transaction::query()
+            ->where('user_id', Auth::id())
             ->latest()->get();
 
     }

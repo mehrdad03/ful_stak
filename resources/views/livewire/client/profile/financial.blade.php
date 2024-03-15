@@ -47,14 +47,14 @@
 
                         <tr
                             class=" text-center bg-{{$bgColor}}">
-                            <td class="p-3">{{$item->trans_id}}</td>
+                            <td class="p-3">{{$item->trans_number}}</td>
                             <td class="p-3">
                                 {{$message}}
                                 @if($basket)
-                                    <span class="mx-2 pb-1 border-bottom">جزییات</span>
+                                    <span class="mx-2 pb-1 border-bottom fw-bold">جزییات</span>
                                 @endif
                             </td>
-                            <td class="p-3">{{number_format($item->amount)}}
+                            <td class="p-3 fw-normal">{{number_format($item->amount)}}
                                 <svg class="mr-2" width="25" height="27" viewBox="0 0 25 27" fill="none"
                                      xmlns="http://www.w3.org/2000/svg">
                                     <path
