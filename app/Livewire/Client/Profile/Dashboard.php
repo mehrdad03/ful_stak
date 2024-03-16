@@ -19,8 +19,6 @@ class Dashboard extends Component
             ])
             ->with('course:id,title,url_slug')
             ->latest()->take(3)->get();
-
-
     }
 
     public function render()
