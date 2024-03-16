@@ -45,7 +45,7 @@
                             }
                         @endphp
 
-                        <tr
+                        <tr wire:key="{{$loop->index+1}}"
                                 class=" text-center bg-{{$bgColor}}">
                             <td class="p-3">{{$item->trans_number}}</td>
                             <td class="p-3">

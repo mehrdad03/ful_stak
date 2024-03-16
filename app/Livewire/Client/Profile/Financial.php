@@ -25,8 +25,9 @@ class Financial extends Component
     {
         $this->tranNumber = $tranNumber;
         $orderId = Transaction::query()->where('trans_number', $tranNumber)->pluck('order_id')->first();
+
         $this->orderItem = OrderItem::query()
-            ->where('id', $orderId)
+            ->where('order_id', $orderId)
             ->with('course:id,title,url_slug')->get();
         $this->dispatch('items-modal');
 
