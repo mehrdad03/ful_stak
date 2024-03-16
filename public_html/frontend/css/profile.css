@@ -117,6 +117,12 @@ button {
     font-size: 13px;
 }
 
+/*financial*/
+.show-detail{
+    cursor: pointer;
+}
+
+
 @media screen and (max-width: 425px) {
     .question > img {
         display: none;

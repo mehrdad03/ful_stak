@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-    <meta name="enamad" content="830265" />
     @php
         $rout_name=\Illuminate\Support\Facades\Route::current()->getName();
         $class='';
@@ -48,7 +47,17 @@
 <script src="/backend/js/sweetalert2@11.js"></script>
 
 <script type="text/javascript">
-    ["keydown","touchmove","touchstart","mouseover"].forEach(function(v){window.addEventListener(v,function(){if(!window.isGoftinoAdded){window.isGoftinoAdded=1;var i="ZXyTzX",d=document,g=d.createElement("script"),s="https://www.goftino.com/widget/"+i,l=localStorage.getItem("goftino_"+i);g.type="text/javascript",g.async=!0,g.src=l?s+"?o="+l:s;d.getElementsByTagName("head")[0].appendChild(g);}})});
+    ["keydown", "touchmove", "touchstart", "mouseover"].forEach(function (v) {
+        window.addEventListener(v, function () {
+            if (!window.isGoftinoAdded) {
+                window.isGoftinoAdded = 1;
+                var i = "ZXyTzX", d = document, g = d.createElement("script"),
+                    s = "https://www.goftino.com/widget/" + i, l = localStorage.getItem("goftino_" + i);
+                g.type = "text/javascript", g.async = !0, g.src = l ? s + "?o=" + l : s;
+                d.getElementsByTagName("head")[0].appendChild(g);
+            }
+        })
+    });
 </script>
 
 @stack('scripts')
