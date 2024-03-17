@@ -8,7 +8,7 @@
         @endphp
         <div class="course mb-4 bg-secondary">
             <a href="{{route('client.course',$item->course->url_slug)}}" class="d-flex align-items-center right ">
-                <img src="/frontend/assets/images/course1.png" alt="course img"/>
+                <img src="/frontend/assets/images/course1.png" alt="{{$item->title}}" class="d-none d-md-block"/>
                 <!-- course & master name -->
                 <div class="me-4">
                     <h5 class="text-white fw-bold">
@@ -24,7 +24,7 @@
                 </div>
             </a>
             <!-- course price -->
-            <div class="d-flex align-items-center left">
+            <div class="d-flex align-items-center left justify-content-between">
                 <p class="m-0 text-white fw-medium d-flex align-items-center mx-4">
                     <span class="fs-4">{{number_format($item->course->price)}}</span>
                     <span class="text-primary me-2">
