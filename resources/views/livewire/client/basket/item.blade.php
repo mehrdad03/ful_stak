@@ -1,4 +1,4 @@
-<div class="col-12 col-md-6 col-lg-8 align-items-start">
+<div class="col-12 col-md-6 col-lg-8 align-items-start" id="cart">
 
     @forelse($items as $item)
         @php

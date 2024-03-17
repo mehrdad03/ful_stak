@@ -121,7 +121,19 @@ button {
 .show-detail{
     cursor: pointer;
 }
-
+#financial .loader {
+    width: 30px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 4px solid #ffffff;
+    border-right-color: #303445;
+    animation: l2 1s infinite linear;
+}
+@keyframes l2 {
+    to {
+        transform: rotate(1turn);
+    }
+}
 
 @media screen and (max-width: 425px) {
     .question > img {
