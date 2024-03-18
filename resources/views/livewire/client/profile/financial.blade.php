@@ -52,9 +52,9 @@
                                 {{$message}}
 
                                 <span class="show-detail mx-2 pb-1 border-bottom fw-bold "
-                                      wire:click="getOrderItem({{$item->trans_number}})">
-                                    <div class="loader" wire:loading="getOrderItem({{$item->trans_number}})"></div>
-                                    <span wire:loading.remove>جزییات</span></span>
+                                      wire:click="getOrderItem({{$item->trans_number}})" >
+                                    <div class="loader" wire:loading="getOrderItem({{$item->trans_number}})" wire:target="getOrderItem({{$item->trans_number}})"></div>
+                                    <span wire:loading.remove wire:target="getOrderItem({{$item->trans_number}})">جزییات</span></span>
 
                             </td>
                             <td data-label=": مبلغ" class="p-3 fw-normal">{{number_format($item->amount)}}
