@@ -8,6 +8,9 @@
 
     <!-- ===== main content ===== -->
     <div class="col col-lg-10 p-0 px-lg-4">
+
+                        <!-- top menu -->
+                        @include('livewire.client.profile.status')
         <!-- main payment section -->
         <section>
             <!-- title -->

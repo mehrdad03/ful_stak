@@ -3,7 +3,7 @@
     $rout_name=\Illuminate\Support\Facades\Route::current()->getName();
 @endphp
 
-<div class="col-lg-2">
+<div class="col-lg-2 d-none d-lg-block">
 <!-- <span class="modal-backdrop"></span> -->
 <div class="sidebar bg-secondary rounded-4 p-3">
         <span class="d-flex justify-content-end mt-4 d-md-none text-primary" id="close">
@@ -122,7 +122,7 @@
                                 stroke-linejoin="round" />
                         </svg>
                     </div>
-                    <div class="text">پرسش ها</div>
+                    <div class="text text-wrap">پرسش ها</div>
                 </a>
             </li>
             <!-- payment -->
