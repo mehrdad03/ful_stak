@@ -80,9 +80,9 @@ class Course extends Model
         $courseThumbnail->storeAs($path, $image_name, 'ftp');
         $this->insertImageToFileTable1($path . '/' . $image_name, $courseId);
 
-        /* if ($oldPhoto) {
-             $this->removeOldImage($oldPhoto);
-         }*/
+        /*  if ($oldPhoto) {
+              $this->removeOldImage($oldPhoto);
+          }*/
     }
 
     public function removeOldImage($oldPhoto): void

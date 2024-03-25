@@ -90,10 +90,6 @@ main {
         padding: 8px 0;
     }
 
-    .payment input {
-        width: 50% !important;
-    }
-
     .payment input::placeholder {
         font-size: 10px;
     }
