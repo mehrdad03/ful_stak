@@ -19,7 +19,7 @@ $(document).ready(function () {
         slideIndex = (slideIndex + 1) % $(".vertical-slider h1").length;
     }
 
-    setInterval(showSlide, 2000); // Change slide every 10 seconds
+    setInterval(showSlide, 2000); // Change slide every 2 seconds
 
     // Mobile Menu
     $("#openMenu").on("click", function () {
