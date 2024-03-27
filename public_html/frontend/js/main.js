@@ -7,6 +7,21 @@ $(document).ready(function () {
         } else $("#header").removeClass("header");
     });
 
+    // text slider
+    var slideIndex = 0;
+    var slideHeight = $(".vertical-slider h1").outerHeight();
+
+    function showSlide() {
+        $(".vertical-slider h1").css(
+            "transform",
+            "translateY(-" + slideHeight * slideIndex + "px)"
+        );
+        slideIndex = (slideIndex + 1) % $(".vertical-slider h1").length;
+    }
+
+    setInterval(showSlide, 2000); // Change slide every 10 seconds
+
+    // Mobile Menu
     $("#openMenu").on("click", function () {
         $(".mobileMenu").addClass("active");
         $(".dropBox").show();
