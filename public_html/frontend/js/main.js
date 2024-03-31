@@ -9,17 +9,18 @@ $(document).ready(function () {
 
     // text slider
     var slideIndex = 0;
-    var slideHeight = $(".vertical-slider h1").outerHeight();
+    var sliderText = '.vertical-slider .slider-text';
+    var slideHeight = $(sliderText).outerHeight();
 
     function showSlide() {
-        $(".vertical-slider h1").css(
+        $(sliderText).css(
             "transform",
             "translateY(-" + slideHeight * slideIndex + "px)"
         );
-        slideIndex = (slideIndex + 1) % $(".vertical-slider h1").length;
+        slideIndex = (slideIndex + 1) % $(sliderText).length;
     }
 
-    setInterval(showSlide, 2000); // Change slide every 2 seconds
+    setInterval(showSlide, 1500); // Change slide every 2 seconds
 
     // Mobile Menu
     $("#openMenu").on("click", function () {

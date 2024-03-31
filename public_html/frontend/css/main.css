@@ -334,7 +334,7 @@ header .header-basket {
     overflow: hidden;
 }
 
-.vertical-slider h1 {
+.vertical-slider .slider-text {
     margin: 0;
     padding: 10px 0;
     font-size: 24px;

@@ -12,14 +12,14 @@
         </div>
         <!-- Hero Title  -->
         <div class="col-lg-6 z-1">
-            <div class="text-white d-flex flex-column flex-md-row align-items-center">
+            <div class="text-white d-flex flex-column flex-md-row justify-content-center align-items-center">
             <p class="m-0 fw-semibold fs-2">
                             به دنیای برنامه نویسی
                         </p>
                         <div class="vertical-slider text-white">
-                            <h1 class="text-primary fs-2 fw-bold m-0 px-3">فول استک</h1>
-                            <h1 class="text-primary fs-2 fw-bold m-0 px-3">فرانت اند</h1>
-                            <h1 class="text-primary fs-2 fw-bold m-0 px-3">بک اند</h1>
+                            <h2 class="slider-text text-primary fs-2 fw-bold m-0 px-3">فول استک</h2>
+                            <h2 class="slider-text text-primary fs-2 fw-bold m-0 px-3">فرانت اند</h2>
+                            <h2 class="slider-text text-primary fs-2 fw-bold m-0 px-3">بک اند</h2>
                         </div>
                         <p class="m-0 fw-semibold fs-2">خوش آمدید</p>
             </div>
