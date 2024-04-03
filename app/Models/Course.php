@@ -4,7 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\Auth;
+
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
@@ -76,18 +77,27 @@ class Course extends Model
     {
         $extension = $courseThumbnail->extension();
         $image_name = Str::random(10) . time() . '.' . $extension;
-        $path = '/course/' . $courseId . '/cover-image';
-        $courseThumbnail->storeAs($path, $image_name, 'ftp');
+        $path = '/courses/' . $courseId . '/cover-image';
+
+        $storagePath = public_path() . $path;
+
+        if (!File::exists($storagePath)) {
+            File::makeDirectory($storagePath, 0777, true);
+        }
+
+        $courseThumbnail->storeAs($storagePath, $image_name, 'public');
         $this->insertImageToFileTable1($path . '/' . $image_name, $courseId);
 
-        /*  if ($oldPhoto) {
-              $this->removeOldImage($oldPhoto);
-          }*/
+
+        if ($oldPhoto) {
+            $this->removeOldImage(public_path().$oldPhoto);
+        }
     }
 
     public function removeOldImage($oldPhoto): void
     {
-        Storage::disk('ftp')->delete($oldPhoto);
+
+        Storage::disk('public')->delete($oldPhoto);
 
     }
 
