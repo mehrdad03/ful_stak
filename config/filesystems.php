@@ -38,8 +38,8 @@ return [
 
         'public' => [
             'driver' => 'local',
-            'root' => storage_path('app/public'),
-            'url' => env('APP_URL') . '/storage',
+            'root' => '/',
+            'url' => env('APP_URL') . '/',
             'visibility' => 'public',
             'throw' => false,
         ],
@@ -63,10 +63,8 @@ return [
             'visibility' => 'public',
             'root' => '/public_html',
             'timeout' => 10000,
-            /*'passive' => false,
-            'ignorePassiveAddress' => true,*/
-
-
+            'passive' => false,
+            'ignorePassiveAddress' => true,
         ],
 
     ],
