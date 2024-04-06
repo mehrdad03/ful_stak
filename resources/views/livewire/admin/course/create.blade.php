@@ -17,6 +17,7 @@
                     </div>
                 </div>
                 <div class="card-body">
+
                     <form wire:submit.prevent="createCourse(Object.fromEntries(new FormData($event.target)))">
                         <!-- Row start -->
                         <div class="row gutters">
@@ -99,6 +100,21 @@
                                         class="text-danger d-block mb-2">{{ $message }}</span> @enderror
 
                                 </div>
+                                <div class="col-12">
+                                    <img src="{{config('app.ftp_url').@$course->coverImage->path }}"
+                                         style="width: 307px;border-radius: 5%"
+                                         class=" ms-2 media-avatar"
+                                         alt="Product">
+                                    <!-- Field wrapper start -->
+                                    <div class="field-wrapper">
+                                        <input style="display: -webkit-inline-box;" type="file"
+                                               wire:model="courseThumbnail" name="courseThumbnail">
+                                        <div class="field-placeholder">مدرس</div>
+                                    </div>
+                                    @error('courseThumbnail') <span
+                                        class="text-danger d-block mb-2">{{ $message }}</span> @enderror
+
+                                </div>
                             </div>
 
                             <div class="col-md-6">
@@ -123,6 +139,18 @@
                                         <div class="field-placeholder">بعد از گذراندن این دوره</div>
                                     </div>
                                     @error('what_you_will_learn') <span
+                                        class="text-danger d-block mb-2">{{ $message }}</span> @enderror
+
+                                </div>
+                                <div class="mt-4 col-12">
+
+                                    <!-- Field wrapper start -->
+                                    <div class="field-wrapper">
+                                    <textarea class="form-control" name="short_description"
+                                              rows="3">{{@$course->short_description}}</textarea>
+                                        <div class="field-placeholder">توضیحات کوتاه</div>
+                                    </div>
+                                    @error('short_description') <span
                                         class="text-danger d-block mb-2">{{ $message }}</span> @enderror
 
                                 </div>
