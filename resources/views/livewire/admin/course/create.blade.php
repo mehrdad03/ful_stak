@@ -101,18 +101,23 @@
 
                                 </div>
                                 <div class="col-12">
-                                    <img src="{{config('app.ftp_url').@$course->coverImage->path }}"
-                                         style="width: 307px;border-radius: 5%"
-                                         class=" ms-2 media-avatar"
-                                         alt="Product">
+
                                     <!-- Field wrapper start -->
                                     <div class="field-wrapper">
                                         <input style="display: -webkit-inline-box;" type="file"
                                                wire:model="courseThumbnail" name="courseThumbnail">
-                                        <div class="field-placeholder">مدرس</div>
+                                        <div class="field-placeholder">کاور دوره</div>
                                     </div>
                                     @error('courseThumbnail') <span
                                         class="text-danger d-block mb-2">{{ $message }}</span> @enderror
+                                    <div class="w-100 mb-4">
+                                        <img src="{{config('app.ftp_url').@$course->coverImage->path }}"
+                                             style="width: 307px;border-radius: 5%"
+                                             class=" ms-2 media-avatar"
+                                             alt="Product">
+
+                                    </div>
+
 
                                 </div>
                             </div>
@@ -166,9 +171,27 @@
                                         class="text-danger d-block mb-2">{{ $message }}</span> @enderror
 
                                 </div>
+                                <div class="mt-4 col-12">
+
+                                    <div class="field-wrapper">
+                                        <input style="display: -webkit-inline-box;" type="file"
+                                               wire:model="courseIntroVideo">
+                                        <div class="field-placeholder">ویدیو معرفی</div>
+                                    </div>
+                                    @error('courseIntroVideo') <span
+                                        class="text-danger d-block mb-2">{{ $message }}</span> @enderror
+                                    <div class="w-100 mb-4">
+
+                                        <video width="320" height="240" controls>
+                                            <source src="{{config('app.ftp_url').@$course->coverVideo->path }}"
+                                                    type="video/mp4">
+                                            Your browser does not support the video tag.
+                                        </video>
+
+                                    </div>
+
+                                </div>
                             </div>
-
-
 
                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                                 <div class="form-actions-footer">

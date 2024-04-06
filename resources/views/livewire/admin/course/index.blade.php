@@ -22,7 +22,8 @@
                                     <div class="field-placeholder">جستجو <span
                                             class="text-danger">*</span></div>
                                 </div>
-                                <a href="{{route('admin.course.create')}}"  wire:navigate  class="btn btn-success">افزودن دوره</a>
+                                <a href="{{route('admin.course.create')}}" wire:navigate class="btn btn-success">افزودن
+                                    دوره</a>
                                 {{ $courses->links('layouts.pagination-admin') }}
                             </div>
                             <table class="table v-middle">
@@ -54,29 +55,13 @@
 
                                         </td>
                                         <td class="sorting_1">
-                                            <div class="media-box  align-items-center row">
-                                                <video width="320" height="240" controls>
-                                                    <source src="{{config('app.ftp_url').@$course->coverVideo->path }}" type="video/mp4">
-                                                    Your browser does not support the video tag.
-                                                </video>
-                                            </div>
-                                            <form class="mt-2 d-inline-flex align-items-center p-1" method="post" enctype="multipart/form-data"
-                                                  style="background: #575757;border-radius: 5px"
-                                                  action="{{route('admin.upload-video',$course->id)}}">
-                                                @csrf
-                                                <input style="display: -webkit-inline-box;" type="file" name="video"
-                                                      {{-- wire:model="courseCoverVideo"--}}>
-                                                <button class="btn btn-sm btn-success" type="submit">
-                                                    ذخیره
 
-                                                </button>
+                                            <video width="320" height="200" controls>
+                                                <source src="{{config('app.ftp_url').@$course->coverVideo->path }}"
+                                                        type="video/mp4">
+                                                Your browser does not support the video tag.
+                                            </video>
 
-                                            </form>
-                                            @if($courseThumbnailError and explode('_',$courseThumbnailError)[0] == $course->id)
-
-                                                <span style="position: absolute;top: 7px;height: 75%;border-radius: 10px;width: 285px;background: #c65148f0!important;"
-                                                      class="alert alert-danger position-absolute d-flex align-items-center justify-content-center">{{@explode('_',$courseThumbnailError)[1]}}</span>
-                                            @endif
                                         </td>
                                         <td>{{$course->title}}</td>
                                         <td>{{$course->category->title}}</td>
@@ -97,7 +82,8 @@
                                                data-bs-original-title="تنظیمات سئو">
                                                 <i class="fa fa-pencil  text-white ms-2"></i>
                                             </a>
-                                            <a wire:navigate href="{{route('admin.course.create')}}?courseId={{$course->id}}"
+                                            <a wire:navigate
+                                               href="{{route('admin.course.create')}}?courseId={{$course->id}}"
                                                data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                data-bs-original-title="ویرایش">
                                                 <i class="fa fa-edit  ms-2"></i>

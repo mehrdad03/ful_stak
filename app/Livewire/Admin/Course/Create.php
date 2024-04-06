@@ -13,18 +13,19 @@ class Create extends Component
 {
     use WithFileUploads;
 
-    public $fileExtension, $extensions = ['jpeg', 'jpg', 'png', 'gif'], $oldPhoto = '';
-    public $courseThumbnail, $courseThumbnailError;
+
+    public $courseThumbnail,$courseIntroVideo;
     public $courseId = 0, $categories, $category, $teachers;
     public $course;//edit
-    public $oldCCourseThumbnail='';//edit
+    public $oldCCourseThumbnail='',$oldCourseIntroVideo='';//edit
 
     public function mount()
     {
         if ($_GET and $_GET['courseId']) {
             $this->courseId = $_GET['courseId'];
             $this->course = Course::query()->where('id', $_GET['courseId'])->firstOrFail();
-            $this->oldCCourseThumbnail = $this->course->coverImage;
+            @$this->oldCCourseThumbnail = $this->course->coverImage->path;
+            @$this->oldCourseIntroVideo = $this->course->coverVideo->path;
         }
 
         $this->categories = Category::all();
@@ -35,17 +36,18 @@ class Create extends Component
     public function createCourse($formData, Course $course)
     {
 
-
         $formData['courseId'] = 0;
 
         $formData['courseThumbnail'] = $this->courseThumbnail;
+        $formData['courseIntroVideo'] = $this->courseIntroVideo;
+
         if ($this->courseId != 0) {
             $formData['courseId'] = $this->courseId;
         }
 
-
         $validator = Validator::make($formData, [
             'courseThumbnail' => 'required|image|mimes:jpeg,png,jpg,gif,webp', // 50KB Max
+            'courseIntroVideo' => 'mimes:mp4|max:102400', // 10MB Max
             'title' => 'required|unique:courses,title,' . $this->courseId . '|string|max: 100',
             'categoryId' => 'required|integer|exists:categories,id',
             'price' => 'required|integer',
@@ -65,11 +67,10 @@ class Create extends Component
         $validator->validate();
         $this->resetValidation();
 
-        $course->createCourse($formData,$this->oldCCourseThumbnail);
+        $course->createCourse($formData,$this->oldCCourseThumbnail,$this->oldCourseIntroVideo);
 
         session()->flash('message', 'دوره با موفقیت ثبت شد!');
         $this->redirect('/admin/courses', navigate: true);
-
 
     }
 
