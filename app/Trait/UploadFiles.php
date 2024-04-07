@@ -11,6 +11,9 @@ trait UploadFiles
     private $drive = 'public';
     protected function uploadFile($id,$oldFile,$file,$type,$fileType)
     {
+
+
+
         $extension = $file->extension();
         $file_name = Str::random(10) . time() . '.' . $extension;
         $path = '/courses/' . $id . '/'.$type;
@@ -50,6 +53,5 @@ trait UploadFiles
             ]
         );
     }
-
 
 }
