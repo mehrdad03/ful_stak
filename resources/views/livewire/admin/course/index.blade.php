@@ -56,7 +56,7 @@
                                         </td>
                                         <td class="sorting_1">
 
-                                            <video width="320" height="200" controls>
+                                            <video  controls  class="rounded-2 overflow-hidden w-100">
                                                 <source src="{{config('app.ftp_url').@$course->coverVideo->path }}"
                                                         type="video/mp4">
                                                 Your browser does not support the video tag.
