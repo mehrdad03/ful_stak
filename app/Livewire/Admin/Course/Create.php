@@ -45,9 +45,10 @@ class Create extends Component
             $formData['courseId'] = $this->courseId;
         }
 
+
         $validator = Validator::make($formData, [
-            'courseThumbnail' => 'required|image|mimes:jpeg,png,jpg,gif,webp', // 50KB Max
-            'courseIntroVideo' => 'mimes:mp4|max:102400', // 10MB Max
+            'courseThumbnail' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp',
+            'courseIntroVideo' => 'nullable|mimes:mp4|max:102400',
             'title' => 'required|unique:courses,title,' . $this->courseId . '|string|max: 100',
             'categoryId' => 'required|integer|exists:categories,id',
             'price' => 'required|integer',

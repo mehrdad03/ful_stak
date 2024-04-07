@@ -22,8 +22,15 @@ class Course extends Model
         DB::transaction(function () use ($formData, $oldCCourseThumbnail, $oldCourseIntroVideo) {
 
             $this->courseCreateOrUpdate($formData);
-            $this->courseThumbnail($formData['courseId'], $oldCCourseThumbnail, $formData['courseThumbnail']);
-            $this->courseIntroVideo($formData['courseId'], $oldCourseIntroVideo, $formData['courseIntroVideo']);
+
+            if ($formData['courseThumbnail']) {
+                $this->courseThumbnail($formData['courseId'], $oldCCourseThumbnail, $formData['courseThumbnail']);
+            }
+            if ($formData['courseIntroVideo']) {
+                $this->courseIntroVideo($formData['courseId'], $oldCourseIntroVideo, $formData['courseIntroVideo']);
+            }
+
+
         });
 
 
