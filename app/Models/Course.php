@@ -2,20 +2,17 @@
 
 namespace App\Models;
 
+use App\Trait\UploadFiles;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\File;
-use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Str;
-
 
 class Course extends Model
 {
-    use HasFactory;
+    use HasFactory, UploadFiles;
 
     protected $guarded = [];
-    private $drive = 'public';
+
 
     public function createCourse($formData, $oldCCourseThumbnail, $oldCourseIntroVideo)
     {
@@ -24,10 +21,14 @@ class Course extends Model
             $this->courseCreateOrUpdate($formData);
 
             if ($formData['courseThumbnail']) {
-                $this->courseThumbnail($formData['courseId'], $oldCCourseThumbnail, $formData['courseThumbnail']);
+
+                $this->uploadFile($formData['courseId'], $oldCCourseThumbnail, $formData['courseThumbnail'], 'cover-image', 'image');
+
             }
             if ($formData['courseIntroVideo']) {
-                $this->courseIntroVideo($formData['courseId'], $oldCourseIntroVideo, $formData['courseIntroVideo']);
+
+                $this->uploadFile($formData['courseId'], $oldCourseIntroVideo, $formData['courseIntroVideo'], 'cover-video', 'video');
+
             }
 
 
@@ -56,70 +57,6 @@ class Course extends Model
 
     }
 
-
-    public function courseThumbnail($courseId, $oldCCourseThumbnail, $courseThumbnail)
-    {
-        $extension = $courseThumbnail->extension();
-        $image_name = Str::random(10) . time() . '.' . $extension;
-        $path = '/courses/' . $courseId . '/cover-image';
-
-        $storagePath = public_path() . $path;
-
-        if (!File::exists($storagePath)) {
-            File::makeDirectory($storagePath, 0777, true);
-        }
-
-        $courseThumbnail->storeAs($path, $image_name, $this->drive);
-        $this->insertMediaToMediaTable($path . '/' . $image_name, $courseId, 'cover-image');
-
-
-        if ($oldCCourseThumbnail) {
-            $this->removeOldImage(public_path() . $oldCCourseThumbnail);
-        }
-
-    }
-
-    public function courseIntroVideo($courseId, $oldCourseIntroVideo, $courseIntroVideo)
-    {
-        $extension = $courseIntroVideo->extension();
-        $image_name = Str::random(10) . time() . '.' . $extension;
-        $path = '/courses/' . $courseId . '/cover-video';
-
-        $storagePath = public_path() . $path;
-
-        if (!File::exists($storagePath)) {
-            File::makeDirectory($storagePath, 0777, true);
-        }
-
-        $courseIntroVideo->storeAs($path, $image_name, $this->drive);
-        $this->insertMediaToMediaTable($path . '/' . $image_name, $courseId, 'cover-video');
-
-
-        if ($oldCourseIntroVideo) {
-            $this->removeOldImage(public_path() . $oldCourseIntroVideo);
-        }
-
-    }
-
-    public function removeOldImage($oldCCourseThumbnail): void
-    {
-
-        Storage::disk($this->drive)->delete($oldCCourseThumbnail);
-
-    }
-
-    public function insertMediaToMediaTable($path, $courseId, $type)
-    {
-        return \App\Models\Media::query()->updateOrCreate(
-            [
-                'course_id' => $courseId,
-                'type' => $type,
-            ],
-            [
-                'path' => $path,
-            ]
-        );
-    }
 
     public function submitSeo($formData, $courseId)
     {
