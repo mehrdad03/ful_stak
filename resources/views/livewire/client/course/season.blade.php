@@ -50,7 +50,7 @@
                     class="d-flex justify-content-center justify-content-md-end">
                     <div
                         class="acc-header d-flex w-100 align-items-center justify-content-between px-1 px-md-4">
-                        <p class="w50 m-0 text-primary fw-bold px-2">{{$section->title}}</p>
+                        <p class="w50 m-0 text-white fw-bold px-2">{{$section->title}}</p>
                         <!-- section details -->
                         <div
                             class="w-50 d-flex align-items-center justify-content-around justify-content-md-end section-info">
