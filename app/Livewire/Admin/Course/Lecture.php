@@ -114,7 +114,7 @@ class Lecture extends Component
     {
         $lectures = CourseSectionLecture::query()
             ->where('course_section_id', $this->sectionId)
-            ->with('courseSection','video');
+            ->with('courseSection','video')->latest();
         return view('livewire.admin.course.lecture', ['lectures' => $lectures->paginate(10)])
             ->layout('layouts.app-admin');
     }
