@@ -21,19 +21,14 @@
             @include('livewire.client.course.mobile-subscription')
             <!-- Course Features -->
             @include('livewire.client.course.features')
-            <img src="/frontend/assets/images/hr.png" alt="HR" class="hr" />
             <!-- Course Season -->
             @include('livewire.client.course.season')
-            <img src="/frontend/assets/images/hr.png" alt="HR" class="hr" />
             <!-- course Needs -->
             @include('livewire.client.course.requirments')
-            <img src="/frontend/assets/images/hr.png" alt="HR" class="hr" />
             <!-- Course Explain -->
             @include('livewire.client.course.description')
-            <img src="/frontend/assets/images/hr.png" alt="HR" class="hr" />
             <!-- ======= Course Slider ======= -->
             @include('livewire.client.course.courses-slider')
-            <img src="/frontend/assets/images/hr.png" alt="HR" class="hr" />
             <!-- ======= Q & A ======= -->
             @include('livewire.client.course.qa')
         </div>

@@ -144,3 +144,4 @@
         </div>
     @endforeach
 </section>
+<img src="/frontend/assets/images/hr.png" alt="HR" class="hr" />

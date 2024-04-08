@@ -69,3 +69,4 @@
     <div class="swiper-button-prev"></div>
     <div class="swiper-button-next"></div>
 </section>
+<img src="/frontend/assets/images/hr.png" alt="HR" class="hr" />
