@@ -97,6 +97,7 @@
                             </table>
                         </div>
                         {{ $courses->links('layouts.pagination-admin') }}
+
                     </div>
                 </div>
             </div>

@@ -99,9 +99,6 @@
                                 @endforeach
                                 </tbody>
                             </table>
-                            <div wire:ignore class="dataTables_paginate paging_simple_numbers"
-                                 id="copy-print-csv_paginate">
-                            </div>
                         </div>
                     </div>
                 </div>

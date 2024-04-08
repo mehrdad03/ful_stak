@@ -10,13 +10,14 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use Livewire\Component;
 use Livewire\WithFileUploads;
+use Livewire\WithPagination;
 
 
 class Lecture extends Component
 {
-    use WithFileUploads, UploadFiles;
+    use WithFileUploads, UploadFiles,WithPagination;
 
-    public $lectures, $lectureId = 0, $sectionId, $title, $lecture, $courseId;
+    public $lectureId = 0, $sectionId, $title, $lecture, $courseId;
     public $video;
     public $section;
     public $oldLectureVideo;
@@ -111,11 +112,10 @@ class Lecture extends Component
 
     public function render()
     {
-        $lectures = $this->lectures = CourseSectionLecture::query()
+        $lectures = CourseSectionLecture::query()
             ->where('course_section_id', $this->sectionId)
-            ->with('courseSection','video')
-            ->get();
-        return view('livewire.admin.course.lecture', ['lectures' => $lectures])
+            ->with('courseSection','video');
+        return view('livewire.admin.course.lecture', ['lectures' => $lectures->paginate(10)])
             ->layout('layouts.app-admin');
     }
 }

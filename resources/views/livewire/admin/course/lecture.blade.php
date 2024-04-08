@@ -42,12 +42,28 @@
                                              class="text-white d-flex invalid-tooltip">{{$message}}</div>
                                     @endforeach
                                 </div>
-                                <div class="field-wrapper">
+                                <div class="field-wrapper" x-data="{isUploading:false,progress:0 }"
+                                   x-on:livewire-upload-start="isUploading=true"
+                                   x-on:livewire-upload-finish="isUploading=false"
+                                   x-on:livewire-upload-error="isUploading=false"
+                                   x-on:livewire-upload-progress="progress=$event.detail.progress"
+                                >
                                     <input style="display: -webkit-inline-box;" type="file"
                                            wire:model="video">
 
-                                    <div wire:loading wire:target="video">Uploading...</div>
+                                    <div class="mt-2" wire:loading wire:target="video">Uploading...</div>
+
+
                                     <div class="field-placeholder">ویدیو معرفی</div>
+
+                                    <div x-show="isUploading" class="progress mt-3 ltr">
+                                        <div class="progress-bar progress-bar-striped  bg-danger progress-bar-animated"
+                                             role="progressbar" x-bind:style="`width:${progress}%`" aria-valuenow="10"
+                                             aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+
+
+
                                 </div>
                                 @error('video') <span
                                     class="text-danger d-block mb-2">{{ $message }}</span> @enderror
@@ -140,6 +156,7 @@
                                 </tbody>
                             </table>
                         </div>
+                        {{ $lectures->links('layouts.pagination-admin') }}
                     </div>
                 </div>
             </div>

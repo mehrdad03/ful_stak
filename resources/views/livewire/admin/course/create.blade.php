@@ -103,11 +103,21 @@
                                 <div class="col-12">
 
                                     <!-- Field wrapper start -->
-                                    <div class="field-wrapper">
+                                    <div class="field-wrapper" x-data="{isUploading:false,progress:0 }"
+                                         x-on:livewire-upload-start="isUploading=true"
+                                         x-on:livewire-upload-finish="isUploading=false"
+                                         x-on:livewire-upload-error="isUploading=false"
+                                         x-on:livewire-upload-progress="progress=$event.detail.progress"
+                                    >
                                         <input style="display: -webkit-inline-box;" type="file"
                                                wire:model="courseThumbnail" name="courseThumbnail">
-                                        <div wire:loading wire:target="courseThumbnail">Uploading...</div>
+                                        <div wire:loading wire:target="courseThumbnail" class="mt-2">Uploading...</div>
                                         <div class="field-placeholder">کاور دوره</div>
+                                        <div x-show="isUploading" class="progress mt-3 ltr">
+                                            <div class="progress-bar progress-bar-striped  bg-danger progress-bar-animated"
+                                                 role="progressbar" x-bind:style="`width:${progress}%`" aria-valuenow="10"
+                                                 aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
 
                                     </div>
                                     @error('courseThumbnail') <span
@@ -177,11 +187,21 @@
                                 </div>
                                 <div class="mt-4 col-12">
 
-                                    <div class="field-wrapper">
+                                    <div class="field-wrapper" x-data="{isUploading:false,progress:0 }"
+                                         x-on:livewire-upload-start="isUploading=true"
+                                         x-on:livewire-upload-finish="isUploading=false"
+                                         x-on:livewire-upload-error="isUploading=false"
+                                         x-on:livewire-upload-progress="progress=$event.detail.progress"
+                                    >
                                         <input style="display: -webkit-inline-box;" type="file"
                                                wire:model="courseIntroVideo">
-                                        <div wire:loading wire:target="courseIntroVideo">Uploading...
-                                            <div class="field-placeholder">ویدیو معرفی</div>
+                                        <div wire:loading wire:target="courseIntroVideo" class="mt-2">Uploading...
+                                            <div class="field-placeholder ">ویدیو معرفی</div>
+                                        </div>
+                                        <div x-show="isUploading" class="progress mt-3 ltr">
+                                            <div class="progress-bar progress-bar-striped  bg-danger progress-bar-animated"
+                                                 role="progressbar" x-bind:style="`width:${progress}%`" aria-valuenow="10"
+                                                 aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
                                         @error('courseIntroVideo') <span
                                             class="text-danger d-block mb-2">{{ $message }}</span> @enderror
