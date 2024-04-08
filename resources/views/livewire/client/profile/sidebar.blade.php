@@ -24,7 +24,7 @@
         <div class="me-md-3 w-100">
             <!-- dashboard -->
             <li wire:ignore class="{{@$rout_name=='client.profile.dashboard'?'active':''}}">
-                <a href="{{route('client.profile.dashboard')}}">
+                <a wire:navigate href="{{route('client.profile.dashboard')}}">
                     <div class="icon">
                         <svg
                             width="30"
@@ -50,7 +50,7 @@
             </li>
             <!-- courses -->
             <li wire:ignore class="{{@$rout_name=='client.profile.my-courses'?'active':''}}">
-                <a href="{{route('client.profile.my-courses')}}">
+                <a wire:navigate href="{{route('client.profile.my-courses')}}">
                     <div class="icon">
                         <svg
                             width="30"
@@ -95,7 +95,7 @@
             </li>
             <!-- faq -->
             <li wire:ignore class="{{@$rout_name=='client.profile.questions'?'active':''}}">
-                <a href="{{route('client.profile.questions')}}">
+                <a wire:navigate href="{{route('client.profile.questions')}}">
                     <div class="icon">
                         <svg
                             width="30"
@@ -127,7 +127,7 @@
             </li>
             <!-- payment -->
             <li wire:ignore class="{{@$rout_name=='client.profile.financial'?'active':''}}">
-                <a href="{{route('client.profile.financial')}}">
+                <a wire:navigate href="{{route('client.profile.financial')}}">
                     <div class="icon">
                         <svg
                             width="30"
@@ -152,7 +152,7 @@
             </li>
             <!-- comments -->
             <li wire:ignore class="{{@$rout_name=='client.profile.comments'?'active':''}}">
-                <a href="{{route('client.profile.comments')}}">
+                <a wire:navigate href="{{route('client.profile.comments')}}">
                     <div class="icon">
                         <svg
                             width="30"
@@ -177,7 +177,7 @@
             </li>
             <!-- notification -->
             <li wire:ignore class="{{@$rout_name=='client.profile.messages'?'active':''}}">
-                <a href="{{route('client.profile.messages')}}">
+                <a wire:navigate href="{{route('client.profile.messages')}}">
                     <div class="icon">
                         <svg
                             width="30"
@@ -202,7 +202,7 @@
             </li>
             <!-- Logout -->
             <li wire:ignore class="#">
-                <a href="{{route('client.logout')}}">
+                <a wire:navigate href="{{route('client.logout')}}">
                     <div class="icon">
                         <svg
                             width="30"

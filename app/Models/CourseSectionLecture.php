@@ -112,7 +112,7 @@ class CourseSectionLecture extends Model
 
 //dd($path . '/' . $videoName);
         $media = FFMpeg::fromDisk('public')
-            ->open( $path);
+            ->open( public_path().$path);
 
         $durationInSeconds = $media->getDurationInSeconds(); // returns an int
 

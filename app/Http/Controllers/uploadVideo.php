@@ -2,13 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Course;
 use App\Models\CourseSectionLecture;
 use App\Models\Media;
-use FFMpeg\Format\Video\X264;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use ProtoneMedia\LaravelFFMpeg\Support\FFMpeg;
@@ -28,7 +25,7 @@ class uploadVideo extends Controller
         $videoName = Str::random(10) . '_' . time() . '.' . $extension;
 
         if ($sectionId) {
-            DB::transaction(function () use ($video, $courseId, $lectureId, $sectionId, $videoName,$oldVideoPath) {
+            DB::transaction(function () use ($video, $courseId, $lectureId, $sectionId, $videoName, $oldVideoPath) {
 
                 $path = 'course/videos/' . $courseId;
                 $videoPath = Storage::disk('local')->put($path, $video);
@@ -52,19 +49,25 @@ class uploadVideo extends Controller
                 );
             });
         } else {
-            DB::transaction(function () use ($request, $video, $courseId, $videoName,$oldVideoPath) {
+            DB::transaction(function () use ($request, $video, $courseId, $videoName, $oldVideoPath) {
+
+
 
                 $path = '/course/' . $courseId . '/cover-video';
 
                 //delete old video files
-                if ($oldVideoPath) {
-                    Storage::disk('ftp')->delete($oldVideoPath);
-                }
+                /* if ($oldVideoPath) {
+                     Storage::disk('ftp')->delete($oldVideoPath);
+                 }*/
 
                 $savePath = $path . '/' . $videoName;
+                //Storage::disk('ftp')->put($path,$video);
                 $video->storeAs($path, $videoName, 'ftp');
 
-                $this->insertVideoToMediaTable($savePath, $courseId);
+                //  $this->insertVideoToMediaTable($savePath, $courseId);
+
+
+
             });
         }
 

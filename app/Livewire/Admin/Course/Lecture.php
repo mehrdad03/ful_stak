@@ -87,7 +87,7 @@ class Lecture extends Component
             'course_id' => $this->courseId,
         ])->first();
 
-        $this->removeOldFile($lecture->path);
+        $this->removeOldFile(public_path().$lecture->path);
 
         $lecture->delete();
 
