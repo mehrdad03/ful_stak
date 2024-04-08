@@ -40,14 +40,12 @@ trait UploadFiles
     protected function removeOldFile($oldFile): void
     {
 
-
         Storage::disk($this->drive)->delete($oldFile);
 
     }
 
     protected function insertMediaToMediaTable($path, $courseId, $type, $section_id, $lecture_id)
     {
-
 
         return \App\Models\Media::query()->updateOrCreate(
             [

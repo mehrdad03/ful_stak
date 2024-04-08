@@ -18,6 +18,7 @@ return new class extends Migration
             $table->text('features');
             $table->integer('duration');
             $table->foreignId('subscription_plan_category_id');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

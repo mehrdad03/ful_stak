@@ -16,6 +16,7 @@ return new class extends Migration {
             $table->text('meta_description');
             $table->foreignId('ref_id');
             $table->string('type');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

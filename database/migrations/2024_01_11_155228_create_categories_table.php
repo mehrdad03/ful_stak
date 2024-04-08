@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('title')->unique();
             $table->foreignId('category_id')->nullable()->constrained();
             $table->boolean('active')->default(false);
+            $table->softDeletes();
             $table->timestamps();
         });
     }

@@ -19,6 +19,7 @@ return new class extends Migration {
             $table->boolean('status')->default(true);
             $table->unsignedInteger('order_number')->default(false);
             $table->boolean('pay_status')->default(false);
+            $table->softDeletes();
             $table->timestamps();
         });
     }

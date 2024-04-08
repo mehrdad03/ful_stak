@@ -5,6 +5,8 @@ namespace App\Livewire\Admin\Course;
 use App\Models\CourseSection;
 use App\Models\CourseSectionLecture;
 use App\Models\Media;
+use App\Trait\UploadFiles;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use Livewire\Component;
 use Livewire\WithFileUploads;
@@ -12,7 +14,7 @@ use Livewire\WithFileUploads;
 
 class Lecture extends Component
 {
-    use WithFileUploads;
+    use WithFileUploads, UploadFiles;
 
     public $lectures, $lectureId = 0, $sectionId, $title, $lecture, $courseId;
     public $video;
@@ -77,9 +79,19 @@ class Lecture extends Component
         CourseSectionLecture::query()
             ->where('id', $lectureId)
             ->delete();
-        $this->dispatch('swal:alert-success');
 
-        $this->redirectRoute('admin.course.section.lecture',$this->sectionId);
+
+        $lecture = Media::query()->where([
+            'id' => $lectureId,
+            'type' => 'lecture-video',
+            'course_id' => $this->courseId,
+        ])->first();
+
+        $this->removeOldFile($lecture->path);
+
+        $lecture->delete();
+
+        $this->redirectRoute('admin.course.section.lecture', $this->sectionId);
 
 
     }

@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('trans_id');
             $table->string('cardPan');
             $table->boolean('status')->default(false);
+            $table->softDeletes();
             $table->timestamps();
         });
     }

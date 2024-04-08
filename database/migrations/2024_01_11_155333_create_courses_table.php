@@ -24,6 +24,7 @@ return new class extends Migration
             $table->foreignId('teacher_id')->constrained();
             $table->foreignId('category_id')->constrained();
             $table->boolean('active')->default(false);
+            $table->softDeletes();
             $table->timestamps();
         });
     }

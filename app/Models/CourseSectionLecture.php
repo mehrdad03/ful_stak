@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Trait\UploadFiles;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use ProtoneMedia\LaravelFFMpeg\Support\FFMpeg;
@@ -12,7 +13,7 @@ use ProtoneMedia\LaravelFFMpeg\Support\FFMpeg;
 
 class CourseSectionLecture extends Model
 {
-    use HasFactory, UploadFiles;
+    use HasFactory, UploadFiles,SoftDeletes;
 
     protected $guarded = [];
 
