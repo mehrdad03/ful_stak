@@ -25,6 +25,7 @@ class CourseSectionLecture extends Model
     {
 
 
+
         /*  DB::transaction(function () use ($formData, $lectureId, $sectionId, $courseId) {
 
 
@@ -61,19 +62,18 @@ class CourseSectionLecture extends Model
         DB::transaction(function () use ($formData, $lectureId, $courseId, $sectionId, $oldLectureVideo) {
 
             $video = $formData['video'];
-            $this->lectureCreateOrUpdate($formData, $lectureId, $sectionId, $courseId);
+            $newLecture = $this->lectureCreateOrUpdate($formData, $lectureId, $sectionId, $courseId);
+
 
             if ($video) {
-
                 $extension = $video->extension();
                 $videoName = Str::random(10) . '_' . time() . '.' . $extension;
                 $path = '/courses/' . $courseId . '/' . 'lecture-video';
 
-                $this->uploadFile($courseId, $oldLectureVideo, $video, 'lecture-video', 'video');
+                $this->uploadFile($courseId, $oldLectureVideo, $video, 'lecture-video', $sectionId, $newLecture->id);
 
 
-                $this->getVideoDurationAndUpdateTable($lectureId, $path, $videoName);
-
+                //  $this->getVideoDurationAndUpdateTable($lectureId, $path, $videoName);
 
 
             }
@@ -85,7 +85,7 @@ class CourseSectionLecture extends Model
 
     public function lectureCreateOrUpdate($formData, $lectureId, $sectionId, $courseId)
     {
-        CourseSectionLecture::query()->updateOrCreate(
+        return CourseSectionLecture::query()->updateOrCreate(
             [
                 'id' => $lectureId
             ]
@@ -113,7 +113,7 @@ class CourseSectionLecture extends Model
 
 //dd($path . '/' . $videoName);
         $media = FFMpeg::fromDisk('public')
-            ->open($path . '/' . $videoName);
+            ->open('/' . $path . '/' . $videoName);
 
         $durationInSeconds = $media->getDurationInSeconds(); // returns an int
 
@@ -126,4 +126,9 @@ class CourseSectionLecture extends Model
 
     }
 
+    public function video()
+    {
+        return $this->belongsTo(Media::class, 'id','lecture_id');
+
+    }
 }

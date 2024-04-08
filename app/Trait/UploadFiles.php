@@ -9,14 +9,13 @@ use Illuminate\Support\Str;
 trait UploadFiles
 {
     private $drive = 'public';
-    protected function uploadFile($id,$oldFile,$file,$type,$fileType)
+
+    protected function uploadFile($id, $oldFile, $file, $type, $section_id,$lecture_id)
     {
-
-
 
         $extension = $file->extension();
         $file_name = Str::random(10) . time() . '.' . $extension;
-        $path = '/courses/' . $id . '/'.$type;
+        $path = '/courses/' . $id . '/' . $type;
 
         $storagePath = public_path() . $path;
 
@@ -24,8 +23,8 @@ trait UploadFiles
             File::makeDirectory($storagePath, 0777, true);
         }
 
-        $file->storeAs($path, $file_name, $this->drive);
-        $this->insertMediaToMediaTable($path . '/' . $file_name, $id, $type);
+        $file->storeAs($storagePath, $file_name, $this->drive);
+        $this->insertMediaToMediaTable($path . '/' . $file_name, $id, $type,$section_id,$lecture_id);
 
 
         if ($oldFile) {
@@ -34,22 +33,29 @@ trait UploadFiles
 
 
     }
+
     protected function removeOldFile($oldFile): void
     {
+
 
         Storage::disk($this->drive)->delete($oldFile);
 
     }
 
-    protected function insertMediaToMediaTable($path, $courseId, $type)
+    protected function insertMediaToMediaTable($path, $courseId, $type, $section_id, $lecture_id)
     {
+
+
         return \App\Models\Media::query()->updateOrCreate(
             [
                 'course_id' => $courseId,
                 'type' => $type,
+                'lecture_id' => $lecture_id ,
+
             ],
             [
                 'path' => $path,
+                'section_id' => $section_id,
             ]
         );
     }

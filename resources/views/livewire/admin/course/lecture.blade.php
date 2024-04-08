@@ -42,11 +42,28 @@
                                              class="text-white d-flex invalid-tooltip">{{$message}}</div>
                                     @endforeach
                                 </div>
+                                <div class="field-wrapper">
+                                    <input style="display: -webkit-inline-box;" type="file"
+                                           wire:model="video">
+
+                                    <div wire:loading  wire:target="video">Uploading...</div>
+                                    <div class="field-placeholder">ویدیو معرفی</div>
+                                </div>
+                                @error('video') <span
+                                    class="text-danger d-block mb-2">{{ $message }}</span> @enderror
 
                             </div>
 
                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-start ma-ts">
-                                <button type="submit" class="btn  btn-primary add-success-noti-admin">ذحیره</button>
+                                <button wire:target="video"  wire:loading.attr="disabled" class="btn  btn-primary add-success-noti-admin">
+                                    <span wire:loading.remove wire:target="video">
+                                        ذحیره
+                                    </span>
+
+                                    <span wire:loading  wire:target="video" class="spinner-border text-white" role="status">
+
+                                    </span>
+                                </button>
                             </div>
                         </form>
                     </div>
@@ -57,17 +74,16 @@
                     <div class="card-body">
                         <div class="table-responsive">
                             <div class="d-flex justify-content-between align-items-center">
-                               {{-- <div class="field-wrapper w-25">
-                                    <input style="background: #ffffff" class="form-control" type="text"
-                                           wire:model.debounce.500ms="search">
-                                    <div class="field-placeholder">جستجو <span
-                                            class="text-danger">*</span></div>
-                                </div>--}}
+                                {{-- <div class="field-wrapper w-25">
+                                     <input style="background: #ffffff" class="form-control" type="text"
+                                            wire:model.debounce.500ms="search">
+                                     <div class="field-placeholder">جستجو <span
+                                             class="text-danger">*</span></div>
+                                 </div>--}}
                             </div>
                             <table class="table v-middle">
                                 <thead>
                                 <tr>
-                                    <th>#</th>
                                     <th>ID</th>
                                     <th>ویدیو</th>
                                     <th>عنوان</th>
@@ -77,51 +93,16 @@
                                 <tbody>
                                 @forelse($lectures as $lecture)
                                     <tr>
-                                        <td>{{$loop->index+1}}</td>
                                         <td>{{$lecture->id}}</td>
 
                                         <td>
-                                            <div class="media-box  align-items-center row">
-                                                <video
-                                                    id="my-video"
-                                                    class="video-js"
-                                                    controls
-                                                    preload="auto"
-                                                    poster="MY_VIDEO_POSTER.jpg"
-                                                    data-setup="{}"
-                                                >
-                                                    <source src="https://dl.ful-stak.dev/course/videos/2/qkgSUpVhwq_1709301437_0_1000.m3u8"  />
-                                                    <p class="vjs-no-js">
-                                                        To view this video please enable JavaScript, and consider upgrading to a
-                                                        web browser that
-                                                        <a href="https://videojs.com/html5-video-support/" target="_blank"
-                                                        >supports HTML5 video</a
-                                                        >
-                                                    </p>
-                                                </video>
-                                            </div>
-                                            <form class="mt-2 d-inline-flex align-items-center p-1" enctype="multipart/form-data"
-                                                  style="background: #575757;border-radius: 5px"
-                                                 action="{{route('admin.upload-video',[$lecture->courseSection->course->id,$lecture->id,$lecture->courseSection->id])}}" method="post">
-                                                @csrf
+                                            <video width="320" height="240" controls>
+                                                <source src="{{config('app.ftp_url').@$lecture->video->path }}"
+                                                        type="video/mp4">
+                                                Your browser does not support the video tag.
+                                            </video>
 
-                                                <input style="display: -webkit-inline-box;" type="file" name="video"
-                                                    >
-                                                <button class="btn btn-sm btn-success" type="submit">
-                                                    ذخیره
-                                                    <div wire:loading
-                                                         wire:target="convertVideo({{$lecture->id}})"
-                                                         class="spinner-border spinner-border-sm"></div>
-                                                </button>
 
-                                            </form>
-                                            {{@explode('_',$videoError)[1]}}
-                                            @if($videoError and explode('_',$videoError)[0] == $lecture->id)
-
-                                               {{-- <span
-                                                    style="position: absolute;top: 7px;height: 75%;border-radius: 10px;width: 285px;background: #c65148f0!important;"
-                                                    class="alert alert-danger position-absolute d-flex align-items-center justify-content-center">{{@explode('_',$videoError)[1]}}</span>--}}
-                                            @endif
                                         </td>
 
                                         <td>{{$lecture->title}}</td>

@@ -22,12 +22,12 @@ class Course extends Model
 
             if ($formData['courseThumbnail']) {
 
-                $this->uploadFile($formData['courseId'], $oldCCourseThumbnail, $formData['courseThumbnail'], 'cover-image', 'image');
+                $this->uploadFile($formData['courseId'], $oldCCourseThumbnail, $formData['courseThumbnail'], 'cover-image', null,null);
 
             }
             if ($formData['courseIntroVideo']) {
 
-                $this->uploadFile($formData['courseId'], $oldCourseIntroVideo, $formData['courseIntroVideo'], 'cover-video', 'video');
+                $this->uploadFile($formData['courseId'], $oldCourseIntroVideo, $formData['courseIntroVideo'], 'cover-video', null,null);
 
             }
 

@@ -106,17 +106,21 @@
                                     <div class="field-wrapper">
                                         <input style="display: -webkit-inline-box;" type="file"
                                                wire:model="courseThumbnail" name="courseThumbnail">
+                                        <div wire:loading wire:target="courseThumbnail">Uploading...</div>
                                         <div class="field-placeholder">کاور دوره</div>
+
                                     </div>
                                     @error('courseThumbnail') <span
                                         class="text-danger d-block mb-2">{{ $message }}</span> @enderror
-                                    <div class="w-100 mb-4">
-                                        <img src="{{config('app.ftp_url').@$course->coverImage->path }}"
-                                             style="width: 307px;border-radius: 5%"
-                                             class=" ms-2 media-avatar"
-                                             alt="Product">
+                                    @if(@$course->coverImage->path)
+                                        <div class="w-100 mb-4">
+                                            <img src="{{config('app.ftp_url').@$course->coverImage->path }}"
+                                                 style="width: 307px;border-radius: 5%"
+                                                 class=" ms-2 media-avatar"
+                                                 alt="Product">
 
-                                    </div>
+                                        </div>
+                                    @endif
 
 
                                 </div>
@@ -176,39 +180,53 @@
                                     <div class="field-wrapper">
                                         <input style="display: -webkit-inline-box;" type="file"
                                                wire:model="courseIntroVideo">
-                                        <div class="field-placeholder">ویدیو معرفی</div>
+                                        <div wire:loading wire:target="courseIntroVideo">Uploading...
+                                            <div class="field-placeholder">ویدیو معرفی</div>
+                                        </div>
+                                        @error('courseIntroVideo') <span
+                                            class="text-danger d-block mb-2">{{ $message }}</span> @enderror
+                                        @if(@$course->coverVideo->path)
+                                            <div class="w-100 mb-4">
+
+                                                <video width="320" height="240" controls>
+                                                    <source src="{{config('app.ftp_url').@$course->coverVideo->path }}"
+                                                            type="video/mp4">
+                                                    Your browser does not support the video tag.
+                                                </video>
+
+                                            </div>
+                                        @endif
+
+
                                     </div>
-                                    @error('courseIntroVideo') <span
-                                        class="text-danger d-block mb-2">{{ $message }}</span> @enderror
-                                    <div class="w-100 mb-4">
-
-                                        <video width="320" height="240" controls>
-                                            <source src="{{config('app.ftp_url').@$course->coverVideo->path }}"
-                                                    type="video/mp4">
-                                            Your browser does not support the video tag.
-                                        </video>
-
-                                    </div>
-
                                 </div>
-                            </div>
 
-                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                                <div class="form-actions-footer">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+
                                     <div class="text-start">
-                                        <button class="btn btn-primary ms-1">ذخیره</button>
+                                        <button wire:target="courseIntroVideo" wire:loading.attr="disabled"
+                                                class="btn btn-primary ms-1">
+                                             <span wire:loading.remove wire:target="courseIntroVideo">
+                                        ذحیره
+                                    </span>
+
+                                            <span wire:loading wire:target="courseIntroVideo"
+                                                  class="spinner-border text-white"
+                                                  role="status">
+
+                                    </span>
+                                        </button>
+
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <!-- Row end -->
+
                     </form>
                 </div>
             </div>
-            <!-- Card end -->
 
         </div>
     </div>
-    <!-- Row end -->
 
 </div>
