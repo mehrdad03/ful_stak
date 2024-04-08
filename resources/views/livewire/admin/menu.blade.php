@@ -99,7 +99,7 @@
                         </div>
                     </li>
                     <li class="default-sidebar-dropdown {{$rout_name=='admin.comments.index'?'active':''}}">
-                        <a class="position-relative" href="{{route('admin.comments')}}">
+                        <a class="position-relative" {{--href="{{route('admin.comments')}}"--}}>
                             <i class="icon-list"></i>
                             <span class="menu-text">نظرات دوره ها</span>
                             <span style="position: absolute;left: 45px;top: 18px;"

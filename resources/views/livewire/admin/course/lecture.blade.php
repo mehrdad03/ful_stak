@@ -46,7 +46,7 @@
                                     <input style="display: -webkit-inline-box;" type="file"
                                            wire:model="video">
 
-                                    <div wire:loading  wire:target="video">Uploading...</div>
+                                    <div wire:loading wire:target="video">Uploading...</div>
                                     <div class="field-placeholder">ویدیو معرفی</div>
                                 </div>
                                 @error('video') <span
@@ -55,12 +55,14 @@
                             </div>
 
                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-start ma-ts">
-                                <button wire:target="video"  wire:loading.attr="disabled" class="btn  btn-primary add-success-noti-admin">
+                                <button wire:target="video" wire:loading.attr="disabled"
+                                        class="btn  btn-primary add-success-noti-admin">
                                     <span wire:loading.remove wire:target="video">
                                         ذحیره
                                     </span>
 
-                                    <span wire:loading  wire:target="video" class="spinner-border text-white" role="status">
+                                    <span wire:loading wire:target="video" class="spinner-border text-white"
+                                          role="status">
 
                                     </span>
                                 </button>
@@ -88,6 +90,7 @@
                                     <th>ویدیو</th>
                                     <th>عنوان</th>
                                     <th>عملیات</th>
+                                    <th>رایگان</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -96,8 +99,9 @@
                                         <td>{{$lecture->id}}</td>
 
                                         <td wire:ignore>
-                                            <video width="320" height="240" controls  wire:ignore>
-                                                <source src="{{config('app.ftp_url').@$lecture->video->path }}"  wire:ignore
+                                            <video width="320" height="240" controls wire:ignore>
+                                                <source src="{{config('app.ftp_url').@$lecture->video->path }}"
+                                                        wire:ignore
                                                         type="video/mp4">
                                                 Your browser does not support the video tag.
                                             </video>
@@ -121,6 +125,13 @@
                                                    data-bs-original-title="حذف">
                                                     <i class="fa fa-trash text-danger ms-2"></i>
                                                 </a>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-switch">
+                                                <input style="width: 3rem;height: 1.5rem;cursor:pointer;"
+                                                       class="form-check-input" type="checkbox"
+                                                       {{$lecture->free?'checked=""' : ''}}  wire:change="isFree({{$lecture->id}})">
                                             </div>
                                         </td>
                                     </tr>

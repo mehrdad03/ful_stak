@@ -24,42 +24,6 @@ class CourseSectionLecture extends Model
 
     public function saveLecture($formData, $lectureId, $sectionId, $courseId, $oldLectureVideo)
     {
-
-
-
-        /*  DB::transaction(function () use ($formData, $lectureId, $sectionId, $courseId) {
-
-
-              $path = '/courses/' . $courseId . '/videos/' . $sectionId;
-
-              if ($video) {
-                  $extension = $video->extension();
-                  $videoName = Str::random(10) . '_' . time() . '.' . $extension;
-                  $this->removeOldVideo($lectureId);
-
-
-                  $storagePath = public_path() . $path;
-
-                  if (!File::exists($storagePath)) {
-                      File::makeDirectory($storagePath, 0777, true);
-                  }
-
-                  $video->storeAs($path, $videoName, 'public');
-
-                  //get video duration
-                  $media = FFMpeg::fromDisk('public')
-                      ->open($path . '/' . $videoName);
-
-                  $durationInSeconds = $media->getDurationInSeconds(); // returns an int
-
-
-              }
-
-              $this->lectureCreateOrUpdate($path . '/' . $videoName, $formData, $lectureId, $sectionId, $courseId, $durationInSeconds);
-
-
-          });*/
-
         DB::transaction(function () use ($formData, $lectureId, $courseId, $sectionId, $oldLectureVideo) {
 
             $video = $formData['video'];
@@ -73,7 +37,6 @@ class CourseSectionLecture extends Model
 
 
                 $this->getVideoDurationAndUpdateTable($newLecture->id,$uploadedVideo['path']);
-
 
             }
 
@@ -110,7 +73,7 @@ class CourseSectionLecture extends Model
     public function getVideoDurationAndUpdateTable($lectureId, $path)
     {
 
-//dd($path . '/' . $videoName);
+
         $media = FFMpeg::fromDisk('public')
             ->open( public_path().$path);
 

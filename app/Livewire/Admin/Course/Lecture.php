@@ -95,6 +95,19 @@ class Lecture extends Component
 
 
     }
+    public function isFree($lectureId)
+    {
+        $comment = CourseSectionLecture::query()->where([
+            'id' => $lectureId,
+        ])->first();
+
+        if ($comment->free) {
+            $comment->update(['free' => false]);
+        } else {
+            $comment->update(['free' => true]);
+        }
+
+    }
 
     public function render()
     {
