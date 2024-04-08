@@ -66,14 +66,12 @@ class CourseSectionLecture extends Model
 
 
             if ($video) {
-                $extension = $video->extension();
-                $videoName = Str::random(10) . '_' . time() . '.' . $extension;
-                $path = '/courses/' . $courseId . '/' . 'lecture-video';
-
-                $this->uploadFile($courseId, $oldLectureVideo, $video, 'lecture-video', $sectionId, $newLecture->id);
 
 
-                //  $this->getVideoDurationAndUpdateTable($lectureId, $path, $videoName);
+               $uploadedVideo= $this->uploadFile($courseId, $oldLectureVideo, $video, 'lecture-video', $sectionId, $newLecture->id);
+
+
+                $this->getVideoDurationAndUpdateTable($newLecture->id,$uploadedVideo['path']);
 
 
             }
@@ -108,14 +106,15 @@ class CourseSectionLecture extends Model
 
     }
 
-    public function getVideoDurationAndUpdateTable($lectureId, $path, $videoName)
+    public function getVideoDurationAndUpdateTable($lectureId, $path)
     {
 
 //dd($path . '/' . $videoName);
         $media = FFMpeg::fromDisk('public')
-            ->open('/' . $path . '/' . $videoName);
+            ->open( $path);
 
         $durationInSeconds = $media->getDurationInSeconds(); // returns an int
+
 
         CourseSectionLecture::query()->where([
             'id' => $lectureId,

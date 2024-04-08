@@ -31,6 +31,9 @@ trait UploadFiles
             $this->removeOldFile(public_path() . $oldFile);
         }
 
+        //use in the CourseSectionLecture Model for getVideoDurationAndUpdateTable
+        return ['path'=>$path . '/' . $file_name];
+
 
     }
 

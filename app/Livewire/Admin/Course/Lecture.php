@@ -33,7 +33,7 @@ class Lecture extends Component
     public function saveLecture($formData, CourseSectionLecture $courseSectionLecture)
     {
 
-        $formData['video']=$this->video;
+        $formData['video'] = $this->video;
 
         $validator = Validator::make($formData, [
             'video' => 'nullable|mimes:mp4',
@@ -47,7 +47,7 @@ class Lecture extends Component
         $validator->validate();
         $this->resetValidation();
 
-        $courseSectionLecture->saveLecture($formData, $this->lectureId, $this->sectionId, $this->courseId,$this->oldLectureVideo);
+        $courseSectionLecture->saveLecture($formData, $this->lectureId, $this->sectionId, $this->courseId, $this->oldLectureVideo);
 
         $this->reset('title');
         $this->dispatch('swal:alert-success');
@@ -67,16 +67,21 @@ class Lecture extends Component
             ->pluck('path')->first();
         $this->title = $lecture->title;
         $this->lectureId = $lecture_id;
-        $this->oldLectureVideo =$oldLectureVideo;
+        $this->oldLectureVideo = $oldLectureVideo;
 
     }
 
-    public function delete($section_id)
+    public function delete($lectureId)
     {
+
         CourseSectionLecture::query()
-            ->where('id', $section_id)
+            ->where('id', $lectureId)
             ->delete();
         $this->dispatch('swal:alert-success');
+
+        $this->redirectRoute('admin.course.section.lecture',$this->sectionId);
+
+
     }
 
     public function render()

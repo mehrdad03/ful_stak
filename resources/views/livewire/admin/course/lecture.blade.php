@@ -92,12 +92,12 @@
                                 </thead>
                                 <tbody>
                                 @forelse($lectures as $lecture)
-                                    <tr>
+                                    <tr wire:key="{{$loop->index}}">
                                         <td>{{$lecture->id}}</td>
 
-                                        <td>
-                                            <video width="320" height="240" controls>
-                                                <source src="{{config('app.ftp_url').@$lecture->video->path }}"
+                                        <td wire:ignore>
+                                            <video width="320" height="240" controls  wire:ignore>
+                                                <source src="{{config('app.ftp_url').@$lecture->video->path }}"  wire:ignore
                                                         type="video/mp4">
                                                 Your browser does not support the video tag.
                                             </video>
