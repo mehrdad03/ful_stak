@@ -17,14 +17,18 @@ class Index extends Component
     public $sameCourses;
     public $courseTotalDuration;
 
+    //after purchase
+    public $videoPath = '';
+
     public function mount(Course $course): void
     {
-        $this->course = $course->load('sections.sectionLectures');
+        $this->course = $course->load('sections.sectionLectures.video');
         $this->sameCourses = Course::query()
-            ->where('category_id',$this->course->category_id )
-            ->select('id','title','short_description','url_slug')->get();
+            ->where('category_id', $this->course->category_id)
+            ->select('id', 'title', 'short_description', 'url_slug')->get();
         $this->courseTotalDuration = CourseSectionLecture::query()->where('course_id', $this->course->id)->sum('duration');
     }
+
     /**
      * @throws ValidationException
      */
@@ -54,7 +58,7 @@ class Index extends Component
     public function submitCourseCommentAnswer($formData, $comment_id, Comment $comment): void
     {
 
-        $formData['comment_id']=$comment_id;
+        $formData['comment_id'] = $comment_id;
 
         $validator = Validator::make($formData, [
             'answer' => 'required|min:10|max: 700',
@@ -71,7 +75,7 @@ class Index extends Component
         $this->resetValidation();
 
         //session output is
-        $comment->submitCourseCommentAnswer($formData,$comment_id, $this->course->id);
+        $comment->submitCourseCommentAnswer($formData, $comment_id, $this->course->id);
         session()->flash('answer_message', 'نظر شما با موفقیت ثبت شد بعد از تایید نمایش داده خواهد شد!');
 
 
@@ -80,9 +84,15 @@ class Index extends Component
 
     public function addToBasket(Basket $basket): void
     {
-        $basket= $basket->addToBasket($this->course->id);
-        $this->dispatch('update-basket',count:$basket->count());
+        $basket = $basket->addToBasket($this->course->id);
+        $this->dispatch('update-basket', count: $basket->count());
 
+    }
+
+    public function videoModal($videoPath)
+    {
+        $this->videoPath = $videoPath;
+        $this->dispatch('videoModal',path: $videoPath);
     }
 
     public function render(): \Illuminate\Contracts\View\View|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\Foundation\Application
@@ -99,15 +109,15 @@ class Index extends Component
                 'status' => true,
                 'comment_id' => 0,
             ])
-            ->with('answers',function ($query) {
+            ->with('answers', function ($query) {
                 $query->where('status', true);
             }, 'user:id,name,picture')
             ->latest()
             ->get();
 
-        return view('livewire.client.course.index',[
-            'comments'=>$comments,
-            'checkCourseInBasket'=>$checkCourseInBasket
-            ]);
+        return view('livewire.client.course.index', [
+            'comments' => $comments,
+            'checkCourseInBasket' => $checkCourseInBasket
+        ]);
     }
 }

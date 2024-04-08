@@ -131,6 +131,9 @@
                                 <p class="text-white m-0">{{$lecture->title}}</p>
                             </div>
                             <div class="d-flex column-gap-2 align-items-center lecture-info ">
+                                <button  data-path="{{config('app.ftp_url').@$lecture->video->path }}" data-title="{{$lecture->title }}"  data-bs-toggle="modal" data-bs-target="#videoModal" class="text-white bg-secondary main-btn videoModal  rounded-2 p-1 " type="button">
+                                   مشاهده
+                                </button>
                                 @if($lecture->free)
                                     <a href="" class="m-0 text-white fw-normal">پیش نمایش</a>
                                 @endif
@@ -143,5 +146,8 @@
             </div>
         </div>
     @endforeach
+
 </section>
 <img src="/frontend/assets/images/hr.png" alt="HR" class="hr" />
+
+
