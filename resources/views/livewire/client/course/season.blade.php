@@ -115,7 +115,7 @@
                     @foreach($section->sectionLectures as $lecture)
 
                         <!-- episode -->
-                        <div class="d-flex justify-content-between">
+                        <div class="d-flex justify-content-between py-1 mb-1 ">
                             <div class="course_episods">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -131,16 +131,29 @@
                                 </svg>
                                 <p class="text-white m-0">{{$lecture->title}}</p>
                             </div>
-                            <div class="d-flex column-gap-2 align-items-center lecture-info ">
+                            <div class="d-flex column-gap-2 align-items-center justify-content-between lecture-info w-25 ">
+
+                                <p class="m-0 text-primary fw-bold">{{@date('s : i',$lecture->duration)}}</p>
                                 @if($checkPurchase)
                                     <button data-path="{{config('app.ftp_url').@$lecture->video->path }}"
                                             data-title="{{$lecture->title }}" data-bs-toggle="modal"
                                             data-bs-target="#videoModal"
-                                            class="text-white bg-secondary main-btn videoModal  rounded-2 p-1 "
+                                            class="text-white bg-secondary main-btn videoModal  rounded-2 px-2 py-1"
                                             type="button">
                                         مشاهده
                                     </button>
-                                @else
+                                @elseif($lecture->free)
+
+
+                                        <button data-path="{{config('app.ftp_url').@$lecture->video->path }}"
+                                                data-title="{{$lecture->title }}" data-bs-toggle="modal"
+                                                data-bs-target="#videoModal"
+                                                class="text-white bg-secondary main-btn videoModal  rounded-2 px-2 py-1"
+                                                type="button">
+                                            مشاهده
+                                        </button>
+                                    @else
+
                                     <div style="background: rgb(232 28 77)" class="px-1 rounded-2">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" style="fill: #fff"
                                              viewBox="0 0 24 24">
@@ -148,13 +161,12 @@
                                                 d="M17 9.761v-4.761c0-2.761-2.238-5-5-5-2.763 0-5 2.239-5 5v4.761c-1.827 1.466-3 3.714-3 6.239 0 4.418 3.582 8 8 8s8-3.582 8-8c0-2.525-1.173-4.773-3-6.239zm-8-4.761c0-1.654 1.346-3 3-3s3 1.346 3 3v3.587c-.927-.376-1.938-.587-3-.587s-2.073.211-3 .587v-3.587zm3 17c-3.309 0-6-2.691-6-6s2.691-6 6-6 6 2.691 6 6-2.691 6-6 6zm2-6c0 1.104-.896 2-2 2s-2-.896-2-2 .896-2 2-2 2 .896 2 2z"/>
                                         </svg>
                                     </div>
-                                @endif
+                                    @endif
 
-                                @if($lecture->free)
-                                    <a href="" class="m-0 text-white fw-normal">پیش نمایش</a>
-                                @endif
 
-                                <p class="m-0 text-primary fw-bold">{{@date('s : i',$lecture->duration)}}</p>
+
+
+
                             </div>
                         </div>
                     @endforeach

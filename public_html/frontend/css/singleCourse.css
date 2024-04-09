@@ -121,9 +121,14 @@ main {
   column-gap: 5px;
 }
 #mainContent .season .acc .acc-item .acc-content .course_episods svg {
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
 }
+
+#mainContent .season .videoModal {
+  font-size: 14px;
+}
+
 
 #mainContent h3 {
   -webkit-text-stroke: 1.5px #244d4d;
