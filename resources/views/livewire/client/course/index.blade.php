@@ -1,6 +1,6 @@
 @push('links')
-    <link rel="stylesheet" href="/frontend/css/singleCourse.css" />
-    <link rel="stylesheet" href="/frontend/css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/frontend/css/singleCourse.css"/>
+    <link rel="stylesheet" href="/frontend/css/swiper-bundle.min.css"/>
 @endpush
 <div>
     <!-- Crumble tabs -->
@@ -31,6 +31,11 @@
             @include('livewire.client.course.courses-slider')
             <!-- ======= Q & A ======= -->
             @include('livewire.client.course.qa')
+
+
+            <!-- ======= video modal ======= -->
+            @include('livewire.client.course.video-modal')
+
         </div>
         <!-- ========= Desktop Side Bar ========= -->
         @include('livewire.client.course.desktop-sidebar')
@@ -39,4 +44,19 @@
 @push('scripts')
     <script src="/frontend/js/swiper-bundle.min.js"></script>
     <script src="/frontend/js/singleCourse.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            $('.videoModal').on('click', function () {
+                var modal = $('#videoModal');
+                var dataPath = $(this).data('path');
+                var dataTitle = $(this).data('title');
+                modal.find('video').attr('src', dataPath)
+                modal.find('h5').html(dataTitle)
+
+            });
+        });
+
+    </script>
+
 @endpush
