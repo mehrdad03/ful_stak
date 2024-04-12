@@ -1,3 +1,7 @@
+@push('links')
+    <link rel="stylesheet" href="/frontend/css/swiper-bundle.min.css"/>
+@endpush
+
 <section id="roadmap">
         <!-- Start  -->
         <h5 class="text-white">شروع مسیر</h5>
@@ -1043,3 +1047,8 @@
 
         <h5 class="text-white">به جهان فول استک کاران خوش آمدید</h5>
       </section>
+
+      @push('scripts')
+    <script src="/frontend/js/swiper-bundle.min.js"></script>
+
+@endpush

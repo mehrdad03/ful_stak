@@ -4,7 +4,7 @@
         @forelse($sameCourses as $course)
 
             <div class="swiper-slide">
-                <img src="/frontend/assets/images/course1.png" alt="course image" />
+                <img src="/frontend/assets/images/course1.png" alt="course image" class="w-50"/>
                 <h6 class="text-white pt-2 px-2">{{$course->title}}</h6>
                 <p class="text-white px-2">{{substr($course->short_description,0,100)}}...</p>
                 <!-- course detail -->
