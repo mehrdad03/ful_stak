@@ -19,8 +19,7 @@
         <!-- ==== Front Road ==== -->
         <div class="row w-100 align-items-center">
           <!-- Front RoadMap -->
-          <div
-            class="d-none d-xl-flex col-xl-2 pe-5 mb-4 flex-column align-items-center">
+          <div class="d-none d-xl-flex col-xl-2 pe-5 mb-4 flex-column align-items-center">
             <svg
               width="32"
               height="46"
