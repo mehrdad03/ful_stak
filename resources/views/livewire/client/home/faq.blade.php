@@ -293,12 +293,112 @@
                 </div>
             </div>
         </div>
-        <div class="codes d-none d-lg-block col-lg-4">
-            <img src="/frontend/assets/images/htmlCode.png" alt="html code" />
-            <img src="/frontend/assets/images/cssCode.png" alt="css code" />
-            <img src="/frontend/assets/images/jsCode.png" alt="JavaScript code" />
-            <img src="/frontend/assets/images/phpCode.png" alt="php code" />
-            <img src="/frontend/assets/images/laravelCode.png" alt="laravel code" />
-        </div>
+        <div class="codes d-none d-lg-flex flex-column col-lg-4">
+            <div
+              class="codeNav d-flex flex-column align-items-baseline py-2 px-3 m-2">
+              <div class="d-flex gap-2 align-items-center">
+                <p class="text-white fw-bold m-0">HTML</p>
+                <svg
+                  class="text-primary"
+                  width="25"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-6 h-6">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" />
+                </svg>
+              </div>
+              <img src="/frontend/assets/images/html.gif" alt="html code" />
+            </div>
+            <div
+              class="codeNav d-flex flex-column align-items-baseline py-2 px-3 m-2">
+              <div class="d-flex gap-2 align-items-center">
+                <p class="text-white fw-bold m-0">CSS</p>
+                <svg
+                  class="text-primary"
+                  width="25"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-6 h-6">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" />
+                </svg>
+              </div>
+              <img src="/frontend/assets/images/css.gif" alt="css code" />
+            </div>
+            <div
+              class="codeNav d-flex flex-column align-items-baseline py-2 px-3 m-2">
+              <div class="d-flex gap-2 align-items-center">
+                <p class="text-white fw-bold m-0">Javascript</p>
+                <svg
+                  class="text-primary"
+                  width="25"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-6 h-6">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" />
+                </svg>
+              </div>
+              <img src="/frontend/assets/images/javascript.gif" alt="JavaScript code" />
+            </div>
+            <div
+              class="codeNav d-flex flex-column align-items-baseline py-2 px-3 m-2">
+              <div class="d-flex gap-2 align-items-center">
+                <p class="text-white fw-bold m-0">PHP</p>
+                <svg
+                  class="text-primary"
+                  width="25"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-6 h-6">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" />
+                </svg>
+              </div>
+              <img src="/frontend/assets/images/php.gif" alt="php code" />
+            </div>
+            <div
+              class="codeNav d-flex flex-column align-items-baseline py-2 px-3 m-2">
+              <div class="d-flex gap-2 align-items-center">
+                <p class="text-white fw-bold m-0">Laravel</p>
+                <svg
+                  class="text-primary"
+                  width="25"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-6 h-6">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" />
+                </svg>
+              </div>
+              <img src="/frontend/assets/images/laravel.gif" alt="laravel code" />
+            </div>
+          </div>
     </div>
 </section>
