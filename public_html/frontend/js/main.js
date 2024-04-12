@@ -9,7 +9,7 @@ $(document).ready(function () {
 
     // text slider
     var slideIndex = 0;
-    var sliderText = '.vertical-slider .slider-text';
+    var sliderText = ".vertical-slider .slider-text";
     var slideHeight = $(sliderText).outerHeight();
 
     function showSlide() {
@@ -44,6 +44,29 @@ $(document).ready(function () {
         var content = $(this).closest(".contentBox").find(".accordion-content");
         $(".accordion-content").not(content).slideUp();
         content.slideToggle();
+    });
+
+    // Slider
+    var swiper = new Swiper(".mySwiper", {
+        spaceBetween: 40,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        breakpoints: {
+            640: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+            },
+            768: {
+                slidesPerView: 2,
+                spaceBetween: 40,
+            },
+            1024: {
+                slidesPerView: 3,
+                spaceBetween: 30,
+            },
+        },
     });
 });
 
