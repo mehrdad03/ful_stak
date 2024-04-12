@@ -4,7 +4,7 @@
             class="col-12 col-lg-2 col-xl-3 z-3 d-flex flex-wrap align-items-center justify-content-between d-lg-block">
             <h2 class="title-text fs-2">پروژه های تسلط</h2>
             <img
-              src="/assets/images/brain.webp"
+              src="/frontend/assets/images/brain.webp"
               alt="brain"
               class="d-none d-lg-block w-75" />
             <a href="#" class="d-flex align-items-center column-gap-2">
@@ -27,7 +27,7 @@
                 <!-- HTML -->
                 <a href="#" class="swiper-slide borderSlider">
                   <img
-                    src="./assets/images/html.png"
+                    src="/frontend/assets/images/html.png"
                     alt="html"
                     class="roadIcon mb-3"
                     width="100" />
@@ -88,7 +88,7 @@
                 <!-- Css -->
                 <a href="#" class="swiper-slide">
                   <img
-                    src="./assets/images/html.png"
+                    src="/frontend/assets/images/html.png"
                     alt="html"
                     class="roadIcon mb-3"
                     width="100" />
@@ -149,7 +149,7 @@
                 <!-- Bootstrap -->
                 <a href="#" class="swiper-slide">
                   <img
-                    src="./assets/images/html.png"
+                    src="/frontend/assets/images/html.png"
                     alt="html"
                     class="roadIcon mb-3"
                     width="100" />
@@ -210,7 +210,7 @@
                 <!-- Bootstrap -->
                 <a href="#" class="swiper-slide">
                   <img
-                    src="./assets/images/html.png"
+                    src="/frontend/assets/images/html.png"
                     alt="html"
                     class="roadIcon mb-3"
                     width="100" />
@@ -274,7 +274,7 @@
           </div>
         </div>
         <img
-          src="/assets/images/projectBg.png"
+          src="/frontend/assets/images/projectBg.png"
           alt="projectBg"
           class="d-none d-lg-block" />
       </section>
