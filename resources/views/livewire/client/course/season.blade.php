@@ -49,8 +49,8 @@
                 <div
                     class="d-flex justify-content-center justify-content-md-end">
                     <div
-                        class="acc-header d-flex w-100 align-items-center justify-content-between px-1 px-md-4">
-                        <p class="w50 m-0 text-white fw-bold px-2">{{$section->title}}</p>
+                        class="acc-header d-flex w-100 align-items-center justify-content-between px-3 py-1 px-md-4">
+                        <h2 class="w50 m-0 text-white fw-bold px-2 fs-6">{{$section->title}}</h2>
                         <!-- section details -->
                         <div
                             class="w-50 d-flex align-items-center justify-content-around justify-content-md-end section-info">
@@ -129,7 +129,7 @@
                                         stroke-linejoin="round"
                                         d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z"/>
                                 </svg>
-                                <p class="text-white m-0">{{$lecture->title}}</p>
+                                <h4 class="text-white m-0 fs-6">{{$lecture->title}}</h4>
                             </div>
                             <div class="d-flex column-gap-2 align-items-center justify-content-between lecture-info w-25 ">
 
@@ -162,11 +162,6 @@
                                         </svg>
                                     </div>
                                     @endif
-
-
-
-
-
                             </div>
                         </div>
                     @endforeach

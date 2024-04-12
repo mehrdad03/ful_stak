@@ -1,34 +1,28 @@
 <div>
     <!-- ========== hero Section ========== -->
-    <livewire:client.home.hero/>
+
+    @include('livewire.client.home.hero')
 
     <!-- ========== intro Section ========== -->
-    <livewire:client.home.intro/>
-
-    <!-- hr -->
-    <img src="/frontend/assets/images/hr.png" alt="HR" class="hr" />
+    @include('livewire.client.home.intro')
 
     <!-- ========== Target Section ========== -->
-    <livewire:client.home.target/>
-
-    <!-- hr -->
-    <img src="/frontend/assets/images/hr.png" alt="HR" class="hr" />
+    @include('livewire.client.home.target')
 
     <!-- ========== Roadmap Section ========== -->
 
-    <livewire:client.home.road-map/>
-    <!-- hr -->
-    <img src="/frontend/assets/images/hr.png" alt="HR" class="hr" />
+    @include('livewire.client.home.road-map')
+
+    <!-- ========== Roadmap Section ========== -->
+
+    @include('livewire.client.home.project')
 
     <!-- ========== blog Section ========== -->
-    <livewire:client.home.blog/>
+    @include('livewire.client.home.blog')
 
     <!-- ========== social Banner ========== -->
-    <livewire:client.home.social-banner/>
-
-    <!-- hr -->
-    <img src="/frontend/assets/images/hr.png" alt="HR" class="hr" />
+    @include('livewire.client.home.social-banner')
 
     <!-- ========== faq Section ========== -->
-    <livewire:client.home.faq/>
+    @include('livewire.client.home.social-banner')
 </div>

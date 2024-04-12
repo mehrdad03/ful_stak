@@ -22,3 +22,5 @@
         <img src="/frontend/assets/images/introBG.png" alt="intro background" />
     </div>
 </section>
+<!-- hr -->
+<img src="/frontend/assets/images/hr.png" alt="HR" class="hr" />
