@@ -563,10 +563,10 @@ header .header-basket {
   .swiper-slide {
     background-color: var(--nav-color);
     border-radius: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-direction: column !important;
     padding: 20px;
     position: relative;
   }
@@ -578,7 +578,7 @@ header .header-basket {
     top: -100px;
   }
   .swiper-pagination-bullet-active {
-    background-color: var(--primary-color);
+    background-color: var(--primary-color) !important;
   }
   .lastRoad {
     margin-right: -300px;
