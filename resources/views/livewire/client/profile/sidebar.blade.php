@@ -13,7 +13,7 @@
           </span>
     <div class="d-flex flex-column align-items-center mb-3 mb-md-5">
         <img
-            src="{{\Illuminate\Support\Facades\Auth::user()->picture}}"
+            src="{{\Illuminate\Support\Facades\Auth::user()->picture ?? '/frontend/assets/images/default.png'}}"
             alt="User Profile"
             class="profileImg" />
         <h5 class="text-white fw-bold my-2">{{\Illuminate\Support\Facades\Auth::user()->name}}</h5>

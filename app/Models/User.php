@@ -39,10 +39,10 @@ class User extends Authenticatable
     ];
 
 
-    public function checkUser($user, $loginType = 'google'): void
+    public function checkUser($user, $loginType = 'google')
     {
 
-        $check = User::query()->where('email', $user['email'])->first();
+        $check = User::query()->where('email',$user['email'])->first();
 
         if (!$check) {
             $newUser = User::query()->create([
@@ -58,6 +58,31 @@ class User extends Authenticatable
             // Notification::send(Auth::user(), new WelcomeMessage($user['name']));
 
         }
+
+        return redirect()->route('client.home');
+
+    }
+
+    public function checkUserWithMobile($mobile)
+    {
+
+
+        $check = User::query()->where('mobile',$mobile)->first();
+
+        if (!$check) {
+            $newUser = User::query()->create([
+                'mobile'=>$mobile
+            ]);
+
+            Auth::login($newUser, true);
+            //  Notification::send(Auth::user(), new WelcomeMessage($user['name']));
+        } else {
+            Auth::login($check, true);
+            // Notification::send(Auth::user(), new WelcomeMessage($user['name']));
+
+        }
+
+        return redirect()->route('client.home');
 
     }
 

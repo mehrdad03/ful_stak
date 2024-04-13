@@ -35,7 +35,6 @@ trait PaymentGateway
         $amount = Session::get('zarinPalAmount'); // قیمت ارسال شده از متود CalculateUserBasketPrice در تریت calculation
         $orderId = Session::get('zarinPalOrderId'); // قیمت ارسال شده از متود paymentZarinPal در helper_function
 
-//dd(Session::get('zarinPalAmount')*10);
         $response = zarinpal()
             ->merchantId('e79622e9-157e-4acc-af4c-f18c281046ef') // تعیین مرچنت کد در حین اجرا - اختیاری
             ->amount($amount)
