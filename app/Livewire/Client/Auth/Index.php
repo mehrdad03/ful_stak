@@ -3,19 +3,17 @@
 namespace App\Livewire\Client\Auth;
 
 use App\Models\User;
-use App\Trait\sendSms;
-use Ghasedak\GhasedakApi;
+use App\Trait\SendSms;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 use Laravel\Socialite\Facades\Socialite;
 use Livewire\Component;
-use function Symfony\Component\Translation\t;
 
 class Index extends Component
 {
 
-    use sendSms;
+    use SendSms;
 
     public $showInsertCodeView = false;
     public $sendCodeSmsError = false, $userMobile;

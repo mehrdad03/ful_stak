@@ -10,7 +10,7 @@ trait SendSms
     protected function sendVerificationCode($mobile)
     {
 
-        $api = new GhasedakApi(env('GHASEDAKAPI_KEY'));
+        $api = new GhasedakApi('4534f06c067e08f05b4df3690816b5d6697ca57f818d84d257d7855f525f6adc');
         $response = $api->Verify(
             $mobile, // receptor
             "fulstaksmsVerification",  // name of the template which you've created in you account
