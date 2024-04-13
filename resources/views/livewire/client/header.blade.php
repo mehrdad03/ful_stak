@@ -68,14 +68,14 @@
                             </svg>
                         </a>
                         <button type="button" class="bg-transparent">
-                            <img src="{{$user->picture}}" alt="user picture"/>
+                            <img src="{{$user->picture ?? '/frontend/assets/images/default.png'}}" alt="user picture"/>
                         </button>
                         @if($prefix!='profile')
                         <!-- popover -->
                         <div class="popover position-absolute bg-secondary">
                             <!-- avatar & phoneNumber -->
                             <div class="d-flex  py-3">
-                                <img src="{{$user->picture}}" alt="user picture"/>
+                                <img src="{{$user->picture ?? '/frontend/assets/images/default.png'}}" alt="user picture"/>
                                 <div class="text-right me-3">
                                     <h6 class="m-0 pb-2 text-white fw-bold user_name"> مهرداد داداش </h6>
                                     <p class="m-0 text-primary">{{$user->mobile ? $user->mobile : $user->email}}</p>
