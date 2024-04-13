@@ -18,8 +18,8 @@ class Index extends Component
     use sendSms;
 
     public $showInsertCodeView = false;
-    public $sendCodeSmsError = false;
-    public $code;
+    public $sendCodeSmsError = false, $userMobile;
+    public $code, $codeInvalidError = false;
 
     public function mount()
     {
@@ -72,7 +72,7 @@ class Index extends Component
         $validator = Validator::make($formData, [
 
             'mobile' => ['required', 'regex:/^09\d{9}$/'],
-        ],[
+        ], [
             'required' => 'شماره موبایل الزامی است !',
             'regex' => 'شماره موبایل نامعتیر است!',
         ]);
@@ -81,8 +81,39 @@ class Index extends Component
         $this->resetValidation();
 
         $this->reset('code');
+
+        //use in the submitUserWithMobile method
+        $this->userMobile = $formData['mobile'];
+        //send data to SendSms trait
         $response = $this->sendVerificationCode($formData['mobile']);
-        $response ? $this->showInsertCodeView = true : $this->sendCodeSmsError=true;
+
+
+        $response ? $this->showInsertCodeView = true : $this->sendCodeSmsError = true;
+
+    }
+
+    public function submitUserWithMobile($formData, User $user)
+    {
+
+        $validator = Validator::make($formData, [
+
+            'code' => ['required', 'numeric', 'digits:4'],
+        ], [
+            'required' => 'کد احراز هویت الزامی است !',
+            'digits' => 'کد احراز هویت 4 رقمی است !',
+            'numeric' => 'کد احراز هویت فقط شامل اعداد است !',
+        ]);
+
+        $validator->validate();
+        $this->resetValidation();
+
+        if ($formData['code'] == Session::get('smsVerificationCode')) {
+            $user->checkUser($this->userMobile, 'mobile');
+
+        } else {
+            $this->codeInvalidError = true;
+        }
+
 
     }
 

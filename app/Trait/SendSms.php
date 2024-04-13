@@ -5,7 +5,7 @@ namespace App\Trait;
 use Ghasedak\GhasedakApi;
 use Illuminate\Support\Facades\Session;
 
-trait sendSms
+trait SendSms
 {
     protected function sendVerificationCode($mobile)
     {

@@ -8,18 +8,26 @@
     </a>
 
     @if($showInsertCodeView)
-        <form wire:submit.prevent="submit(Object.fromEntries(new FormData($event.target)))" id="form">
+        <form wire:submit.prevent="submitUserWithMobile(Object.fromEntries(new FormData($event.target)))" id="form">
             <div class="my-1 mt-4 my-md-3">
                 <h1 class="text-white fs-4 text-center">کد ارسال شد</h1>
                 <div class="d-flex flex-column my-2 ">
                     <label for="code" class="m-2 fw-bold text-white">کد تایید</label>
                     <input class="text-center"
-                           type="number"
+                           type="text"
                            name="code"
                            wire:model="code"
+                           maxlength="4"
                            id="phoneNumber"
                            placeholder="کد رو وارد کنید"/>
-                    <span id="error" class="text-danger"></span>
+                    @error('code')
+                    <span
+                        class="text-danger d-block mt-2">{{ $message }}</span>
+                    @enderror
+                    @if($codeInvalidError)
+                        <span class="text-danger mt-2">کد احراز نامعتبر است !</span>
+                    @endif
+
                 </div>
                 <div class="d-flex justify-content-center align-items-center">
                     <button class="my-2 py-3" type="submit" id="submit">
