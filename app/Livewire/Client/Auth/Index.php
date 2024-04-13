@@ -3,13 +3,24 @@
 namespace App\Livewire\Client\Auth;
 
 use App\Models\User;
+use App\Trait\sendSms;
+use Ghasedak\GhasedakApi;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Validator;
 use Laravel\Socialite\Facades\Socialite;
 use Livewire\Component;
+use function Symfony\Component\Translation\t;
 
 class Index extends Component
 {
+
+    use sendSms;
+
+    public $showInsertCodeView = false;
+    public $sendCodeSmsError = false;
+    public $code;
+
     public function mount()
     {
         Session::put('previous_url', url()->previous());
@@ -49,11 +60,33 @@ class Index extends Component
     {
         $githubUser = Socialite::driver('github')->stateless()->user();
 
-        $user->checkUser($githubUser,'github');
+        $user->checkUser($githubUser, 'github');
 
         return redirect()->route('client.home');
 
     }
+
+    public function sendCode($formData)
+    {
+
+        $validator = Validator::make($formData, [
+
+            'mobile' => ['required', 'regex:/^09\d{9}$/'],
+        ],[
+            'required' => 'شماره موبایل الزامی است !',
+            'regex' => 'شماره موبایل نامعتیر است!',
+        ]);
+
+        $validator->validate();
+        $this->resetValidation();
+
+        $this->reset('code');
+        $response = $this->sendVerificationCode($formData['mobile']);
+        $response ? $this->showInsertCodeView = true : $this->sendCodeSmsError=true;
+
+    }
+
+
     public function render()
     {
         return view('livewire.client.auth.index');

@@ -8,6 +8,7 @@
         "php": "^8.2",
         "ext-ftp": "*",
         "aws/aws-sdk-php": "^3.303",
+        "ghasedak/laravel": "^2.1",
         "guzzlehttp/guzzle": "^7.2",
         "jenssegers/agent": "^2.6",
         "laravel/framework": "^10.10",

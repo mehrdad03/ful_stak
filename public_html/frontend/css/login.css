@@ -63,12 +63,12 @@ main .form button {
   font-size: 14px;
   background-color: #23bf65;
 }
-main .form #submit:disabled {
-  width: 40%;
+/*main .form #submit:disabled {
+  width: 10%;
   cursor: not-allowed;
   opacity: 0.5;
   transition: all 0.4s;
-}
+}*/
 main .form #submit {
   opacity: 1;
   cursor: pointer;
