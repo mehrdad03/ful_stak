@@ -123,6 +123,7 @@
                       <p class="m-0 text-primary fw-bold me-2">تومان</p>
                     </div>
                   </div>
+                  <button class="main-btn text-white px-3 py-2 btn-innerShadow">مشاهده دوره</button>
                 </a>
                 <!-- Css -->
                 <a href="#" class="swiper-slide">
@@ -159,6 +160,7 @@
                           stroke-linecap="round"
                           stroke-linejoin="round" />
                       </svg>
+                      
                     </div>
                     <!-- Course Liked -->
                     <div class="col-3 d-flex align-items-start">
@@ -181,6 +183,7 @@
                       <p class="m-0 text-primary fw-bold me-2">تومان</p>
                     </div>
                   </div>
+                  <button class="main-btn text-white px-3 py-2 btn-innerShadow">مشاهده دوره</button>
                 </a>
                 <!-- Bootstrap -->
                 <a href="#" class="swiper-slide">
@@ -261,6 +264,7 @@
                       <p class="m-0 text-primary fw-bold me-2">تومان</p>
                     </div>
                   </div>
+                  <button class="main-btn text-white px-3 py-2 btn-innerShadow">مشاهده دوره</button>
                 </a>
                 <!-- JavaScript -->
                 <a href="#" class="swiper-slide">
@@ -341,6 +345,7 @@
                       <p class="m-0 text-primary fw-bold me-2">تومان</p>
                     </div>
                   </div>
+                  <button class="main-btn text-white px-3 py-2 btn-innerShadow">مشاهده دوره</button>
                 </a>
               </div>
               <div class="swiper-pagination"></div>
@@ -363,9 +368,9 @@
           <!-- Back Courses -->
           <div class="col-12 col-xl-10 mt-4 mt-sm-0 p-0">
             <div class="swiper mySwiper">
-              <div class="swiper-wrapper">
+            <div class="swiper-wrapper">
                 <!-- HTML -->
-                <a href="#" class="swiper-slide">
+                <a href="#" class="swiper-slide borderSlider">
                   <img
                     src="./frontend/assets/images/html.png"
                     alt="html"
@@ -422,6 +427,7 @@
                       <p class="m-0 text-primary fw-bold me-2">تومان</p>
                     </div>
                   </div>
+                  <button class="main-btn text-white px-3 py-2 btn-innerShadow">مشاهده دوره</button>
                 </a>
                 <!-- Css -->
                 <a href="#" class="swiper-slide">
@@ -458,6 +464,7 @@
                           stroke-linecap="round"
                           stroke-linejoin="round" />
                       </svg>
+                      
                     </div>
                     <!-- Course Liked -->
                     <div class="col-3 d-flex align-items-start">
@@ -480,9 +487,10 @@
                       <p class="m-0 text-primary fw-bold me-2">تومان</p>
                     </div>
                   </div>
+                  <button class="main-btn text-white px-3 py-2 btn-innerShadow">مشاهده دوره</button>
                 </a>
                 <!-- Bootstrap -->
-                <a href="#" class="swiper-slide borderSlider">
+                <a href="#" class="swiper-slide">
                   <svg
                     width="100"
                     height="100"
@@ -560,6 +568,7 @@
                       <p class="m-0 text-primary fw-bold me-2">تومان</p>
                     </div>
                   </div>
+                  <button class="main-btn text-white px-3 py-2 btn-innerShadow">مشاهده دوره</button>
                 </a>
                 <!-- JavaScript -->
                 <a href="#" class="swiper-slide">
@@ -640,6 +649,7 @@
                       <p class="m-0 text-primary fw-bold me-2">تومان</p>
                     </div>
                   </div>
+                  <button class="main-btn text-white px-3 py-2 btn-innerShadow">مشاهده دوره</button>
                 </a>
               </div>
               <div class="swiper-pagination"></div>
@@ -750,7 +760,7 @@
           <!-- Fullstack Courses -->
           <div class="col-12 col-xl-10 mt-4 mt-sm-0 p-0">
             <div class="swiper mySwiper">
-              <div class="swiper-wrapper">
+            <div class="swiper-wrapper">
                 <!-- HTML -->
                 <a href="#" class="swiper-slide borderSlider">
                   <img
@@ -809,6 +819,7 @@
                       <p class="m-0 text-primary fw-bold me-2">تومان</p>
                     </div>
                   </div>
+                  <button class="main-btn text-white px-3 py-2 btn-innerShadow">مشاهده دوره</button>
                 </a>
                 <!-- Css -->
                 <a href="#" class="swiper-slide">
@@ -845,6 +856,7 @@
                           stroke-linecap="round"
                           stroke-linejoin="round" />
                       </svg>
+                      
                     </div>
                     <!-- Course Liked -->
                     <div class="col-3 d-flex align-items-start">
@@ -867,6 +879,7 @@
                       <p class="m-0 text-primary fw-bold me-2">تومان</p>
                     </div>
                   </div>
+                  <button class="main-btn text-white px-3 py-2 btn-innerShadow">مشاهده دوره</button>
                 </a>
                 <!-- Bootstrap -->
                 <a href="#" class="swiper-slide">
@@ -947,6 +960,7 @@
                       <p class="m-0 text-primary fw-bold me-2">تومان</p>
                     </div>
                   </div>
+                  <button class="main-btn text-white px-3 py-2 btn-innerShadow">مشاهده دوره</button>
                 </a>
                 <!-- JavaScript -->
                 <a href="#" class="swiper-slide">
@@ -1027,6 +1041,7 @@
                       <p class="m-0 text-primary fw-bold me-2">تومان</p>
                     </div>
                   </div>
+                  <button class="main-btn text-white px-3 py-2 btn-innerShadow">مشاهده دوره</button>
                 </a>
               </div>
               <div class="swiper-pagination"></div>
