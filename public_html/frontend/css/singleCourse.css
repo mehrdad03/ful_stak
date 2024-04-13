@@ -112,9 +112,6 @@ main {
   padding: 20px 0;
   margin: 20px auto;
 }
-#mainContent .season .acc .acc-item.active {
-  height: 430px;
-}
 #mainContent .season .acc .acc-item .acc-content .course_episods {
   display: flex;
   align-items: center;

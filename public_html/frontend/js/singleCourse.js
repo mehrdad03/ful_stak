@@ -8,12 +8,12 @@ $(document).ready(function () {
         $(".more").text("");
     });
 
-    // Accordion
-    $(".acc-item").on("click", function () {
-        $(".acc-item").removeClass("active");
-        $(this).toggleClass("active");
-        $(this).css("margin-bottom", "5%");
-    });
+  // Accordion
+  $(".acc-item .acc-content").hide();
+  $(".acc-item").on("click", function () {
+    // Toggle the visibility of the .acc-content within the clicked .acc-item with slide animation
+    $(this).find(".acc-content").show();
+  });
 
     // Q & A
     $(".newQ").hide();

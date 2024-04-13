@@ -45,17 +45,13 @@
     @foreach($course->sections as $section)
         <div class="acc w-100">
             <div class="acc-num"><p class="m-0 index">{{$loop->index+1}}</p></div>
-            <div class="acc-item w-100 {{$loop->index==0 ? 'active' :'' }}">
-                <div
-                    class="d-flex justify-content-center justify-content-md-end">
-                    <div
-                        class="acc-header d-flex w-100 align-items-center justify-content-between px-3 py-1 px-md-4">
+            <div class="acc-item mb-5 w-100 {{$loop->index==0 ? 'active' :'' }}">
+                <div class="d-flex justify-content-center justify-content-md-end">
+                    <div class="acc-header d-flex w-100 align-items-center justify-content-between px-3 py-1 px-md-4">
                         <h2 class="w50 m-0 text-white fw-bold px-2 fs-6">{{$section->title}}</h2>
                         <!-- section details -->
-                        <div
-                            class="w-50 d-flex align-items-center justify-content-around justify-content-md-end section-info">
-                            <div
-                                class="d-flex justify-content-center align-items-start py-3 w-75">
+                        <div class="w-50 d-flex align-items-center justify-content-around justify-content-md-end section-info">
+                            <div class="d-flex justify-content-center align-items-start py-3 w-75">
                                 <div class="courseDetails w-50">
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
