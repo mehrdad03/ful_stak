@@ -10,7 +10,7 @@
     @if($showInsertCodeView)
         <form wire:submit.prevent="submitUserWithMobile(Object.fromEntries(new FormData($event.target)))" id="form">
             <div class="my-1 mt-4 my-md-3">
-                <h1 class="text-white fs-4 text-center">کد ارسال شد</h1>
+                <h1 class="text-white fs-4 text-center">ورود | ثبت ‌نام</h1>
                 <div class="d-flex flex-column my-2 ">
                     <label for="code" class="m-2 fw-bold text-white">کد تایید</label>
                     <input class="text-center"
@@ -30,8 +30,13 @@
 
                 </div>
                 <div class="d-flex justify-content-center align-items-center">
-                    <button class="my-2 py-3" type="submit" id="submit">
-                        ثبت نام
+                    <button class="my-2 py-3" type="submit" id="submit" style="text-align: -webkit-center;height: 45px ">
+                        <span wire:loading.remove>
+                               تایید
+                        </span>
+                        <span wire:loading class="loader" style="width:30px ; border-width: 4px"
+
+                        ></span>
                     </button>
                 </div>
             </div>

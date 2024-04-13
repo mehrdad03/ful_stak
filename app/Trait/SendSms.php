@@ -24,6 +24,21 @@ trait SendSms
         }
     }
 
+    public function sendSubmitOrderSms($data)
+    {
+        $api = new GhasedakApi('4534f06c067e08f05b4df3690816b5d6697ca57f818d84d257d7855f525f6adc');
+        $response = $api->Verify(
+            $data['mobile'], // receptor
+            "submitOrder",  // name of the template which you've created in you account
+            $data['orderNumber']  // parameters (supporting up to 10 parameters)
+        );
+
+        if ($response->result->code == 200) {
+            return true;
+        } else {
+            return false;
+        }
+}
     public function randomeCode()
     {
         Session::forget('smsVerificationCode');
