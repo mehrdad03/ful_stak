@@ -106,12 +106,11 @@ class Index extends Component
         $this->resetValidation();
 
         if ($formData['code'] == Session::get('smsVerificationCode')) {
-            $user->checkUser($this->userMobile, 'mobile');
+            $user->checkUserWithMobile($this->userMobile);
 
         } else {
             $this->codeInvalidError = true;
         }
-
 
     }
 

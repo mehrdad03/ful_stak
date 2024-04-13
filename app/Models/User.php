@@ -42,24 +42,37 @@ class User extends Authenticatable
     public function checkUser($user, $loginType = 'google')
     {
 
+        $check = User::query()->where('email',$user['email'])->first();
 
-        if ($loginType === 'mobile') {
-            $data = [
-                'mobile' =>$user,
-            ];
-        } else if ($loginType === 'google') {
-            $data = [
+        if (!$check) {
+            $newUser = User::query()->create([
                 'email' => $user['email'],
                 'picture' => $user['picture'],
                 'name' => $user['name'],
-            ];
+            ]);
+
+            Auth::login($newUser, true);
+            //  Notification::send(Auth::user(), new WelcomeMessage($user['name']));
+        } else {
+            Auth::login($check, true);
+            // Notification::send(Auth::user(), new WelcomeMessage($user['name']));
 
         }
 
-        $check = User::query()->where($data)->first();
+        return redirect()->route('client.home');
+
+    }
+
+    public function checkUserWithMobile($mobile)
+    {
+
+
+        $check = User::query()->where('mobile',$mobile)->first();
 
         if (!$check) {
-            $newUser = User::query()->create($data);
+            $newUser = User::query()->create([
+                'mobile'=>$mobile
+            ]);
 
             Auth::login($newUser, true);
             //  Notification::send(Auth::user(), new WelcomeMessage($user['name']));
