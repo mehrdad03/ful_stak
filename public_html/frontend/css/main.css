@@ -561,6 +561,7 @@ header .header-basket {
     height: 350px;
     max-height: 430px;
 }
+
 .swiper-slide {
     background-color: var(--nav-color);
     border-radius: 30px;
@@ -570,6 +571,12 @@ header .header-basket {
     flex-direction: column !important;
     padding: 20px;
     position: relative;
+}
+.swiper-slide .courseLike svg{
+    transition: all .4ms ease-in-out;
+}
+.swiper-slide .courseLike svg:hover{
+    fill: #950D0D;
 }
 .borderSlider {
     border-right: 2px solid var(--primary-color);
@@ -603,6 +610,24 @@ header .header-basket {
 }
 #projects .projectBrain {
     width: 80%;
+}
+#projects .swiper {
+    height: 30rem;
+}
+#projects .swiper-wrapper{
+    max-height: 23rem;
+    padding-top: 52px;
+}
+#projects .swiper-slide .courseBanner{
+    background-color: var(--nav-color);
+    position: absolute;
+    top: -50px;
+    width: 90%;
+    height: 140px;
+    overflow: hidden;
+}
+#projects .swiper-slide h3 {
+    margin-top: 5.5rem;
 }
 @media screen and (max-width: 768px) {
     #projects .swiper-wrapper a h5 {

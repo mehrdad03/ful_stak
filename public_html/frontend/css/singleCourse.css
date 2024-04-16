@@ -136,6 +136,12 @@ main {
   overflow: hidden;
   align-items: start !important;
 }
+
+.swiper-slide .sliderBtn {
+  background-color: transparent;
+  border: 1px solid var(--primary-color);
+}
+
 .swiper-slide img{
   max-height: 120px;
   object-fit: cover;

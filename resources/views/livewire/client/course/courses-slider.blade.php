@@ -15,7 +15,7 @@
                         <p class="text-white text-center flex-grow-1 px-3">
                             تسلط بر دنیای Vue js
                         </p>
-                        <div class="w-100  d-flex align-items-center justify-content-between  px-3 mb-3">
+                        <div class="w-100 flex-wrap d-flex align-items-center justify-content-between justify-content-lg-center gap-3 px-3 mb-3">
                             <div class="d-flex align-items-start gap-1">
                                 <svg width="17" height="17" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M2.70825 9.20833H2.16659C1.87927 9.20833 1.60372 9.0942 1.40055 8.89103C1.19739 8.68787 1.08325 8.41232 1.08325 8.125V2.70833C1.08325 2.42102 1.19739 2.14547 1.40055 1.9423C1.60372 1.73914 1.87927 1.625 2.16659 1.625H10.8333C11.1206 1.625 11.3961 1.73914 11.5993 1.9423C11.8024 2.14547 11.9166 2.42102 11.9166 2.70833V8.125C11.9166 8.41232 11.8024 8.68787 11.5993 8.89103C11.3961 9.0942 11.1206 9.20833 10.8333 9.20833H10.2916" stroke="#23BF65" stroke-linecap="round" stroke-linejoin="round"/>
@@ -38,7 +38,7 @@
                                 <p class="m-0 text-white-50">3600</p>
                             </div>
                         </div>
-                        <button class="main-btn text-white px-3 py-2 mb-3 mx-auto">مشاهده دوره</button>
+                        <button class="sliderBtn btn-innerShadow rounded-3  text-white px-3 py-2 mb-3 mx-auto">مشاهده دوره</button>
                     </div>
                     <div class="swiper-slide">
                         <img
@@ -52,7 +52,7 @@
                         <p class="text-white text-center flex-grow-1 px-3">
                             تسلط بر دنیای Vue js
                         </p>
-                        <div class="w-100  d-flex align-items-center justify-content-between  px-3 mb-3">
+                        <div class="w-100 flex-wrap d-flex align-items-center justify-content-between justify-content-lg-center gap-3 px-3 mb-3">
                             <div class="d-flex align-items-start gap-1">
                                 <svg width="17" height="17" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M2.70825 9.20833H2.16659C1.87927 9.20833 1.60372 9.0942 1.40055 8.89103C1.19739 8.68787 1.08325 8.41232 1.08325 8.125V2.70833C1.08325 2.42102 1.19739 2.14547 1.40055 1.9423C1.60372 1.73914 1.87927 1.625 2.16659 1.625H10.8333C11.1206 1.625 11.3961 1.73914 11.5993 1.9423C11.8024 2.14547 11.9166 2.42102 11.9166 2.70833V8.125C11.9166 8.41232 11.8024 8.68787 11.5993 8.89103C11.3961 9.0942 11.1206 9.20833 10.8333 9.20833H10.2916" stroke="#23BF65" stroke-linecap="round" stroke-linejoin="round"/>
@@ -75,7 +75,7 @@
                                 <p class="m-0 text-white-50">3600</p>
                             </div>
                         </div>
-                        <button class="main-btn text-white px-3 py-2 mb-3 mx-auto">مشاهده دوره</button>
+                        <button class="sliderBtn btn-innerShadow rounded-3  text-white px-3 py-2 mb-3 mx-auto">مشاهده دوره</button>
                     </div>
                     <div class="swiper-slide">
                         <img
@@ -89,7 +89,7 @@
                         <p class="text-white text-center flex-grow-1 px-3">
                             تسلط بر دنیای Vue js
                         </p>
-                        <div class="w-100  d-flex align-items-center justify-content-between  px-3 mb-3">
+                        <div class="w-100 flex-wrap d-flex align-items-center justify-content-between justify-content-lg-center gap-3 px-3 mb-3">
                             <div class="d-flex align-items-start gap-1">
                                 <svg width="17" height="17" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M2.70825 9.20833H2.16659C1.87927 9.20833 1.60372 9.0942 1.40055 8.89103C1.19739 8.68787 1.08325 8.41232 1.08325 8.125V2.70833C1.08325 2.42102 1.19739 2.14547 1.40055 1.9423C1.60372 1.73914 1.87927 1.625 2.16659 1.625H10.8333C11.1206 1.625 11.3961 1.73914 11.5993 1.9423C11.8024 2.14547 11.9166 2.42102 11.9166 2.70833V8.125C11.9166 8.41232 11.8024 8.68787 11.5993 8.89103C11.3961 9.0942 11.1206 9.20833 10.8333 9.20833H10.2916" stroke="#23BF65" stroke-linecap="round" stroke-linejoin="round"/>
@@ -112,7 +112,7 @@
                                 <p class="m-0 text-white-50">3600</p>
                             </div>
                         </div>
-                        <button class="main-btn text-white px-3 py-2 mb-3 mx-auto">مشاهده دوره</button>
+                        <button class="sliderBtn btn-innerShadow rounded-3  text-white px-3 py-2 mb-3 mx-auto">مشاهده دوره</button>
                     </div>
                     <div class="swiper-slide">
                         <img
@@ -126,7 +126,7 @@
                         <p class="text-white text-center flex-grow-1 px-3">
                             تسلط بر دنیای Vue js
                         </p>
-                        <div class="w-100  d-flex align-items-center justify-content-between  px-3 mb-3">
+                        <div class="w-100 flex-wrap d-flex align-items-center justify-content-between justify-content-lg-center gap-3 px-3 mb-3">
                             <div class="d-flex align-items-start gap-1">
                                 <svg width="17" height="17" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M2.70825 9.20833H2.16659C1.87927 9.20833 1.60372 9.0942 1.40055 8.89103C1.19739 8.68787 1.08325 8.41232 1.08325 8.125V2.70833C1.08325 2.42102 1.19739 2.14547 1.40055 1.9423C1.60372 1.73914 1.87927 1.625 2.16659 1.625H10.8333C11.1206 1.625 11.3961 1.73914 11.5993 1.9423C11.8024 2.14547 11.9166 2.42102 11.9166 2.70833V8.125C11.9166 8.41232 11.8024 8.68787 11.5993 8.89103C11.3961 9.0942 11.1206 9.20833 10.8333 9.20833H10.2916" stroke="#23BF65" stroke-linecap="round" stroke-linejoin="round"/>
@@ -149,7 +149,7 @@
                                 <p class="m-0 text-white-50">3600</p>
                             </div>
                         </div>
-                        <button class="main-btn text-white px-3 py-2 mb-3 mx-auto">مشاهده دوره</button>
+                        <button class="sliderBtn btn-innerShadow rounded-3  text-white px-3 py-2 mb-3 mx-auto">مشاهده دوره</button>
                     </div>
 
                 </div>
