@@ -317,12 +317,12 @@ header .header-basket {
     background-color: #20222f;
 }
 
-#roadmapPopup{
+#roadmapPopup {
     background-color: var(--nav-color);
     position: absolute;
     max-width: 250px;
     opacity: 0;
-    transition: all .3s ease-in;
+    transition: all 0.3s ease-in;
     top: 0px;
     left: 40%;
     padding: 10px;
@@ -348,11 +348,11 @@ header .header-basket {
     padding: 10px;
     border-radius: 5px;
 }
-#roadmapPopup a{
-    transition: all .1s ease-in;
+#roadmapPopup a {
+    transition: all 0.1s ease-in;
 }
-#roadmapPopup a:hover{
-    opacity: .6;
+#roadmapPopup a:hover {
+    opacity: 0.6;
 }
 
 @media screen and (min-width: 425px) {
@@ -610,11 +610,11 @@ header .header-basket {
     padding: 20px;
     position: relative;
 }
-.swiper-slide .courseLike svg{
-    transition: all .4ms ease-in-out;
+.swiper-slide .courseLike svg {
+    transition: all 0.4ms ease-in-out;
 }
-.swiper-slide .courseLike svg:hover{
-    fill: #950D0D;
+.swiper-slide .courseLike svg:hover {
+    fill: #950d0d;
 }
 .borderSlider {
     border-right: 2px solid var(--primary-color);
@@ -652,11 +652,11 @@ header .header-basket {
 #projects .swiper {
     height: 30rem;
 }
-#projects .swiper-wrapper{
+#projects .swiper-wrapper {
     max-height: 23rem;
     padding-top: 52px;
 }
-#projects .swiper-slide .courseBanner{
+#projects .swiper-slide .courseBanner {
     background-color: var(--nav-color);
     position: absolute;
     top: -50px;

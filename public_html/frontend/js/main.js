@@ -7,10 +7,15 @@ $(document).ready(function () {
         } else $("#header").removeClass("header");
     });
 
-
-    $("#roadmapBtn").on("click", function(){
+    // Roadmap Popup
+    $("#roadmapBtn").on("click", function () {
         $("#roadmapPopup").addClass("active");
-    })
+    });
+    // Mobile version
+    $("#mobileRoad").hide();
+    $("#mRoad").on("click", function () {
+        $("#mobileRoad").slideToggle();
+    });
 
     // text slider
     var slideIndex = 0;
@@ -78,13 +83,11 @@ $(document).ready(function () {
 //Profile After Auth
 $(".profile button").on("click", function () {
     $(".popover").toggleClass("active");
-
 });
 // وقتی روی هر المانی به جز باکس کلیک شود
 $("body").on("click", function (event) {
     // اگر المانی که کلیک شده است، باکس active نباشد، کلاس active از باکس حذف شود
     if (!$(event.target).closest(".profile").length) {
         $(".popover").removeClass("active");
-
     }
 });
