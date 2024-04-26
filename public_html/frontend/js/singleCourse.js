@@ -8,12 +8,11 @@ $(document).ready(function () {
         $(".more").text("");
     });
 
-  // Accordion
-  $(".acc-item .acc-content").hide();
-  $(".acc-item").on("click", function () {
-    // Toggle the visibility of the .acc-content within the clicked .acc-item with slide animation
-    $(this).find(".acc-content").show();
-  });
+    // Accordion
+    $(".acc-item").click(function () {
+        $(".acc-item").removeClass("active");
+        $(this).toggleClass("active");
+    });
 
     // Q & A
     $(".newQ").hide();
@@ -27,13 +26,12 @@ $(document).ready(function () {
     });
 });
 
-$('a.reply').on('click', function () {
+$("a.reply").on("click", function () {
     //hide other question box
     $(".newQ").hide();
-    var formParent=$(this).parents('.question')
-   formParent.find('.newA').toggle()
-
-})
+    var formParent = $(this).parents(".question");
+    formParent.find(".newA").toggle();
+});
 
 // Slider
 var swiper = new Swiper(".mySwiper", {

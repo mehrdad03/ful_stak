@@ -45,7 +45,7 @@
     @foreach($course->sections as $section)
         <div class="acc w-100">
             <div class="acc-num"><p class="m-0 index">{{$loop->index+1}}</p></div>
-            <div class="acc-item mb-5 w-100 {{$loop->index==0 ? 'active' :'' }}">
+            <div class="acc-item mb-5">
                 <div class="d-flex justify-content-center justify-content-md-end">
                     <div class="acc-header d-flex w-100 align-items-center justify-content-between px-3 py-1 px-md-4">
                         <h2 class="w50 m-0 text-white fw-bold px-2 fs-6">{{$section->title}}</h2>
@@ -106,10 +106,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="acc-content lh-lg">
-
+                <div class="acc-content">
                     @foreach($section->sectionLectures as $lecture)
-
                         <!-- episode -->
                         <div class="d-flex justify-content-between py-1 mb-1 ">
                             <div class="course_episods">

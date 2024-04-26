@@ -67,12 +67,16 @@ main {
 }
 #mainContent .season .acc .acc-item {
   border: 2px solid #23bf64;
+  width: 95%;
   height: 60px;
   margin-right: 5%;
   margin-top: -3.5%;
   background-color: #0b141b;
   overflow: hidden;
   transition: all 0.4s;
+}
+#mainContent .season .acc .acc-item.active{
+  height: 100%;
 }
 #mainContent .season .acc .acc-num {
   position: absolute;
@@ -124,6 +128,13 @@ main {
 
 #mainContent .season .videoModal {
   font-size: 14px;
+}
+
+@media screen and (max-width: 768px) {
+  #mainContent .season .acc .acc-item{
+    height: 50px;
+    padding-top: 10px;
+  } 
 }
 
 /* Course Slider */
