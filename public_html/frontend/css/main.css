@@ -317,6 +317,44 @@ header .header-basket {
     background-color: #20222f;
 }
 
+#roadmapPopup{
+    background-color: var(--nav-color);
+    position: absolute;
+    max-width: 250px;
+    opacity: 0;
+    transition: all .3s ease-in;
+    top: 0px;
+    left: 40%;
+    padding: 10px;
+    border-radius: 10px;
+    z-index: -1000;
+}
+#roadmapPopup.active {
+    top: 70px;
+    opacity: 1;
+}
+#roadmapPopup .front {
+    background-color: #bf232359;
+    padding: 10px;
+    border-radius: 5px;
+}
+#roadmapPopup .back {
+    background-color: #235abf59;
+    padding: 10px;
+    border-radius: 5px;
+}
+#roadmapPopup .full {
+    background-color: #23bf6459;
+    padding: 10px;
+    border-radius: 5px;
+}
+#roadmapPopup a{
+    transition: all .1s ease-in;
+}
+#roadmapPopup a:hover{
+    opacity: .6;
+}
+
 @media screen and (min-width: 425px) {
     .mobileMenu {
         width: 250px;

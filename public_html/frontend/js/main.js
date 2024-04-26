@@ -7,6 +7,11 @@ $(document).ready(function () {
         } else $("#header").removeClass("header");
     });
 
+
+    $("#roadmapBtn").on("click", function(){
+        $("#roadmapPopup").addClass("active");
+    })
+
     // text slider
     var slideIndex = 0;
     var sliderText = ".vertical-slider .slider-text";
