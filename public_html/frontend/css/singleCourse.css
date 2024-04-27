@@ -153,9 +153,9 @@ main {
   height: 120px;
   overflow: hidden;
 }
-.swiper-slide h4 {
-  margin-top: 5.7rem;
-  font-size: 1.3rem;
+.swiper-slide h3 {
+  margin-top: 4rem;
+  font-size: 1.6rem;
 }
 @media screen and (max-width: 768px) {
   .swiper-wrapper a h5 {

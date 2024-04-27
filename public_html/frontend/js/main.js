@@ -78,9 +78,13 @@ $(document).ready(function () {
                 spaceBetween: 40,
             },
             1024: {
-                slidesPerView: 3,
-                spaceBetween: 30,
+                slidesPerView: 2,
+                spaceBetween: 50,
             },
+            1440:{
+                slidesPerView: 3,
+                spaceBetween: 20,
+            }
         },
     });
 });
