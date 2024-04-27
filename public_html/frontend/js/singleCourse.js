@@ -4,8 +4,8 @@ $(document).ready(function () {
 
     // Show More
     $(".more button").on("click", function () {
-        $(".exText").css("height", "800px");
-        $(".more").text("");
+        $(".exText").css("height", "100%");
+        $(this).hide();
     });
 
     // Accordion

@@ -1245,8 +1245,8 @@
             <!-- Accordions -->
             <div class="accordion">
                 <div class="contentBox">
-                    <div
-                        class="d-flex justify-content-between align-items-center me-4 py-4 mx-sm-3 me-sm-5">
+                    <div class="accordion-header">
+                    <div class="d-flex justify-content-between align-items-center me-4 py-4 mx-sm-3 me-sm-5">
                         <p class="text-white fw-semibold fs-5 mx-2 me-3 mb-0">
                             آیا برای یادگیری توسعه دهندگی وب نیاز به تجربه قبلی دارم؟
                         </p>
@@ -1265,11 +1265,12 @@
                             </svg>
                         </div>
                     </div>
-                    <div class="content ">
+                    </div>
+                    <div class="accordion-content btn-innerShadow">
                         <p class="text-white p-4">
-                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
-                            استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و
-                            مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی
+                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و
+                            با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه
+                            و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی
                             تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای
                             کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و
                             آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم
@@ -1283,8 +1284,8 @@
                     </div>
                 </div>
                 <div class="contentBox">
-                    <div
-                        class="d-flex justify-content-between align-items-center me-4 py-4 mx-sm-3 me-sm-5">
+                    <div class="accordion-header">
+                    <div class="d-flex justify-content-between align-items-center me-4 py-4 mx-sm-3 me-sm-5">
                         <p class="text-white fw-semibold fs-5 mx-2 me-3 mb-0">
                             آیا برای یادگیری توسعه دهندگی وب نیاز به تجربه قبلی دارم؟
                         </p>
@@ -1303,11 +1304,12 @@
                             </svg>
                         </div>
                     </div>
-                    <div class="content ">
+                    </div>
+                    <div class="accordion-content btn-innerShadow">
                         <p class="text-white p-4">
-                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
-                            استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و
-                            مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی
+                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و
+                            با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه
+                            و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی
                             تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای
                             کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و
                             آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم
@@ -1321,8 +1323,8 @@
                     </div>
                 </div>
                 <div class="contentBox">
-                    <div
-                        class="d-flex justify-content-between align-items-center me-4 py-4 mx-sm-3 me-sm-5">
+                    <div class="accordion-header">
+                    <div class="d-flex justify-content-between align-items-center me-4 py-4 mx-sm-3 me-sm-5">
                         <p class="text-white fw-semibold fs-5 mx-2 me-3 mb-0">
                             آیا برای یادگیری توسعه دهندگی وب نیاز به تجربه قبلی دارم؟
                         </p>
@@ -1341,11 +1343,12 @@
                             </svg>
                         </div>
                     </div>
-                    <div class="content ">
+                    </div>
+                    <div class="accordion-content btn-innerShadow">
                         <p class="text-white p-4">
-                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
-                            استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و
-                            مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی
+                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و
+                            با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه
+                            و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی
                             تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای
                             کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و
                             آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم
@@ -1359,8 +1362,8 @@
                     </div>
                 </div>
                 <div class="contentBox">
-                    <div
-                        class="d-flex justify-content-between align-items-center me-4 py-4 mx-sm-3 me-sm-5">
+                    <div class="accordion-header">
+                    <div class="d-flex justify-content-between align-items-center me-4 py-4 mx-sm-3 me-sm-5">
                         <p class="text-white fw-semibold fs-5 mx-2 me-3 mb-0">
                             آیا برای یادگیری توسعه دهندگی وب نیاز به تجربه قبلی دارم؟
                         </p>
@@ -1379,11 +1382,12 @@
                             </svg>
                         </div>
                     </div>
-                    <div class="content ">
+                    </div>
+                    <div class="accordion-content btn-innerShadow">
                         <p class="text-white p-4">
-                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
-                            استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و
-                            مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی
+                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و
+                            با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه
+                            و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی
                             تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای
                             کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و
                             آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم
@@ -1397,8 +1401,8 @@
                     </div>
                 </div>
                 <div class="contentBox">
-                    <div
-                        class="d-flex justify-content-between align-items-center me-4 py-4 mx-sm-3 me-sm-5">
+                    <div class="accordion-header">
+                    <div class="d-flex justify-content-between align-items-center me-4 py-4 mx-sm-3 me-sm-5">
                         <p class="text-white fw-semibold fs-5 mx-2 me-3 mb-0">
                             آیا برای یادگیری توسعه دهندگی وب نیاز به تجربه قبلی دارم؟
                         </p>
@@ -1417,11 +1421,12 @@
                             </svg>
                         </div>
                     </div>
-                    <div class="content ">
+                    </div>
+                    <div class="accordion-content btn-innerShadow">
                         <p class="text-white p-4">
-                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
-                            استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و
-                            مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی
+                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و
+                            با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه
+                            و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی
                             تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای
                             کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و
                             آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم
@@ -1435,8 +1440,8 @@
                     </div>
                 </div>
                 <div class="contentBox">
-                    <div
-                        class="d-flex justify-content-between align-items-center me-4 py-4 mx-sm-3 me-sm-5">
+                    <div class="accordion-header">
+                    <div class="d-flex justify-content-between align-items-center me-4 py-4 mx-sm-3 me-sm-5">
                         <p class="text-white fw-semibold fs-5 mx-2 me-3 mb-0">
                             آیا برای یادگیری توسعه دهندگی وب نیاز به تجربه قبلی دارم؟
                         </p>
@@ -1455,11 +1460,12 @@
                             </svg>
                         </div>
                     </div>
-                    <div class="content ">
+                    </div>
+                    <div class="accordion-content btn-innerShadow">
                         <p class="text-white p-4">
-                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
-                            استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و
-                            مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی
+                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و
+                            با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه
+                            و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی
                             تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای
                             کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و
                             آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم
@@ -1473,8 +1479,8 @@
                     </div>
                 </div>
                 <div class="contentBox">
-                    <div
-                        class="d-flex justify-content-between align-items-center me-4 py-4 mx-sm-3 me-sm-5">
+                    <div class="accordion-header">
+                    <div class="d-flex justify-content-between align-items-center me-4 py-4 mx-sm-3 me-sm-5">
                         <p class="text-white fw-semibold fs-5 mx-2 me-3 mb-0">
                             آیا برای یادگیری توسعه دهندگی وب نیاز به تجربه قبلی دارم؟
                         </p>
@@ -1493,11 +1499,12 @@
                             </svg>
                         </div>
                     </div>
-                    <div class="content ">
+                    </div>
+                    <div class="accordion-content btn-innerShadow">
                         <p class="text-white p-4">
-                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
-                            استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و
-                            مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی
+                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و
+                            با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه
+                            و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی
                             تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای
                             کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و
                             آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم

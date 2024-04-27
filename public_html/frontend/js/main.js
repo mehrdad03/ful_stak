@@ -11,6 +11,11 @@ $(document).ready(function () {
     $("#roadmapBtn").on("click", function () {
         $("#roadmapPopup").addClass("active");
     });
+    $("body").on("click", function (event) {
+        if (!$(event.target).closest("#roadmapBtn").length) {
+            $("#roadmapPopup").removeClass("active");
+        }
+    });
     // Mobile version
     $("#mobileRoad").hide();
     $("#mRoad").on("click", function () {

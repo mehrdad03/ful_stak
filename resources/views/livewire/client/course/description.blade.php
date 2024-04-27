@@ -7,6 +7,12 @@
     <!-- explain Text -->
     <div class="exText text-white">
        {{$course->description}}
+       Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias ullam culpa similique sunt eius facere error, fuga facilis iure quidem maiores neque corporis, saepe reiciendis magni, soluta sit earum doloremque!
+       Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias ullam culpa similique sunt eius facere error, fuga facilis iure quidem maiores neque corporis, saepe reiciendis magni, soluta sit earum doloremque!
+       Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias ullam culpa similique sunt eius facere error, fuga facilis iure quidem maiores neque corporis, saepe reiciendis magni, soluta sit earum doloremque!
+       Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias ullam culpa similique sunt eius facere error, fuga facilis iure quidem maiores neque corporis, saepe reiciendis magni, soluta sit earum doloremque!
+       Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias ullam culpa similique sunt eius facere error, fuga facilis iure quidem maiores neque corporis, saepe reiciendis magni, soluta sit earum doloremque!
+       Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias ullam culpa similique sunt eius facere error, fuga facilis iure quidem maiores neque corporis, saepe reiciendis magni, soluta sit earum doloremque!
     </div>
     <!-- More explain -->
     <div class="more d-flex justify-content-center align-items-center">
