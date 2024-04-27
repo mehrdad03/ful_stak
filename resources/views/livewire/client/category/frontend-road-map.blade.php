@@ -72,7 +72,6 @@
         <!-- video -->
         <div class="col col-lg-6 d-flex justify-content-center">
             <iframe
-                class="video"
                 src="https://www.youtube.com/embed/QHBVA_7bSRg?si=8WJSsEfdxlxMKZ_5"
                 title="YouTube video player"
                 frameborder="0"
@@ -194,13 +193,14 @@
                                 d="M249.998 127L229.998 117.453V140.547L249.998 131V127ZM247.998 131H332.998V127H247.998V131Z"
                                 fill="#23BF65" />
                         </svg>
-                        <iframe
-                            class="video"
+                       <span class="video">
+                         <iframe
                             src="https://www.youtube.com/embed/QHBVA_7bSRg?si=8WJSsEfdxlxMKZ_5"
                             title="YouTube video player"
                             frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             allowfullscreen></iframe>
+                       </span>
                     </div>
                     <!-- Course -->
                     <div
@@ -284,13 +284,15 @@
                                 stroke-width="11" />
                         </svg>
 
-                        <iframe
-                            class="video"
+                       <span class="video">
+                         <iframe
+                            
                             src="https://www.youtube.com/embed/QHBVA_7bSRg?si=8WJSsEfdxlxMKZ_5"
                             title="YouTube video player"
                             frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             allowfullscreen></iframe>
+                       </span>
                     </div>
                     <!-- Course -->
                     <div id="bootstrap"
@@ -388,13 +390,15 @@
                                 stroke="#23BF65"
                                 stroke-width="11" />
                         </svg>
-                        <iframe
-                            class="video"
+                       <span class="video">
+                         <iframe
+                            
                             src="https://www.youtube.com/embed/QHBVA_7bSRg?si=8WJSsEfdxlxMKZ_5"
                             title="YouTube video player"
                             frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             allowfullscreen></iframe>
+                       </span>
                     </div>
                     <!-- Course -->
                     <div
@@ -494,13 +498,15 @@
                                 stroke="#23BF65"
                                 stroke-width="11" />
                         </svg>
-                        <iframe
-                            class="video"
+                       <span class="video">
+                         <iframe
+                            
                             src="https://www.youtube.com/embed/QHBVA_7bSRg?si=8WJSsEfdxlxMKZ_5"
                             title="YouTube video player"
                             frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             allowfullscreen></iframe>
+                       </span>
                     </div>
                     <!-- Course -->
                     <div
@@ -581,13 +587,15 @@
                                 stroke="#23BF65"
                                 stroke-width="11" />
                         </svg>
-                        <iframe
-                            class="video"
+                       <span class="video">
+                         <iframe
+                            
                             src="https://www.youtube.com/embed/QHBVA_7bSRg?si=8WJSsEfdxlxMKZ_5"
                             title="YouTube video player"
                             frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             allowfullscreen></iframe>
+                       </span>
                     </div>
                     <!-- Course -->
                     <div
@@ -687,13 +695,15 @@
                                 stroke-width="11" />
                         </svg>
 
-                        <iframe
-                            class="video"
+                       <span class="video">
+                         <iframe
+                            
                             src="https://www.youtube.com/embed/QHBVA_7bSRg?si=8WJSsEfdxlxMKZ_5"
                             title="YouTube video player"
                             frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             allowfullscreen></iframe>
+                       </span>
                     </div>
                     <!-- Course -->
                     <div
