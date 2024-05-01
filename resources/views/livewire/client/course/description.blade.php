@@ -16,7 +16,7 @@
     </div>
     <!-- More explain -->
     <div class="more d-flex justify-content-center align-items-center">
-        <button class="show d-flex justify-content-center">
+        <button class="show d-flex justify-content-center bg-transparent">
             <svg
                 width="18"
                 height="18"

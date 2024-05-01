@@ -3,9 +3,20 @@ $(document).ready(function () {
     $("#date").text(d);
 
     // Show More
-    $(".more button").on("click", function () {
-        $(".exText").css("height", "100%");
-        $(this).hide();
+    $(".more .show").on("click", function () {
+        $(".exText").addClass("open")
+        // change text and svg degree when clicked
+        if($(".exText").hasClass("open")) {
+            $(".more .show p").text("بسته شدن");
+            $(".more .show svg").css("transform", "rotate(180deg)");
+            if($(".exText").hasClass("open")){
+                $(".more .show").on("click", function () {
+                    $(".exText").removeClass("open")
+                    $(".more .show p").text("ادامه مطلب");
+                    $(".more .show svg").css("transform", "rotate(0deg)");
+                })
+            }
+        }
     });
 
     // Accordion

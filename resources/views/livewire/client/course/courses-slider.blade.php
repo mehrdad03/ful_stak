@@ -1,7 +1,7 @@
 <section wire:ignore>
     <h3 class="text-primary fs-2 mb-5">دوره های آموزشی دیگر</h3>
-    <div class="swiper mySwiper">
-    <div class="swiper-wrapper">
+         <div class="swiper mySwiper">
+             <div class="swiper-wrapper">
                     <!-- HTML -->
                     <div class="swiper-slide">
                         <!-- course banner -->
@@ -265,6 +265,6 @@
                 </div>
                 <div class="swiper-pagination"></div>
             </div>
-  </div>
-</section>
-<img src="/frontend/assets/images/hr.png" alt="HR" class="hr" />
+    </section>
+    <img src="/frontend/assets/images/hr.png" alt="HR" class="hr" />
+    
