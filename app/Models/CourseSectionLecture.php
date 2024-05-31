@@ -36,7 +36,7 @@ class CourseSectionLecture extends Model
                $uploadedVideo= $this->uploadFile($courseId, $oldLectureVideo, $video, 'lecture-video', $sectionId, $newLecture->id);
 
 
-                $this->getVideoDurationAndUpdateTable($newLecture->id,$uploadedVideo['path']);
+               // $this->getVideoDurationAndUpdateTable($newLecture->id,$uploadedVideo['path']);
 
             }
 
@@ -76,6 +76,8 @@ class CourseSectionLecture extends Model
 
         $media = FFMpeg::fromDisk('public')
             ->open( public_path().$path);
+       /* $media = FFMpeg::fromDisk('ftp')
+            ->open( $path);*/
 
         $durationInSeconds = $media->getDurationInSeconds(); // returns an int
 

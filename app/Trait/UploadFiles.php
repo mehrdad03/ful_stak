@@ -2,6 +2,7 @@
 
 namespace App\Trait;
 
+use App\Jobs\UploadVideoJob;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
@@ -24,7 +25,11 @@ trait UploadFiles
             File::makeDirectory($storagePath, 0777, true);
         }
 
-        $file->storeAs($storagePath, $file_name, $this->drive);
+        //saved file path with livewire
+        $tempFilePath = $file->getRealPath();
+        UploadVideoJob::dispatch($storagePath,$tempFilePath,$this->drive,$file_name);
+
+//        $file->storeAs($storagePath, $file_name, $this->drive);
         $this->insertMediaToMediaTable($path . '/' . $file_name, $id, $type,$section_id,$lecture_id);
 
 
