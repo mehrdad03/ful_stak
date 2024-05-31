@@ -8,16 +8,17 @@ use Illuminate\Support\Str;
 
 trait UploadFiles
 {
-    private $drive = 'public';
+    private $drive = 'ftp';
 
     protected function uploadFile($id, $oldFile, $file, $type, $section_id,$lecture_id)
     {
 
         $extension = $file->extension();
         $file_name = Str::random(10) . time() . '.' . $extension;
-        $path = '/courses/' . $id . '/' . $type;
+        $path = 'courses/' . $id . '/' . $type;
 
-        $storagePath = public_path() . $path;
+      //  $storagePath = public_path() . $path;
+        $storagePath =$path;
 
         if (!File::exists($storagePath)) {
             File::makeDirectory($storagePath, 0777, true);
@@ -28,7 +29,8 @@ trait UploadFiles
 
 
         if ($oldFile) {
-            $this->removeOldFile(public_path() . $oldFile);
+            //$this->removeOldFile(public_path() . $oldFile);
+            $this->removeOldFile( $oldFile);
         }
 
         //use in the CourseSectionLecture Model for getVideoDurationAndUpdateTable

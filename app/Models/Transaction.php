@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use App\Trait\SendSms;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -11,13 +10,13 @@ use Illuminate\Support\Facades\DB;
 
 class Transaction extends Model
 {
-    use HasFactory, SoftDeletes, SendSms;
+    use HasFactory,SoftDeletes;
 
     protected $guarded = [];
 
     public function savePaymentInfo($response, $status, $amount, $orderId)
     {
-        DB::transaction(function () use ($response, $status, $amount, $orderId) {
+        DB::transaction(function () use ($response, $status, $amount,$orderId) {
             $referenceId = 0;
             $cardPan = 0;
 
@@ -39,9 +38,6 @@ class Transaction extends Model
 
             Order::query()->where('id', $orderId)->update(['pay_status' => $status]);
             OrderItem::query()->where('order_id', $orderId)->update(['pay_status' => $status]);
-
-            $this->sendVerificationCode();
-
         });
 
 

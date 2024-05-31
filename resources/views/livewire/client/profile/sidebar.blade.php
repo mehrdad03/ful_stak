@@ -1,9 +1,10 @@
 @php
     $prefix=\Illuminate\Support\Facades\Route::current()->getPrefix();
     $rout_name=\Illuminate\Support\Facades\Route::current()->getName();
+    $user=\Illuminate\Support\Facades\Auth::user();
 @endphp
 
-<div class="col-lg-2 d-none d-lg-block">
+<div class="col-lg-3 d-none d-lg-block">
 <!-- <span class="modal-backdrop"></span> -->
 <div class="sidebar bg-secondary rounded-4 p-3">
         <span class="d-flex justify-content-end mt-4 d-md-none text-primary" id="close">
@@ -13,11 +14,11 @@
           </span>
     <div class="d-flex flex-column align-items-center mb-3 mb-md-5">
         <img
-            src="{{\Illuminate\Support\Facades\Auth::user()->picture ?? '/frontend/assets/images/default.png'}}"
+            src="{{$user->picture ?? '/frontend/assets/images/default.png'}}"
             alt="User Profile"
             class="profileImg" />
-        <h5 class="text-white fw-bold my-2">{{\Illuminate\Support\Facades\Auth::user()->name}}</h5>
-        <p class="text-primary">{{\Illuminate\Support\Facades\Auth::user()->mobile}}</p>
+        <h5 class="text-white fw-bold my-2">{{$user->name}}</h5>
+        <p class="text-primary">{{$user->mobile??$user->email}}</p>
     </div>
 
     <ul class="p-0">

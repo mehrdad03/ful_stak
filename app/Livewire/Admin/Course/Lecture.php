@@ -38,6 +38,7 @@ class Lecture extends Component
 
         $formData['video'] = $this->video;
 
+
         $validator = Validator::make($formData, [
             'video' => 'nullable|mimes:mp4',
             'title' => 'required | string',
@@ -83,12 +84,14 @@ class Lecture extends Component
 
 
         $lecture = Media::query()->where([
-            'id' => $lectureId,
+            'lecture_id' => $lectureId,
             'type' => 'lecture-video',
             'course_id' => $this->courseId,
         ])->first();
 
-        $this->removeOldFile(public_path().$lecture->path);
+
+        $this->removeOldFile($lecture->path);
+        //$this->removeOldFile(public_path().$lecture->path);
 
         $lecture->delete();
 

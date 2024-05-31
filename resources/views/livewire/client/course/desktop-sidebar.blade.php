@@ -1,25 +1,11 @@
 <aside id="sideBar" class="d-none d-lg-block col col-lg-4 sticky-top">
     <!-- ====== Course Details ====== -->
-    <div class="courseDet text-white pb-5">
-        {{--<video
-            id="my-video"
-            class="video-js"
-            controls
-            preload="auto"
-            width="640"
-            height="264"
-            poster="MY_VIDEO_POSTER.jpg"
-            data-setup="{}"
-        >
-            <source src="http://185.24.252.75/test_3.m3u8"  />
-            <p class="vjs-no-js">
-                To view this video please enable JavaScript, and consider upgrading to a
-                web browser that
-                <a href="" target="_blank"
-                >supports HTML5 video</a
-                >
-            </p>
-        </video>--}}
+    <div class="courseDet text-white pb-5 overflow-hidden">
+        <video class="w-100" controls>
+            <source src=""
+                    type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
         <!-- ==== Course features ==== -->
         <div class="p-4">
             <h5>ویژگی های این دوره :</h5>

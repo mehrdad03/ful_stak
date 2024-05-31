@@ -7,7 +7,7 @@
     @include('livewire.client.profile.sidebar')
 
     <!-- ===== main content ===== -->
-    <div class="col col-lg-10 p-0 px-lg-4">
+    <div class="col col-lg-9 p-0 px-lg-4">
 
                         <!-- top menu -->
                         @include('livewire.client.profile.status')
