@@ -32,8 +32,8 @@
                                     <th>#</th>
                                     <th>ID</th>
                                     <th>تصویر کاور</th>
-                                    <th>ویدیو کاور</th>
-                                    <th>کاور</th>
+                                   {{-- <th>ویدیو کاور</th>--}}
+                                   {{-- <th>کاور</th>--}}
                                     <th>عنوان</th>
                                     <th>دسته بندی</th>
                                     <th>سرفصل ها</th>
@@ -45,7 +45,7 @@
                                     <tr wire:key="{{$course->id}}" class="position-relative">
                                         <td>{{$loop->index+1}}</td>
                                         <td>{{$course->id}}</td>
-                                        <td class="sorting_1">
+                                        {{--<td class="sorting_1">
                                             <div class="media-box  align-items-center row">
                                                 <img src="{{config('app.ftp_url').@$course->coverImage->path }}"
                                                      style="width: 307px;border-radius: 5%"
@@ -53,8 +53,8 @@
                                                      alt="Product">
                                             </div>
 
-                                        </td>
-                                        <td class="sorting_1">
+                                        </td>--}}
+                                        {{--<td class="sorting_1">
 
                                             <video  controls  class="rounded-2 overflow-hidden w-100">
                                                 <source src="{{config('app.ftp_url').@$course->coverVideo->path }}"
@@ -62,7 +62,7 @@
                                                 Your browser does not support the video tag.
                                             </video>
 
-                                        </td>
+                                        </td>--}}
                                         <td>{{$course->title}}</td>
                                         <td>{{$course->category->title}}</td>
                                         <td>

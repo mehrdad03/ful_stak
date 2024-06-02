@@ -29,14 +29,11 @@ class CourseSectionLecture extends Model
             $video = $formData['video'];
             $newLecture = $this->lectureCreateOrUpdate($formData, $lectureId, $sectionId, $courseId);
 
-
             if ($video) {
 
+               $this->uploadFile($courseId, $oldLectureVideo, $video, 'lecture-video', $sectionId, $newLecture->id);
 
-               $uploadedVideo= $this->uploadFile($courseId, $oldLectureVideo, $video, 'lecture-video', $sectionId, $newLecture->id);
-
-
-               // $this->getVideoDurationAndUpdateTable($newLecture->id,$uploadedVideo['path']);
+               $this->getVideoDurationAndUpdateTable($newLecture->id,$video->getRealPath());
 
             }
 
@@ -75,7 +72,7 @@ class CourseSectionLecture extends Model
 
 
         $media = FFMpeg::fromDisk('public')
-            ->open( public_path().$path);
+            ->open( $path);
        /* $media = FFMpeg::fromDisk('ftp')
             ->open( $path);*/
 

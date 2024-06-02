@@ -27,7 +27,7 @@ class Index extends Component
     public function render()
     {
         $courses = Course::query()
-            ->with('category', 'coverImage', 'coverVideo')
+            ->with('category'/*, 'coverImage', 'coverVideo'*/)
             ->orderBy('category_id');
 
         return view('livewire.admin.course.index', [

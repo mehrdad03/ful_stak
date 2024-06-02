@@ -10027,7 +10027,7 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": "^8.2",
+        "php": "^8.1",
         "ext-ftp": "*"
     },
     "platform-dev": [],

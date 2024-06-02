@@ -38,7 +38,14 @@ return [
             'driver' => 'database',
             'table' => 'jobs',
             'queue' => 'default',
-            'retry_after' => 90,
+            'retry_after' => 60,
+            'after_commit' => false,
+        ],
+        'database-upload-video' => [
+            'driver' => 'database',
+            'table' => 'jobs',
+            'queue' => 'upload-video',
+            'retry_after' => 3660,
             'after_commit' => false,
         ],
 
