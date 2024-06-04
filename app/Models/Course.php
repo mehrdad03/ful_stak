@@ -24,6 +24,7 @@ class Course extends Model
 
             if ($formData['courseThumbnail']) {
 
+
                 $this->uploadFile($formData['courseId'], $oldCCourseThumbnail, $formData['courseThumbnail'], 'cover-image', null,null);
 
             }
@@ -103,7 +104,9 @@ class Course extends Model
 
     public function coverImage()
     {
-        return $this->belongsTo(Media::class, 'id', 'course_id')->where('type', '=', 'cover-image');
+        return $this->belongsTo(Media::class, 'id', 'course_id')
+            ->select('id', 'path', 'course_id')
+            ->where('type', '=', 'cover-image');
     }
 
     public function teacher()

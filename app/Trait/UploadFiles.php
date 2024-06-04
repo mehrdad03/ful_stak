@@ -11,35 +11,43 @@ trait UploadFiles
 {
     private $drive = 'ftp';
 
-    protected function uploadFile($id, $oldFile, $file, $type, $section_id,$lecture_id)
+    protected function uploadFile($id, $oldFile, $file, $type, $section_id, $lecture_id)
     {
 
         $extension = $file->extension();
         $file_name = Str::random(10) . time() . '.' . $extension;
         $path = 'courses/' . $id . '/' . $type;
 
-      //  $storagePath = public_path() . $path;
-        $storagePath =$path;
+        //  $storagePath = public_path() . $path;
+        $storagePath = $path;
 
         if (!File::exists($storagePath)) {
             File::makeDirectory($storagePath, 0777, true);
         }
 
-        //saved file path with livewire
-        $tempFilePath = $file->getRealPath();
-        UploadVideoJob::dispatch($storagePath,$tempFilePath,$this->drive,$file_name);
+
+        if ($type == 'cover-image') {
+
+
+            $file->storeAs( public_path() .'/'. $path, $file_name, 'public');
+
+        } else {
+            //saved file path with livewire
+            $tempFilePath = $file->getRealPath();
+            UploadVideoJob::dispatch($storagePath, $tempFilePath, $this->drive, $file_name);
+        }
 
 //        $file->storeAs($storagePath, $file_name, $this->drive);
-        $this->insertMediaToMediaTable($path . '/' . $file_name, $id, $type,$section_id,$lecture_id);
+        $this->insertMediaToMediaTable($path . '/' . $file_name, $id, $type, $section_id, $lecture_id);
 
 
         if ($oldFile) {
             //$this->removeOldFile(public_path() . $oldFile);
-            $this->removeOldFile( $oldFile);
+            $this->removeOldFile($oldFile);
         }
 
         //use in the CourseSectionLecture Model for getVideoDurationAndUpdateTable
-        return ['path'=>$path . '/' . $file_name];
+        return ['path' => $path . '/' . $file_name];
 
 
     }
@@ -58,7 +66,7 @@ trait UploadFiles
             [
                 'course_id' => $courseId,
                 'type' => $type,
-                'lecture_id' => $lecture_id ,
+                'lecture_id' => $lecture_id,
 
             ],
             [
