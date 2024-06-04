@@ -32,7 +32,6 @@
             <!-- ======= Q & A ======= -->
             @include('livewire.client.course.qa')
 
-
             <!-- ======= video modal ======= -->
             @include('livewire.client.course.video-modal')
 

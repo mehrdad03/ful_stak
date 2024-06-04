@@ -330,28 +330,34 @@ header .header-basket {
     height: 0;
     transition: all 0.1s ease-in;
 }
+
 #roadmapPopup.active {
     opacity: 1;
     height: 140px;
 }
+
 #roadmapPopup .front {
     background-color: #bf232359;
     padding: 10px;
     border-radius: 5px;
 }
+
 #roadmapPopup .back {
     background-color: #235abf59;
     padding: 10px;
     border-radius: 5px;
 }
+
 #roadmapPopup .full {
     background-color: #23bf6459;
     padding: 10px;
     border-radius: 5px;
 }
+
 #roadmapPopup a {
     transition: all 0.1s ease-in;
 }
+
 #roadmapPopup a:hover {
     opacity: 0.6;
 }
@@ -368,6 +374,7 @@ header .header-basket {
     display: flex;
     align-items: center;
 }
+
 .vertical-slider {
     height: 50px;
     overflow: hidden;
@@ -471,10 +478,10 @@ header .header-basket {
     border-radius: 25px;
     background: #303445;
     box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25),
-        0px 6px 6px 0px rgba(0, 0, 0, 0.21),
-        0px 15px 9px 0px rgba(0, 0, 0, 0.13),
-        0px 26px 10px 0px rgba(0, 0, 0, 0.04),
-        0px 40px 11px 0px rgba(0, 0, 0, 0);
+    0px 6px 6px 0px rgba(0, 0, 0, 0.21),
+    0px 15px 9px 0px rgba(0, 0, 0, 0.13),
+    0px 26px 10px 0px rgba(0, 0, 0, 0.04),
+    0px 40px 11px 0px rgba(0, 0, 0, 0);
 }
 
 .introBG {
@@ -513,9 +520,9 @@ header .header-basket {
     margin-top: 10%;
     padding: 30px;
     box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25),
-        0px 6px 6px 0px rgba(0, 0, 0, 0.21),
-        0px 15px 9px 0px rgba(0, 0, 0, 0.13), 0px 26px 10px 0px #0000000a,
-        0px 40px 11px 0px rgba(0, 0, 0, 0);
+    0px 6px 6px 0px rgba(0, 0, 0, 0.21),
+    0px 15px 9px 0px rgba(0, 0, 0, 0.13), 0px 26px 10px 0px #0000000a,
+    0px 40px 11px 0px rgba(0, 0, 0, 0);
 }
 
 .targetBox .targetItem {
@@ -526,10 +533,10 @@ header .header-basket {
     padding-bottom: 10px;
     background: var(--primary-color);
     box-shadow: 0px 4px 9px 0px rgba(0, 0, 0, 0.44),
-        0px 17px 17px 0px rgba(0, 0, 0, 0.38),
-        0px 39px 23px 0px rgba(0, 0, 0, 0.23),
-        0px 69px 27px 0px rgba(0, 0, 0, 0.07),
-        0px 107px 30px 0px rgba(0, 0, 0, 0.01);
+    0px 17px 17px 0px rgba(0, 0, 0, 0.38),
+    0px 39px 23px 0px rgba(0, 0, 0, 0.23),
+    0px 69px 27px 0px rgba(0, 0, 0, 0.07),
+    0px 107px 30px 0px rgba(0, 0, 0, 0.01);
 }
 
 .targetBox > div > img {
@@ -574,35 +581,42 @@ header .header-basket {
     flex-direction: column;
     align-items: center;
 }
+
 #roadmap .road {
     transform: translate(4%, -15%);
 }
+
 #roadmap .row {
     margin-top: -35px;
 }
+
 #roadmap .roadText {
     border: 2px dashed #fff;
     font-size: 13px;
 }
+
 #roadmap h5 {
     padding: 20px 84px;
     border-radius: 25px;
     z-index: 1;
     background: var(--nav-color);
     box-shadow: 0px 11px 25px 0px rgba(0, 0, 0, 0.44),
-        0px 45px 45px 0px rgba(0, 0, 0, 0.38),
-        0px 101px 60px 0px rgba(0, 0, 0, 0.23),
-        0px 179px 72px 0px rgba(0, 0, 0, 0.07),
-        0px 280px 78px 0px rgba(0, 0, 0, 0.01);
+    0px 45px 45px 0px rgba(0, 0, 0, 0.38),
+    0px 101px 60px 0px rgba(0, 0, 0, 0.23),
+    0px 179px 72px 0px rgba(0, 0, 0, 0.07),
+    0px 280px 78px 0px rgba(0, 0, 0, 0.01);
 }
+
 .swiper {
     width: 100%;
     height: 400px;
     max-height: 430px;
 }
-.swiper-wrapper{
+
+.swiper-wrapper {
     max-height: 360px;
 }
+
 .swiper-slide {
     background-color: var(--nav-color);
     border-radius: 30px;
@@ -613,25 +627,39 @@ header .header-basket {
     padding: 20px;
     position: relative;
 }
+
+.swiper-slide h3 span {
+    height: 120px;
+    line-height: 1.7;
+}
+
+
 .swiper-slide .courseLike svg {
     transition: all 0.4ms ease-in-out;
 }
+
 .swiper-slide .courseLike svg:hover {
     fill: #950d0d;
 }
+
 .borderSlider {
     border-right: 2px solid var(--primary-color);
     border-left: 2px solid var(--primary-color);
 }
+
 .swiper-slide .roadIcon {
-    top: -100px;
+    position: absolute;
+    top: -40px;
 }
+
 .swiper-pagination-bullet-active {
     background-color: var(--primary-color) !important;
 }
+
 .lastRoad {
     margin-right: -300px;
 }
+
 @media screen and (max-width: 320px) {
     #roadmap h5 {
         font-size: 1rem;
@@ -643,22 +671,27 @@ header .header-basket {
     width: 100%;
     height: 100%;
 }
+
 #projects > img {
     position: absolute;
     height: 580px;
     top: -120px;
     right: -30px;
 }
+
 #projects .projectBrain {
     width: 80%;
 }
+
 #projects .swiper {
     height: 30rem;
 }
+
 #projects .swiper-wrapper {
     max-height: 23rem;
     padding-top: 52px;
 }
+
 #projects .swiper-slide .courseBanner {
     background-color: var(--nav-color);
     position: absolute;
@@ -667,13 +700,16 @@ header .header-basket {
     height: 140px;
     overflow: hidden;
 }
+
 #projects .swiper-slide h3 {
     margin-top: 5.5rem;
 }
+
 @media screen and (max-width: 768px) {
     #projects .swiper-wrapper a h5 {
         font-size: 1.1rem;
     }
+
     #projects .swiper-wrapper a p {
         font-size: 0.9rem;
     }
@@ -707,7 +743,7 @@ header .header-basket {
     border-radius: 25px;
     background: linear-gradient(222deg, #20222f 9.49%, #303445 92.39%);
     box-shadow: 0px 11px 25px 0px rgba(0, 0, 0, 0.5),
-        0px 280px 78px 0px rgba(0, 0, 0, 0.01);
+    0px 280px 78px 0px rgba(0, 0, 0, 0.01);
 }
 
 .blogCard > p {
@@ -725,7 +761,7 @@ header .header-basket {
     padding: 0px 15px;
     background: linear-gradient(222deg, #20222f 9.49%, #303445 92.39%);
     box-shadow: 0px 11px 25px 0px rgba(0, 0, 0, 0.5),
-        0px 280px 78px 0px rgba(0, 0, 0, 0.01);
+    0px 280px 78px 0px rgba(0, 0, 0, 0.01);
 }
 
 .mobileCard > div > p {
@@ -789,10 +825,10 @@ header .header-basket {
     cursor: pointer;
     background: linear-gradient(222deg, #20222f 9.49%, #303445 92.39%);
     box-shadow: 0px 11px 25px 0px rgba(0, 0, 0, 0.44),
-        0px 45px 45px 0px rgba(0, 0, 0, 0.38),
-        0px 101px 60px 0px rgba(0, 0, 0, 0.23),
-        0px 179px 72px 0px rgba(0, 0, 0, 0.07),
-        0px 280px 78px 0px rgba(0, 0, 0, 0.01);
+    0px 45px 45px 0px rgba(0, 0, 0, 0.38),
+    0px 101px 60px 0px rgba(0, 0, 0, 0.23),
+    0px 179px 72px 0px rgba(0, 0, 0, 0.07),
+    0px 280px 78px 0px rgba(0, 0, 0, 0.01);
 }
 
 #faq .contentBox > div {
@@ -813,6 +849,7 @@ header .header-basket {
 #faq .contentBox.active {
     border-radius: 25px 25px 0 0;
 }
+
 #faq .contentBox .acc_icon {
     width: 40px;
     height: 40px;
@@ -831,6 +868,7 @@ header .header-basket {
     margin: 20px 0;
     border-radius: 15px;
 }
+
 #faq .codes .codeNav {
     background-color: var(--nav-color);
     border-radius: 20px;

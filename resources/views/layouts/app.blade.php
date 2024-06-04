@@ -15,6 +15,7 @@
     <!-- Sweet alert css  -->
     <script src="/backend/js/sweetalert2@11.js"></script>
     <!-- main css  -->
+    <link rel="stylesheet" href="/backend/css/font-awesome.css">
     <link rel="stylesheet" href="/frontend/css/main.css"/>
     @stack('links')
     <title>Full Stack</title>
