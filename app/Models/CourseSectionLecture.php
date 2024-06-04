@@ -93,4 +93,9 @@ class CourseSectionLecture extends Model
         return $this->belongsTo(Media::class, 'id','lecture_id');
 
     }
+    public function course()
+    {
+        return $this->belongsTo(Course::class);
+    }
+
 }

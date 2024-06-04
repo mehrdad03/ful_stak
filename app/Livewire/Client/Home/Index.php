@@ -17,8 +17,9 @@ class Index extends Component
 
         $this->categories = Category::query()->whereIn('url_slug', $slugs)
             ->with(['courses' => function ($query) {
-                $query->select('id', 'title', 'url_slug', 'price', 'discount', 'short_description', 'category_id', 'active')
-                    ->where('active', true);
+                $query->select('courses.id', 'courses.title', 'courses.url_slug', 'courses.price', 'courses.discount', 'courses.short_description', 'courses.category_id', 'courses.active')
+                    ->where('courses.active', true)
+                    ->withTotalDuration();
             }])
             ->get()
             ->keyBy('url_slug');

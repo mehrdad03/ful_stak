@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Trait\UploadFiles;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -109,6 +110,17 @@ class Course extends Model
     {
         return $this->belongsTo(User::class);
     }
+    public function lectures()
+    {
+        return $this->hasMany(CourseSectionLecture::class);
+    }
+    public function scopeWithTotalDuration(Builder $query)
+    {
+        $query->withCount(['lectures as total_duration' => function ($query) {
+            $query->select(DB::raw('SUM(duration)'));
+        }]);
+    }
+
 
 
 }
