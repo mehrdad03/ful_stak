@@ -340,13 +340,29 @@
                                 <div class="d-flex justify-content-between w-100 mb-2">
                                     <!-- course duration -->
                                     <div class="d-flex align-items-center">
-                                        <p class="m-0 text-white ms-2 mt-lg">{{$formattedTime}}</p>
-                                        <i class="fa fa-clock-o text-primary"></i>
+                                        @if( $course->total_duration!=0)
+                                            <p class="m-0 text-white ms-2 mt-lg">{{$formattedTime}}</p>
+                                            <i class="fa fa-clock-o text-primary"></i>
+                                        @else
+                                            <div class="d-flex align-items-center">
+                                                <i class="fa fa-circle-o text-danger ms-2" style="color: #ff0000;"></i>
+                                                <span class="text-danger">به زودی</span>
+                                            </div>
+                                        @endif
+
+
                                     </div>
-                                    <div class=" d-flex align-items-center">
-                                        <p class="m-0 text-white fw-medium">{{number_format($course->price)}}</p>
-                                        <p class="m-0 text-primary fw-bold me-2">تومان</p>
-                                    </div>
+                                    @if( $course->total_duration!=0)
+                                        <div class=" d-flex align-items-center">
+                                            <p class="m-0 text-white fw-medium">{{number_format($course->price)}}</p>
+                                            <p class="m-0 text-primary fw-bold me-2">تومان</p>
+                                        </div>
+                                    @else
+                                        <div class="d-flex align-items-center">
+                                            <span class="text-danger">نامشخص</span>
+                                        </div>
+                                    @endif
+
                                 </div>
                                 <a target="_blank" href="{{route('client.course',$course->url_slug)}}"
                                    class="main-btn text-white px-3 py-2 btn-innerShadow">مشاهده دوره</a>
