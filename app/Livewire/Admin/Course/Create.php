@@ -4,6 +4,7 @@ namespace App\Livewire\Admin\Course;
 
 use App\Models\Category;
 use App\Models\Course;
+use App\Models\CourseStatus;
 use App\Models\Teacher;
 use Illuminate\Support\Facades\Validator;
 use Livewire\Component;
@@ -15,7 +16,7 @@ class Create extends Component
 
 
     public $courseThumbnail,$courseIntroVideo;
-    public $courseId = 0, $categories, $category, $teachers;
+    public $courseId = 0, $categories, $category, $teachers,$courseStatus;
     public $course;//edit
     public $oldCCourseThumbnail='',$oldCourseIntroVideo='';//edit
 
@@ -30,6 +31,7 @@ class Create extends Component
 
         $this->categories = Category::all();
         $this->teachers = Teacher::all();
+        $this->courseStatus = CourseStatus::all();
 
     }
 
@@ -51,6 +53,7 @@ class Create extends Component
             'courseIntroVideo' => 'nullable|mimes:mp4|max:102400',
             'title' => 'required|unique:courses,title,' . $this->courseId . '|string|max: 100',
             'categoryId' => 'required|integer|exists:categories,id',
+            'courseStatusId' => 'required|integer|exists:course_statuses,id',
             'price' => 'required|integer',
             'discount' => 'required|integer',
             'teacherId' => 'required|integer|exists:teachers,id',

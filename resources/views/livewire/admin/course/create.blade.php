@@ -75,7 +75,27 @@
                                         </select>
                                         <div class="field-placeholder">دسته بندی</div>
                                     </div>
-                                    @error('title') <span
+                                    @error('categoryId') <span
+                                        class="text-danger d-block mb-2">{{ $message }}</span> @enderror
+
+                                </div>
+                                <div class="col-12">
+
+                                    <!-- Field wrapper start -->
+                                    <div class="field-wrapper">
+                                        <select class=" " name="courseStatusId" wire:ignore
+                                                title="Select Product Category">
+                                            @foreach($courseStatus as $item)
+                                                <option wire:key="{{$item->id}}"
+                                                        @if($item->id==$course->course_status_id)
+                                                            selected
+                                                        @endif
+                                                        value="{{ @$item->id }}">{{ $item->title }}</option>
+                                            @endforeach
+                                        </select>
+                                        <div class="field-placeholder">وضعیت دوره</div>
+                                    </div>
+                                    @error('courseStatusId') <span
                                         class="text-danger d-block mb-2">{{ $message }}</span> @enderror
 
                                 </div>

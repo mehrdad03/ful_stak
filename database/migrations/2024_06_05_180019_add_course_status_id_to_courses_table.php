@@ -11,7 +11,7 @@ return new class extends Migration {
     public function up(): void
     {
         Schema::table('courses', function (Blueprint $table) {
-            $table->foreignid('course_status_id')->nullable()->constrained();
+            $table->foreignid('course_status_id')->after('category_id')->nullable()->constrained();
         });
     }
 
