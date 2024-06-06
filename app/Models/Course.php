@@ -114,6 +114,11 @@ class Course extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function courseStatus()
+    {
+        return $this->belongsTo(CourseStatus::class,'course_status_id','id');
+    }
     public function lectures()
     {
         return $this->hasMany(CourseSectionLecture::class);

@@ -116,7 +116,7 @@
                 @auth
 
                     @if($checkCourseInBasket)
-                        <a href="{{route('client.basket')}}" class="productBuy btn-innerShadow w-100 mt-3 ">
+                        <a wire:navigate  href="{{route('client.basket')}}" class="productBuy btn-innerShadow w-100 mt-3 ">
                     <span
                         class="afterAddedToBasketBtn flex-grow-1 text-center px-3 py-2 text-light fw-normal d-flex justify-content-between px-5">
                       موجود در سبد خرید
@@ -136,7 +136,7 @@
                         </button>
                     @endif
                 @else
-                    <a href="{{route('auth.client')}}" class="productBuy btn-innerShadow w-100 mt-3">
+                    <a wire:navigate href="{{route('auth.client')}}" class="productBuy btn-innerShadow w-100 mt-3">
                     <span
                         class="main-btn flex-grow-1 text-center px-3 py-2 text-light fw-normal "
                     >

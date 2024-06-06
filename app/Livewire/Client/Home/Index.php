@@ -20,7 +20,7 @@ class Index extends Component
                 $query->select('courses.id', 'courses.title', 'courses.url_slug', 'courses.price', 'courses.discount', 'courses.short_description', 'courses.category_id', 'courses.active')
                     ->where('courses.active', true)
                     ->withTotalDuration()
-                    ->with('coverImage');
+                    ->with('coverImage','courseStatus');
 
             }])
             ->get()
