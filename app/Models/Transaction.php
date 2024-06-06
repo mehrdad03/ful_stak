@@ -7,16 +7,19 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 
 class Transaction extends Model
 {
-    use HasFactory,SoftDeletes;
+    use HasFactory, SoftDeletes;
 
     protected $guarded = [];
 
     public function savePaymentInfo($response, $status, $amount, $orderId)
     {
-        DB::transaction(function () use ($response, $status, $amount,$orderId) {
+        Session::forget(['paymentStatus', 'paymentOrderId']);
+
+        DB::transaction(function () use ($response, $status, $amount, $orderId) {
             $referenceId = 0;
             $cardPan = 0;
 
@@ -38,8 +41,12 @@ class Transaction extends Model
 
             Order::query()->where('id', $orderId)->update(['pay_status' => $status]);
             OrderItem::query()->where('order_id', $orderId)->update(['pay_status' => $status]);
+
+
         });
 
+        Session::put('paymentStatus', $status);
+        Session::put('paymentOrderId', $orderId);
 
     }
 

@@ -3,9 +3,11 @@
 namespace App\Livewire\Client\Basket;
 
 use App\Models\Basket;
+use App\Models\Transaction;
 use App\Trait\calculation;
 use App\Trait\PaymentGateway;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 use Livewire\Component;
 
 class Index extends Component
@@ -28,7 +30,29 @@ class Index extends Component
     public function zarinPalPayment()
     {
 
-        $this->zarinPalVerify();
+        $authority = request()->query('Authority'); // دریافت کوئری استرینگ ارسال شده توسط زرین پال
+        $status = request()->query('Status'); // دریافت کوئری استرینگ ارسال شده توسط زرین پال
+        $amount = Session::get('zarinPalAmount'); // قیمت ارسال شده از متود CalculateUserBasketPrice در تریت calculation
+        $orderId = Session::get('zarinPalOrderId'); // قیمت ارسال شده از متود paymentZarinPal در helper_function
+
+        $response = zarinpal()
+            ->merchantId('e79622e9-157e-4acc-af4c-f18c281046ef') // تعیین مرچنت کد در حین اجرا - اختیاری
+            ->amount($amount)
+            ->verification()
+            ->authority($authority)
+            ->send();
+
+        $transactions = new Transaction();
+        if (!$response->success()) {
+
+            $transactions->savePaymentInfo($response, false, $amount, $orderId);
+           return redirect()->route('payment.status');
+
+        } else {
+            $this->status = true;
+            $transactions->savePaymentInfo($response, $this->status, $amount, $orderId);
+        }
+
     }
 
     public function render()

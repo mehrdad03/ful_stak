@@ -8,6 +8,7 @@ use App\Livewire\Client\Pricing\Index as pricingIndex;
 use App\Livewire\Client\Course\Index as courseIndex;
 use App\Livewire\Client\Auth\Index as authIndex;
 use App\Livewire\Client\Basket\Index as basketIndex;
+use App\Livewire\Client\Payment\Index as paymentIndex;
 use App\Livewire\Client\Profile\Comments;
 use App\Livewire\Client\Profile\Dashboard;
 use App\Livewire\Client\Profile\Financial;
@@ -39,6 +40,8 @@ Route::get('/road-map/{category:url_slug}', RoadMap::class)->name('client.catego
 Route::get('/cart', basketIndex::class)->name('client.basket')->middleware('auth');
 Route::get('/payment/verify', [basketIndex::class, 'zarinPalPayment'])->name('client.zarinpal.verify')->middleware('auth');
 
+Route::get('/payment/status', paymentIndex::class)->name('payment.status');
+
 /*********** Client Login  & Register *************/
 
 Route::group(['prefix' => 'auth', 'middleware' => 'guest:web'], function () {
@@ -64,7 +67,7 @@ Route::group(['prefix' => 'profile', 'middleware' => 'auth'], function () {
         Route::get('/questions', Questions::class)->name('questions');
         Route::get('/financial', Financial::class)->name('financial');
         Route::get('/messages', Messages::class)->name('messages');
-        Route::get('/comments', Comments::class)->name('comments');
+
     });
 });
 
