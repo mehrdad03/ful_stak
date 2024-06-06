@@ -15,11 +15,11 @@
     <!-- course name -->
     <div class="d-flex align-items-center my-4">
 
-        <p class="m-0 fw-bold text-white me-2">
+        <a wire:navigate href="{{route('client.course',$item->course->url_slug)}}" class="m-0 fw-bold text-white me-2">
             {{$title[0]}}
             <span class="text-primary">{{$title[1]}}</span>
             {{$title[2]}}|<span class="me-1 text-primary">{{$currentYear}}</span>
-        </p>
+        </a>
     </div>
 
     <div class="d-flex align-items-center justify-content-between">

@@ -153,7 +153,7 @@
             </li>
             <!-- comments -->
             <li wire:ignore class="{{@$rout_name=='client.profile.comments'?'active':''}}">
-                <a wire:navigate href="{{route('client.profile.comments')}}">
+                <a wire:navigate href="{{--{{route('client.profile.comments')}}--}}">
                     <div class="icon">
                         <svg
                             width="30"
