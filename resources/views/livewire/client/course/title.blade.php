@@ -42,6 +42,16 @@
     </section>
 
     <!-- watch seasons -->
-    <a href="#season" class="main-btn text-white px-2 px-lg-4 py-2 fw-medium"
-    >مشاهده سرفصل های دوره</a>
+    <div  class=" d-flex justify-content-between w-100 main-btn text-white fw-medium">
+        <a class="text-dark p-2 scroll-btn" href="#season">
+            سرفصل های دوره
+        </a>
+        <a class="text-dark p-2 scroll-btn" href="#requirmnets">
+            پیش نیاز ها
+        </a>
+        <a class="text-dark p-2 scroll-btn" href="#description">
+            توضیحات دوره
+        </a>
+
+    </div>
 </div>

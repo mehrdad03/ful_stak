@@ -17,6 +17,20 @@ main {
   color: #23bf64;
 }
 
+#mainContent .scroll-btn {
+    width: 30%;
+    position: relative;
+}
+
+#mainContent .scroll-btn + .scroll-btn:before {
+    content: '|';
+    display: block;
+    color: #000;
+    position: absolute;
+    top: 8px;
+}
+
+
 #mainContent .features {
   border: 1px solid #23bf64;
   border-radius: 40px;
@@ -134,7 +148,7 @@ main {
   #mainContent .season .acc .acc-item{
     height: 50px;
     padding-top: 10px;
-  } 
+  }
 }
 
 /* Course Slider */

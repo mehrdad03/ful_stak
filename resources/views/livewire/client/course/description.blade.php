@@ -1,4 +1,4 @@
-<section class="explain position-relative">
+<section class="explain position-relative" id="description">
     <h3 class="text-primary fs-2">توضیحات دوره</h3>
     <div class="d-flex align-items-center gap-2 mt-5">
         <span class="explainTitleCircle p-2"></span>

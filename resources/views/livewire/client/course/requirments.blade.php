@@ -1,4 +1,4 @@
-<section class="text-white">
+<section class="text-white" id="requirmnets">
     <h3 class="text-primary fs-2 mb-5">پیش نیازها</h3>
     <div class="d-flex flex-column gap-3">
         @foreach(explode('_',$course->requirements) as $item)
