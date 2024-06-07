@@ -12,17 +12,17 @@
                         $currentYear=date('Y');
                     @endphp
                     <a href="{{route('client.course',$item->course->url_slug)}}" style="color: initial" class=" d-flex align-items-start justify-content-between">
-                        <div class="course-cover">
-                            <img src="" alt="">
+                        <div class="course-cover w-25">
+                            <img src="/{{$item->course->coverImage->path }}" class="w-100" alt="">
                         </div>
-                        <div class="course-cover">
-                            <p class="title">
+                        <div class="course-cover w-75 pe-3">
+                            <p class="title py-2 m-0">
                                 {{$title[0]}}
                                 <span class="text-primary">{{$title[1]}}</span>
                                 {{$title[2]}}
                                 |<span class="me-2 text-primary">{{$currentYear}}</span>
                             </p>
-                            <p class="price">
+                            <p class="price py-2">
                                 قیمت خرید :
                                 <span class="fw-bold fs-5">{{number_format($item->price)}}</span>
                                 <svg class="mr-2" width="25" height="27" viewBox="0 0 25 27" fill="none"
