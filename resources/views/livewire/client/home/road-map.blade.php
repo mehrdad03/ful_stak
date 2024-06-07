@@ -118,7 +118,7 @@
                                     </div>
                                 </div>
                                 <a target="_blank" href="{{route('client.course',$course->url_slug)}}"
-                                   class="main-btn text-white px-3 py-2 btn-innerShadow">مشاهده دوره</a>
+                                   class="main-btn text-white px-3 py-2 ">مشاهده دوره</a>
                             </div>
                         @endforeach
 
@@ -188,7 +188,7 @@
                                     </div>
                                 </div>
                                 <a target="_blank" href="{{route('client.course',$course->url_slug)}}"
-                                   class="main-btn text-white px-3 py-2 btn-innerShadow">مشاهده دوره</a>
+                                   class="main-btn text-white px-3 py-2 ">مشاهده دوره</a>
                             </div>
                         @endforeach
 
@@ -365,7 +365,7 @@
 
                                 </div>
                                 <a target="_blank" href="{{route('client.course',$course->url_slug)}}"
-                                   class="main-btn text-white px-3 py-2 btn-innerShadow">مشاهده دوره</a>
+                                   class="main-btn text-white px-3 py-2 ">مشاهده دوره</a>
                             </div>
                         @endforeach
 
