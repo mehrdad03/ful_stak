@@ -46,12 +46,13 @@ class Index extends Component
         if (!$response->success()) {
 
             $transactions->savePaymentInfo($response, false, $amount, $orderId);
-           return redirect()->route('payment.status');
+
 
         } else {
             $this->status = true;
             $transactions->savePaymentInfo($response, $this->status, $amount, $orderId);
         }
+        return redirect()->route('payment.status');
 
     }
 
