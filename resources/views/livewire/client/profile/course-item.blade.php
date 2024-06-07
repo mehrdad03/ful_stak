@@ -24,7 +24,7 @@
 
     <div class="d-flex align-items-center justify-content-between">
         <div class="d-flex align-items-center column-gap-2">
-            <p class="m-0 text-primary fw-bold">مشاهده دوره</p>
+            <a wire:navigate href="{{route('client.course',$item->course->url_slug)}}" class="m-0 text-primary fw-bold">مشاهده ادامه دوره</a>
             <svg
                 width="20"
                 height="20"

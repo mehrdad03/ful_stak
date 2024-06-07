@@ -112,7 +112,12 @@
                                 <tbody>
                                 @forelse($lectures as $lecture)
                                     <tr wire:key="{{$loop->index}}">
-                                        <td>{{$lecture->id}}</td>
+                                        <td>
+                                            {{$lecture->id}}
+                                            <br>
+                                              قسمت
+                                            {{$loop->index+1}}
+                                        </td>
 
                                         <td wire:ignore>
                                             <video width="320" height="240" controls wire:ignore>
