@@ -137,7 +137,7 @@
         <a class="nav-link text-white fs-6" href="{{route('client.profile.financial')}}">مالی</a>
     </div>
 </li>
-<li class="nav-item text-white {{@$rout_name=='client.profile.comments'?'active':''}}">
+{{--<li class="nav-item text-white {{@$rout_name=='client.profile.comments'?'active':''}}">
     <div class="d-flex align-items-center gap-2 pe-4">
         <svg
             width="30"
@@ -158,7 +158,7 @@
         </svg>
         <a class="nav-link text-white fs-6" href="{{route('client.profile.comments')}}">نظرات</a>
     </div>
-</li>
+</li>--}}
 <li class="nav-item text-white {{@$rout_name=='client.profile.messages'?'active':''}}">
     <div class="d-flex align-items-center gap-2 pe-4">
         <svg
