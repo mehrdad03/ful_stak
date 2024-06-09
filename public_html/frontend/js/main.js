@@ -43,7 +43,6 @@ $(document).ready(function () {
         $(".dropBox").show();
         $("html body").addClass("notScroll");
     });
-
     $("#closeMenu").on("click", function () {
         $(".mobileMenu").removeClass("active");
         $("html body").removeClass("notScroll");
@@ -51,6 +50,7 @@ $(document).ready(function () {
     });
     $(".dropBox").on("click", function () {
         $(".mobileMenu").removeClass("active");
+        $("html body").removeClass("notScroll");
         $(this).hide();
     });
 
@@ -81,10 +81,10 @@ $(document).ready(function () {
                 slidesPerView: 2,
                 spaceBetween: 50,
             },
-            1440:{
+            1440: {
                 slidesPerView: 3,
                 spaceBetween: 20,
-            }
+            },
         },
     });
 });
