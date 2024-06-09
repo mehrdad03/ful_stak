@@ -193,7 +193,7 @@
                                         class="text-danger d-block mb-2">{{ $message }}</span> @enderror
 
                                 </div>
-                                <div class="mt-4 col-12">
+                               {{-- <div class="mt-4 col-12">
 
                                     <!-- Field wrapper start -->
                                     <div class="field-wrapper">
@@ -204,7 +204,7 @@
                                     @error('short_description') <span
                                         class="text-danger d-block mb-2">{{ $message }}</span> @enderror
 
-                                </div>
+                                </div>--}}
                                 <div class="mt-4 col-12">
 
                                     <div class="field-wrapper" x-data="{isUploading:false,progress:0 }"
