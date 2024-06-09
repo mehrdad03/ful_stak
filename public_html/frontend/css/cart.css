@@ -13,8 +13,7 @@ main {
 }
 
 .course img {
-    max-width: 150px;
-    max-height: 150px;
+    max-width: 110px;
     border-radius: 4px;
 }
 
