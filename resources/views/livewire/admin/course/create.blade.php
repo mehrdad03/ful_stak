@@ -87,7 +87,7 @@
                                                 title="Select Product Category">
                                             @foreach($courseStatus as $item)
                                                 <option wire:key="{{$item->id}}"
-                                                        @if($item->id==$course->course_status_id)
+                                                        @if($item->id==@$course->course_status_id)
                                                             selected
                                                         @endif
                                                         value="{{ @$item->id }}">{{ $item->title }}</option>

@@ -24,14 +24,17 @@ class Index extends Component
 
     public function mount(Course $course): void
     {
-        $this->course = $course->load('sections.sectionLectures.video');
+        $this->course = $course->load('sections.sectionLectures.video','category:id,title');
         $this->sameCourses = Course::query()
             ->where('category_id', $this->course->category_id)
             ->select('id', 'title', 'short_description', 'url_slug')->get();
-        $this->courseTotalDuration = CourseSectionLecture::query()->where('course_id', $this->course->id)->sum('duration');
+        $this->courseTotalDuration = CourseSectionLecture::query()
+            ->where('course_id', $this->course->id)
+            ->sum('duration');
 
 
-        $this->checkPurchase = OrderItem::query()->where([
+        $this->checkPurchase = OrderItem::query()
+            ->where([
             'user_id' => Auth::id(),
             'course_id' => $this->course->id,
             'pay_status' => true
