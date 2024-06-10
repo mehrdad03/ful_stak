@@ -4,17 +4,17 @@ $(document).ready(function () {
 
     // Show More
     $(".more .show").on("click", function () {
-        $(".exText").addClass("open")
+        $(".exText").addClass("open");
         // change text and svg degree when clicked
-        if($(".exText").hasClass("open")) {
+        if ($(".exText").hasClass("open")) {
             $(".more .show p").text("بسته شدن");
             $(".more .show svg").css("transform", "rotate(180deg)");
-            if($(".exText").hasClass("open")){
+            if ($(".exText").hasClass("open")) {
                 $(".more .show").on("click", function () {
-                    $(".exText").removeClass("open")
+                    $(".exText").removeClass("open");
                     $(".more .show p").text("ادامه مطلب");
                     $(".more .show svg").css("transform", "rotate(0deg)");
-                })
+                });
             }
         }
     });
@@ -42,7 +42,4 @@ $(document).ready(function () {
         var formParent = $(this).parents(".question");
         formParent.find(".newA").toggle();
     });
-    
 });
-
-
