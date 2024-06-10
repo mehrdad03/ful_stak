@@ -56,7 +56,7 @@
     </svg>
     <!-- Courses -->
     <a
-        href="../index.html"
+        href="javascript:0"
         class="d-flex gap-1 text-white fw-medium crumItem">
 
         <p class="m-0">دوره ها</p>

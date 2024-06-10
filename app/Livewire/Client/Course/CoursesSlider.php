@@ -16,7 +16,9 @@ public $sameCourses;
         $sameCoursesCategoryId = Course::query()->where('id', Session::get('courseId'))->pluck('category_id')->first();
         $this->sameCourses = Course::query()
             ->where('category_id',$sameCoursesCategoryId )
+            ->with('cover-image')
             ->select('id','title','short_description','url_slug')->get();
+
     }
     public function render()
     {

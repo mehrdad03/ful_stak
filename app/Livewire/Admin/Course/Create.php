@@ -15,10 +15,10 @@ class Create extends Component
     use WithFileUploads;
 
 
-    public $courseThumbnail,$courseIntroVideo;
-    public $courseId = 0, $categories, $category, $teachers,$courseStatus;
+    public $courseThumbnail, $courseIntroVideo;
+    public $courseId = 0, $categories, $category, $teachers, $courseStatus;
     public $course;//edit
-    public $oldCCourseThumbnail='',$oldCourseIntroVideo='';//edit
+    public $oldCCourseThumbnail = '', $oldCourseIntroVideo = '';//edit
 
     public function mount()
     {
@@ -48,6 +48,8 @@ class Create extends Component
         }
 
 
+ //       dd($formData);
+
         $validator = Validator::make($formData, [
             'courseThumbnail' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp',
             'courseIntroVideo' => 'nullable|mimes:mp4|max:102400',
@@ -71,7 +73,7 @@ class Create extends Component
         $validator->validate();
         $this->resetValidation();
 
-        $course->createCourse($formData,$this->oldCCourseThumbnail,$this->oldCourseIntroVideo);
+        $course->createCourse($formData, $this->oldCCourseThumbnail, $this->oldCourseIntroVideo);
 
         session()->flash('message', 'دوره با موفقیت ثبت شد!');
         $this->redirect('/admin/courses', navigate: true);

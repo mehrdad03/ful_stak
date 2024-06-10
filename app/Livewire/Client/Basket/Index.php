@@ -20,7 +20,7 @@ class Index extends Component
     public function mount()
     {
         $this->basket = Basket::query()
-            ->with('course.teacher')
+            ->with('course.teacher','course.coverImage')
             ->where('user_id', Auth::id())->get();
         //from trait
         $this->payment = $this->CalculateUserBasketPrice($this->basket);
