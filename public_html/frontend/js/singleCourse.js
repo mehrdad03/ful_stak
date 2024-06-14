@@ -2,22 +2,26 @@ $(document).ready(function () {
     var d = new Date().toLocaleDateString("fa-IR");
     $("#date").text(d);
 
-    // Show More
     $(".more .show").on("click", function () {
-        $(".exText").addClass("open");
-        // change text and svg degree when clicked
-        if ($(".exText").hasClass("open")) {
-            $(".more .show p").text("بسته شدن");
-            $(".more .show svg").css("transform", "rotate(180deg)");
-            if ($(".exText").hasClass("open")) {
-                $(".more .show").on("click", function () {
-                    $(".exText").removeClass("open");
-                    $(".more .show p").text("ادامه مطلب");
-                    $(".more .show svg").css("transform", "rotate(0deg)");
-                });
-            }
+        var $exText = $(".exText");
+        var $showMore = $(".more .show p");
+        var $showIcon = $(".more .show svg");
+    
+        // Toggle the 'open' class on the .exText element
+        $exText.toggleClass("open");
+    
+        // Check if the .exText element has the 'open' class
+        if ($exText.hasClass("open")) {
+            // Change text and rotate the SVG icon to indicate 'close'
+            $showMore.text("بسته شدن");
+            $showIcon.css("transform", "rotate(180deg)");
+        } else {
+            // Change text and rotate the SVG icon back to indicate 'open'
+            $showMore.text("ادامه مطلب");
+            $showIcon.css("transform", "rotate(0deg)");
         }
     });
+    
 
     // Accordion
     $(".acc-item").click(function () {
