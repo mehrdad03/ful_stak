@@ -478,10 +478,10 @@ header .header-basket {
     border-radius: 25px;
     background: #303445;
     box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25),
-    0px 6px 6px 0px rgba(0, 0, 0, 0.21),
-    0px 15px 9px 0px rgba(0, 0, 0, 0.13),
-    0px 26px 10px 0px rgba(0, 0, 0, 0.04),
-    0px 40px 11px 0px rgba(0, 0, 0, 0);
+        0px 6px 6px 0px rgba(0, 0, 0, 0.21),
+        0px 15px 9px 0px rgba(0, 0, 0, 0.13),
+        0px 26px 10px 0px rgba(0, 0, 0, 0.04),
+        0px 40px 11px 0px rgba(0, 0, 0, 0);
 }
 
 .introBG {
@@ -520,9 +520,9 @@ header .header-basket {
     margin-top: 10%;
     padding: 30px;
     box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25),
-    0px 6px 6px 0px rgba(0, 0, 0, 0.21),
-    0px 15px 9px 0px rgba(0, 0, 0, 0.13), 0px 26px 10px 0px #0000000a,
-    0px 40px 11px 0px rgba(0, 0, 0, 0);
+        0px 6px 6px 0px rgba(0, 0, 0, 0.21),
+        0px 15px 9px 0px rgba(0, 0, 0, 0.13), 0px 26px 10px 0px #0000000a,
+        0px 40px 11px 0px rgba(0, 0, 0, 0);
 }
 
 .targetBox .targetItem {
@@ -533,10 +533,10 @@ header .header-basket {
     padding-bottom: 10px;
     background: var(--primary-color);
     box-shadow: 0px 4px 9px 0px rgba(0, 0, 0, 0.44),
-    0px 17px 17px 0px rgba(0, 0, 0, 0.38),
-    0px 39px 23px 0px rgba(0, 0, 0, 0.23),
-    0px 69px 27px 0px rgba(0, 0, 0, 0.07),
-    0px 107px 30px 0px rgba(0, 0, 0, 0.01);
+        0px 17px 17px 0px rgba(0, 0, 0, 0.38),
+        0px 39px 23px 0px rgba(0, 0, 0, 0.23),
+        0px 69px 27px 0px rgba(0, 0, 0, 0.07),
+        0px 107px 30px 0px rgba(0, 0, 0, 0.01);
 }
 
 .targetBox > div > img {
@@ -601,10 +601,10 @@ header .header-basket {
     z-index: 1;
     background: var(--nav-color);
     box-shadow: 0px 11px 25px 0px rgba(0, 0, 0, 0.44),
-    0px 45px 45px 0px rgba(0, 0, 0, 0.38),
-    0px 101px 60px 0px rgba(0, 0, 0, 0.23),
-    0px 179px 72px 0px rgba(0, 0, 0, 0.07),
-    0px 280px 78px 0px rgba(0, 0, 0, 0.01);
+        0px 45px 45px 0px rgba(0, 0, 0, 0.38),
+        0px 101px 60px 0px rgba(0, 0, 0, 0.23),
+        0px 179px 72px 0px rgba(0, 0, 0, 0.07),
+        0px 280px 78px 0px rgba(0, 0, 0, 0.01);
 }
 
 .swiper {
@@ -632,7 +632,6 @@ header .header-basket {
     height: 120px;
     line-height: 1.7;
 }
-
 
 .swiper-slide .courseLike svg {
     transition: all 0.4ms ease-in-out;
@@ -747,7 +746,7 @@ header .header-basket {
     border-radius: 25px;
     background: linear-gradient(222deg, #20222f 9.49%, #303445 92.39%);
     box-shadow: 0px 11px 25px 0px rgba(0, 0, 0, 0.5),
-    0px 280px 78px 0px rgba(0, 0, 0, 0.01);
+        0px 280px 78px 0px rgba(0, 0, 0, 0.01);
 }
 
 .blogCard > p {
@@ -765,7 +764,7 @@ header .header-basket {
     padding: 0px 15px;
     background: linear-gradient(222deg, #20222f 9.49%, #303445 92.39%);
     box-shadow: 0px 11px 25px 0px rgba(0, 0, 0, 0.5),
-    0px 280px 78px 0px rgba(0, 0, 0, 0.01);
+        0px 280px 78px 0px rgba(0, 0, 0, 0.01);
 }
 
 .mobileCard > div > p {
@@ -818,6 +817,29 @@ header .header-basket {
 }
 
 /* Faq Section */
+
+/* text box container */
+
+.exText {
+    overflow: hidden;
+    height: 300px;
+    transition: height 0.5s ease;
+    padding: 15px;
+}
+.show {
+    cursor: pointer;
+    margin-bottom: -35px;
+}
+.exText.open {
+    height: auto;
+}
+.more .show svg {
+    margin-left: 5px;
+    transition: transform 0.5s ease;
+}
+
+/* main faq */
+
 .faqImg:nth-child(3) {
     -webkit-transform: scaleX(-1);
     transform: scaleX(-1);
@@ -829,10 +851,10 @@ header .header-basket {
     cursor: pointer;
     background: linear-gradient(222deg, #20222f 9.49%, #303445 92.39%);
     box-shadow: 0px 11px 25px 0px rgba(0, 0, 0, 0.44),
-    0px 45px 45px 0px rgba(0, 0, 0, 0.38),
-    0px 101px 60px 0px rgba(0, 0, 0, 0.23),
-    0px 179px 72px 0px rgba(0, 0, 0, 0.07),
-    0px 280px 78px 0px rgba(0, 0, 0, 0.01);
+        0px 45px 45px 0px rgba(0, 0, 0, 0.38),
+        0px 101px 60px 0px rgba(0, 0, 0, 0.23),
+        0px 179px 72px 0px rgba(0, 0, 0, 0.07),
+        0px 280px 78px 0px rgba(0, 0, 0, 0.01);
 }
 
 #faq .contentBox > div {
