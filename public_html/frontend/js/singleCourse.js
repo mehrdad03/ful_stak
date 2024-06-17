@@ -2,16 +2,16 @@ $(document).ready(function () {
     var d = new Date().toLocaleDateString("fa-IR");
     $("#date").text(d);
 
-    $(".more .show").on("click", function () {
-        var $exText = $(".exText");
-        var $showMore = $(".more .show p");
-        var $showIcon = $(".more .show svg");
+    $(".moreDesc .show").on("click", function () {
+        var $descText = $(".descText");
+        var $showMore = $(".moreDesc .show p");
+        var $showIcon = $(".moreDesc .show svg");
     
-        // Toggle the 'open' class on the .exText element
-        $exText.toggleClass("open");
+        // Toggle the 'open' class on the .descText element
+        $descText.toggleClass("open");
     
-        // Check if the .exText element has the 'open' class
-        if ($exText.hasClass("open")) {
+        // Check if the .descText element has the 'open' class
+        if ($descText.hasClass("open")) {
             // Change text and rotate the SVG icon to indicate 'close'
             $showMore.text("بسته شدن");
             $showIcon.css("transform", "rotate(180deg)");

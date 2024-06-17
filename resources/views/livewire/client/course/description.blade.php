@@ -5,7 +5,7 @@
         <h5 class="text-white m-0">دوره جاوا اسکریپت</h5>
     </div>
     <!-- explain Text -->
-    <div class="exText text-white">
+    <div class="descText text-white">
 
         ## جاوا اسکریپت: زبانی قدرتمند برای وب
 
@@ -55,7 +55,7 @@
        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias ullam culpa similique sunt eius facere error, fuga facilis iure quidem maiores neque corporis, saepe reiciendis magni, soluta sit earum doloremque!
     </div>
     <!-- More explain -->
-    <div class="more d-flex justify-content-center align-items-center">
+    <div class="moreDesc d-flex justify-content-center align-items-center">
         <button class="show d-flex justify-content-center bg-transparent">
             <svg
                 width="18"
