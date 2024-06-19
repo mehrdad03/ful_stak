@@ -85,7 +85,7 @@
             alt="questions"
             class="faqImg" />
     </div>
-    <div class="row">
+    <div class="row align-items-center">
         <!-- Accordions -->
         <div class="col col-lg-8">
             <div class="accordion">
@@ -365,48 +365,6 @@
             </div>
         </div>
         <div class="codes d-none d-lg-flex flex-column col-lg-4">
-            <div
-              class="codeNav d-flex flex-column align-items-baseline py-2 px-3 m-2">
-              <div class="d-flex gap-2 align-items-center">
-                <p class="text-white fw-bold m-0">HTML</p>
-                <svg
-                  class="text-primary"
-                  width="25"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="w-6 h-6">
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" />
-                </svg>
-              </div>
-              <img src="/frontend/assets/images/html.gif" alt="html code" />
-            </div>
-            <div
-              class="codeNav d-flex flex-column align-items-baseline py-2 px-3 m-2">
-              <div class="d-flex gap-2 align-items-center">
-                <p class="text-white fw-bold m-0">CSS</p>
-                <svg
-                  class="text-primary"
-                  width="25"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="w-6 h-6">
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" />
-                </svg>
-              </div>
-              <img src="/frontend/assets/images/css.gif" alt="css code" />
-            </div>
             <div
               class="codeNav d-flex flex-column align-items-baseline py-2 px-3 m-2">
               <div class="d-flex gap-2 align-items-center">
