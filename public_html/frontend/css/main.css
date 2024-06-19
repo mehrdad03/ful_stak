@@ -1012,6 +1012,6 @@ footer .link:hover {
 }
 
 footer ul .link::before {
-    content: "*";
+    content: "-";
     margin: 0 4px;
 }
