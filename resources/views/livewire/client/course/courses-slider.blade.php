@@ -27,10 +27,10 @@
                          </a>
                          <a target="_blank" href="{{--{{route('client.course',$item->url_slug)}}--}}"
                             class="course-cover">
-                             <h3 class="fw-bolder text-white w-100 pt-2">
+                             <h5 class="fw-bolder text-white w-100 pt-2">
                                         <span
                                             class="text-primary pt-5 d-block">{{str_replace('_',' ', $item->title)}}</span>
-                             </h3>
+                             </h5>
                          </a>
                          <p class="text-white flex-grow-1 w-100">
                              {{mb_substr($item->short_description, 0, 100)}} ...
