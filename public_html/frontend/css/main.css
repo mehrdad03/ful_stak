@@ -52,6 +52,9 @@ body {
     background: var(--background-color) !important;
     overflow-x: hidden;
 }
+img{
+    -webkit-user-drag: none;
+}
 
 a {
     text-decoration: none !important;
