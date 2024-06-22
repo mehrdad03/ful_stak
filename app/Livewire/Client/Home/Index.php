@@ -13,7 +13,7 @@ class Index extends Component
     public function mount()
     {
 
-        $slugs = ['frontend-road-map', 'backend-road-map', 'fullstack-road-map'];
+        $slugs = ['frontend-road-map', 'backend-road-map', 'fullstack-road-map','master-courses'];
 
         $this->categories = Category::query()->whereIn('url_slug', $slugs)
             ->with(['courses' => function ($query) {
