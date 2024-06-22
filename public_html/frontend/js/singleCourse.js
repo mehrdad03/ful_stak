@@ -6,10 +6,10 @@ $(document).ready(function () {
         var $descText = $(".descText");
         var $showMore = $(".moreDesc .show p");
         var $showIcon = $(".moreDesc .show svg");
-    
+
         // Toggle the 'open' class on the .descText element
         $descText.toggleClass("open");
-    
+
         // Check if the .descText element has the 'open' class
         if ($descText.hasClass("open")) {
             // Change text and rotate the SVG icon to indicate 'close'
@@ -21,7 +21,6 @@ $(document).ready(function () {
             $showIcon.css("transform", "rotate(0deg)");
         }
     });
-    
 
     // Accordion
     $(".acc-item").click(function () {

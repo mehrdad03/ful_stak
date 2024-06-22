@@ -15,49 +15,49 @@
         <strong>آموزش برنامه‌نویسی وب</strong> یکی از مهارت‌های اساسی و پرتقاضا در صنعت فناوری اطلاعات است. با گسترش اینترنت و نیاز به وبسایت‌ها و اپلیکیشن‌های وب، تسلط بر برنامه‌نویسی وب می‌تواند شما را به یک حرفه‌ای موفق تبدیل کند. آموزش برنامه‌نویسی وب نه تنها درهای زیادی را برای فرصت‌های شغلی باز می‌کند، بلکه به شما امکان می‌دهد تا ایده‌ها و پروژه‌های خود را به واقعیت تبدیل کنید.
         </p>
 
-        <h4 class="fs-6 lh-base fw-normal mt-4 px-lg-4 px-2">
+        <h4 class="fs-6 lh-base fw-normal mt-4 px-1">
             <strong>آموزش فرانت‌اند</strong>
         </h4>
-        <p class="text-white-50">
-        فرانت‌اند بخش قابل مشاهده و تعاملی یک وبسایت یا اپلیکیشن وب است. در <span class="text-primary">Ful-Stack.Dev</span>، شما با اصول HTML، CSS و JavaScript شروع می‌کنید. این تکنولوژی‌ها به شما کمک می‌کنند تا صفحات وب زیبا و کاربرپسند ایجاد کنید. سپس به سراغ فریم‌ورک‌ها و کتابخانه‌های مدرن مانند <span class="text-info">React.js</span>، <span class="text-danger">Angular</span> و <span class="text-success">Vue.js</span> می‌روید. این ابزارها به شما امکان می‌دهند تا رابط‌های کاربری پیچیده و پویا بسازید که تجربه کاربری عالی را ارائه می‌دهند.
+        <p class="text-white-50 px-lg-4 px-2">
+        فرانت‌اند بخش قابل مشاهده و تعاملی یک وبسایت یا اپلیکیشن وب است. در <span class="text-primary">Ful-Stack.Dev</span>، شما با اصول HTML، CSS و JavaScript شروع می‌کنید. این تکنولوژی‌ها به شما کمک می‌کنند تا صفحات وب زیبا و کاربرپسند ایجاد کنید. سپس به سراغ فریم‌ورک‌ها و کتابخانه‌های مدرن مانند <strong class="text-info">React.js</strong>، <strong class="text-danger">Angular</strong> و <strong class="text-success">Vue.js</strong> می‌روید. این ابزارها به شما امکان می‌دهند تا رابط‌های کاربری پیچیده و پویا بسازید که تجربه کاربری عالی را ارائه می‌دهند.
         </p>
 
-        <h4 class="fs-6 lh-base fw-normal mt-4 px-lg-4 px-2">
+        <h4 class="fs-6 lh-base fw-normal mt-4 px-1">
             <strong>آموزش بک‌اند</strong>
         </h4>
         
-        <p class="text-white-50">
-        بک‌اند بخش پشت صحنه یک وبسایت است که مسئولیت مدیریت داده‌ها، احراز هویت کاربران و انجام منطق سرور را بر عهده دارد. در <span class="text-primary">Ful-Stack.Dev</span>، شما با <strong>زبان‌های برنامه‌نویسی سمت سرور</strong> مانند <span class="text-success">Node.js</span>، <span class="text-warning">Python</span> و <span class="text-danger">PHP</span> آشنا می‌شوید. همچنین با استفاده از پایگاه‌های داده مانند <span>MongoDB</span> و MySQL، یاد می‌گیرید که چگونه داده‌ها را ذخیره و مدیریت کنید. علاوه بر این، با فریم‌ورک محبوب PHP یعنی لاراول آشنا خواهید شد که به شما امکان می‌دهد تا برنامه‌های وب قوی و مقیاس‌پذیر ایجاد کنید. لاراول با ساختار منظم و ابزارهای قدرتمند خود،
+        <p class="text-white-50 px-lg-4 px-2">
+        بک‌اند بخش پشت صحنه یک وبسایت است که مسئولیت مدیریت داده‌ها، احراز هویت کاربران و انجام منطق سرور را بر عهده دارد. در <span class="text-primary">Ful-Stack.Dev</span>، شما با <strong>زبان‌های برنامه‌نویسی سمت سرور</strong> مانند <strong class="text-success">Node.js</strong>، <strong class="text-warning">Python</strong> و <strong class="text-info">PHP</strong> آشنا می‌شوید. همچنین با استفاده از پایگاه‌های داده مانند <strong>MongoDB</strong> و <strong>MySQL</strong>، یاد می‌گیرید که چگونه داده‌ها را ذخیره و مدیریت کنید. علاوه بر این، با فریم‌ورک محبوب PHP یعنی لاراول آشنا خواهید شد که به شما امکان می‌دهد تا برنامه‌های وب قوی و مقیاس‌پذیر ایجاد کنید. لاراول با ساختار منظم و ابزارهای قدرتمند خود،
         </p>
 
-        <h4 class="fs-6 lh-base fw-normal mt-4 px-lg-4 px-2">
+        <h4 class="fs-6 lh-base fw-normal mt-4 px-1">
             <strong>اهمیت آموزش فول استک</strong>
         </h4>
         
-        <p class="text-white-50">
+        <p class="text-white-50 px-lg-4 px-2">
             <strong>تسلط بر هر دو بخش فرانت‌اند و بک‌اند</strong>، شما را به یک توسعه‌دهنده فول استک تبدیل می‌کند. توسعه‌دهندگان فول استک توانایی طراحی و توسعه کامل یک وبسایت یا اپلیکیشن وب را دارند، از ظاهر کاربرپسند تا عملکرد پشت صحنه.
         </p>
-        <p class="text-white-50">
+        <p class="text-white-50 px-lg-4 px-2">
             این مهارت چندجانبه به شما <em>مزیت رقابتی بزرگی</em> در بازار کار می‌دهد، زیرا کارفرمایان به دنبال افرادی هستند که می‌توانند پروژه‌ها را به صورت کامل و مستقل انجام دهند.
         </p>
         
         <hr />
 
-        <h4 class="fs-6 lh-base fw-normal mt-4 px-lg-4 px-2">
+        <h4 class="fs-6 lh-base fw-normal mt-4 px-1">
         &#x2022; 
             <strong>دوره‌های آموزشی جامع و پروژه‌های عملی</strong>
         </h4>
         
-        <p class="text-white-50">
+        <p class="text-white-50 px-lg-4 px-2">
             ما در <span class="text-primary">Ful-Stack.Dev</span> <strong>دوره‌های جامع و پروژه‌محور</strong> را ارائه می‌دهیم که شما را برای <strong>ورود به بازار کار</strong> آماده می‌کند. هر دوره شامل <span class="text-white">پروژه‌های عملی</span> است که به شما کمک می‌کند تا دانش خود را به مهارت‌های عملی تبدیل کنید. این پروژه‌ها به شما امکان می‌دهند تجربه واقعی در توسعه وب کسب کنید و برای چالش‌های دنیای واقعی آماده شوید.
         </p>
         
-        <h4 class="fs-6 lh-base fw-normal mt-4 px-lg-4 px-2">
+        <h4 class="fs-6 lh-base fw-normal mt-4 px-1">
             &#x2022; 
             <strong>دوره‌های آموزشی جامع و پروژه‌های عملی</strong>
         </h4>
         
-        <p class="text-white-50">
+        <p class="text-white-50 px-lg-4 px-2">
         تیم پشتیبانی ما همیشه در دسترس است تا به سوالات و مشکلات شما پاسخ دهد. ما دسترسی به <strong> منابع و ابزارهای پیشرفته</strong> را برای شما فراهم می‌کنیم، از مستندات کامل تا ابزارهای توسعه و دیباگ، همه چیز را در اختیار خواهید داشت تا بتوانید بهترین نتیجه را از آموزش‌های خود بگیرید.        </p>
      </div>
     <div class="more mt-2 d-flex justify-content-center">
@@ -85,7 +85,7 @@
             alt="questions"
             class="faqImg" />
     </div>
-    <div class="row">
+    <div class="row align-items-center">
         <!-- Accordions -->
         <div class="col col-lg-8">
             <div class="accordion">
@@ -365,48 +365,6 @@
             </div>
         </div>
         <div class="codes d-none d-lg-flex flex-column col-lg-4">
-            <div
-              class="codeNav d-flex flex-column align-items-baseline py-2 px-3 m-2">
-              <div class="d-flex gap-2 align-items-center">
-                <p class="text-white fw-bold m-0">HTML</p>
-                <svg
-                  class="text-primary"
-                  width="25"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="w-6 h-6">
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" />
-                </svg>
-              </div>
-              <img src="/frontend/assets/images/html.gif" alt="html code" />
-            </div>
-            <div
-              class="codeNav d-flex flex-column align-items-baseline py-2 px-3 m-2">
-              <div class="d-flex gap-2 align-items-center">
-                <p class="text-white fw-bold m-0">CSS</p>
-                <svg
-                  class="text-primary"
-                  width="25"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="w-6 h-6">
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" />
-                </svg>
-              </div>
-              <img src="/frontend/assets/images/css.gif" alt="css code" />
-            </div>
             <div
               class="codeNav d-flex flex-column align-items-baseline py-2 px-3 m-2">
               <div class="d-flex gap-2 align-items-center">
