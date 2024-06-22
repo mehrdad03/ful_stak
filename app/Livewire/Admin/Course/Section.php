@@ -26,6 +26,7 @@ class Section extends Component
     public function saveSection($formData, CourseSection $courseSection)
     {
 
+
         $validator = Validator::make($formData, [
             'title' => 'required | string',
         ], [

@@ -4,11 +4,11 @@
         $title=explode('_',$course->title);
         $currentYear=date('Y');
     @endphp
-    <h1 class="fw-bold text-end">
-        {{$title[0]}}
-        <span class="text-primary">{{$title[1]}}</span>
-        {{$title[2]}}
-        |<span class="me-2 text-primary">{{$currentYear}}</span>
+    <h1 class="fw-bold text-end fs-2">
+        {{@$title[0]}}
+        {{@$title[1]}}
+        {{@$title[2]}}
+        |<span class="me-2 text-primary">{{@$currentYear}}</span>
 
     </h1>
     <!-- Subtitle -->
