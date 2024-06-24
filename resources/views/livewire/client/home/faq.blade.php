@@ -25,26 +25,16 @@
         <h4 class="fs-6 lh-base fw-normal mt-4 px-1">
             <strong>آموزش بک‌اند</strong>
         </h4>
-<<<<<<< HEAD
-        
-        <p class="text-white-50">
-=======
 
-        <p class="text-white-50 px-lg-4 px-2">
->>>>>>> d64ced7facc45f28337654cf9c88e38a71b0ed08
+        <p class="text-white-50">
         بک‌اند بخش پشت صحنه یک وبسایت است که مسئولیت مدیریت داده‌ها، احراز هویت کاربران و انجام منطق سرور را بر عهده دارد. در <span class="text-primary">Ful-Stack.Dev</span>، شما با <strong>زبان‌های برنامه‌نویسی سمت سرور</strong> مانند <strong class="text-success">Node.js</strong>، <strong class="text-warning">Python</strong> و <strong class="text-info">PHP</strong> آشنا می‌شوید. همچنین با استفاده از پایگاه‌های داده مانند <strong>MongoDB</strong> و <strong>MySQL</strong>، یاد می‌گیرید که چگونه داده‌ها را ذخیره و مدیریت کنید. علاوه بر این، با فریم‌ورک محبوب PHP یعنی لاراول آشنا خواهید شد که به شما امکان می‌دهد تا برنامه‌های وب قوی و مقیاس‌پذیر ایجاد کنید. لاراول با ساختار منظم و ابزارهای قدرتمند خود،
         </p>
 
         <h4 class="fs-6 lh-base fw-normal mt-4 px-1">
             <strong>اهمیت آموزش فول استک</strong>
         </h4>
-<<<<<<< HEAD
-        
-        <p class="text-white-50">
-=======
 
-        <p class="text-white-50 px-lg-4 px-2">
->>>>>>> d64ced7facc45f28337654cf9c88e38a71b0ed08
+        <p class="text-white-50">
             <strong>تسلط بر هر دو بخش فرانت‌اند و بک‌اند</strong>، شما را به یک توسعه‌دهنده فول استک تبدیل می‌کند. توسعه‌دهندگان فول استک توانایی طراحی و توسعه کامل یک وبسایت یا اپلیکیشن وب را دارند، از ظاهر کاربرپسند تا عملکرد پشت صحنه.
         </p>
         <p class="text-white-50">
@@ -57,13 +47,8 @@
         &#x2022;
             <strong>دوره‌های آموزشی جامع و پروژه‌های عملی</strong>
         </h4>
-<<<<<<< HEAD
-        
-        <p class="text-white-50">
-=======
 
-        <p class="text-white-50 px-lg-4 px-2">
->>>>>>> d64ced7facc45f28337654cf9c88e38a71b0ed08
+        <p class="text-white-50">
             ما در <span class="text-primary">Ful-Stack.Dev</span> <strong>دوره‌های جامع و پروژه‌محور</strong> را ارائه می‌دهیم که شما را برای <strong>ورود به بازار کار</strong> آماده می‌کند. هر دوره شامل <span class="text-white">پروژه‌های عملی</span> است که به شما کمک می‌کند تا دانش خود را به مهارت‌های عملی تبدیل کنید. این پروژه‌ها به شما امکان می‌دهند تجربه واقعی در توسعه وب کسب کنید و برای چالش‌های دنیای واقعی آماده شوید.
         </p>
 
@@ -71,13 +56,8 @@
             &#x2022;
             <strong>دوره‌های آموزشی جامع و پروژه‌های عملی</strong>
         </h4>
-<<<<<<< HEAD
-        
-        <p class="text-white-50">
-=======
 
-        <p class="text-white-50 px-lg-4 px-2">
->>>>>>> d64ced7facc45f28337654cf9c88e38a71b0ed08
+        <p class="text-white-50">
         تیم پشتیبانی ما همیشه در دسترس است تا به سوالات و مشکلات شما پاسخ دهد. ما دسترسی به <strong> منابع و ابزارهای پیشرفته</strong> را برای شما فراهم می‌کنیم، از مستندات کامل تا ابزارهای توسعه و دیباگ، همه چیز را در اختیار خواهید داشت تا بتوانید بهترین نتیجه را از آموزش‌های خود بگیرید.        </p>
      </div>
     <div class="more mt-2 d-flex justify-content-center">
