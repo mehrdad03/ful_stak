@@ -47,6 +47,7 @@ class Course extends Model
             [
                 'title' => $formData['title'],
                 'price' => $formData['price'],
+                'usdt_price' => $formData['usdt_price'],
                 'discount' => $formData['discount'],
                 'category_id' => $formData['categoryId'],
                 'course_status_id' => $formData['courseStatusId'],

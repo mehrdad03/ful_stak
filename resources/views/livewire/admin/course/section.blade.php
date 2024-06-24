@@ -31,7 +31,7 @@
                     <form wire:submit.prevent="saveSection(Object.fromEntries(new FormData($event.target)))">
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                             <div class="field-wrapper">
-                                <input name="title" id="title" value="{{@$title}}"
+                                <input name="title" wire:model="title" id="title" value="{{@$title}}"
                                        class="form-control @error('title') error-input-border @enderror"
                                        type="text">
                                 <div class="field-placeholder">عنوان<span class="text-danger">*</span>

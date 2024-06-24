@@ -5,6 +5,7 @@ namespace App\Livewire\Admin\Course;
 
 use App\Models\Course;
 use App\Models\CourseSection;
+use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Validator;
 use Livewire\Component;
 
@@ -24,6 +25,8 @@ class Section extends Component
 
     public function saveSection($formData, CourseSection $courseSection)
     {
+
+
         $validator = Validator::make($formData, [
             'title' => 'required | string',
         ], [
@@ -35,7 +38,7 @@ class Section extends Component
         $courseSection->saveSection($formData, $this->sectionId, $this->course_id);
         $this->reset('title');
         $this->dispatch('swal:alert-success');
-         $this->redirect('/admin/course/'.$this->course_id.'/section');
+        //$this->redirect('/admin/course/'.$this->course_id.'/section');
     }
 
     public function editSection($section_id)

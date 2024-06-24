@@ -50,6 +50,18 @@
 
                                     <!-- Field wrapper start -->
                                     <div class="field-wrapper">
+                                        <input class="form-control" type="text" placeholder="" name="usdt_price"
+                                               value="{{@$course->usdt_price}}">
+                                        <div class="field-placeholder">قیمت به تتر <span class="text-danger"></span></div>
+                                    </div>
+                                    @error('usdt_price') <span
+                                        class="text-danger d-block mb-2">{{ $message }}</span> @enderror
+
+                                </div>
+                                <div class="col-12">
+
+                                    <!-- Field wrapper start -->
+                                    <div class="field-wrapper">
                                         <input class="form-control" type="text" placeholder="" name="discount"
                                                value="{{@$course->discount}}">
                                         <div class="field-placeholder">تخفیف <span class="text-danger"></span></div>
