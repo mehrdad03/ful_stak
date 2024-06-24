@@ -57,6 +57,7 @@ class Create extends Component
             'categoryId' => 'required|integer|exists:categories,id',
             'courseStatusId' => 'required|integer|exists:course_statuses,id',
             'price' => 'required|integer',
+            'usdt_price' => 'required|integer',
             'discount' => 'required|integer',
             'teacherId' => 'required|integer|exists:teachers,id',
             'short_description' => 'required|string',
