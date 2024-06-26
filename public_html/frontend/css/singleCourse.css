@@ -54,7 +54,6 @@ main {
   display: flex;
   align-items: start;
   justify-content: center;
-  border-left: 1px solid #23bf64;
   width: 18%;
 }
 #mainContent .season .courseDetails:nth-child(3) {

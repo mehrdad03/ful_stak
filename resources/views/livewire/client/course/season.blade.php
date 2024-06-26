@@ -51,7 +51,7 @@
                         <h2 class="w50 m-0 text-white fw-bold px-2 fs-6">{{$section->title}}</h2>
                         <!-- section details -->
                         <div class="w-50 d-flex align-items-center justify-content-around justify-content-md-end section-info">
-                            <div class="d-flex justify-content-center align-items-start py-3 w-75">
+                            <div class="d-flex justify-content-end align-items-start py-3 w-75">
                                 <div class="courseDetails w-50">
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
@@ -68,25 +68,6 @@
                                     <p class="m-0 text-primary fw-medium">
                                         {{$section->sectionLectures->count()}} <span
                                             class="d-none d-md-inline">جلسه</span>
-                                    </p>
-                                </div>
-                                <div class="courseDetails w-50">
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        fill="none"
-                                        viewBox="0 0 24 24"
-                                        stroke-width="1.5"
-                                        stroke="currentColor"
-                                        class="text-white">
-                                        <path
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                            d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
-                                    </svg>
-
-                                    <p class="m-0 text-primary fw-medium">
-                                        {{--  {{@date('H:i',$section->lecture($section->id))}}--}}
-
                                     </p>
                                 </div>
                             </div>

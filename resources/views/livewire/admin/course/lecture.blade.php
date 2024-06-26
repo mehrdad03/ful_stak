@@ -161,7 +161,7 @@
                                 </tbody>
                             </table>
                         </div>
-                        {{ $lectures->links('layouts.pagination-admin') }}
+{{--                        {{ $lectures->links('layouts.pagination-admin') }}--}}
                     </div>
                 </div>
             </div>

@@ -6,7 +6,9 @@
     @endphp
     <h1 class="fw-bold text-end fs-2">
         {{@$title[0]}}
+        <span class="me-2 text-primary">
         {{@$title[1]}}
+        </span>
         {{@$title[2]}}
         |<span class="me-2 text-primary">{{@$currentYear}}</span>
 
@@ -44,7 +46,7 @@
                     fill="currentColor"></path>
             </svg>
 
-            شرکت کنندگان :<span class="text-primary me-1">1100</span> دانشجو )
+            شرکت کنندگان :<span class="text-primary me-1">{{number_format($studentsCount)}}</span> دانشجو )
         </p>
         <!-- Updated on -->
         <div class="d-flex justify-content-center fw-medium date">
