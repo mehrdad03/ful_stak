@@ -279,7 +279,7 @@
             </div>
             <ul class="navbar-nav gap-4 mt-3">
 
-                @if($mobile && $prefix=='profile')
+                @if($mobile and $prefix=='/profile')
                     @include('livewire.client.profile.profile-mobile-sidebar')
                 @else
                     @include('livewire.client.home.primary-mobile-menu')
