@@ -176,7 +176,7 @@
                     <div class="text">نظرات</div>
                 </a>
             </li>
-            <!-- notification -->
+          {{--  <!-- notification -->
             <li wire:ignore class="{{@$rout_name=='client.profile.messages'?'active':''}}">
                 <a wire:navigate href="{{route('client.profile.messages')}}">
                     <div class="icon">
@@ -200,7 +200,7 @@
                     </div>
                     <div class="text">پیغام</div>
                 </a>
-            </li>
+            </li>--}}
             <!-- Logout -->
             <li wire:ignore class="#">
                 <a wire:navigate href="{{route('client.logout')}}">

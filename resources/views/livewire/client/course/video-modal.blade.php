@@ -13,6 +13,11 @@
                 </video>
 
             </div>
+            <div class="modal-header d-flex">
+                <button type="button" class=" m-0">جلسه بعدی</button>
+                <button type="button" class=" m-0">مشاهده کردم</button>
+                <button type="button" class=" m-0">جلسه قبلی</button>
+            </div>
 
         </div>
     </div>

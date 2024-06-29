@@ -129,7 +129,7 @@ class Index extends Component
             $this->studentsCount = Session::get($studentsCountKey, 0);
 
             // اضافه کردن یک عدد تصادفی بین 1 تا 10 به تعداد دانشجویان
-            $this->studentsCount += rand(1, 10);
+            $this->studentsCount += rand(10,20);
 
             // ذخیره تعداد جدید دانشجویان و تاریخ به‌روزرسانی
             Session::put($studentsCountKey, $this->studentsCount);

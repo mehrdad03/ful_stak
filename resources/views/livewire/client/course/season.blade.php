@@ -48,7 +48,7 @@
             <div class="acc-item mb-5">
                 <div class="d-flex justify-content-center justify-content-md-end">
                     <div class="acc-header d-flex w-100 align-items-center justify-content-between px-3 py-1 px-md-4">
-                        <h2 class="w50 m-0 text-white fw-bold px-2 fs-6">{{$section->title}}</h2>
+                        <h2 class="w50 m-0 text-white  px-2 fs-6">{{$section->title}}</h2>
                         <!-- section details -->
                         <div class="w-50 d-flex align-items-center justify-content-around justify-content-md-end section-info">
                             <div class="d-flex justify-content-end align-items-start py-3 w-75">
@@ -109,7 +109,7 @@
                             <div class="d-flex column-gap-2 align-items-center justify-content-between lecture-info w-25 ">
 
                                 <p class="m-0 text-primary fw-bold">{{@date('s : i',$lecture->duration)}}</p>
-                                @if($checkPurchase)
+                                @if(!$checkPurchase and \Illuminate\Support\Facades\Auth::id()==1)
                                     <button data-path="{{config('app.ftp_url').@$lecture->video->path }}"
                                             data-title="{{$lecture->title }}" data-bs-toggle="modal"
                                             data-bs-target="#videoModal"
