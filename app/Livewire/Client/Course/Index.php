@@ -6,6 +6,9 @@ use App\Models\Basket;
 use App\Models\Comment;
 use App\Models\Course;
 use App\Models\CourseSectionLecture;
+use App\Models\CourseUserProgress;
+use App\Models\LectureUser;
+use App\Models\Media;
 use App\Models\OrderItem;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
@@ -24,6 +27,13 @@ class Index extends Component
     public $videoPath = '';
 
     public $studentsCount;
+
+    public $lectureId;
+
+    public $lessonCompleted = false;
+
+    public $previousLecture;
+    public $nextLecture;
 
     public function mount(Course $course): void
     {
@@ -108,11 +118,32 @@ class Index extends Component
 
     }
 
-    public function videoModal($videoPath)
+    /*public function videoEnded()
+    {
+
+        $userId = Auth::id();
+        $courseId = $this->course->id;
+        $lectures = $this->course->lectures->count();
+
+        // پیدا کردن یا ایجاد رکورد در جدول course_user_progress
+        $progressRecord = CourseUserProgress::query()->updateOrCreate(
+            ['user_id' => $userId, 'course_id' => $courseId],
+            ['total_lessons' => $lectures]
+        );
+        // به‌روزرسانی تعداد درس‌های تکمیل‌شده
+        $progressRecord->completed_lessons += 1;
+        $progressRecord->progress = ($progressRecord->completed_lessons / $progressRecord->total_lessons) * 100;
+        $progressRecord->save();
+
+        $this->lessonCompleted = true;
+
+    }*/
+
+    /*public function videoModal($videoPath)
     {
         $this->videoPath = $videoPath;
-        $this->dispatch('videoModal', path: $videoPath);
-    }
+        $this->dispatch('videoModal', $videoPath);
+    }*/
 
     public function updateStudents()
     {
@@ -129,7 +160,7 @@ class Index extends Component
             $this->studentsCount = Session::get($studentsCountKey, 0);
 
             // اضافه کردن یک عدد تصادفی بین 1 تا 10 به تعداد دانشجویان
-            $this->studentsCount += rand(10,20);
+            $this->studentsCount += rand(10, 20);
 
             // ذخیره تعداد جدید دانشجویان و تاریخ به‌روزرسانی
             Session::put($studentsCountKey, $this->studentsCount);
@@ -137,6 +168,81 @@ class Index extends Component
         } else {
             $this->studentsCount = Session::get($studentsCountKey);
         }
+    }
+
+    public function getLectureId($lectureId)
+    {
+        $this->lessonCompleted = false;
+        $lectureCheck = CourseSectionLecture::query()->where('id', $lectureId)->exists();
+        if ($lectureCheck) {
+            $this->lectureId = $lectureId;
+            // $this->getAdjacentLecturePaths();
+        }
+
+
+
+        //check if this lessens seen or not
+        $completeLessen = LectureUser::query()->where([
+            'user_id' => Auth::id(),
+            'course_id' => $this->course->id,
+            'course_section_lecture_id' => $this->lectureId,
+        ])->exists();
+
+        if ($completeLessen) {
+            $this->lessonCompleted = true;
+        }
+
+
+    }
+
+    public function getAdjacentLecturePaths()
+    {
+        $courseId = $this->course->id;
+        // پیدا کردن درس قبلی
+        $this->previousLecture = Media::query()->where('course_id', $courseId)
+            ->where('id', '<', $this->lectureId)
+            ->orderBy('id', 'desc')
+            ->pluck('path')
+            ->first();
+        // پیدا کردن درس بعدی
+        $this->nextLecture = Media::query()->where('course_id', $courseId)
+            ->where('id', '>', $this->lectureId)
+            ->orderBy('id', 'asc')
+            ->pluck('path')
+            ->first();
+
+    }
+
+    public function goToNextLecture()
+    {
+
+
+        $this->dispatch('adjacentVideoPath', config('app.ftp_url') . $this->nextLecture);
+
+    }
+
+    public function goToPreviousLecture()
+    {
+        $this->dispatch('adjacentVideoPath', config('app.ftp_url') . $this->previousLecture);
+
+
+    }
+
+    public function completeLesson(CourseUserProgress $courseUserProgress, LectureUser $lectureUser)
+    {
+
+        $userId = Auth::id();
+        $courseId = $this->course->id;
+        $lectures = $this->course->lectures->count();
+
+        $courseUserProgress->submit($userId, $courseId, $lectures);
+
+        $lectureUser->submit($this->lectureId, $courseId);
+
+        $this->dispatch('completeLesson', 'جلسه تکمیل شد');
+
+
+        $this->lessonCompleted = true;
     }
 
     public function render(): \Illuminate\Contracts\View\View|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\Foundation\Application

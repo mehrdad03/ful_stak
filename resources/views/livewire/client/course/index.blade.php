@@ -44,6 +44,27 @@
     <script src="/frontend/js/swiper-bundle.min.js"></script>
     <script src="/frontend/js/singleCourse.js"></script>
     <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var video = document.getElementById('videoPlayer');
+
+            if (video) {
+                video.addEventListener('ended', function () {
+                    completeLesson();
+                });
+
+                video.addEventListener('timeupdate', function () {
+                    // Check if the remaining time is 20 seconds or less
+                    if (video.duration - video.currentTime <= 20) {
+                    @this.call('completeLesson')
+                        ;
+                        // Remove the event listener to prevent multiple calls
+                        video.removeEventListener('timeupdate', arguments.callee);
+                    }
+                });
+            }
+        });
+    </script>
+    <script>
         $(document).ready(function () {
 
             $('.videoModal').on('click', function () {
@@ -55,6 +76,34 @@
 
             });
         });
+
+        $(document).ready(function () {
+
+            $('#videoModal').on('hide.bs.modal', function () {
+                var video = document.getElementById('videoPlayer');
+                video.pause();
+            });
+        });
+
+
+        window.addEventListener('completeLesson', function (event) {
+            completeLesson()
+        })
+
+        function completeLesson() {
+
+            Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: 'جلسه تکمیل شد',
+                showConfirmButton: false,
+                color: '#fff',
+                background: '#20222F',
+
+                timer: 3000
+            })
+        }
+
 
     </script>
 
