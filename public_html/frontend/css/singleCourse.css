@@ -470,6 +470,30 @@ iframe {
 .mSubscription .sidebarArrow:nth-last-of-type(1) {
   transform: scaleX(-1);
 }
+#progress-circle {
+    position: relative;
+    width: 200px;
+    height: 200px;
+}
+
+#progress-info {
+    width: 175px;
+    height: 175px;
+    border-radius: 50%;
+    background: #424a6b;
+    font-size: 24px;
+    color: #fff;
+    line-height: 135px;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.progress-info-text {
+    color: #fff; /* رنگ متن پیشرفت (قرمز) */
+}
 @media screen and (max-width: 768px) {
   main {
     margin: 17% 0;

@@ -23,6 +23,8 @@ class CourseUserProgress extends Model
         $progressRecord->progress = ($progressRecord->completed_lessons / $progressRecord->total_lessons) * 100;
         $progressRecord->save();
 
+        return $progressRecord->progress;
+
 
     }
 }

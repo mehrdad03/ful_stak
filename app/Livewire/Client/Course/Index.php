@@ -31,6 +31,7 @@ class Index extends Component
     public $lectureId;
 
     public $lessonCompleted = false;
+    public $progress;
 
     public $previousLecture;
     public $nextLecture;
@@ -52,6 +53,11 @@ class Index extends Component
                 'course_id' => $this->course->id,
                 'pay_status' => true
             ])->exists();
+
+        $this->progress=CourseUserProgress::query()->where([
+            'user_id'=>Auth::id(),
+            'course_id'=>$course->id,
+        ])->pluck('progress')->firstOrFail();
 
         $this->updateStudents();
 
@@ -235,7 +241,7 @@ class Index extends Component
         $courseId = $this->course->id;
         $lectures = $this->course->lectures->count();
 
-        $courseUserProgress->submit($userId, $courseId, $lectures);
+       $this->progress= $courseUserProgress->submit($userId, $courseId, $lectures);
 
         $lectureUser->submit($this->lectureId, $courseId);
 
