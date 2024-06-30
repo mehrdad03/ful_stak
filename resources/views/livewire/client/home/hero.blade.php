@@ -6,8 +6,8 @@
         <!-- Hero Canvas  -->
         <div class="col-lg-6 d-flex justify-content-center">
             <img
-                class="hero-img"
-                src="/frontend/assets/images/Hero Section Illustration.png"
+                class="hero-img w-100 h-auto"
+                src="/frontend/assets/images/hero.gif"
                 alt="hero section image" />
         </div>
         <!-- Hero Title  -->
@@ -17,9 +17,9 @@
                             به دنیای برنامه نویسی
                         </p>
                         <div class="vertical-slider text-white">
-                            <h2 class="slider-text text-primary fs-2 fw-bold m-0 px-3">فول استک</h2>
-                            <h2 class="slider-text text-primary fs-2 fw-bold m-0 px-3">فرانت اند</h2>
-                            <h2 class="slider-text text-primary fs-2 fw-bold m-0 px-3">بک اند</h2>
+                            <h3 class="slider-text text-primary fs-3 fw-bold m-0 px-3">فول استک</h3>
+                            <h3 class="slider-text text-primary fs-3 fw-bold m-0 px-3">فرانت اند</h3>
+                            <h3 class="slider-text text-primary fs-3 fw-bold m-0 px-3">بک اند</h3>
                         </div>
                         <p class="m-0 fw-semibold fs-2">خوش آمدید</p>
             </div>
