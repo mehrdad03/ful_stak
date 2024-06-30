@@ -3,24 +3,25 @@
     <!-- ======after purchase ====== -->
     <div class="courseDet text-white pb-5 overflow-hidden">
 
-        @if($checkPurchase)
+        @if(!$checkPurchase)
             @include('livewire.client.course.circle-progress')
         @endif
 
         @include('livewire.client.course.video-features-course')
 
-        @if(!$checkPurchase)
+        @if($checkPurchase)
             @include('livewire.client.course.price-course')
         @endif
 
 
     </div>
+    @if(!$checkPurchase)
+        @include('livewire.client.course.source-code-support-btns')
+    @endif
 
-    <!-- Atach -->
-    <div class="sideVector d-none d-lg-flex justify-content-between">
-        <img src="/frontend/assets/images/v2.png" alt="vector"/>
-        <img src="/frontend/assets/images/v2.png" alt="vector"/>
-    </div>
+
+
+
     <!-- Course Master Box -->
     @include('livewire.client.course.master-of-course')
 
