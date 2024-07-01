@@ -1,16 +1,5 @@
 <aside id="sideBar" class="d-none d-lg-block col col-lg-4 sticky-top">
-    @php
-        $slug = strtolower($course->category->url_slug);
-          $keyword = strtolower('frontend');
-          $telegram_group='';
 
-          // بررسی وجود کلمه کلیدی در اسلاگ
-          if (strpos($slug, 'frontend')) {
-                   $telegram_group='https://t.me/+hRwjhLGAHNJkZWFk';
-          } elseif( strpos($slug, 'backend')) {
-             $telegram_group='https://t.me/+mgqbUiNo-UY0YzM8';
-          }
-    @endphp
     <div class="courseDet text-white pb-5 overflow-hidden">
         <!-- ======after purchase ====== -->
         @if(!$checkPurchase)

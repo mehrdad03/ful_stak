@@ -5,9 +5,9 @@
 </video>
 <!-- ==== Course features ==== -->
 <div class="p-4">
-    <h5>ویژگی های این دوره :</h5>
+    <p class="fs-5 fw-bold">ویژگی های این دوره :</p>
     <ul>
-        <li class="d-flex gap-2 mt-3">
+        <li class="d-flex gap-2 ">
                   <span>
                     <svg
                         width="24"
@@ -23,9 +23,12 @@
                           stroke-linejoin="round"/>
                     </svg>
                   </span>
-            <p>5 ساعت ویدیو آموزشی</p>
+            <p>
+                تدریس با آخرین ورژن زبان ها و فریمورک ها
+
+            </p>
         </li>
-        <li class="d-flex gap-2 mt-1">
+        <li class="d-flex gap-2 ">
                   <span>
                     <svg
                         width="24"
@@ -41,9 +44,14 @@
                           stroke-linejoin="round"/>
                     </svg>
                   </span>
-            <p>3 تمرین صفر تا صد برای تسلط</p>
+            <p>
+                بیش از
+                <strong>
+                    {{$hours}}
+                </strong>
+                ساعت ویدیو آموزشی</p>
         </li>
-        <li class="d-flex gap-2 my-1">
+        <li class="d-flex gap-2 ">
                   <span>
                     <svg
                         width="24"
@@ -59,9 +67,15 @@
                           stroke-linejoin="round"/>
                     </svg>
                   </span>
-            <p>پرسش و پاسخ آنلاین با استاد</p>
+            <p>
+                بیش از
+              <strong>
+                  {{$lecturesCount}}
+              </strong>
+                جلسه آموزشی
+            </p>
         </li>
-        <li class="d-flex gap-2 mb-1">
+        <li class="d-flex gap-2">
                   <span>
                     <svg
                         width="24"
@@ -77,7 +91,10 @@
                           stroke-linejoin="round"/>
                     </svg>
                   </span>
-            <p>پشتیبانی بعد از اتمام آموزش</p>
+            <p>
+                پرسش و پاسخ آنلاین در گروه VIP با استاد
+            </p>
         </li>
+
     </ul>
 </div>

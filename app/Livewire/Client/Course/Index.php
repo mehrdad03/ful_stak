@@ -21,6 +21,7 @@ class Index extends Component
     public $course;
     public $sameCourses;
     public $courseTotalDuration;
+    public $lecturesCount;
     public $checkPurchase;
 
     //after purchase
@@ -39,6 +40,7 @@ class Index extends Component
     public function mount(Course $course): void
     {
         $this->course = $course->load('sections.sectionLectures.video', 'category:id,title,url_slug');
+        $this->lecturesCount = $course->lectures->count();
         $this->sameCourses = Course::query()
             ->where('category_id', $this->course->category_id)
             ->select('id', 'title', 'short_description', 'url_slug')->get();
@@ -239,7 +241,8 @@ class Index extends Component
 
         $userId = Auth::id();
         $courseId = $this->course->id;
-        $lectures = $this->course->lectures->count();
+        $lectures = $this->lecturesCount;
+
 
        $this->progress= $courseUserProgress->submit($userId, $courseId, $lectures);
 

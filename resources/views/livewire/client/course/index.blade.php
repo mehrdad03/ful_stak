@@ -1,6 +1,28 @@
 @push('links')
     <link rel="stylesheet" href="/frontend/css/singleCourse.css"/>
     <link rel="stylesheet" href="/frontend/css/swiper-bundle.min.css"/>
+    @php
+        $seconds = $courseTotalDuration; // تعداد ثانیه‌های ویدیو
+
+        $hours = floor($seconds / 3600);
+        $minutes = floor(($seconds % 3600) / 60);
+        $seconds = $seconds % 60;
+
+        // نمایش با فرمت ساعت:دقیقه:ثانیه
+       $formattedTime = sprintf('%02d:%02d:%02d', $hours, $minutes, $seconds);
+
+        $slug = strtolower($course->category->url_slug);
+          $keyword = strtolower('frontend');
+          $telegram_group='';
+
+          // بررسی وجود کلمه کلیدی در اسلاگ
+          if (strpos($slug, 'frontend')) {
+                   $telegram_group='https://t.me/+hRwjhLGAHNJkZWFk';
+          } elseif( strpos($slug, 'backend')) {
+             $telegram_group='https://t.me/+mgqbUiNo-UY0YzM8';
+          }
+
+    @endphp
 @endpush
 <div>
     <!-- Crumble tabs -->
