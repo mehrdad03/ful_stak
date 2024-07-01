@@ -1,11 +1,13 @@
 <div class="col-md-12 mb-3">
-    <a href="#" class="github-btn bg-white  btn w-100" target="_blank">
+    <a href="{{$checkPurchase?$course->source_code:'javascript:0'}}" class="github-btn bg-white  btn w-100 {{$checkPurchase?'':'msgBeforePurchase'}}"
+       target="{{$checkPurchase?'_blank':''}}">
         <img src="/images/github.png" alt="GitHub" class="ms-2" width="40" height="40">
         <span class="fw-bold " style="color: #5f2a8c;">سرورس کد پروژه در گیت هاب</span>
     </a>
 </div>
 <div class="col-md-12 mb-5">
-    <a href="" class="btn btn-primary w-100">
+    <a href="{{$checkPurchase?$telegram_group:'javascript:0'}}" target="{{$checkPurchase?'_blank':''}}"
+       class="btn btn-primary w-100  {{!$checkPurchase?'msgBeforePurchase':''}} ">
 
 
         <svg  class="ms-2" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 32 32" fill="none">

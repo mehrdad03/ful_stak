@@ -205,18 +205,17 @@
                                         class="text-danger d-block mb-2">{{ $message }}</span> @enderror
 
                                 </div>
-                               {{-- <div class="mt-4 col-12">
+                                <div class="mt-4 col-12">
 
                                     <!-- Field wrapper start -->
                                     <div class="field-wrapper">
-                                    <textarea class="form-control" name="short_description"
-                                              rows="3">{{@$course->short_description}}</textarea>
-                                        <div class="field-placeholder">توضیحات کوتاه</div>
+                                        <input type="text" name="source_code" value="{{@$course->source_code}}">
+                                        <div class="field-placeholder">سورس کد</div>
                                     </div>
-                                    @error('short_description') <span
+                                    @error('source_code') <span
                                         class="text-danger d-block mb-2">{{ $message }}</span> @enderror
 
-                                </div>--}}
+                                </div>
                                 <div class="mt-4 col-12">
 
                                     <div class="field-wrapper" x-data="{isUploading:false,progress:0 }"

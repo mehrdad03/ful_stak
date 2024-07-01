@@ -54,7 +54,8 @@ class Course extends Model
                 'teacher_id' => $formData['teacherId'],
                 'short_description' => $formData['short_description'],
                 'requirements' => $formData['requirements'],
-                'what_you_will_learn' => $formData['what_you_will_learn']
+                'what_you_will_learn' => $formData['what_you_will_learn'],
+                'source_code' => $formData['source_code']
             ]
         );
 

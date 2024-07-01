@@ -63,6 +63,7 @@ class Create extends Component
             'short_description' => 'required|string',
             'requirements' => 'required',
             'what_you_will_learn' => 'required',
+            'source_code' => 'string',
         ], [
             '*.required' => 'فیلد ضروری',
             'title.max' => 'حداکثر تعداد کاراکتر : 50',

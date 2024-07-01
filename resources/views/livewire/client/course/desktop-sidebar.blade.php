@@ -1,25 +1,34 @@
 <aside id="sideBar" class="d-none d-lg-block col col-lg-4 sticky-top">
+    @php
+        $slug = strtolower($course->category->url_slug);
+          $keyword = strtolower('frontend');
+          $telegram_group='';
 
-    <!-- ======after purchase ====== -->
+          // بررسی وجود کلمه کلیدی در اسلاگ
+          if (strpos($slug, 'frontend')) {
+                   $telegram_group='https://t.me/+hRwjhLGAHNJkZWFk';
+          } elseif( strpos($slug, 'backend')) {
+             $telegram_group='https://t.me/+mgqbUiNo-UY0YzM8';
+          }
+    @endphp
     <div class="courseDet text-white pb-5 overflow-hidden">
-
+        <!-- ======after purchase ====== -->
         @if(!$checkPurchase)
             @include('livewire.client.course.circle-progress')
         @endif
+        <!-- ======after purchase ====== -->
 
         @include('livewire.client.course.video-features-course')
 
+        <!-- ======before purchase ====== -->
         @if($checkPurchase)
             @include('livewire.client.course.price-course')
         @endif
-
+        <!-- ======before purchase ====== -->
 
     </div>
-    @if(!$checkPurchase)
-        @include('livewire.client.course.source-code-support-btns')
-    @endif
 
-
+    @include('livewire.client.course.source-code-support-btns')
 
 
     <!-- Course Master Box -->
@@ -28,7 +37,6 @@
 
     @push('scripts')
         <script src="/frontend/js/circle-progress.min.js"></script>
-
         <script>
             $(document).ready(function () {
                 var progress = $('#progress-circle').data('progress');
@@ -49,6 +57,22 @@
                 /*$('#progress-info').html('Progress: ' + progress + '%');*/
             });
         </script>
+        <script>
+            $('.msgBeforePurchase').on('click', function () {
+
+                Swal.fire({
+                    position: 'center',
+                    icon: 'error',
+                    title:'شما هنوز در دروه شرکت نکردین!',
+                    showConfirmButton: false,
+                    color: '#fff',
+                    background: '#20222F',
+                    timer: 3000
+                })
+
+            })
+        </script>
+
     @endpush
 
 </aside>

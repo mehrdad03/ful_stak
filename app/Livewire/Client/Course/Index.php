@@ -31,14 +31,14 @@ class Index extends Component
     public $lectureId;
 
     public $lessonCompleted = false;
-    public $progress;
+    public $progress=0;
 
     public $previousLecture;
     public $nextLecture;
 
     public function mount(Course $course): void
     {
-        $this->course = $course->load('sections.sectionLectures.video', 'category:id,title');
+        $this->course = $course->load('sections.sectionLectures.video', 'category:id,title,url_slug');
         $this->sameCourses = Course::query()
             ->where('category_id', $this->course->category_id)
             ->select('id', 'title', 'short_description', 'url_slug')->get();
@@ -57,7 +57,7 @@ class Index extends Component
         $this->progress=CourseUserProgress::query()->where([
             'user_id'=>Auth::id(),
             'course_id'=>$course->id,
-        ])->pluck('progress')->firstOrFail();
+        ])->pluck('progress')->first();
 
         $this->updateStudents();
 
