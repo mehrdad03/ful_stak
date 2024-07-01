@@ -33,9 +33,7 @@
             </svg>
 
             <p class="m-0 text-primary fw-medium">
-                {{@date('H:i',$courseTotalDuration)}}
-
-
+                {{@$formattedTime}}
             </p>
         </div>
     </div>

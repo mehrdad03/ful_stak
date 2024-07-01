@@ -8,7 +8,7 @@
         @endphp
         <div class="course mb-4 bg-secondary">
             <a wire:navigate href="{{route('client.course',$item->course->url_slug)}}" class="d-flex align-items-center right ">
-                <img src="{{$item->course->coverImage->path}}" alt="{{$item->title}}" class="d-none d-md-block w-100"/>
+                <img src="{{@$item->course->coverImage->path}}" alt="{{$item->title}}" class="d-none d-md-block w-100"/>
                 <!-- course & master name -->
                 <div class="me-4">
                     <h5 class="text-white fw-bold">

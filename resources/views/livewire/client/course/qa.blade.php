@@ -117,7 +117,8 @@
                         انصراف
                     </button>
                     <button class="main-btn text-white px-4 py-1" type="submit">
-                        ثبت
+                        <i class="fa fa-spinner fa-spin" wire:loading></i>
+                        <span wire:loading.remove> ثبت</span>
                     </button>
                 </div>
             </form>
@@ -181,7 +182,8 @@
                                 انصراف
                             </button>
                             <button class="main-btn text-white px-4 py-1" type="submit">
-                                ثبت
+                                <i class="fa fa-spinner fa-spin" wire:loading></i>
+                                <span wire:loading.remove> ثبت</span>
                             </button>
                         </div>
                     </form>
@@ -193,7 +195,7 @@
                             برای ارسال دیدگاه لازم است وارد شده یا ثبت‌نام کنید
                         </p>
                         <a href="{{route('auth.client')}}">
-                            ورود یا ثبت‌نام
+                            ورود یا ثبت ‌نام
                         </a>
                     </div>
                 @endauth

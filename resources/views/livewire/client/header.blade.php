@@ -2,6 +2,7 @@
     $user=\Illuminate\Support\Facades\Auth::user();
     $prefix=\Illuminate\Support\Facades\Route::current()->getPrefix();
     $rout_name=\Illuminate\Support\Facades\Route::current()->getName();
+
 @endphp
 <header id="header">
     <nav class="navbar container navbar-expand-lg fixed-top my-3">
@@ -279,7 +280,7 @@
             </div>
             <ul class="navbar-nav gap-4 mt-3">
 
-                @if($mobile and $prefix=='/profile')
+                @if($mobile and $prefix=='profile')
                     @include('livewire.client.profile.profile-mobile-sidebar')
                 @else
                     @include('livewire.client.home.primary-mobile-menu')

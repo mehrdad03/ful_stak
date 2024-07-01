@@ -2,7 +2,7 @@
 
     <div class="courseDet text-white pb-5 overflow-hidden">
         <!-- ======after purchase ====== -->
-        @if(!$checkPurchase)
+        @if($checkPurchase)
             @include('livewire.client.course.circle-progress')
         @endif
         <!-- ======after purchase ====== -->
@@ -10,7 +10,7 @@
         @include('livewire.client.course.video-features-course')
 
         <!-- ======before purchase ====== -->
-        @if($checkPurchase)
+        @if(!$checkPurchase)
             @include('livewire.client.course.price-course')
         @endif
         <!-- ======before purchase ====== -->
@@ -61,6 +61,8 @@
 
             })
         </script>
+
+
 
     @endpush
 

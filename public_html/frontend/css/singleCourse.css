@@ -79,7 +79,7 @@ main {
   border-radius: 30px;
 }
 #mainContent .season .acc .acc-item {
-  border: 2px solid #23bf64;
+  border: 2px solid #23bf6469;
   width: 95%;
   height: 60px;
   margin-right: 5%;
@@ -493,6 +493,60 @@ iframe {
 
 .progress-info-text {
     color: #fff; /* رنگ متن پیشرفت (قرمز) */
+}
+
+.countdown {
+    font-size: 2em;
+    font-weight: bold;
+    direction: ltr;
+
+}
+.countdown-item {
+    text-align: center;
+    margin: 0 10px;
+    background:#e81c4d
+}
+.countdown-item span {
+    display: block;
+}
+
+.countdown-item span:nth-child(2) {
+    font-size: 10px;
+}
+.discount-price {
+    position: relative;
+    display: inline-block;
+    font-size: 1.5em;
+    color: #8d8d8d;
+}
+.discount-price::before {
+    content: '';
+    position: absolute;
+    top: 45%;
+    left: 35%;
+    width: 32%;
+    height: 2px;
+    background: rgba(193, 193, 193, 0.43);
+    transform: rotate(-14deg);
+    transform-origin: center;
+
+}
+.discount-percentage {
+    background: #000;
+    width: 65px;
+    height: 53px;
+}
+
+.discount-percentage span {
+    animation: pulse 1s infinite alternate;
+}
+@keyframes pulse {
+    from {
+        font-size: .9em;
+    }
+    to {
+        font-size: 1.7em;
+    }
 }
 @media screen and (max-width: 768px) {
   main {

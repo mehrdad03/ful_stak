@@ -46,7 +46,7 @@
                   </span>
             <p>
                 بیش از
-                <strong>
+                <strong class="fs-4" style="color: #23bf65">
                     {{$hours}}
                 </strong>
                 ساعت ویدیو آموزشی</p>
@@ -69,7 +69,7 @@
                   </span>
             <p>
                 بیش از
-              <strong>
+              <strong class="fs-4" style="color: #23bf65">
                   {{$lecturesCount}}
               </strong>
                 جلسه آموزشی
@@ -91,7 +91,7 @@
                           stroke-linejoin="round"/>
                     </svg>
                   </span>
-            <p>
+            <p class="m-0">
                 پرسش و پاسخ آنلاین در گروه VIP با استاد
             </p>
         </li>
