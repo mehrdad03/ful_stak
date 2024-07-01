@@ -3,11 +3,17 @@
     @forelse($items as $item)
         @php
             $title=explode('_',$item->course->title);
+               $currentYear=date('Y');
 
-              $currentYear=date('Y');
+               $originalPrice = $item->course->price;
+               $discountedPrice = $item->course->discount;
+
+               $discountPercentage = ceil(((($originalPrice - $discountedPrice) / $originalPrice) * 100)/5)*5;
         @endphp
+
         <div class="course mb-4 bg-secondary">
-            <a wire:navigate href="{{route('client.course',$item->course->url_slug)}}" class="d-flex align-items-center right ">
+            <a wire:navigate href="{{route('client.course',$item->course->url_slug)}}"
+               class="d-flex align-items-center right ">
                 <img src="{{@$item->course->coverImage->path}}" alt="{{$item->title}}" class="d-none d-md-block w-100"/>
                 <!-- course & master name -->
                 <div class="me-4">
@@ -18,7 +24,7 @@
                         <span class="me-1">|</span>
                         <span class="me-1 text-primary">{{$currentYear}}</span>
                     </h5>
-                    <p class="m-0 text-white fw-normal mt-3" >
+                    <p class="m-0 text-white fw-normal mt-3">
                         مدرس دوره : <span class="text-primary">{{@$item->course->teacher->name}}</span>
                     </p>
                 </div>
@@ -26,7 +32,10 @@
             <!-- course price -->
             <div class="d-flex align-items-center left justify-content-between">
                 <p class="m-0 text-white fw-medium d-flex align-items-center mx-4">
-                    <span class="fs-4">{{number_format($item->course->price)}}</span>
+                    <span class="fs-4" style="text-align: left">
+                       <span class=" fs-5 " style="color: rgba(132,132,132,0.87);text-decoration: line-through">{{ number_format($originalPrice) }}</span>
+                       <span class="fw-bold">  {{number_format($originalPrice-$discountedPrice)}}</span>
+                    </span>
                     <span class="text-primary me-2">
                     <svg class="mr-2" width="25" height="27" viewBox="0 0 25 27" fill="none"
                          xmlns="http://www.w3.org/2000/svg">
@@ -37,7 +46,8 @@
                 </span>
                 </p>
 
-                <button class="delete d-flex align-items-center justify-content-center" wire:click="deleteConfirm({{$item->id}})">
+                <button class="delete d-flex align-items-center justify-content-center"
+                        wire:click="deleteConfirm({{$item->id}})">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
