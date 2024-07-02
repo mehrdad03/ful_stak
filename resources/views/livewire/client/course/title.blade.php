@@ -54,7 +54,9 @@
             <span id="date"></span>
         </div>
     </section>
-    @include('livewire.client.course.countdown')
+    @if($course->discount!=0 && !$checkPurchase)
+        @include('livewire.client.course.countdown')
+    @endif
     <div class=" d-flex justify-content-between w-100 main-btn text-white fw-medium d-none d-lg-flex ">
         <a class="text-dark p-2 scroll-btn" href="#season">
             سرفصل های دوره

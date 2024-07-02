@@ -1,5 +1,3 @@
-
-
 <div class=" d-flex justify-content-between w-100 discount-box text-white fw-medium align-items-center  py-2 px-5 mb-4">
     <div><img src="/images/IncredibleOffer.svg" alt=""></div>
     <div class="countdown d-flex align-items-center justify-content-evenly" >
