@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\ValidationException;
+use Jenssegers\Agent\Agent;
 use Livewire\Component;
 
 class Index extends Component
@@ -37,8 +38,17 @@ class Index extends Component
     public $previousLecture;
     public $nextLecture;
 
+    public $mobile=false;
+
     public function mount(Course $course): void
     {
+        $agent = new Agent();
+        $agent->isMobile();
+        if ( $agent->isMobile()){
+            $this->mobile=true;
+        }
+
+
         $this->course = $course->load('sections.sectionLectures.video', 'category:id,title,url_slug');
         $this->lecturesCount = $course->lectures->count();
         $this->sameCourses = Course::query()

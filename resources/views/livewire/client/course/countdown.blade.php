@@ -1,39 +1,40 @@
-@php
-    $originalPrice = $course->price;
-    $discountedPrice = $course->discount;
-    $discountPercentage = ceil(((($originalPrice - $discountedPrice) / $originalPrice) * 100)/5)*5;
-@endphp
-<div class="countdown d-flex align-items-center justify-content-evenly" id="countdown">
-    <div class="d-flex">
-        <div class="countdown-item p-1 rounded fs-5">
-            <span id="days"></span>
+
+
+<div class=" d-flex justify-content-between w-100 discount-box text-white fw-medium align-items-center  py-2 px-5 mb-4">
+    <div><img src="/images/IncredibleOffer.svg" alt=""></div>
+    <div class="countdown d-flex align-items-center justify-content-evenly" >
+        <div class="countdown-item rounded p-1 fs-4">
+            <span class="days"></span>
             <span>روز</span>
         </div>
         <span class="separator">:</span>
-        <div class="countdown-item p-1 rounded fs-5">
-            <span id="hours"></span>
+        <div class="countdown-item rounded p-1 fs-4">
+            <span class="hours"></span>
             <span>ساعت</span>
         </div>
         <span class="separator">:</span>
-        <div class="countdown-item p-1 rounded fs-5">
-            <span id="minutes"></span>
+        <div class="countdown-item rounded p-1 fs-4">
+            <span class="minutes"></span>
             <span>دقیقه</span>
         </div>
         <span class="separator">:</span>
-        <div class="countdown-item p-1 rounded fs-5">
-            <span id="seconds"></span>
+        <div class="countdown-item rounded p-1 fs-4">
+            <span class="seconds"></span>
             <span>ثانیه</span>
         </div>
+
     </div>
-    <span class="d-block text-center fs-6 m-0 discount-percentage align-content-center  rounded">
-        <span class="text-white ">{{ number_format($discountPercentage) }}%</span>
-    </span>
+</div>
+<div class="w-100">
+    <p>ظرفیت باقیمانده : <span>12</span> </p>
+    <div class="progress-container mb-5">
 
+        <div class="progress-bar" style="width: 70%;"></div>
+    </div>
 </div>
 
-<div class="discount-price position-relative fw-bold mt-3">
-    <span class="d-block text-center fs-3 m-0">{{number_format($course->price)}}</span>
-</div>
+
+
 
 @push('scripts')
 
@@ -47,7 +48,7 @@
         }
 
         // به‌روزرسانی شمارنده معکوس هر ثانیه
-        var countdownFunction = setInterval(function () {
+        var countdownFunction = setInterval(function() {
             // زمان کنونی
             var now = new Date().getTime();
 
@@ -60,16 +61,23 @@
             var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-            // نمایش زمان باقی‌مانده
-            document.getElementById("days").innerHTML = padZero(days);
-            document.getElementById("hours").innerHTML = padZero(hours);
-            document.getElementById("minutes").innerHTML = padZero(minutes);
-            document.getElementById("seconds").innerHTML = padZero(seconds);
+            // دریافت تمام عناصر شمارنده
+            var countdowns = document.querySelectorAll('.countdown');
+
+            // نمایش زمان باقی‌مانده برای تمام شمارنده‌ها
+            countdowns.forEach(function(countdown) {
+                countdown.querySelector('.days').innerHTML = padZero(days);
+                countdown.querySelector('.hours').innerHTML = padZero(hours);
+                countdown.querySelector('.minutes').innerHTML = padZero(minutes);
+                countdown.querySelector('.seconds').innerHTML = padZero(seconds);
+            });
 
             // اگر شمارنده معکوس به پایان رسید
             if (distance < 0) {
                 clearInterval(countdownFunction);
-                document.getElementById("countdown").innerHTML = "تخفیف به پایان رسید!";
+                countdowns.forEach(function(countdown) {
+                    countdown.innerHTML = "تخفیف به پایان رسید!";
+                });
             }
         }, 1000);
     </script>

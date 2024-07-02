@@ -54,8 +54,7 @@
             <span id="date"></span>
         </div>
     </section>
-
-    <!-- watch seasons -->
+    @include('livewire.client.course.countdown')
     <div class=" d-flex justify-content-between w-100 main-btn text-white fw-medium d-none d-lg-flex ">
         <a class="text-dark p-2 scroll-btn" href="#season">
             سرفصل های دوره
@@ -67,4 +66,5 @@
             توضیحات دوره
         </a>
     </div>
+
 </div>

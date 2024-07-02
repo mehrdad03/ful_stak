@@ -7,7 +7,8 @@
         @endif
         <!-- ======after purchase ====== -->
 
-        @include('livewire.client.course.video-features-course')
+        @include('livewire.client.course.desktop-video-course')
+        @include('livewire.client.course.features-course')
 
         <!-- ======before purchase ====== -->
         @if(!$checkPurchase)
@@ -52,7 +53,7 @@
                 Swal.fire({
                     position: 'center',
                     icon: 'error',
-                    title:'شما هنوز در دروه شرکت نکردین!',
+                    title: 'شما هنوز در دروه شرکت نکردین!',
                     showConfirmButton: false,
                     color: '#fff',
                     background: '#20222F',
@@ -61,9 +62,6 @@
 
             })
         </script>
-
-
-
     @endpush
 
 </aside>

@@ -54,7 +54,6 @@ main {
   display: flex;
   align-items: start;
   justify-content: center;
-  width: 18%;
 }
 #mainContent .season .courseDetails:nth-child(3) {
   border-left: none;
@@ -496,18 +495,21 @@ iframe {
 }
 
 .countdown {
-    font-size: 2em;
-    font-weight: bold;
     direction: ltr;
 
 }
 .countdown-item {
     text-align: center;
     margin: 0 10px;
-    background:#e81c4d
+
 }
 .countdown-item span {
     display: block;
+}
+
+.countdown .separator {
+    place-self: flex-start;
+    margin-top: 10px;
 }
 
 .countdown-item span:nth-child(2) {
@@ -515,7 +517,6 @@ iframe {
 }
 .discount-price {
     position: relative;
-    display: inline-block;
     font-size: 1.5em;
     color: #8d8d8d;
 }
@@ -548,12 +549,63 @@ iframe {
         font-size: 1.7em;
     }
 }
+.discount-box{
+    background: rgba(232, 28, 77, 0.14);
+    border: 1px solid #e81c4d;
+    border-radius: 60px;
+    position: relative;
+
+}
+
+.discount-box div:first-child {
+    align-self: center;
+
+}
+
+.discount-box div:first-child img {
+    width: 165px;
+
+} /* ظرف نوار پیشرفت */
+.progress-container {
+
+    background-color: rgba(232, 28, 77, 0.14);
+    border-radius: 25px;
+    overflow: hidden;
+    width: 100%;
+}
+
+/* نوار پیشرفت */
+.progress-bar {
+    height: 7px;
+    background-color: #e81c4d;
+    border-radius: 25px;
+    transition: width 0.5s ease;
+}
+
 @media screen and (max-width: 768px) {
   main {
     margin: 17% 0;
   }
   .courseDet .productBuy span {
     font-size: 12px;
-    padding: 11px 0 !important;
   }
+    .discount-box  {
+        margin-top: 70px;
+        flex-wrap: wrap;
+    }
+
+    .progress-container {
+        width: 100%;
+    }
+
+    .discount-box div:first-child img {
+        position: absolute;
+        top: -40px;
+        left: 50%;
+        transform: translatex(-50%);
+    }
+    .countdown{
+        width: 100%;
+
+    }
 }

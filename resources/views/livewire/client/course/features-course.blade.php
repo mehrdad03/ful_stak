@@ -1,9 +1,3 @@
-<video class="w-100" controls>
-    <source src=""
-            type="video/mp4">
-    Your browser does not support the video tag.
-</video>
-<!-- ==== Course features ==== -->
 <div class="p-4">
     <p class="fs-5 fw-bold">ویژگی های این دوره :</p>
     <ul>
@@ -69,9 +63,9 @@
                   </span>
             <p>
                 بیش از
-              <strong class="fs-4" style="color: #23bf65">
-                  {{$lecturesCount}}
-              </strong>
+                <strong class="fs-4" style="color: #23bf65">
+                    {{$lecturesCount}}
+                </strong>
                 جلسه آموزشی
             </p>
         </li>

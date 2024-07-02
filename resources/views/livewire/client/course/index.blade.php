@@ -35,12 +35,7 @@
         <div id="mainContent" class="col col-lg-8">
             <!-- Title Text -->
             @include('livewire.client.course.title')
-            <!-- mobile version Course Detail -->
-            @include('livewire.client.course.mobile-course-detail')
-            <!-- mobile version Course Master Box -->
-            @include('livewire.client.course.mobile-about-master')
-            <!-- mobile version Subscription -->
-            @include('livewire.client.course.mobile-subscription')
+
             <!-- Course Features -->
             @include('livewire.client.course.features')
             <!-- Course Season -->
@@ -51,9 +46,12 @@
             @include('livewire.client.course.description')
             <!-- ======= Course Slider ======= -->
             @include('livewire.client.course.courses-slider')
+            @if($mobile)
+                <!-- mobile version Course Detail -->
+                @include('livewire.client.course.mobile-course-detail')
+            @endif
             <!-- ======= Q & A ======= -->
             @include('livewire.client.course.qa')
-
             <!-- ======= video modal ======= -->
             @include('livewire.client.course.video-modal')
 

@@ -1,6 +1,19 @@
 @if($course->discount!=0)
-    @include('livewire.client.course.countdown')
+    @php
+        $originalPrice = $course->price;
+        $discountedPrice = $course->discount;
+        $discountPercentage = ceil(((($originalPrice - $discountedPrice) / $originalPrice) * 100)/5)*5;
+    @endphp
 @endif
+
+<span class="d-block text-center fs-6 m-0 discount-percentage align-content-center  rounded">
+        <span class="text-white ">{{ number_format($discountPercentage) }}%</span>
+    </span>
+
+<div class="discount-price position-relative fw-bold mt-3">
+    <span class="d-block text-center fs-3 m-0">{{number_format($course->price)}}</span>
+</div>
+
 <div
         class="d-flex flex-column justify-content-between align-items-center px-3 mb-4">
     <!-- == Buy Course == -->
