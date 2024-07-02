@@ -292,7 +292,7 @@ header .header-basket {
     display: none;
     min-width: 250px;
     left: 10px;
-    bottom: -330px;
+    top: 60px;
     overflow: hidden;
 }
 
