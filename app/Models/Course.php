@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\DB;
 
 class Course extends Model
 {
-    use HasFactory, UploadFiles,SoftDeletes;
+    use HasFactory, UploadFiles, SoftDeletes;
 
     protected $guarded = [];
 
@@ -25,12 +25,12 @@ class Course extends Model
             if ($formData['courseThumbnail']) {
 
 
-                $this->uploadFile($formData['courseId'], $oldCCourseThumbnail, $formData['courseThumbnail'], 'cover-image', null,null);
+                $this->uploadFile($formData['courseId'], $oldCCourseThumbnail, $formData['courseThumbnail'], 'cover-image', null, null);
 
             }
             if ($formData['courseIntroVideo']) {
 
-                $this->uploadFile($formData['courseId'], $oldCourseIntroVideo, $formData['courseIntroVideo'], 'cover-video', null,null);
+                $this->uploadFile($formData['courseId'], $oldCourseIntroVideo, $formData['courseIntroVideo'], 'cover-video', null, null);
 
             }
 
@@ -119,12 +119,14 @@ class Course extends Model
 
     public function courseStatus()
     {
-        return $this->belongsTo(CourseStatus::class,'course_status_id','id');
+        return $this->belongsTo(CourseStatus::class, 'course_status_id', 'id');
     }
+
     public function lectures()
     {
         return $this->hasMany(CourseSectionLecture::class);
     }
+
     public function scopeWithTotalDuration(Builder $query)
     {
         $query->withCount(['lectures as total_duration' => function ($query) {
@@ -132,6 +134,11 @@ class Course extends Model
         }]);
     }
 
+    public function courseUserProgress()
+    {
+        return $this->belongsTo(CourseUserProgress::class,'id','course_id');
+
+    }
 
 
 }

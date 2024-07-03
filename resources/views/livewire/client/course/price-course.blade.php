@@ -6,11 +6,12 @@
     @endphp
 @endif
 
-<span class="d-block text-center fs-6 m-0 discount-percentage align-content-center  rounded">
-        <span class="text-white ">{{ number_format($discountPercentage) }}%</span>
-    </span>
 
-<div class="discount-price position-relative fw-bold mt-3">
+
+<div class=" d-flex justify-content-center align-items-center discount-price position-relative fw-bold mt-3">
+    <div class="d-block text-center fs-6 m-0 discount-percentage align-content-center px-2 ms-4">
+        <span class="text-white fs-5 ">{{ number_format($discountPercentage) }}%</span>
+    </div>
     <span class="d-block text-center fs-3 m-0">{{number_format($course->price)}}</span>
 </div>
 

@@ -524,7 +524,7 @@ iframe {
     content: '';
     position: absolute;
     top: 45%;
-    left: 35%;
+    left: 24%;
     width: 32%;
     height: 2px;
     background: rgba(193, 193, 193, 0.43);
@@ -533,22 +533,23 @@ iframe {
 
 }
 .discount-percentage {
-    background: #000;
-    width: 65px;
-    height: 53px;
+    background: rgb(232 28 77 / 55%);
+    border-radius: 20px;
+    border: 2px solid #e81c4d;
+    height: 28px;
 }
 
 .discount-percentage span {
     animation: pulse 1s infinite alternate;
 }
-@keyframes pulse {
+/*@keyframes pulse {
     from {
         font-size: .9em;
     }
     to {
         font-size: 1.7em;
     }
-}
+}*/
 .discount-box{
     background: rgba(232, 28, 77, 0.14);
     border: 1px solid #e81c4d;

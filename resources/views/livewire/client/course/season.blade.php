@@ -107,7 +107,7 @@
                             <div class="d-flex column-gap-2 align-items-center justify-content-between lecture-info w-25" wire:ignore>
 
                                 <p class="m-0 text-primary ">{{@date('s : i',$lecture->duration)}}</p>
-                                @if(!$checkPurchase and \Illuminate\Support\Facades\Auth::id()==1)
+                                @if($checkPurchase and \Illuminate\Support\Facades\Auth::id()==1)
                                     <button data-path="{{config('app.ftp_url').@$lecture->video->path }}"
                                             data-title="{{$lecture->title }}" data-bs-toggle="modal"
                                             data-bs-target="#videoModal"

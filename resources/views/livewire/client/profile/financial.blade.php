@@ -10,12 +10,12 @@
     <div class="col col-lg-9 p-0 px-lg-4">
 
                         <!-- top menu -->
-                        @include('livewire.client.profile.status')
+                     {{--   @include('livewire.client.profile.status')--}}
         <!-- main payment section -->
         <section>
             <!-- title -->
             <div
-                class="mt-5 d-flex flex-column flex-lg-row justify-content-between align-items-start align-items-md-center mb-3">
+                class="d-flex flex-column flex-lg-row justify-content-between align-items-start align-items-md-center mb-3">
                 <h4 class="text-primary d-flex align-items-center column-gap-2">
                     <span></span>تاریخچه تراکنش ها
                 </h4>
@@ -39,17 +39,17 @@
                     @forelse($transactions as $item)
                         @php
                             $message='پرداخت نا موفق';
-                            $bgColor='danger';
+                            $bgColor='rgb(220 53 69 / 41%) !important';
                             $basket=false;
                             if ($item->status){
                                   $message='پرداخت موفق';
-                                  $bgColor='success';
+                                  $bgColor='#2a7c49';
                                     $basket=true;
                             }
                         @endphp
 
                         <tr wire:key="{{$loop->index+1}}"
-                            class=" text-center bg-{{$bgColor}}">
+                            class=" text-center" style="background: {{$bgColor}} ;border-bottom:  1px solid">
                             <td data-label=": شماره پیگیری" class="p-3">{{$item->trans_number}}</td>
                             <td data-label=": شرح تراکنش" class="p-3">
                                 {{$message}}

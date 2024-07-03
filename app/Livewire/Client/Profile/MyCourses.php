@@ -17,7 +17,7 @@ class MyCourses extends Component
                 'user_id' => Auth::id(),
                 'pay_status' => true,
             ])
-            ->with('course:id,title,url_slug')
+            ->with('course:id,title,url_slug','course.courseUserProgress:id,progress,course_id','course.coverImage')
             ->latest()->get();
     }
     public function render()

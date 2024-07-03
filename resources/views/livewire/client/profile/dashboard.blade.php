@@ -10,15 +10,15 @@
     <!-- ====== main content ====== -->
     <div class="col col-lg-9 p-0 px-lg-4">
         <!-- top menu -->
-        @include('livewire.client.profile.status')
+        {{--@include('livewire.client.profile.status')--}}
         <!-- course btn -->
         <div
-                class="mt-5 d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center">
+                class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center">
             <h4 class="text-primary d-flex align-items-center column-gap-2">
                 <span></span>دوره های جاری
             </h4>
 
-            <a
+            <a wire:navigate
                     href="{{route('client.profile.my-courses')}}"
                     class="d-flex align-items-center column-gap-2 instalink">
                 <p class="text-primary m-0">تمامی دوره های جاری</p>
@@ -42,7 +42,7 @@
 
         <!-- My Courses -->
         <section>
-            <div class="d-flex justify-content-center justify-content-lg-start align-items-center flex-wrap gap-4 mt-4">
+            <div class="row gap-4 mt-4">
                 @forelse($latestCourses as $item)
                     @php
                         $title=explode('_',$item->course->title);

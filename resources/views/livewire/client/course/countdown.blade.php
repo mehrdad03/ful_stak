@@ -26,7 +26,6 @@
 <div class="w-100">
     <p>ظرفیت باقیمانده : <span>12</span> </p>
     <div class="progress-container mb-5">
-
         <div class="progress-bar" style="width: 70%;"></div>
     </div>
 </div>

@@ -262,3 +262,25 @@ button {
         width: 100% !important;
     }
 }
+/* ظرف نوار پیشرفت */
+.progress-container {
+
+    background-color:#fff;
+    border-radius: 25px;
+    overflow: hidden;
+    width: 100%;
+}
+
+/* نوار پیشرفت */
+.progress-bar {
+    height: 7px;
+    background-color: #23bf64;
+    border-radius: 25px;
+    transition: width 0.5s ease;
+}
+
+.item-cover{
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+}

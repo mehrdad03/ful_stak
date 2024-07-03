@@ -58,6 +58,7 @@
   alignment-baseline: central;
   text-anchor: middle;
   font-size: 8px;
+    color: #fff!important;
 }
 
 .circle-chart__subline {
@@ -71,7 +72,7 @@
 }
 
 .warning-stroke {
-  stroke: #ffbb33;
+  stroke: var(--primary-color);
 }
 
 .danger-stroke {
