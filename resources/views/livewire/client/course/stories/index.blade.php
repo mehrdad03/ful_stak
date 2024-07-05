@@ -6,8 +6,13 @@
 <section id="story">
 
     @include('livewire.client.course.stories.items-story')
+
+
+        @include('livewire.client.course.stories.add-story-modal')
+
+
     @include('livewire.client.course.stories.show-story-modal')
-    @include('livewire.client.course.stories.add-story-modal')
+
 
     @push('scripts')
 
@@ -19,8 +24,10 @@
                     var button = $(event.relatedTarget);
                     var videoSrc = button.data('video');
                     var modal = $(this);
-                    modal.find('#storyVideo source').attr('src', videoSrc);
-                    modal.find('#storyVideo')[0].load();
+                    var video = modal.find('#storyVideo');
+                    video.find('source').attr('src', videoSrc);
+                    video[0].load();
+                    video[0].play();
                 });
 
                 $('#storyModal').on('hidden.bs.modal', function (event) {

@@ -27,7 +27,7 @@
 <div>
 
     <!-- Stories -->
-    @include('livewire.client.course.stories')
+    @include('livewire.client.course.stories.index')
     <!-- video on mobile -->
     @include('livewire.client.course.mobile-video')
     <!-- Main Row -->
@@ -120,7 +120,6 @@
                 showConfirmButton: false,
                 color: '#fff',
                 background: '#20222F',
-
                 timer: 3000
             })
         }
@@ -136,6 +135,21 @@
                 position: 'center',
                 icon: 'error',
                 title: dynamicTitle,
+                showConfirmButton: false,
+                color: '#fff',
+                background: '#20222F',
+                timer: 3000
+            })
+
+        })
+    </script>
+    <script>
+        $('.msgLatestStory').on('click', function () {
+
+            Swal.fire({
+                position: 'center',
+                icon: 'warning',
+                title: 'شما یک استوری در صف انتظار دارید!',
                 showConfirmButton: false,
                 color: '#fff',
                 background: '#20222F',

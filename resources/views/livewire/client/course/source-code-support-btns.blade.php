@@ -1,6 +1,6 @@
 <div class="my-3">
     <div class="col-md-12 mb-3">
-        <a href="{{$checkPurchase?$course->source_code:'javascript:0'}}" data-msg="شما هنوز در دروه شرکت نکردین!"
+        <a href="{{$checkPurchase?$course->source_code:'javascript:0'}}" data-msg="هنوز تو دروه شرکت نکردی!"
            class="github-btn bg-white rounded-5  btn w-100 {{$checkPurchase?'':'msgBeforePurchase'}}"
            target="{{$checkPurchase?'_blank':''}}">
             <img src="/images/github.png" alt="GitHub" class="ms-2" width="40" height="40">
@@ -8,7 +8,7 @@
         </a>
     </div>
     <div class="col-md-12 mb-5">
-        <a href="{{$checkPurchase?$telegram_group:'javascript:0'}}"  data-msg="شما هنوز در دروه شرکت نکردین!"
+        <a href="{{$checkPurchase?$telegram_group:'javascript:0'}}"  data-msg="هنوز تو دروه شرکت نکردی!"
            target="{{$checkPurchase?'_blank':''}}"
            class="btn btn-primary w-100 rounded-5  {{!$checkPurchase?'msgBeforePurchase':''}} ">
 

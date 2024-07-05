@@ -34,12 +34,23 @@ main {
     text-align: center;
 }
 
-#story .modal-content {
-    background: rgb(32, 34, 47);
+#story #show-story .modal-content {
+    background: transparent;
+    height: 700px ;
 }
 
+#story #add-story .modal-content {
+    background: #20222F;
+}
+
+#story #show-story .modal-content video {
+    background: #000;
+    height: 700px;
+}
+
+
 #story .modal {
-    background: rgba(0, 0, 0, .9)
+    background: rgba(0, 0, 0, .5)
 }
 
 #story .modal-body .submit {
@@ -82,7 +93,24 @@ main {
 #story .stories::-webkit-scrollbar {
     display: none;
 }
+#story .upload-requirements {
+    border: 1px solid #fff;
+}
 
+#story .upload-requirements ul li {
+    position: relative;
+    padding-right: 30px;
+}
+
+#story .upload-requirements ul li::before {
+    content: '•';
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    color: white;
+/ font-size: 1.5 em;
+    line-height: 1em;
+}
 #mainContent .features {
   border: 1px solid #23bf64;
   border-radius: 40px;

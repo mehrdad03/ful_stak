@@ -10,28 +10,6 @@
                 </button>
             </div>
             <div class="modal-body">
-
-                <style>
-                    .upload-requirements {
-                        border: 1px solid #fff;
-                    }
-
-                    .upload-requirements ul li {
-                        position: relative;
-                        padding-right: 30px;
-                    }
-
-                    .upload-requirements ul li::before {
-                        content: '•';
-                        position: absolute;
-                        right: 10px;
-                        top: 5px;
-                        color: white;
-                    / font-size: 1.5 em;
-                        line-height: 1em;
-                    }
-                </style>
-
                 <div class="upload-requirements rounded mb-3">
                     <p class="text-primary my-2 mx-3 fw-bold">شرایط :</p>
                     <ul class="text-white ">

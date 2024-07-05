@@ -49,8 +49,8 @@ class Index extends Component
 
     public $mobile = false;
 
-
-    public $file;
+    //upload story properties
+    public $latestStory = false;
 
     public function mount(Course $course): void
     {
@@ -84,6 +84,8 @@ class Index extends Component
         ])->pluck('progress')->first();
 
         $this->updateStudents();
+
+        $this->checkLatestStory();
 
 
     }
@@ -328,7 +330,7 @@ class Index extends Component
         // و بخواد آپلود فایل سنگین انجام بده تا پدر سرور رو در بیاره
         $filepond = Session::get('filepond');
 
-        if ($filepond/1024 < 51200) {
+        if ($filepond / 1024 < 51200) {
 
             $validator = Validator::make($formData, [
                 'title' => 'nullable|string|min:5|max:50',
@@ -344,10 +346,19 @@ class Index extends Component
             $this->resetValidation();
             $story->addStory($formData, $this->course->id);
 
-        }else{
+        } else {
             dd('بیلاخ');
         }
 
+
+    }
+
+    public function checkLatestStory()
+    {
+        $this->latestStory = Story::query()->where([
+            'user_id' => Auth::id(),
+            'status' => false
+        ])->latest()->exists();
 
     }
 
