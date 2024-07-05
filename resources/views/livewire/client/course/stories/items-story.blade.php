@@ -11,15 +11,15 @@
                 <p class="username">افزودن</p>
             </div>
 
-            <div class="item text-center mx-2" data-toggle="modal" data-target="#show-story"
+            <div class="item text-center mx-2" data-toggle="modal" data-target="#show-story" wire:click=""
                  data-video="{{config('app.ftp_url').@$firstStory->media->path}}">
-                <img src="{{@$firstStory->user->picture}}" alt="Story 1" class="img-fluid rounded-circle">
+                <img src="{{@$firstStory->user->picture}}" alt="{{$course->title}}" class="img-fluid rounded-circle">
                 <p class="username">{{@$firstStory->user->name}}</p>
             </div>
 
             @foreach($otherStories  as $story)
 
-                <div class="item text-center mx-2" data-toggle="modal" data-target="#show-story"
+                <div class="item text-center mx-2" data-toggle="modal" data-target="#show-story" data-story="{{$story->id}}"
                      data-video="{{config('app.ftp_url').@$story->media->path}}">
                     <img src="{{@$story->user->picture}}" alt="Story 1" class="img-fluid rounded-circle">
                     <p class="username">{{$story->user->name}}</p>

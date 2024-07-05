@@ -29,6 +29,9 @@
                     video.find('source').attr('src', videoSrc);
                     video[0].load();
                     video[0].play();
+                @this.call('submitStoryView',videoSrc)
+                    ;
+
                 });
 
                 showStoryModal.on('hidden.bs.modal', function (event) {

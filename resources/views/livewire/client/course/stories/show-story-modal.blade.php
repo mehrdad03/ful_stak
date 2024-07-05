@@ -1,4 +1,4 @@
-<div class="modal fade" id="show-story" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+<div class="modal fade" id="show-story" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" wire:ignore.self
      aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content text-center">

@@ -94,26 +94,6 @@ class Index extends Component
 
     }
 
-    public function getCourseStories()
-    {
-        $firstStory = $this->firstStory = Story::query()
-            ->where('status', true)
-            ->where('course_id', $this->course->id)
-            ->where('user_id', 1)
-            ->latest()
-            ->first();
-        $this->otherStories = Story::query()
-            ->where('status', true)
-            ->where('course_id', $this->course->id)
-            ->when($firstStory, function ($query) use ($firstStory) {
-                return $query->where('id', '!=', $firstStory->id);
-            })
-            ->latest()
-            ->limit(10)
-            ->get();
-
-    }
-
 
     /**
      * @throws ValidationException
@@ -303,7 +283,9 @@ class Index extends Component
     }
 
 
-    /*upload story*/
+    /*
+     * stories funcrios
+     * */
 
     public function uploadStory(Request $request)
     {
@@ -386,6 +368,46 @@ class Index extends Component
         ])->latest()->exists();
 
     }
+    public function getCourseStories()
+    {
+        $firstStory = $this->firstStory = Story::query()
+            ->where('status', true)
+            ->where('course_id', $this->course->id)
+            ->where('user_id', 1)
+            ->with('user', 'media')
+            ->latest()
+            ->first();
+        $this->otherStories = Story::query()
+            ->where('status', true)
+            ->where('course_id', $this->course->id)
+            ->when($firstStory, function ($query) use ($firstStory) {
+                return $query->where('id', '!=', $firstStory->id);
+            })
+            ->latest()
+            ->with('user', 'media')
+            ->limit(10)
+            ->get();
+    }
+
+    public function submitStoryView($videoSrc)
+    {
+
+        //در $videoSrc چون همرا باهاست دانلود میاد
+        // باید دامنه هسات دانلود رو حذف کنیم بعد
+        //در جدول media دنباش بگردیم
+
+        $storyId = Media::query()->where([
+            'path'=> substr($videoSrc, strpos($videoSrc, 'courses/')),
+            'type'=> 'story',
+            'course_id'=> $this->course->id,
+        ])
+            ->pluck('lecture_id')
+            ->firstOrFail();
+
+        Story::query()->where('id', $storyId)->increment('view');
+    }
+
+
 
     public function render(): \Illuminate\Contracts\View\View|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\Foundation\Application
     {
