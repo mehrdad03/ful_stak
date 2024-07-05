@@ -30,6 +30,58 @@ main {
     top: 8px;
 }
 
+#story .stories .item {
+    text-align: center;
+}
+
+#story .modal-content {
+    background: rgb(32, 34, 47);
+}
+
+#story .modal {
+    background: rgba(0, 0, 0, .9)
+}
+
+#story .modal-body .submit {
+    text-align: left;
+}
+
+
+#story .modal-dialog {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Make sure the modal takes up the full viewport height */
+}
+
+#story .stories .item img, .add-btn {
+    width: 75px;
+    height: 75px;
+    border: 2px solid #e81c4d;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 5px;
+    padding: 3px;
+}
+
+#story .stories .item .add-btn {
+    color: var(--primary-color);
+    background: var(--nav-color);
+    border: 3px solid var(--primary-color);
+}
+
+#story .username {
+    font-size: 14px;
+    color: #fff;
+}
+
+#story .stories {
+    overflow-x: scroll;
+}
+
+#story .stories::-webkit-scrollbar {
+    display: none;
+}
 
 #mainContent .features {
   border: 1px solid #23bf64;
@@ -610,3 +662,4 @@ iframe {
 
     }
 }
+

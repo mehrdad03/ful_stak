@@ -47,21 +47,7 @@
                 /*$('#progress-info').html('Progress: ' + progress + '%');*/
             });
         </script>
-        <script>
-            $('.msgBeforePurchase').on('click', function () {
 
-                Swal.fire({
-                    position: 'center',
-                    icon: 'error',
-                    title: 'شما هنوز در دروه شرکت نکردین!',
-                    showConfirmButton: false,
-                    color: '#fff',
-                    background: '#20222F',
-                    timer: 3000
-                })
-
-            })
-        </script>
     @endpush
 
 </aside>

@@ -128,4 +128,21 @@
 
     </script>
 
+    <script>
+        $('.msgBeforePurchase').on('click', function () {
+
+            var dynamicTitle = $(this).data('msg');
+            Swal.fire({
+                position: 'center',
+                icon: 'error',
+                title: dynamicTitle,
+                showConfirmButton: false,
+                color: '#fff',
+                background: '#20222F',
+                timer: 3000
+            })
+
+        })
+    </script>
+
 @endpush
