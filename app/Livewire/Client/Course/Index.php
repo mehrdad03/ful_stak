@@ -50,6 +50,7 @@ class Index extends Component
     public $mobile = false;
 
     //upload story properties
+    public $stories = [];
     public $latestStory = false;
 
     public function mount(Course $course): void
@@ -86,9 +87,20 @@ class Index extends Component
         $this->updateStudents();
 
         $this->checkLatestStory();
+        $this->stories = $this->getCourseStories();
 
 
     }
+
+    public function getCourseStories()
+    {
+        return Story::query()->where([
+            'status' => true,
+            'course_id' => $this->course->id,
+        ])->latest()->get();
+
+    }
+
 
     /**
      * @throws ValidationException

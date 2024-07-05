@@ -8,7 +8,7 @@
     @include('livewire.client.course.stories.items-story')
 
 
-        @include('livewire.client.course.stories.add-story-modal')
+    @include('livewire.client.course.stories.add-story-modal')
 
 
     @include('livewire.client.course.stories.show-story-modal')
@@ -18,19 +18,18 @@
 
         <script>
             $(document).ready(function () {
-
-                $('#storyModal').on('show.bs.modal', function (event) {
+                var showStoryModal = $('#show-story')
+                showStoryModal.on('show.bs.modal', function (event) {
 
                     var button = $(event.relatedTarget);
                     var videoSrc = button.data('video');
+
                     var modal = $(this);
-                    var video = modal.find('#storyVideo');
-                    video.find('source').attr('src', videoSrc);
-                    video[0].load();
-                    video[0].play();
+                    modal.find('#storyVideo source').attr('src', videoSrc);
+                    modal.find('#storyVideo')[0].load();
                 });
 
-                $('#storyModal').on('hidden.bs.modal', function (event) {
+                showStoryModal.on('hidden.bs.modal', function (event) {
                     var modal = $(this);
                     modal.find('#storyVideo')[0].pause();
                 });

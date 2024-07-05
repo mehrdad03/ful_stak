@@ -19,20 +19,19 @@ class Story extends Model
 
     public function addStory($formData, $courseId)
     {
-
-        $this->submitToStory($formData['title'], $courseId);
-
         // دریافت نام فایل از سشن
         $fileName = Session::get('fileName');
+        // مسیر فایل در فولدر موقت
+        $tempFilePath = storage_path('app/livewire-tmp/' . $fileName);
+
+        // مسیر جدید برای ذخیره فایل در فولدر public در روت پروژه
+        $newFilePath = 'courses/' . $courseId . '/stories';
+        $newFile = $newFilePath . '/' . $fileName;
+
+        $story=$this->submitToStory($formData['title'], $courseId);
+        $this->submitToMedia($newFile, $courseId,$story->id);
 
         if ($fileName) {
-            // مسیر فایل در فولدر موقت
-            $tempFilePath = storage_path('app/livewire-tmp/' . $fileName);
-
-            // مسیر جدید برای ذخیره فایل در فولدر public در روت پروژه
-            $newFilePath = 'courses/' . $courseId . '/stories';
-            $newFile = $newFilePath . '/' . $fileName;
-
 
             // ایجاد دایرکتوری مقصد در صورت عدم وجود
             if (!File::isDirectory(public_path($newFilePath))) {
@@ -58,7 +57,7 @@ class Story extends Model
 
     public function submitToStory($title, $courseId)
     {
-        Story::query()->create([
+        return Story::query()->create([
             'title' => $title,
             'user_id' => Auth::id(),
             'course_id' => $courseId,
@@ -66,14 +65,27 @@ class Story extends Model
 
     }
 
-    public function submitToMedia($path, $courseId)
+    public function submitToMedia($path, $courseId,$storyId)
     {
         Media::query()->create([
             'path' => $path,
             'type' => 'story',
+            'lecture_id' => $storyId,
             'course_id' => $courseId,
             'user_id' => Auth::id(),
         ]);
+
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+
+    }
+
+    public function media()
+    {
+        return $this->belongsTo(Media::class,'id','lecture_id')->where('type','=','story');
 
     }
 
