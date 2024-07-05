@@ -39,8 +39,9 @@ Route::get('/auth/client/logout', [authIndex::class, 'clientLogout'])->name('cli
 Route::get('/road-map/{category:url_slug}', RoadMap::class)->name('client.category.road-map');
 Route::get('/cart', basketIndex::class)->name('client.basket')->middleware('auth');
 Route::get('/payment/verify', [basketIndex::class, 'zarinPalPayment'])->name('client.zarinpal.verify')->middleware('auth');
-
 Route::get('/payment/status', paymentIndex::class)->name('payment.status');
+
+Route::post('/upload/story', [\App\Livewire\Client\Course\Index::class, 'uploadStory'])->name('upload.story')->middleware('auth');
 
 /*********** Client Login  & Register *************/
 

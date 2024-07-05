@@ -1,4 +1,4 @@
-<div class="my-5  text-center text-white px-2">
+<div class=" text-center text-white px-2">
     <!-- Main Headline -->
     @php
         $title=explode('_',$course->title);

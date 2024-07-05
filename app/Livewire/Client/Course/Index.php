@@ -10,15 +10,24 @@ use App\Models\CourseUserProgress;
 use App\Models\LectureUser;
 use App\Models\Media;
 use App\Models\OrderItem;
+use App\Models\Story;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\ValidationException;
+use Intervention\Image\Drivers\Gd\Driver;
+use Intervention\Image\ImageManager;
 use Jenssegers\Agent\Agent;
 use Livewire\Component;
+use Livewire\WithFileUploads;
+use Illuminate\Http\Request;
 
 class Index extends Component
 {
+    use WithFileUploads;
+
     public $course;
     public $sameCourses;
     public $courseTotalDuration;
@@ -33,19 +42,22 @@ class Index extends Component
     public $lectureId;
 
     public $lessonCompleted = false;
-    public $progress=0;
+    public $progress = 0;
 
     public $previousLecture;
     public $nextLecture;
 
-    public $mobile=false;
+    public $mobile = false;
+
+
+    public $file;
 
     public function mount(Course $course): void
     {
         $agent = new Agent();
         $agent->isMobile();
-        if ( $agent->isMobile()){
-            $this->mobile=true;
+        if ($agent->isMobile()) {
+            $this->mobile = true;
         }
 
 
@@ -66,9 +78,9 @@ class Index extends Component
                 'pay_status' => true
             ])->exists();
 
-        $this->progress=CourseUserProgress::query()->where([
-            'user_id'=>Auth::id(),
-            'course_id'=>$course->id,
+        $this->progress = CourseUserProgress::query()->where([
+            'user_id' => Auth::id(),
+            'course_id' => $course->id,
         ])->pluck('progress')->first();
 
         $this->updateStudents();
@@ -198,7 +210,6 @@ class Index extends Component
         }
 
 
-
         //check if this lessens seen or not
         $completeLessen = LectureUser::query()->where([
             'user_id' => Auth::id(),
@@ -254,7 +265,7 @@ class Index extends Component
         $lectures = $this->lecturesCount;
 
 
-       $this->progress= $courseUserProgress->submit($userId, $courseId, $lectures);
+        $this->progress = $courseUserProgress->submit($userId, $courseId, $lectures);
 
         $lectureUser->submit($this->lectureId, $courseId);
 
@@ -262,6 +273,82 @@ class Index extends Component
 
 
         $this->lessonCompleted = true;
+    }
+
+
+    /*upload story*/
+
+    public function uploadStory(Request $request)
+    {
+
+
+        $request->validate([
+            'filepond' => 'required|file|max:51200', // حداکثر اندازه 50 مگابایت (51200 کیلوبایت)
+        ]);
+
+
+        $file = $request->file('filepond');
+
+        //برای زمانیک هکر جاوااسکریپت رو غرفعال کنه
+        Session::put('filepond', $file->getSize());
+        // و بخواد آپلود فایل سنگین انجام بده تا پدر سرور رو در بیاره
+
+
+        $fileName = pathinfo($file->hashName(), PATHINFO_FILENAME);
+        $extension = $file->extension();
+        Session::put('fileName', $fileName . '.webp');
+
+        if ($request->hasFile('filepond')) {
+
+            if ($extension != 'mp4') {
+
+                $manager = new ImageManager(new Driver());
+                $manager->read($file)
+                    ->toWebp(1)
+                    ->save(storage_path('app/livewire-tmp/' . $fileName . '.webp'));
+
+                Session::put('fileName', $fileName . '.webp');
+
+            } else {
+                $file->storeAs('livewire-tmp', $file->hashName());
+
+                Session::put('fileName', $file->hashName());
+            }
+
+
+            //$file->storeAs('livewire-tmp', $file->hashName());
+
+
+        }
+    }
+
+    public function addStory($formData, Story $story)
+    {
+        //شرط if صرفا برای زمانی هست هکر جاوااسکریپت رو غرفعال کنه
+        // و بخواد آپلود فایل سنگین انجام بده تا پدر سرور رو در بیاره
+        $filepond = Session::get('filepond');
+
+        if ($filepond/1024 < 51200) {
+
+            $validator = Validator::make($formData, [
+                'title' => 'nullable|string|min:5|max:50',
+
+            ], [
+                '*.required' => 'فیلد ضروری',
+                'title.max' => 'حداکثر تعداد کاراکتر : 50',
+                'title.min' => 'حداقل تعداد کاراکتر : 10',
+            ]);
+
+
+            $validator->validate();
+            $this->resetValidation();
+            $story->addStory($formData, $this->course->id);
+
+        }else{
+            dd('بیلاخ');
+        }
+
+
     }
 
     public function render(): \Illuminate\Contracts\View\View|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\Foundation\Application

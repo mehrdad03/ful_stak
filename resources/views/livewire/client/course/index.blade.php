@@ -25,8 +25,9 @@
     @endphp
 @endpush
 <div>
-    <!-- Crumble tabs -->
-    @include('livewire.client.course.crumble')
+
+    <!-- Stories -->
+    @include('livewire.client.course.stories')
     <!-- video on mobile -->
     @include('livewire.client.course.mobile-video')
     <!-- Main Row -->

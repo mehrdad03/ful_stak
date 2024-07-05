@@ -41,7 +41,7 @@
 <!-- jquery -->
 <script src="/backend/js/jquery.min.js"></script>
 <!-- Bootstrap js  -->
-<script src="/frontend/js/bootstrap.bundle.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <!-- Main js  -->
 <script defer src="/frontend/js/main.js"></script>
 <!-- Sweet alert js  -->

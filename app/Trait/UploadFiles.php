@@ -14,6 +14,7 @@ trait UploadFiles
     protected function uploadFile($id, $oldFile, $file, $type, $section_id, $lecture_id)
     {
 
+
         $extension = $file->extension();
         $file_name = Str::random(10) . time() . '.' . $extension;
         $path = 'courses/' . $id . '/' . $type;
@@ -28,13 +29,12 @@ trait UploadFiles
 
         if ($type == 'cover-image') {
 
-
             $file->storeAs( public_path() .'/'. $path, $file_name, 'public');
 
         } else {
             //saved file path with livewire
             $tempFilePath = $file->getRealPath();
-            UploadVideoJob::dispatch($storagePath, $tempFilePath, $this->drive, $file_name);
+            UploadVideoJob::dispatch($storagePath, $tempFilePath, $this->drive, $file_name,null);
         }
 
 //        $file->storeAs($storagePath, $file_name, $this->drive);
