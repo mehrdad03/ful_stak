@@ -75,6 +75,10 @@ main {
     padding: 3px;
 }
 
+#story .stories .item:hover {
+   opacity: .4;
+}
+
 #story .stories .item .add-btn {
     color: var(--primary-color);
     background: var(--nav-color);

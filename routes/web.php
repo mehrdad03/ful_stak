@@ -41,7 +41,9 @@ Route::get('/cart', basketIndex::class)->name('client.basket')->middleware('auth
 Route::get('/payment/verify', [basketIndex::class, 'zarinPalPayment'])->name('client.zarinpal.verify')->middleware('auth');
 Route::get('/payment/status', paymentIndex::class)->name('payment.status');
 
-Route::post('/upload/story', [\App\Livewire\Client\Course\Index::class, 'uploadStory'])->name('upload.story')->middleware('auth');
+
+Route::post('/upload/story', [\App\Livewire\Client\Course\Index::class, 'uploadTempFileStory'])->name('upload.story')->middleware('auth');
+Route::delete('/upload/story', [\App\Livewire\Client\Course\Index::class, 'deleteTempleFile'])->name('upload.story.delete')->middleware('auth');
 
 /*********** Client Login  & Register *************/
 

@@ -35,7 +35,7 @@
                         </div>
                         @error('title')
                         <span
-                            class="text-danger d-block my-1">{{ $message }}</span>
+                            class="alert alert-danger d-block my-2">{{ $message }}</span>
                         @enderror
                         <div class="form-group mt-2" wire:ignore>
                             <label for="file" class="mb-2 text-white">ویدیو یا تصویر</label>
@@ -47,12 +47,12 @@
                         </div>
 
                     </div>
-                    @error('file')
+                    @error('fileSize')
                     <span
-                        class="text-danger d-block my-1">{{ $message }}</span>
+                        class="alert alert-danger d-block my-1">{{ $message }}</span>
                     @enderror
                     <div class="mt-3 submit ">
-                        <button class="main-btn py-1 px-3 ">
+                        <button class="main-btn py-1 px-3 add-story-btn ">
 
                             <i class="fa fa-spinner fa-spin" wire:loading></i>
                             <span wire:loading.remove> ذخیره</span>

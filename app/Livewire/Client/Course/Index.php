@@ -283,11 +283,14 @@ class Index extends Component
     }
 
 
-    /*
-     * stories funcrios
-     * */
+ // stories functions
 
-    public function uploadStory(Request $request)
+    public function deleteTempleFile()
+    {
+        Session::forget('filepond');
+    }
+
+    public function uploadTempFileStory(Request $request)
     {
 
 
@@ -305,7 +308,7 @@ class Index extends Component
 
         $fileName = pathinfo($file->hashName(), PATHINFO_FILENAME);
         $extension = $file->extension();
-        Session::put('fileName', $fileName . '.webp');
+        /*Session::put('fileName', $fileName . '.webp');*/
 
         if ($request->hasFile('filepond')) {
 
@@ -324,7 +327,7 @@ class Index extends Component
                 Session::put('fileName', $file->hashName());
             }
 
-
+            $this->dispatch('fileUploaded');
             //$file->storeAs('livewire-tmp', $file->hashName());
 
 
@@ -337,21 +340,33 @@ class Index extends Component
         // و بخواد آپلود فایل سنگین انجام بده تا پدر سرور رو در بیاره
         $filepond = Session::get('filepond');
 
+
+
+        $formData['fileSize'] = $filepond;
+
         if ($filepond / 1024 < 51200) {
 
             $validator = Validator::make($formData, [
+                'fileSize' => 'required',
                 'title' => 'nullable|string|min:5|max:50',
 
             ], [
-                '*.required' => 'فیلد ضروری',
+                'fileSize.required' => ' فایل آپلود نشده و یا حجم بیشتر از 50MB دارد!',
                 'title.max' => 'حداکثر تعداد کاراکتر : 50',
                 'title.min' => 'حداقل تعداد کاراکتر : 10',
             ]);
 
-
             $validator->validate();
             $this->resetValidation();
+
             $story->addStory($formData, $this->course->id);
+            $this->dispatch('storyIsUploaded');
+
+            Session::forget('filepond');
+
+
+           /*فعال کردم پیغام در صف انتظار بودن آخرین استوری*/
+            $this->latestStory=true;
 
         } else {
             dd('بیلاخ');
@@ -368,6 +383,7 @@ class Index extends Component
         ])->latest()->exists();
 
     }
+
     public function getCourseStories()
     {
         $firstStory = $this->firstStory = Story::query()
@@ -397,9 +413,9 @@ class Index extends Component
         //در جدول media دنباش بگردیم
 
         $storyId = Media::query()->where([
-            'path'=> substr($videoSrc, strpos($videoSrc, 'courses/')),
-            'type'=> 'story',
-            'course_id'=> $this->course->id,
+            'path' => substr($videoSrc, strpos($videoSrc, 'courses/')),
+            'type' => 'story',
+            'course_id' => $this->course->id,
         ])
             ->pluck('lecture_id')
             ->firstOrFail();
@@ -407,7 +423,7 @@ class Index extends Component
         Story::query()->where('id', $storyId)->increment('view');
     }
 
-
+    // stories functions
 
     public function render(): \Illuminate\Contracts\View\View|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\Foundation\Application
     {

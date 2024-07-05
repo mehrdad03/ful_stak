@@ -8,7 +8,9 @@
     @include('livewire.client.course.stories.items-story')
 
 
-    @include('livewire.client.course.stories.add-story-modal')
+    @if(!$latestStory)
+        @include('livewire.client.course.stories.add-story-modal')
+    @endif
 
 
     @include('livewire.client.course.stories.show-story-modal')
@@ -29,7 +31,9 @@
                     video.find('source').attr('src', videoSrc);
                     video[0].load();
                     video[0].play();
-                @this.call('submitStoryView',videoSrc)
+
+                    /*ارسال مسیر فایل استوری برای ثبت ویدیو*/
+                @this.call('submitStoryView', videoSrc)
                     ;
 
                 });
@@ -47,6 +51,7 @@
         <script src="/frontend/js/filepond-plugin-file-validate-size.js"></script>
         <script src="/frontend/js/filepond-plugin-file-validate-type.js"></script>
         <script>
+
             FilePond.registerPlugin(
                 FilePondPluginImagePreview,
                 FilePondPluginFileValidateSize,
@@ -73,7 +78,45 @@
                     fetch: false,
                 },
             });
+
         </script>
 
+        {{--manage submit btn in file uploading--}}
+        <script>
+
+            var filepond = $('#filepond');
+            filepond.on('FilePond:addfile', function (e) {
+                $('.add-story-btn').attr('disabled', 'disabled')
+                $('form .fa-spinner').show()
+            });
+            filepond.on('FilePond:processfile', function (e) {
+                $('.add-story-btn').removeAttr('disabled');
+                $('form .fa-spinner').hide()
+            });
+            filepond.on('FilePond:processfileabort', function (e) {
+                $('.add-story-btn').removeAttr('disabled');
+                $('form .fa-spinner').hide()
+            });
+        </script>
+        {{--manage submit btn in file uploading--}}
+
+        <script>
+            window.addEventListener('storyIsUploaded', event => {
+
+                $('#add-story').modal('hide')
+
+                Swal.fire({
+                    position: 'content',
+                    icon: 'success',
+                    title: "استوری شما با موفقیت ارسال شد",
+                    text: "بعد از تایید نمایش داده خواهد شد!",
+                    showConfirmButton: false,
+                    color: '#fff',
+                    background: '#20222F',
+
+                    timer: 4000
+                })
+            })
+        </script>
     @endpush
 </section>
