@@ -50,7 +50,8 @@ class Index extends Component
     public $mobile = false;
 
     //upload story properties
-    public $stories = [];
+    public $firstStory;
+    public $otherStories = [];
     public $latestStory = false;
 
     public function mount(Course $course): void
@@ -66,6 +67,7 @@ class Index extends Component
         $this->lecturesCount = $course->lectures->count();
         $this->sameCourses = Course::query()
             ->where('category_id', $this->course->category_id)
+            ->with('coverImage:id,path,course_id')
             ->select('id', 'title', 'short_description', 'url_slug')->get();
         $this->courseTotalDuration = CourseSectionLecture::query()
             ->where('course_id', $this->course->id)
@@ -87,17 +89,28 @@ class Index extends Component
         $this->updateStudents();
 
         $this->checkLatestStory();
-        $this->stories = $this->getCourseStories();
+        $this->getCourseStories();
 
 
     }
 
     public function getCourseStories()
     {
-        return Story::query()->where([
-            'status' => true,
-            'course_id' => $this->course->id,
-        ])->latest()->get();
+        $firstStory = $this->firstStory = Story::query()
+            ->where('status', true)
+            ->where('course_id', $this->course->id)
+            ->where('user_id', 1)
+            ->latest()
+            ->first();
+        $this->otherStories = Story::query()
+            ->where('status', true)
+            ->where('course_id', $this->course->id)
+            ->when($firstStory, function ($query) use ($firstStory) {
+                return $query->where('id', '!=', $firstStory->id);
+            })
+            ->latest()
+            ->limit(10)
+            ->get();
 
     }
 

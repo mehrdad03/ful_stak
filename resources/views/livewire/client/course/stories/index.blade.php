@@ -25,8 +25,10 @@
                     var videoSrc = button.data('video');
 
                     var modal = $(this);
-                    modal.find('#storyVideo source').attr('src', videoSrc);
-                    modal.find('#storyVideo')[0].load();
+                    var video = modal.find('#storyVideo');
+                    video.find('source').attr('src', videoSrc);
+                    video[0].load();
+                    video[0].play();
                 });
 
                 showStoryModal.on('hidden.bs.modal', function (event) {
