@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-51VV84SGR7"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-51VV84SGR7');
+    </script>
     @php
         $rout_name=\Illuminate\Support\Facades\Route::current()->getName();
         $class='';
@@ -18,7 +28,7 @@
     <link rel="stylesheet" href="/backend/css/font-awesome.css">
     <link rel="stylesheet" href="/frontend/css/main.css"/>
     @stack('links')
-    <title>Full Stack</title>
+    <title>آموزش برنامه نویسی فول استک</title>
 </head>
 <body>
 
