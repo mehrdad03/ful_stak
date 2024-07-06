@@ -8,9 +8,9 @@
     @include('livewire.client.course.stories.items-story')
 
 
-    @if(!$latestStory)
+    @if(!$latestStory ) @endif
         @include('livewire.client.course.stories.add-story-modal')
-    @endif
+
 
 
     @include('livewire.client.course.stories.show-story-modal')
@@ -27,11 +27,22 @@
                     var videoSrc = button.data('video');
 
                     var modal = $(this);
-                    var video = modal.find('#storyVideo');
-                    video.find('source').attr('src', videoSrc);
-                    video[0].load();
-                    video[0].play();
+                    var mediaContainer = modal.find('.modal-body');
 
+                    if (videoSrc.endsWith('.webp')) {
+                        // Replace video tag with img tag for webp images
+                        var imageHtml = '<img src="' + videoSrc + '" class="w-75 h-100 img-fluid">';
+                        mediaContainer.html(imageHtml);
+                    } else {
+                        // Use video tag for other video types
+                        var videoHtml = '<video id="storyVideo" controls class="w-75 h-100">';
+                        videoHtml += '<source src="' + videoSrc + '" type="video/mp4">';
+                        videoHtml += 'Your browser does not support the video tag.</video>';
+                        mediaContainer.html(videoHtml);
+                        var video = modal.find('#storyVideo')[0];
+                        video.load();
+                        video.play();
+                    }
                     /*ارسال مسیر فایل استوری برای ثبت ویدیو*/
                 @this.call('submitStoryView', videoSrc)
                     ;

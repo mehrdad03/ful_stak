@@ -380,7 +380,7 @@ class Index extends Component
         $this->latestStory = Story::query()->where([
             'user_id' => Auth::id(),
             'status' => false
-        ])->latest()->exists();
+        ])->latest()->first()->exists();
 
     }
 
