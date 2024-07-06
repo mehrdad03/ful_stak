@@ -283,7 +283,7 @@ class Index extends Component
     }
 
 
- // stories functions
+    // stories functions
 
     public function deleteTempleFile()
     {
@@ -341,7 +341,6 @@ class Index extends Component
         $filepond = Session::get('filepond');
 
 
-
         $formData['fileSize'] = $filepond;
 
         if ($filepond / 1024 < 51200) {
@@ -365,8 +364,8 @@ class Index extends Component
             Session::forget('filepond');
 
 
-           /*فعال کردم پیغام در صف انتظار بودن آخرین استوری*/
-            $this->latestStory=true;
+            /*فعال کردم پیغام در صف انتظار بودن آخرین استوری*/
+            $this->latestStory = true;
 
         } else {
             dd('بیلاخ');
@@ -377,10 +376,17 @@ class Index extends Component
 
     public function checkLatestStory()
     {
-        $this->latestStory = Story::query()->where([
+        $latestStory = Story::query()->where([
             'user_id' => Auth::id(),
             'status' => false
-        ])->latest()->first()->exists();
+        ])->latest()->first();
+
+        if ($latestStory !== null) {
+            $this->latestStory = true;
+        } else {
+            $this->latestStory = false;
+        }
+
 
     }
 
