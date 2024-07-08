@@ -56,6 +56,9 @@ class Index extends Component
     public $otherStories = [];
     public $latestStory = false;
 
+    //free lectures properties
+    public $freeLectures=[];
+
     public function mount(Course $course): void
     {
         $agent = new Agent();
@@ -89,14 +92,25 @@ class Index extends Component
         ])->pluck('progress')->first();
 
         $this->updateStudents();
-
         $this->checkLatestStory();
         $this->getCourseStories();
-
         $this->seoConfing();
+        $this->freeLectures();
 
     }
 
+
+    public function freeLectures()
+    {
+        $this->freeLectures=CourseSectionLecture::query()
+            ->where([
+                'free'=>true,
+                'course_id'=>$this->course->id,
+            ])
+            ->with('video')
+            ->get();
+
+    }
     public function seoConfing()
     {
         $courseSeo = SeoItem::query()->where('ref_id', $this->course->id)->select('id','meta_name','meta_description')->first();

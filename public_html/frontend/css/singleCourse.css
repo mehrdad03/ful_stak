@@ -670,6 +670,12 @@ iframe {
     letter-spacing: 1px;
 }
 
+.free-lectures,#mainContent .season .acc .acc-num.free-lectures-number{
+    background: rgb(0 22 60 / 99%) !important;
+    border: 1px solid #1c61e8 !important;
+
+}
+
 .discount-box div:first-child {
     align-self: center;
 
@@ -694,7 +700,6 @@ iframe {
     border-radius: 25px;
     transition: width 0.5s ease;
 }
-
 @media screen and (max-width: 768px) {
   main {
     margin: 17% 0;
