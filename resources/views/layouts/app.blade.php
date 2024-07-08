@@ -20,6 +20,8 @@
     @endphp
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    {!! SEO::generate() !!}
+
     <!-- Bootstrap css  -->
     <link href="/frontend/css/bootstrap.min.css" rel="stylesheet"/>
     <!-- Sweet alert css  -->
@@ -28,7 +30,6 @@
     <link rel="stylesheet" href="/backend/css/font-awesome.css">
     <link rel="stylesheet" href="/frontend/css/main.css"/>
     @stack('links')
-    <title>آموزش برنامه نویسی فول استک</title>
 </head>
 <body>
 

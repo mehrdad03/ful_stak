@@ -9,14 +9,14 @@
                 </video>
 
             </div>
-            <style>
+           {{-- <style>
                 .action-btns{
                     left: 90px;
                     bottom: 170px;
                 }
 
                 .action-btns a {
-                   color: #ffff;
+                    color: #ffff;
                 }
             </style>
             <div class="position-absolute action-btns">
@@ -28,7 +28,7 @@
                     <i class="fa fa-eye"></i>
                     <span class=" d-block  ">1k</span>
                 </a>
-            </div>
+            </div>--}}
         </div>
     </div>
 </div>

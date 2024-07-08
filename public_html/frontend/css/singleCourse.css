@@ -1,5 +1,5 @@
 main {
-  margin: 8% 0;
+  margin: 120px 0;
 }
 
 /* Main Content */
@@ -267,6 +267,28 @@ main {
   text-align: center;
   font-weight: 900;
 }
+
+#mainContent #description h3 {
+    -webkit-text-stroke: unset;
+    text-align: right;
+    margin-top: 5px;
+    font-size: 18px;
+    font-weight: 900;
+    color: var(--primary-color);
+}
+
+#mainContent #description h2 {
+    font-size:25px;
+    margin: 30px 0;
+    font-weight: bolder;
+}
+
+#mainContent #description ul li strong {
+    color: var(--primary-color);
+}
+#mainContent #description ul {
+    list-style: inside;
+}
 #mainContent .needItem span {
   background-color: #23bf64;
   width: 20px;
@@ -280,7 +302,7 @@ main {
   border-radius: 100%;
 }
 #mainContent .explain .descText {
-  height: 100px;
+  height: 500px;
   overflow: hidden;
   margin-top: 20px;
 }
@@ -639,7 +661,13 @@ iframe {
     border: 1px solid #e81c4d;
     border-radius: 60px;
     position: relative;
+}
 
+.important-box {
+    background: rgba(232, 28, 77, 0.14);
+    border: 1px solid #e81c4d;
+    border-radius: 10px;
+    letter-spacing: 1px;
 }
 
 .discount-box div:first-child {

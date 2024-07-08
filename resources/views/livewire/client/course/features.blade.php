@@ -3,9 +3,9 @@
         $what_you_will_learn=collect(explode('_',$course->what_you_will_learn))->split(2);
 
     @endphp
-    <h4 class="text-primary fw-bold my-4 text-center">
+    <h3 class="text-primary fw-bold my-4 text-center">
         آنچه یاد خواهید گرفت
-    </h4>
+    </h3>
     <div class="row flex-column flex-lg-row text-end">
         @foreach($what_you_will_learn as $items)
 

@@ -1,5 +1,5 @@
 <iframe
-    class="d-block d-lg-none rounded-3 mt-5 intro-video"
+    class="d-block d-lg-none rounded-3 my-3 intro-video"
     src="https://www.youtube.com/embed/QHBVA_7bSRg?si=8WJSsEfdxlxMKZ_5"
     title="YouTube video player"
     frameborder="0"

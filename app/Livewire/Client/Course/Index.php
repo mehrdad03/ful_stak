@@ -10,7 +10,9 @@ use App\Models\CourseUserProgress;
 use App\Models\LectureUser;
 use App\Models\Media;
 use App\Models\OrderItem;
+use App\Models\SeoItem;
 use App\Models\Story;
+use Artesaos\SEOTools\Traits\SEOTools;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Session;
@@ -26,7 +28,7 @@ use Illuminate\Http\Request;
 
 class Index extends Component
 {
-    use WithFileUploads;
+    use WithFileUploads, SEOTools;
 
     public $course;
     public $sameCourses;
@@ -91,7 +93,17 @@ class Index extends Component
         $this->checkLatestStory();
         $this->getCourseStories();
 
+        $this->seoConfing();
 
+    }
+
+    public function seoConfing()
+    {
+        $courseSeo = SeoItem::query()->where('ref_id', $this->course->id)->select('id','meta_name','meta_description')->first();
+
+        @$this->seo()
+            ->setTitle($courseSeo->meta_name)
+            ->setDescription($courseSeo->meta_description);
     }
 
 
@@ -347,12 +359,13 @@ class Index extends Component
 
             $validator = Validator::make($formData, [
                 'fileSize' => 'required',
-                'title' => 'nullable|string|min:5|max:50',
+                'title' => 'required|string|min:5|max:50',
 
             ], [
+                'title.required' => 'عنوان اجباری است!',
                 'fileSize.required' => ' فایل آپلود نشده و یا حجم بیشتر از 50MB دارد!',
-                'title.max' => 'حداکثر تعداد کاراکتر : 50',
-                'title.min' => 'حداقل تعداد کاراکتر : 10',
+                'title.max' => 'حداکثر تعداد کاراکتر : 20',
+                'title.min' => 'حداقل تعداد کاراکتر : 5',
             ]);
 
             $validator->validate();
