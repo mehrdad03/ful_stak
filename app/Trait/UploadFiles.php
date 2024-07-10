@@ -2,6 +2,7 @@
 
 namespace App\Trait;
 
+use App\Jobs\DeleteFileFromFtpJob;
 use App\Jobs\UploadVideoJob;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
@@ -55,8 +56,7 @@ trait UploadFiles
     protected function removeOldFile($oldFile): void
     {
 
-        Storage::disk($this->drive)->delete($oldFile);
-
+        DeleteFileFromFtpJob::dispatch($oldFile, $this->drive);
     }
 
     protected function insertMediaToMediaTable($path, $courseId, $type, $section_id, $lecture_id)

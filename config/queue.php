@@ -48,6 +48,13 @@ return [
             'retry_after' => 3660,
             'after_commit' => false,
         ],
+        'database-delete-file' => [
+            'driver' => 'database',
+            'table' => 'jobs',
+            'queue' => 'delete-file',
+            'retry_after' => 3660,
+            'after_commit' => false,
+        ],
 
         'beanstalkd' => [
             'driver' => 'beanstalkd',
