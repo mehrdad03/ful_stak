@@ -206,13 +206,14 @@
                                 </svg>
                                 <h4 class="text-white m-0 fs-6">{{$lecture->title}}</h4>
                             </div>
-                            <div class="d-flex column-gap-2 align-items-center justify-content-between lecture-info w-25" wire:ignore>
+                            <div class="d-flex column-gap-2 align-items-center justify-content-between lecture-info w-25">
 
                                 <p class="m-0 text-primary ">{{@date('s : i',$lecture->duration)}}</p>
-                                @if($checkPurchase and \Illuminate\Support\Facades\Auth::id()==1)
-                                    <button data-path="https://statics.ful-stak.dev/courses/24/stories/FTtHRYcGP7Kc8sOY3QYxp7xsvKEQcqnLdbCLZYIS.mp4"
+                                @if($checkPurchase or \Illuminate\Support\Facades\Auth::id()==1)
+                                    <button data-path="{{config('app.ftp_url').@$lecture->video->path}}"
                                             data-title="{{$lecture->title }}" data-bs-toggle="modal"
-                                            data-bs-target="#videoModal"
+                                            data-target="#videoModal"
+                                            data-toggle="modal"
                                             class="text-white bg-secondary main-btn videoModal  rounded-2 px-2 py-1"  wire:click="getLectureId({{$lecture->id}})"
                                             type="button">
                                         مشاهده

@@ -31,11 +31,11 @@
                             </button>
                             <span class="nav-border"></span>
                         </li>
-
+{{--
                     <li class="nav-item">
                         <a class="nav-link text-white fs-6" wire:navigate href="#">بلاگ</a>
                         <span class="nav-border"></span>
-                    </li>
+                    </li>--}}
                 </ul>
 
                 <!-- roadmapBtn Popover -->
