@@ -43,10 +43,10 @@
                                     @endforeach
                                 </div>
                                 <div class="field-wrapper" x-data="{isUploading:false,progress:0 }"
-                                   x-on:livewire-upload-start="isUploading=true"
-                                   x-on:livewire-upload-finish="isUploading=false"
-                                   x-on:livewire-upload-error="isUploading=false"
-                                   x-on:livewire-upload-progress="progress=$event.detail.progress"
+                                     x-on:livewire-upload-start="isUploading=true"
+                                     x-on:livewire-upload-finish="isUploading=false"
+                                     x-on:livewire-upload-error="isUploading=false"
+                                     x-on:livewire-upload-progress="progress=$event.detail.progress"
                                 >
                                     <input style="display: -webkit-inline-box;" type="file"
                                            wire:model="video">
@@ -61,7 +61,6 @@
                                              role="progressbar" x-bind:style="`width:${progress}%`" aria-valuenow="10"
                                              aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
-
 
 
                                 </div>
@@ -115,7 +114,7 @@
                                         <td>
                                             {{$lecture->id}}
                                             <br>
-                                              قسمت
+                                            قسمت
                                             {{$loop->index+1}}
                                         </td>
 
@@ -126,7 +125,8 @@
                                                         type="video/mp4">
                                                 Your browser does not support the video tag.
                                             </video>
-
+                                            <label class="my-2 d-block" for="filePath">مسیر فایل</label>
+                                            <input class="form-control mt-2" type="text" id="filePath" value="{{config('app.ftp_url').@$lecture->video->path }}">
 
                                         </td>
 
@@ -161,7 +161,7 @@
                                 </tbody>
                             </table>
                         </div>
-{{--                        {{ $lectures->links('layouts.pagination-admin') }}--}}
+                        {{--                        {{ $lectures->links('layouts.pagination-admin') }}--}}
                     </div>
                 </div>
             </div>

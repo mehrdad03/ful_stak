@@ -59,6 +59,13 @@
         </div>
         <!-- ========= Desktop Side Bar ========= -->
         @include('livewire.client.course.desktop-sidebar')
+
+        @if($course->requirementsCourses->count()>0)
+            <!-- ========= Requirement Courses Modal ========= -->
+            @include('livewire.client.course.requirement-courses')
+        @endif
+
+
     </div>
 </div>
 @push('scripts')
@@ -89,12 +96,13 @@
         $(document).ready(function () {
 
             $('.videoModal').on('click', function () {
+
                 var modal = $('#videoModal');
+
                 var dataPath = $(this).data('path');
                 var dataTitle = $(this).data('title');
                 modal.find('video').attr('src', dataPath)
                 modal.find('h5').html(dataTitle)
-
             });
         });
 

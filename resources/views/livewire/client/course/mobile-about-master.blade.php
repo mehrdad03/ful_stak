@@ -1,6 +1,6 @@
 <div
     class="d-block d-lg-none masterBox d-flex flex-column justify-content-center align-items-center mt-4">
-    <img src="/frontend/assets/images/master.jpg" alt="master of course" />
+    <img src="https://lh3.googleusercontent.com/a/ACg8ocJ-6CNVAJ37h9M5ID8VALHMN-eaoMv39ywpkUq7kU132w=s96-c" alt="مهرداد داداشی-مدرس دوره"/>
     <h5 class="text-white fw-bold mt-3">مهرداد داداشی</h5>
     <h6 class="text-primary">مدرس دوره</h6>
     <p class="text-white">

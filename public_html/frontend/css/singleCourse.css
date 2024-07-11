@@ -286,9 +286,6 @@ main {
 #mainContent #description ul li strong {
     color: var(--primary-color);
 }
-#mainContent #description ul {
-    list-style: inside;
-}
 #mainContent .needItem span {
   background-color: #23bf64;
   width: 20px;

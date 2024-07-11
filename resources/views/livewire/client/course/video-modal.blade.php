@@ -14,10 +14,10 @@
                             type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
-
+                <p class="text-danger text-center p-1 rounded-1 border border-danger my-2">اگر ساکن ایران هستید، برای سرعت بیشتر قند ‌شکن خود را خاموش کنید.
+                </p>
             </div>
             <div class="d-flex align-items-center justify-content-between px-4 mb-3 flex-wrap">
-
                 @if(!$lessonCompleted)
 
                     <button type="button" class=" btn btn-outline-success" wire:click="completeLesson">
@@ -51,7 +51,6 @@
                             </linearGradient>
                         </defs>
                     </svg>
-
                 </a>
             </div>
 

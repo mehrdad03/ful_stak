@@ -8,7 +8,7 @@
                     <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.872 1.516 8.229-7.452-3.897-7.452 3.897 1.516-8.229-6.064-5.872 8.332-1.151z"/>
                 </svg>
             </span>
-            <h1 class="fs-3 fw-bold text-center m-0 pe-2">آموزش برنامه‌نویسی فول استک با <strong class="text-primary">Ful-Stack.Dev</strong></h1>
+            <h1 class="fs-3 fw-bold text-center m-0 pe-2">آموزش برنامه‌نویسی فول استک با <strong class="text-primary">Ful-Stak.Dev</strong></h1>
         </div>
 
         <p class="text-white-50 mb-3">

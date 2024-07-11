@@ -60,12 +60,15 @@
                     >
                 </a>
             @else
-                <button wire:click="addToBasket" class="btn main-btn fw-bold w-100 mt-3 p-3">
+                <button wire:click="addToBasket('null')" class="btn main-btn fw-bold w-100 mt-3 p-3"
+                        data-bs-toggle="modal"
+                        data-toggle="modal"
+                        data-target="#requirementCourses"
+                        type="button" >
                     <span
                         class=" ">
                         ثبت نام در دوره
-                    </span
-                    >
+                    </span>
                 </button>
             @endif
         @else

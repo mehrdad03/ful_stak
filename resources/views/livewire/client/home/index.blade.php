@@ -18,7 +18,7 @@
     @include('livewire.client.home.project')
 
     <!-- ========== blog Section ========== -->
-    @include('livewire.client.home.blog')
+  {{--  @include('livewire.client.home.blog')--}}
 
     <!-- ========== social Banner ========== -->
     @include('livewire.client.home.social-banner')

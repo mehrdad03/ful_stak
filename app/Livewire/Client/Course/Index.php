@@ -69,7 +69,14 @@ class Index extends Component
         }
 
 
-        $this->course = $course->load('sections.sectionLectures.video', 'category:id,title,url_slug', 'requirementsCourses.course:id,title,url_slug');
+        $this->course = $course->load([
+            'sections.sectionLectures.video',
+            'category:id,title,url_slug',
+            'requirementsCourses.course' => function($query) {
+                $query->select('id', 'title', 'url_slug')->with('coverImage');
+            }
+        ]);
+
         $this->lecturesCount = $course->lectures->count();
         $this->sameCourses = Course::query()
             ->where('category_id', $this->course->category_id)
@@ -184,26 +191,30 @@ class Index extends Component
         $allRequirementCourses = $this->getRequirementsCourses()->pluck('prerequisite_course_id')->toArray();
 
 
-//برای زمانی که کل دور های پیش نیاز به سبد خرید اضافه میشن
+
+
         if ($requirementsCourses === 'all') {
+
+//برای زمانی که کل دور های پیش نیاز به سبد خرید اضافه میشن
 
             foreach ($allRequirementCourses as $item) {
                 $basket = $basket->addToBasket($item);
             }
             $this->redirect('/cart', navigate: true);
 
+        } else if ($requirementsCourses === 'null') {
 
             //برای زمانی که دوره اصلی به سبد خرید اضاف میشه
 
-        } else if ($requirementsCourses === 'null') {
             $basket = $basket->addToBasket($this->course->id);
             if (count($allRequirementCourses)==0){
                 $this->redirect('/cart', navigate: true);
             }
 
+        } else {
 
             //برای زمانی که یکی از دوره های پیش نیاز به سبد خرید اضاف میشه
-        } else {
+
             $courseId = Course::query()->where('url_slug', $requirementsCourses)->pluck('id')->first();
             $basket = $basket->addToBasket($courseId);
 

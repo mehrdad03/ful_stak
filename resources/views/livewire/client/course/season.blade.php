@@ -110,6 +110,7 @@
                                     <button data-path="https://statics.ful-stak.dev/courses/24/stories/FTtHRYcGP7Kc8sOY3QYxp7xsvKEQcqnLdbCLZYIS.mp4"
                                             data-title="{{$lecture->title }}" data-bs-toggle="modal"
                                             data-bs-target="#videoModal"
+                                            data-toggle="modal"
                                             class="text-white bg-secondary main-btn videoModal  rounded-2 px-2 py-1"  wire:click="getLectureId({{$lecture->id}})"
                                             type="button">
                                         مشاهده
@@ -118,7 +119,8 @@
 
                                     <button data-path="{{config('app.ftp_url').@$lecture->video->path }}"
                                             data-title="{{$lecture->title }}" data-bs-toggle="modal"
-                                            data-bs-target="#videoModal"
+                                            data-target="#videoModal"
+                                            data-toggle="modal"
                                             class="text-white bg-secondary main-btn videoModal  rounded-2 px-2 py-1"
                                             type="button">
                                         مشاهده
@@ -223,6 +225,7 @@
                                         <button data-path="{{config('app.ftp_url').@$lecture->video->path }}"
                                                 data-title="{{$lecture->title }}" data-bs-toggle="modal"
                                                 data-bs-target="#videoModal"
+                                                data-toggle="modal"
                                                 class="text-white bg-secondary main-btn videoModal  rounded-2 px-2 py-1"
                                                 type="button">
                                             مشاهده
