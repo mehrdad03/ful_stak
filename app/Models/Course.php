@@ -21,6 +21,10 @@ class Course extends Model
         DB::transaction(function () use ($formData, $oldCCourseThumbnail, $oldCourseIntroVideo) {
 
             $this->courseCreateOrUpdate($formData);
+            if (isset($formData['requirementsCourses'])) {
+
+                $this->submitToRequirementsCourses($formData['requirementsCourses'], $formData['courseId']);
+            }
 
             if ($formData['courseThumbnail']) {
 
@@ -58,6 +62,20 @@ class Course extends Model
                 'source_code' => $formData['source_code']
             ]
         );
+
+    }
+
+    public function submitToRequirementsCourses($courses, $courseId)
+    {
+        RequirementCourse::query()->where('course_id',$courseId)->delete();
+        foreach ($courses as $course) {
+            RequirementCourse::query()->create([
+                    'course_id' => $courseId,
+                    'prerequisite_course_id' => $course,
+                ]
+            );
+        }
+
 
     }
 
@@ -136,7 +154,13 @@ class Course extends Model
 
     public function courseUserProgress()
     {
-        return $this->belongsTo(CourseUserProgress::class,'id','course_id');
+        return $this->belongsTo(CourseUserProgress::class, 'id', 'course_id');
+
+    }
+
+    public function requirementsCourses(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(RequirementCourse::class, 'course_id','id');
 
     }
 

@@ -52,7 +52,8 @@
                                     <div class="field-wrapper">
                                         <input class="form-control" type="text" placeholder="" name="usdt_price"
                                                value="{{@$course->usdt_price}}">
-                                        <div class="field-placeholder">قیمت به تتر <span class="text-danger"></span></div>
+                                        <div class="field-placeholder">قیمت به تتر <span class="text-danger"></span>
+                                        </div>
                                     </div>
                                     @error('usdt_price') <span
                                         class="text-danger d-block mb-2">{{ $message }}</span> @enderror
@@ -135,6 +136,31 @@
                                 <div class="col-12">
 
                                     <!-- Field wrapper start -->
+                                    <div class="field-wrapper">
+                                        <select class="" name="requirementsCourses" wire:model="requirementsCourses"
+                                                multiple
+                                                title="Select Product Category">
+                                            @foreach($totalCourseForRequirementCourses as $item)
+                                                <option
+                                                    @if(in_array($item->id, $requirementsCourses))
+                                                        selected
+                                                    @endif
+                                                    value="{{ @$item->id }}"
+                                                    @if($item->id==@$course->teacher_id)
+                                                        selected
+                                                    @endif
+                                                >{{ $item->title }}</option>
+                                            @endforeach
+                                        </select>
+                                        <div class="field-placeholder">مدرس</div>
+                                    </div>
+                                    @error('teacherId') <span
+                                        class="text-danger d-block mb-2">{{ $message }}</span> @enderror
+
+                                </div>
+                                <div class="col-12">
+
+                                    <!-- Field wrapper start -->
                                     <div class="field-wrapper" x-data="{isUploading:false,progress:0 }"
                                          x-on:livewire-upload-start="isUploading=true"
                                          x-on:livewire-upload-finish="isUploading=false"
@@ -146,9 +172,11 @@
                                         <div wire:loading wire:target="courseThumbnail" class="mt-2">Uploading...</div>
                                         <div class="field-placeholder">کاور دوره</div>
                                         <div x-show="isUploading" class="progress mt-3 ltr">
-                                            <div class="progress-bar progress-bar-striped  bg-danger progress-bar-animated"
-                                                 role="progressbar" x-bind:style="`width:${progress}%`" aria-valuenow="10"
-                                                 aria-valuemin="0" aria-valuemax="100"></div>
+                                            <div
+                                                class="progress-bar progress-bar-striped  bg-danger progress-bar-animated"
+                                                role="progressbar" x-bind:style="`width:${progress}%`"
+                                                aria-valuenow="10"
+                                                aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
 
                                     </div>
@@ -230,9 +258,11 @@
                                             <div class="field-placeholder ">ویدیو معرفی</div>
                                         </div>
                                         <div x-show="isUploading" class="progress mt-3 ltr">
-                                            <div class="progress-bar progress-bar-striped  bg-danger progress-bar-animated"
-                                                 role="progressbar" x-bind:style="`width:${progress}%`" aria-valuenow="10"
-                                                 aria-valuemin="0" aria-valuemax="100"></div>
+                                            <div
+                                                class="progress-bar progress-bar-striped  bg-danger progress-bar-animated"
+                                                role="progressbar" x-bind:style="`width:${progress}%`"
+                                                aria-valuenow="10"
+                                                aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
                                         @error('courseIntroVideo') <span
                                             class="text-danger d-block mb-2">{{ $message }}</span> @enderror

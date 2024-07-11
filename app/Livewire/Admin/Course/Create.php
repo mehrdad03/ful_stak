@@ -16,7 +16,7 @@ class Create extends Component
 
 
     public $courseThumbnail, $courseIntroVideo;
-    public $courseId = 0, $categories, $category, $teachers, $courseStatus;
+    public $courseId = 0, $categories, $category, $teachers, $courseStatus,$totalCourseForRequirementCourses,$requirementsCourses=[];
     public $course;//edit
     public $oldCCourseThumbnail = '', $oldCourseIntroVideo = '';//edit
 
@@ -24,7 +24,7 @@ class Create extends Component
     {
         if ($_GET and $_GET['courseId']) {
             $this->courseId = $_GET['courseId'];
-            $this->course = Course::query()->where('id', $_GET['courseId'])->firstOrFail();
+            $this->course = Course::query()->where('id', $_GET['courseId'])->with('requirementsCourses')->firstOrFail();
             @$this->oldCCourseThumbnail = $this->course->coverImage->path;
             @$this->oldCourseIntroVideo = $this->course->coverVideo->path;
         }
@@ -32,6 +32,9 @@ class Create extends Component
         $this->categories = Category::all();
         $this->teachers = Teacher::all();
         $this->courseStatus = CourseStatus::all();
+        $this->totalCourseForRequirementCourses = Course::query()->select('id','title')->get();
+        $this->requirementsCourses = $this->course->requirementsCourses->pluck('prerequisite_course_id')->toArray();
+
 
     }
 
@@ -45,6 +48,9 @@ class Create extends Component
 
         if ($this->courseId != 0) {
             $formData['courseId'] = $this->courseId;
+        }
+        if ($this->requirementsCourses) {
+            $formData['requirementsCourses'] = $this->requirementsCourses;
         }
 
 
