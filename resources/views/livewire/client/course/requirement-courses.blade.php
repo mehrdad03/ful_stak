@@ -17,13 +17,17 @@
                         <a href="{{route('client.course',$item->course->url_slug)}}" class="d-block cover text-center text-white p-2">
                             <img src="/{{@$item->course->coverImage->path }}" class="w-50" alt="">
                         </a>
-                        <a href="{{route('client.course',$item->course->url_slug)}}" class="d-block title text-center text-white my-4">
+                        <a href="{{route('client.course',$item->course->url_slug)}}" class="d-block title text-center text-white my-2">
                             {{@$title[0]}}
                             <span class="me-1 text-primary">
                             {{@$title[1]}}
                             </span>
                             {{@$title[2]}}
                         </a>
+                        <div class="mb-2 text-white text-center fw-medium">
+                            {{number_format($item->course->price)}}
+                            <span class="m-0 text-primary fw-bold me-1">تومان</span>
+                        </div>
                         <div class="action text-center">
                             <button class=" btn btn-outline-success"
                                     wire:click="addToBasket('{{$item->course->url_slug}}')">
