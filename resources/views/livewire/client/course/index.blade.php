@@ -71,27 +71,34 @@
 @push('scripts')
     <script src="/frontend/js/swiper-bundle.min.js"></script>
     <script src="/frontend/js/singleCourse.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            var video = document.getElementById('videoPlayer');
 
-            if (video) {
-                video.addEventListener('ended', function () {
-                    completeLesson();
-                });
 
-                video.addEventListener('timeupdate', function () {
-                    // Check if the remaining time is 20 seconds or less
-                    if (video.duration - video.currentTime <= 20) {
-                    @this.call('completeLesson')
-                        ;
-                        // Remove the event listener to prevent multiple calls
-                        video.removeEventListener('timeupdate', arguments.callee);
-                    }
-                });
-            }
-        });
-    </script>
+    @if($checkPurchase)
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                var video = document.getElementById('videoPlayer');
+
+                if (video) {
+                    video.addEventListener('ended', function () {
+                        completeLesson();
+                    });
+
+                    video.addEventListener('timeupdate', function () {
+                        // Check if the remaining time is 20 seconds or less
+                        if (video.duration - video.currentTime <= 20) {
+                        @this.call('completeLesson')
+                            ;
+                            // Remove the event listener to prevent multiple calls
+                            video.removeEventListener('timeupdate', arguments.callee);
+                        }
+                    });
+                }
+            });
+        </script>
+    @endif
+
+
+
     <script>
         $(document).ready(function () {
 

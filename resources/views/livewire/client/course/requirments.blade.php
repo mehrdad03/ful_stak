@@ -1,4 +1,4 @@
-<section wire:ignore>
+<section wire:ignore id="requirements">
     <h3 class="text-primary fs-2 mb-5">
         پیش نیاز های این دوره :
     </h3>
@@ -7,14 +7,14 @@
             <!-- HTML -->
             @foreach ($course->requirementsCourses as $item)
                 @php
-                    $seconds = $item->course->total_duration; // تعداد ثانیه‌های ویدیو
+                  /*  $seconds = $item->course->total_duration; // تعداد ثانیه‌های ویدیو
 
                     $hours = floor($seconds / 3600);
                     $minutes = floor(($seconds % 3600) / 60);
                     $seconds = $seconds % 60;
 
                     // نمایش با فرمت ساعت:دقیقه:ثانیه
-                   $formattedTime = sprintf('%02d:%02d:%02d', $hours, $minutes, $seconds);
+                   $formattedTime = sprintf('%02d:%02d:%02d', $hours, $minutes, $seconds);*/
                  $title=explode('_',$item->course->title);
                 @endphp
 
@@ -42,14 +42,14 @@
                     <p class="text-white flex-grow-1 w-100">
                         {{mb_substr($item->course->short_description, 0, 100)}} ...
                     </p>
-                    <div class="d-flex align-items-center justify-content-between mb-2 w-100 ps-2 pe-2">
+                    <div class="d-flex align-items-center justify-content-center mb-2 w-100 ps-2 pe-2">
                         <!-- course duration -->
-                        <div class=" d-flex align-items-center">
+                       {{-- <div class=" d-flex align-items-center">
                             <p class="m-0 text-white ms-2 pt-1">{{@$formattedTime}}</p>
                             <i class="fa fa-clock-o text-primary"></i>
-                        </div>
+                        </div>--}}
                         <!-- Course Liked -->
-                        <div class="d-flex align-items-center">
+                        <div class="d-flex align-items-center justify-content-center mb-1">
                             <p class="m-0 text-white fw-medium">{{number_format($item->course->price)}}</p>
                             <p class="m-0 text-primary fw-bold me-2">تومان</p>
                         </div>

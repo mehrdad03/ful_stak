@@ -61,7 +61,7 @@
         <a class="text-dark p-2 scroll-btn" href="#season">
             سرفصل های دوره
         </a>
-        <a class="text-dark p-2 scroll-btn" href="#requirmnets">
+        <a class="text-dark p-2 scroll-btn" href="#requirements">
             پیش نیاز ها
         </a>
         <a class="text-dark p-2 scroll-btn" href="#description">
