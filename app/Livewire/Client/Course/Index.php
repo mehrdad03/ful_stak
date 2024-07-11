@@ -10,6 +10,7 @@ use App\Models\CourseUserProgress;
 use App\Models\LectureUser;
 use App\Models\Media;
 use App\Models\OrderItem;
+use App\Models\RequirementCourse;
 use App\Models\SeoItem;
 use App\Models\Story;
 use Artesaos\SEOTools\Traits\SEOTools;
@@ -57,7 +58,7 @@ class Index extends Component
     public $latestStory = false;
 
     //free lectures properties
-    public $freeLectures=[];
+    public $freeLectures = [];
 
     public function mount(Course $course): void
     {
@@ -68,7 +69,7 @@ class Index extends Component
         }
 
 
-        $this->course = $course->load('sections.sectionLectures.video', 'category:id,title,url_slug');
+        $this->course = $course->load('sections.sectionLectures.video', 'category:id,title,url_slug', 'requirementsCourses.course:id,title,url_slug');
         $this->lecturesCount = $course->lectures->count();
         $this->sameCourses = Course::query()
             ->where('category_id', $this->course->category_id)
@@ -96,24 +97,26 @@ class Index extends Component
         $this->getCourseStories();
         $this->seoConfing();
         $this->freeLectures();
+        /*   dd($this->course->requirementsCourses);*/
 
     }
 
 
     public function freeLectures()
     {
-        $this->freeLectures=CourseSectionLecture::query()
+        $this->freeLectures = CourseSectionLecture::query()
             ->where([
-                'free'=>true,
-                'course_id'=>$this->course->id,
+                'free' => true,
+                'course_id' => $this->course->id,
             ])
             ->with('video')
             ->get();
 
     }
+
     public function seoConfing()
     {
-        $courseSeo = SeoItem::query()->where('ref_id', $this->course->id)->select('id','meta_name','meta_description')->first();
+        $courseSeo = SeoItem::query()->where('ref_id', $this->course->id)->select('id', 'meta_name', 'meta_description')->first();
 
         @$this->seo()
             ->setTitle($courseSeo->meta_name)
@@ -174,9 +177,39 @@ class Index extends Component
     }
 
 
-    public function addToBasket(Basket $basket): void
+    public function addToBasket($requirementsCourses, Basket $basket): void
     {
-        $basket = $basket->addToBasket($this->course->id);
+
+
+        $allRequirementCourses = $this->getRequirementsCourses()->pluck('prerequisite_course_id')->toArray();
+
+
+//برای زمانی که کل دور های پیش نیاز به سبد خرید اضافه میشن
+        if ($requirementsCourses === 'all') {
+
+            foreach ($allRequirementCourses as $item) {
+                $basket = $basket->addToBasket($item);
+            }
+            $this->redirect('/cart', navigate: true);
+
+
+            //برای زمانی که دوره اصلی به سبد خرید اضاف میشه
+
+        } else if ($requirementsCourses === 'null') {
+            $basket = $basket->addToBasket($this->course->id);
+            if (count($allRequirementCourses)==0){
+                $this->redirect('/cart', navigate: true);
+            }
+
+
+            //برای زمانی که یکی از دوره های پیش نیاز به سبد خرید اضاف میشه
+        } else {
+            $courseId = Course::query()->where('url_slug', $requirementsCourses)->pluck('id')->first();
+            $basket = $basket->addToBasket($courseId);
+
+        }
+
+
         $this->dispatch('update-basket', count: $basket->count());
 
     }
@@ -306,6 +339,14 @@ class Index extends Component
 
 
         $this->lessonCompleted = true;
+    }
+
+    public function getRequirementsCourses()
+    {
+        return RequirementCourse::query()
+            ->where('course_id', $this->course->id)
+            ->with('course:id,title,url_slug')
+            ->get();
     }
 
 

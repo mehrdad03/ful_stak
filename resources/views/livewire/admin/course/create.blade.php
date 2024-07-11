@@ -137,7 +137,7 @@
 
                                     <!-- Field wrapper start -->
                                     <div class="field-wrapper">
-                                        <select class="" name="requirementsCourses" wire:model="requirementsCourses"
+                                        <select class="" name="requirementsCourses" style="height: 200px" wire:model="requirementsCourses"
                                                 multiple
                                                 title="Select Product Category">
                                             @foreach($totalCourseForRequirementCourses as $item)
