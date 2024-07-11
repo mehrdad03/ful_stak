@@ -50,7 +50,7 @@
                 <input
                     type="text"
                     placeholder="کد تخفیف را وارد کنید"
-                    class="bg-light  rounded-2 w-100 mx-2 pe-3 text-secondary p-1 text-center  " />
+                    class="bg-light  rounded-2 w-100 mx-2 pe-3 text-secondary p-1 text-center  "/>
                 <button class="bg-primary text-white px-3 py-1 rounded-2">
                     ثبت
                 </button>
@@ -92,7 +92,8 @@
         <div class="d-flex align-items-center justify-content-between">
             <p class="text-white fw-bold">مبلغ قابل پرداخت</p>
             <p class="text-white fw-semibold fs-4">
-                {{number_format($payment['userBasketTotalPrice']-$payment['userBasketTotalDiscount'])}} <span class="me-2 text-primary fw-medium">
+                {{number_format($payment['userBasketTotalPrice']-$payment['userBasketTotalDiscount'])}} <span
+                    class="me-2 text-primary fw-medium">
                     <svg class="mr-2" width="25" height="27" viewBox="0 0 25 27" fill="none"
                          xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -103,9 +104,40 @@
             </p>
         </div>
         <button wire:click="submitOrder"
-            type="button"
-            class="w-100 bg-primary text-white fw-bolder py-2 rounded-5">
+                type="button"
+                class="w-100 bg-primary submitOrder text-white fw-bolder py-2 rounded-5">
             پرداخت
         </button>
     </div>
+    @push('scripts')
+
+        <script>
+            $('.submitOrder').on('click', function () {
+                let timerInterval;
+                Swal.fire({
+                    title: "در حال انتقال به درگاه بانکی",
+                    timer: 10000,
+                    timerProgressBar: true,
+                    color: '#fff',
+                    background: '#20222F',
+                    didOpen: () => {
+                        Swal.showLoading();
+                        const timer = Swal.getPopup().querySelector("b");
+                        timerInterval = setInterval(() => {
+                            timer.textContent = `${Swal.getTimerLeft()}`;
+                        }, 100);
+                    },
+                    willClose: () => {
+                        clearInterval(timerInterval);
+                    }
+                }).then((result) => {
+                    /* Read more about handling dismissals below */
+                    if (result.dismiss === Swal.DismissReason.timer) {
+                        console.log("I was closed by the timer");
+                    }
+                })
+            });
+        </script>
+
+    @endpush
 </div>

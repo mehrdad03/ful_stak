@@ -17,6 +17,7 @@ class Payment extends Component
 
     public function submitOrder(Order $order)
     {
+
         $payInfo = [
             'userBasketTotalPrice' => $this->payment['userBasketTotalPrice'],
             'userBasketTotalDiscount' => $this->payment['userBasketTotalDiscount']
