@@ -46,7 +46,7 @@
             <!-- Course Explain -->
             @include('livewire.client.course.description')
             <!-- ======= Course Slider ======= -->
-            @include('livewire.client.course.courses-slider')
+            {{--@include('livewire.client.course.courses-slider')--}}
             @if($mobile)
                 <!-- mobile version Course Detail -->
                 @include('livewire.client.course.mobile-course-detail')

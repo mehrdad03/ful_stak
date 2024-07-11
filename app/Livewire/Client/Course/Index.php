@@ -73,15 +73,15 @@ class Index extends Component
             'sections.sectionLectures.video',
             'category:id,title,url_slug',
             'requirementsCourses.course' => function($query) {
-                $query->select('id', 'title', 'url_slug')->with('coverImage');
+                $query->select('id', 'title','price','short_description', 'url_slug')->with('coverImage');
             }
         ]);
 
         $this->lecturesCount = $course->lectures->count();
-        $this->sameCourses = Course::query()
+        /*$this->sameCourses = Course::query()
             ->where('category_id', $this->course->category_id)
             ->with('coverImage:id,path,course_id')
-            ->select('id', 'title', 'short_description', 'url_slug')->get();
+            ->select('id', 'title', 'short_description', 'url_slug')->get();*/
         $this->courseTotalDuration = CourseSectionLecture::query()
             ->where('course_id', $this->course->id)
             ->sum('duration');
