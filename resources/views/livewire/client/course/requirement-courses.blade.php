@@ -4,8 +4,8 @@
         <div class="modal-content" style="background: #20222F">
             <div class="modal-header px-4">
                 <h5 class="modal-title text-white" id="exampleModalLabel" wire:ignore>دوره های پیش نیاز این دوره</h5>
-                <button type="button" class="btn-close  m-0" data-bs-dismiss="modal" aria-label="Close">
-                    <i class="fa fa-times-rectangle fs-3 text-white"></i>
+                <button type="button" class="close px-2 fs-4 rounded-1" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
                 </button>
             </div>
             <div class="modal-body row text-white">
@@ -14,10 +14,12 @@
                         $title=explode('_',$item->course->title);
                     @endphp
                     <div class="col-md-4">
-                        <a href="{{route('client.course',$item->course->url_slug)}}" class="d-block cover text-center text-white p-2">
+                        <a href="{{route('client.course',$item->course->url_slug)}}"
+                           class="d-block cover text-center text-white p-2">
                             <img src="/{{@$item->course->coverImage->path }}" class="w-50" alt="">
                         </a>
-                        <a href="{{route('client.course',$item->course->url_slug)}}" class="d-block title text-center text-white my-2">
+                        <a href="{{route('client.course',$item->course->url_slug)}}"
+                           class="d-block title text-center text-white my-2">
                             {{@$title[0]}}
                             <span class="me-1 text-primary">
                             {{@$title[1]}}
@@ -28,12 +30,20 @@
                             {{number_format($item->course->price)}}
                             <span class="m-0 text-primary fw-bold me-1">تومان</span>
                         </div>
-                        <div class="action text-center">
+
+                        <div class="action text-center" wire:ignore>
                             <button class=" btn btn-outline-success"
                                     wire:click="addToBasket('{{$item->course->url_slug}}')">
                                 افزودن به سبد خرید
                             </button>
+                            <span class="text-center text-info in-basket-msg" style="display: none">
+                            <i class="fa fa-check-circle"></i>
+                                <span>
+                                    موجود در سبد خرید
+                                </span>
+                            </span>
                         </div>
+
                     </div>
                 @endforeach
 
@@ -43,17 +53,34 @@
             <div class="d-flex align-items-center justify-content-between px-4 mb-3 flex-wrap">
 
 
-                <button type="button" class=" btn btn-success"  wire:click="addToBasket('all')">
-                    <i class="fa fa-spinner fa-spin" wire:loading></i>
-                    <span wire:loading.remove>افزودن همه و رفتن به سبد خرید</span>
+                <button type="button" class=" btn btn-success" wire:click="addToBasket('all')">
+                    <span  class="d-flex align-items-center">
+                       <i class="fa fa-plus ms-2"></i>
+                        افزودن همه و رفتن به سبد خرید
+                    </span>
                 </button>
 
 
-                <a href="{{route('client.basket')}}" wire:navigate class="btn btn-outline-primary">
-                   نیازی ندارم برو به سبد خرید!
+                <a href="{{route('client.basket')}}" wire:navigate class="btn btn-outline-primary d-flex align-items-center">
+                    <i class="fa fa-shopping-cart ms-2"></i>
+                     برو به سبد خرید!
                 </a>
             </div>
 
         </div>
     </div>
+
+    @push('scripts')
+
+        <script>
+
+            $(document).ready(function() {
+                $('#requirementCourses .action .btn').on('click', function() {
+                    $(this).hide(); // دکمه را مخفی می‌کند
+                    $(this).siblings('.in-basket-msg').show(); // span را نمایش می‌دهد
+                });
+            });
+
+        </script>
+    @endpush
 </div>

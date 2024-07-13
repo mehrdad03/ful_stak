@@ -4,8 +4,8 @@
         <div class="modal-content" style="background: #20222F">
             <div class="modal-header px-4">
                 <h5 class="modal-title text-white" id="exampleModalLabel" wire:ignore></h5>
-                <button type="button" class="btn-close  m-0" data-bs-dismiss="modal" aria-label="Close">
-                    <i class="fa fa-times-rectangle fs-3 text-white"></i>
+                <button type="button" class="close px-2 fs-4 rounded-1" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
                 </button>
             </div>
             <div class="modal-body">
