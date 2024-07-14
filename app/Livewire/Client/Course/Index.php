@@ -15,9 +15,7 @@ use App\Models\SeoItem;
 use App\Models\Story;
 use Artesaos\SEOTools\Traits\SEOTools;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Session;
-use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\ValidationException;
 use Intervention\Image\Drivers\Gd\Driver;
@@ -525,9 +523,9 @@ class Index extends Component
                 'status' => true,
                 'comment_id' => 0,
             ])
-            ->with('answers', function ($query) {
+            ->with(['answers' => function ($query) {
                 $query->where('status', true);
-            }, 'user:id,name,picture')
+            }, 'user:id,name,picture'])
             ->latest()
             ->get();
 
