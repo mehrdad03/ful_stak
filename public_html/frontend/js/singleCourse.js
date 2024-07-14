@@ -1,4 +1,4 @@
-$(document).ready(function () {
+document.addEventListener('livewire:navigated', () => {
     var d = new Date().toLocaleDateString("fa-IR");
     $("#date").text(d);
 

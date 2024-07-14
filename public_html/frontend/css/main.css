@@ -139,6 +139,12 @@ body.notScroll {
     max-height: 100vh;
     overflow: hidden;
 }
+main{
+    margin: 120px auto 90px;;
+}
+.modal{
+    z-index: 100000;
+}
 
 /* ===== Scrollbar CSS ===== */
 /* Firefox */
@@ -198,6 +204,7 @@ header .header-basket {
     display: flex;
     flex-direction: column;
     overflow: hidden;
+
 }
 
 .nav-item > a {
@@ -379,7 +386,8 @@ header .header-basket {
 #hero {
     height: 100vh;
     display: flex;
-    align-items: center;
+    align-items: start;
+    padding-top: 80px ;
 }
 
 .vertical-slider {

@@ -1,4 +1,4 @@
-$(document).ready(function () {
+document.addEventListener('livewire:navigated', () => {
     $(window).scroll(function () {
         var scroll = $(window).scrollTop();
 

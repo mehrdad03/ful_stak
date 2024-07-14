@@ -23,6 +23,9 @@
     <!-- ========== social Banner ========== -->
     @include('livewire.client.home.social-banner')
 
-{{--    <!-- ========== faq Section ========== -->
+    <!-- ========== Seo Section ========== -->
+    @include('livewire.client.home.home-seo-passage')
+
+  {{--  <!-- ========== faq Section ========== -->
     @include('livewire.client.home.faq')--}}
 </div>

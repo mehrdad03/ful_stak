@@ -23,6 +23,8 @@
     <meta name="theme-color" content="#23bf65">
     {!! SEO::generate() !!}
 
+    <!-- Swiper css  -->
+    <link rel="stylesheet" href="/frontend/css/swiper-bundle.min.css"/>
     <!-- Bootstrap css  -->
     <link href="/frontend/css/bootstrap.min.css" rel="stylesheet"/>
     <!-- Sweet alert css  -->
@@ -30,6 +32,7 @@
     <!-- main css  -->
     <link rel="stylesheet" href="/backend/css/font-awesome.css">
     <link rel="stylesheet" href="/frontend/css/main.css"/>
+
     @stack('links')
 </head>
 <body>
@@ -53,9 +56,11 @@
 <!-- jquery -->
 <script src="/backend/js/jquery.min.js"></script>
 <!-- Bootstrap js  -->
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="/frontend/js/bootstrap.min.js"></script>
 <!-- Main js  -->
 <script defer src="/frontend/js/main.js"></script>
+<!-- Swiper  js  -->
+<script src="/frontend/js/swiper-bundle.min.js"></script>
 <!-- Sweet alert js  -->
 <script src="/backend/js/sweetalert2@11.js"></script>
 

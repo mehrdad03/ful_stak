@@ -3,7 +3,9 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">جزئیات تراکنش # {{$tranNumber}}</h5>
-                <button type="button" class="btn-close m-0" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button type="button" class="close px-2 fs-4 rounded-1" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
             </div>
             <div class="modal-body">
                 @forelse($orderItem as $item)
@@ -13,7 +15,7 @@
                     @endphp
                     <a href="{{route('client.course',$item->course->url_slug)}}" style="color: initial" class=" d-flex align-items-start justify-content-between">
                         <div class="course-cover w-25">
-                            <img src="/{{$item->course->coverImage->path }}" class="w-100" alt="">
+                            <img src="/{{@$item->course->coverImage->path }}" class="w-100" alt="">
                         </div>
                         <div class="course-cover w-75 pe-3">
                             <p class="title py-2 m-0">

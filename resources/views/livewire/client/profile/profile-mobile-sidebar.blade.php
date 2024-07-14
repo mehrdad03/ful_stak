@@ -1,5 +1,5 @@
 <li class="nav-item text-primary {{@$rout_name=='client.profile.dashboard'?'active':''}} ">
-    <div class="d-flex align-items-center gap-2 pe-4">
+    <div class="d-flex align-items-center gap-2 mb-3 pe-4">
         <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -85,7 +85,7 @@
         >
     </div>
 </li>
-<li class="nav-item text-white {{@$rout_name=='client.profile.questions'?'active':''}}">
+{{--<li class="nav-item text-white {{@$rout_name=='client.profile.questions'?'active':''}}">
     <div class="d-flex align-items-center gap-2 pe-4">
         <svg
             width="30"
@@ -114,7 +114,7 @@
 
         <a class="nav-link text-white fs-6" href="{{route('client.profile.questions')}}">پرسش ها</a>
     </div>
-</li>
+</li>--}}
 <li class="nav-item text-white {{@$rout_name=='client.profile.financial'?'active':''}}">
     <div class="d-flex align-items-center gap-2 pe-4">
         <svg
@@ -159,7 +159,7 @@
         <a class="nav-link text-white fs-6" href="{{route('client.profile.comments')}}">نظرات</a>
     </div>
 </li>--}}
-<li class="nav-item text-white {{@$rout_name=='client.profile.messages'?'active':''}}">
+{{--<li class="nav-item text-white {{@$rout_name=='client.profile.messages'?'active':''}}">
     <div class="d-flex align-items-center gap-2 pe-4">
         <svg
             width="30"
@@ -180,7 +180,7 @@
         </svg>
         <a class="nav-link text-white fs-6" href="{{route('client.profile.messages')}}">پیغام</a>
     </div>
-</li>
+</li>--}}
 <li class="nav-item text-white">
     <div class="d-flex align-items-center gap-2 pe-4">
         <svg

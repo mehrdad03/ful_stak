@@ -30,5 +30,5 @@
         </div>
     </div>
 </div>
-{{--<!-- hr -->
-<img src="/frontend/assets/images/hr.png" alt="HR" class="hr" />--}}
+<!-- hr -->
+<img src="/frontend/assets/images/hr.png" alt="HR" class="hr" />
