@@ -133,7 +133,7 @@
                 class="d-flex justify-content-between align-items-center px-1 px-lg-4 pb-3 border-bottom">
                 <div class="d-flex align-items-center column-gap-3">
                     <img
-                        src="{{$comment->user->picture}}"
+                        src="/frontend/assets/images/default.png"
                         alt="avatar"
                         class="avatar rounded-5 rounded-5 border border-white border-4"/>
 
@@ -142,15 +142,19 @@
                         <p class="m-0 text-white-50">{{@$comment->created_at->diffForHumans()}}</p>
                     </div>
                 </div>
-                <a href="#answer_{{$comment->id}}" class="main-btn text-white px-2 px-lg-5 py-1 reply" >
+                <a href="#answer_{{$comment->id}}" class="main-btn text-white px-2 px-lg-5 py-1 reply">
                     پاسخ
                 </a>
             </div>
-            <p class="m-0 pt-3 p-lg-5 text-white">
-                {{$comment->comment}}
-            </p>
 
-            <div class="newA px-4 py-0" id="answer_{{$comment->id}}" wire:ignore.self >
+                <?php
+                $text = "    Line one\n    Line two\n    Line three";
+                $cleanedText = preg_replace('/^\s+/m', '', $comment->comment);
+                ?>
+            <pre class="m-0 pt-3 p-3 text-white">{{ $cleanedText }}</pre>
+
+
+            <div class="newA px-4 py-0" id="answer_{{$comment->id}}" wire:ignore.self>
                 <!-- title -->
                 <hr class="text-light">
                 @auth
@@ -158,7 +162,7 @@
                         wire:submit="submitCourseCommentAnswer(Object.fromEntries(new FormData($event.target)),{{$comment->id}})"
                         class=" pb-2">
                         <!-- Question -->
-                        <div class="text-white w-100 d-flex flex-column  {{session('answer_message') ? 'd-none' : ''}}" >
+                        <div class="text-white w-100 d-flex flex-column  {{session('answer_message') ? 'd-none' : ''}}">
                             <label for="answer" class="my-3">پاسخ به این دیدگاه</label>
                             <textarea name="answer" id="answer" cols="30" maxlength="700" rows="10" class="p-3"
                                       placeholder="متن مورد نظر خود رو وراد کنید . . ."></textarea>
@@ -177,7 +181,8 @@
 
 
                         <!-- buttons -->
-                        <div class="w-100 mt-2 d-flex justify-content-end mt-4 column-gap-3 {{session('answer_message') ? 'd-none' : ''}} ">
+                        <div
+                            class="w-100 mt-2 d-flex justify-content-end mt-4 column-gap-3 {{session('answer_message') ? 'd-none' : ''}} ">
                             <button class="text-white bg-danger px-4 py-1 rounded-4 closeQ" type="button">
                                 انصراف
                             </button>
@@ -203,7 +208,7 @@
             </div>
         </div>
 
-        <div wire:ignore>
+        <div>
             @forelse($comment->answers as $answer)
                 <img
                     src="/frontend/assets/images/ans.png"
@@ -229,10 +234,20 @@
                         {{@$answer->comment}}
                     </p>
                 </div>
+
             @empty
             @endforelse
         </div>
     @empty
     @endforelse
 
+    {{$comments->links('layouts.pagination-admin')}}
+    @push('scripts')
+        <script>
+            $('.page-item').on('click', function () {
+                const section = document.getElementById('questions');
+                section.scrollIntoView({behavior: 'smooth', block: 'start'});
+            })
+        </script>
+    @endpush
 </section>
