@@ -24,10 +24,11 @@ use Jenssegers\Agent\Agent;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 use Illuminate\Http\Request;
+use Livewire\WithPagination;
 
 class Index extends Component
 {
-    use WithFileUploads, SEOTools;
+    use WithFileUploads, SEOTools,WithPagination;
 
     public $course;
     public $sameCourses;
@@ -527,7 +528,7 @@ class Index extends Component
                 $query->where('status', true);
             }, 'user:id,name,picture'])
             ->latest()
-            ->get();
+            ->paginate(10);
 
         return view('livewire.client.course.index', [
             'comments' => $comments,
