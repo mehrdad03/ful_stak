@@ -2,17 +2,17 @@
     <ul class="pagination justify-content-center" role="navigation">
         {{-- Previous Page Link --}}
         @if ($paginator->onFirstPage())
-            <li class="page-item disabled" aria-disabled="true" aria-label="@lang('pagination.previous')">
+            <li class="page-item disabled" aria-disabled="true" aria-label="قبلی">
                 <span class="page-link" aria-hidden="true">
                     <span class="d-none d-md-block">&lsaquo;</span>
-                    <span class="d-block d-md-none">@lang('pagination.previous')</span>
+                    <span class="d-block d-md-none">قبلی</span>
                 </span>
             </li>
         @else
             <li class="page-item">
-                <button type="button" class="page-link" wire:click="previousPage" rel="prev" aria-label="@lang('pagination.previous')">
+                <button type="button" class="page-link" wire:click="previousPage" rel="prev" aria-label="قبلی">
                     <span class="d-none d-md-block">&lsaquo;</span>
-                    <span class="d-block d-md-none">@lang('pagination.previous')</span>
+                    <span class="d-block d-md-none">قبلی</span>
                 </button>
             </li>
         @endif
@@ -39,15 +39,15 @@
         {{-- Next Page Link --}}
         @if ($paginator->hasMorePages())
             <li class="page-item">
-                <button type="button" class="page-link" wire:click="nextPage" rel="next" aria-label="@lang('pagination.next')">
-                    <span class="d-block d-md-none">@lang('pagination.next')</span>
+                <button type="button" class="page-link" wire:click="nextPage" rel="next" aria-label="بعدی">
+                    <span class="d-block d-md-none">بعدی</span>
                     <span class="d-none d-md-block">&rsaquo;</span>
                 </button>
             </li>
         @else
-            <li class="page-item disabled" aria-disabled="true" aria-label="@lang('pagination.next')">
+            <li class="page-item disabled" aria-disabled="true" aria-label="بعدی">
                 <span class="page-link" aria-hidden="true">
-                    <span class="d-block d-md-none">@lang('pagination.next')</span>
+                    <span class="d-block d-md-none">بعدی</span>
                     <span class="d-none d-md-block">&rsaquo;</span>
                 </span>
             </li>

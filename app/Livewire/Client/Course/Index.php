@@ -525,7 +525,7 @@ class Index extends Component
                 'comment_id' => 0,
             ])
             ->with(['answers' => function ($query) {
-                $query->where('status', true);
+                $query->where('status', true)->with('user');
             }, 'user:id,name,picture'])
             ->latest()
             ->paginate(10);
