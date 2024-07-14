@@ -103,9 +103,9 @@
                 </span>
             </p>
         </div>
-        <button wire:click="submitOrder"
+        <button wire:click="submitOrder" style="height: 60px"
                 type="button"
-                class="w-100 bg-primary submitOrder text-white fw-bolder py-2 rounded-5">
+                class="w-100 bg-primary submitOrder text-white fs-5 fw-bolder py-2 rounded-5">
             پرداخت
         </button>
     </div>

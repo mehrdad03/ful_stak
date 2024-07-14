@@ -55,9 +55,12 @@
 
                 <button type="button" class=" btn btn-success" wire:click="addToBasket('all')">
                     <span  class="d-flex align-items-center">
-                       <i class="fa fa-plus ms-2"></i>
-                        افزودن همه و رفتن به سبد خرید
+                       <i wire:loading.remove="" class="fa fa-plus ms-2"></i>
+                        <span class="loader ms-2" wire:loading style="width:20px ; border-width: 3px"></span>
+                        <span > افزودن همه و رفتن به سبد خرید</span>
+
                     </span>
+
                 </button>
 
 

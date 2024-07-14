@@ -49,31 +49,32 @@
 
             @if($checkCourseInBasket)
                 <a wire:navigate href="{{route('client.basket')}}"
-                   class="productBuy btn-innerShadow w-100 mt-3 ">
-                    <span
-                        class="afterAddedToBasketBtn flex-grow-1 text-center px-3 py-2 text-light fw-normal d-flex justify-content-between px-5">
+                   class="   w-100 mt-3 ">
+                    <span style="height: 60px"
+                        class="afterAddedToBasketBtn rounded-5 flex-grow-1 text-center px-3 py-2 text-light fw-normal d-flex justify-content-between align-items-center px-5">
                       موجود در سبد خرید
                         <span>
                             مشاهده
                         </span>
-                    </span
-                    >
+                    </span >
                 </a>
             @else
-                <button wire:click="addToBasket('null')" class="btn main-btn fw-bold w-100 mt-3 p-3"
+                <button wire:click="addToBasket('null')" class="btn main-btn fw-bold w-100 mt-3 p-3" style="height: 60px"
                         data-bs-toggle="modal"
                         data-toggle="modal"
                         data-target="#requirementCourses"
                         type="button" >
                     <span
                         class=" ">
-                        ثبت نام در دوره
+                        <span wire:loading.remove>ثبت نام در دوره</span>
+
+                        <span class="loader" wire:loading style="width:30px ; border-width: 4px"></span>
                     </span>
                 </button>
             @endif
         @else
 
-            <a wire:navigate href="{{route('auth.client')}}" class="productBuy btn-innerShadow w-100 mt-3">
+            <a wire:navigate href="{{route('auth.client')}}" class="productBuy btn-innerShadow w-100 mt-3" style="height: 60px">
                     <span
                         class="main-btn flex-grow-1 text-center px-3 py-2 text-light fw-normal "
                     >

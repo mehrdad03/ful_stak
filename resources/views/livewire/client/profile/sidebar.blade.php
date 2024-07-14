@@ -95,7 +95,7 @@
                 </a>
             </li>
             <!-- faq -->
-            <li wire:ignore class="{{@$rout_name=='client.profile.questions'?'active':''}}">
+        {{--    <li wire:ignore class="{{@$rout_name=='client.profile.questions'?'active':''}}">
                 <a wire:navigate href="{{route('client.profile.questions')}}">
                     <div class="icon">
                         <svg
@@ -125,7 +125,7 @@
                     </div>
                     <div class="text text-wrap">پرسش ها</div>
                 </a>
-            </li>
+            </li>--}}
             <!-- payment -->
             <li wire:ignore class="{{@$rout_name=='client.profile.financial'?'active':''}}">
                 <a wire:navigate href="{{route('client.profile.financial')}}">
@@ -151,9 +151,9 @@
                     <div class="text">مالی</div>
                 </a>
             </li>
-            <!-- comments -->
+           {{-- <!-- comments -->
             <li wire:ignore class="{{@$rout_name=='client.profile.comments'?'active':''}}">
-                <a wire:navigate href="{{--{{route('client.profile.comments')}}--}}">
+                <a wire:navigate href="--}}{{--{{route('client.profile.comments')}}--}}{{--">
                     <div class="icon">
                         <svg
                             width="30"
@@ -175,7 +175,7 @@
                     </div>
                     <div class="text">نظرات</div>
                 </a>
-            </li>
+            </li>--}}
           {{--  <!-- notification -->
             <li wire:ignore class="{{@$rout_name=='client.profile.messages'?'active':''}}">
                 <a wire:navigate href="{{route('client.profile.messages')}}">

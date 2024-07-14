@@ -1,4 +1,4 @@
-<div class="instagram p-4 d-flex flex-column flex-sm-row justify-content-center align-items-center">
+<div class="instagram p-4 d-flex flex-column flex-sm-row justify-content-center align-items-center mb-5">
     <img src="/frontend/assets/images/instagram.png" alt="instagram icon"/>
     <div>
         <h2 class="text-white fw-bolder">اینستاگرام</h2>
@@ -30,5 +30,5 @@
         </div>
     </div>
 </div>
-<!-- hr -->
-<img src="/frontend/assets/images/hr.png" alt="HR" class="hr" />
+{{--<!-- hr -->
+<img src="/frontend/assets/images/hr.png" alt="HR" class="hr" />--}}

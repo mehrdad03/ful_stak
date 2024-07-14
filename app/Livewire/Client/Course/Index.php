@@ -207,6 +207,7 @@ class Index extends Component
             //برای زمانی که دوره اصلی به سبد خرید اضاف میشه
 
             $basket = $basket->addToBasket($this->course->id);
+
             if (count($allRequirementCourses)==0){
                 $this->redirect('/cart', navigate: true);
             }

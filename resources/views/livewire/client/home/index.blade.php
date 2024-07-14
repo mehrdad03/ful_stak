@@ -23,6 +23,6 @@
     <!-- ========== social Banner ========== -->
     @include('livewire.client.home.social-banner')
 
-    <!-- ========== faq Section ========== -->
-    @include('livewire.client.home.faq')
+{{--    <!-- ========== faq Section ========== -->
+    @include('livewire.client.home.faq')--}}
 </div>
