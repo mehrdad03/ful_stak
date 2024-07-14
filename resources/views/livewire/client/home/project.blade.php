@@ -4,7 +4,7 @@
         <div class="row flex-column flex-lg-row row-gap-3 align-items-center">
             <div
                 class="col-12 col-lg-2 col-xl-3 z-3 d-flex flex-wrap align-items-center justify-content-between d-lg-block">
-                <h2 class="title-text fs-2">پروژه های تسلط</h2>
+                <h2 class="title-text fs-2">مستر کلاس ها</h2>
                 <img
                     src="/frontend/assets/images/brain.webp"
                     alt="brain"
@@ -44,8 +44,8 @@
                                     <img
                                         src="{{@$course->coverImage->path }}"
                                         alt="html"
-                                        class="roadIcon"
-                                        width="125"/>
+                                        class="roadIcon rounded-2"
+                                        width="230"/>
                                 </a>
                                 <a target="_blank" href="{{route('client.course',$course->url_slug)}}"
                                    class="course-cover">
