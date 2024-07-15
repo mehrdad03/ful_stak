@@ -1,8 +1,9 @@
 @if($course->discount!=0)
     @php
         $originalPrice = $course->price;
-        $discountedPrice = $course->discount;
-        $discountPercentage = ceil(((($originalPrice - $discountedPrice) / $originalPrice) * 100)/5)*5;
+        $discountPercentage = ($course->discount / $originalPrice) * 100;
+        $discountPercentage = ceil($discountPercentage/5)*5; // گرد کردن به دو رقم اعشار
+
     @endphp
 
 
@@ -51,19 +52,20 @@
                 <a wire:navigate href="{{route('client.basket')}}"
                    class="   w-100 mt-3 ">
                     <span style="height: 60px"
-                        class="afterAddedToBasketBtn rounded-5 flex-grow-1 text-center px-3 py-2 text-light fw-normal d-flex justify-content-between align-items-center px-5">
+                          class="afterAddedToBasketBtn rounded-5 flex-grow-1 text-center px-3 py-2 text-light fw-normal d-flex justify-content-between align-items-center px-5">
                       موجود در سبد خرید
                         <span>
                             مشاهده
                         </span>
-                    </span >
+                    </span>
                 </a>
             @else
-                <button wire:click="addToBasket('null')" class="btn main-btn fw-bold w-100 mt-3 p-3" style="height: 60px"
+                <button wire:click="addToBasket('null')" class="btn main-btn fw-bold w-100 mt-3 p-3"
+                        style="height: 60px"
                         data-bs-toggle="modal"
                         data-toggle="modal"
                         data-target="#requirementCourses"
-                        type="button" >
+                        type="button">
                     <span
                         class=" ">
                         <span wire:loading.remove>ثبت نام در دوره</span>
@@ -74,7 +76,8 @@
             @endif
         @else
 
-            <a wire:navigate href="{{route('auth.client')}}" class="productBuy btn-innerShadow w-100 mt-3" style="height: 60px">
+            <a wire:navigate href="{{route('auth.client')}}" class="productBuy btn-innerShadow w-100 mt-3"
+               style="height: 60px">
                     <span
                         class="main-btn flex-grow-1 text-center px-3 py-2 text-light fw-normal "
                     >
