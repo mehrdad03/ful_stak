@@ -57,7 +57,7 @@
                                 <p class="text-white flex-grow-1">
                                     {{mb_substr($course->short_description, 0, 100)}} ...
                                 </p>
-                                <div class="d-flex flex-wrap mb-2 align-items-center justify-content-around gap-3">
+                                <div class="d-flex flex-wrap mb-2 align-items-end justify-content-around gap-3">
                                     <!-- course duration -->
                                     <div class="d-flex align-items-center">
                                         <p class="m-0 text-white ms-2 pt-1">{{$formattedTime}}</p>
@@ -65,12 +65,18 @@
                                     </div>
                                     <!-- Course Liked -->
                                     <div class="d-flex align-items-center">
-                                        <p class="m-0 text-white fw-medium">{{number_format($course->price)}}</p>
-                                        <p class="m-0 text-primary fw-bold me-2">تومان</p>
+                                        <p class="m-0 text-white fw-medium">
+
+                                            <span class="d-block text-decoration-line-through text-danger">{{number_format(@$course->price)}}</span>
+                                            <span class="d-block">{{number_format(@$course->price-@$course->discount)}}
+                                            <span class="m-0 text-primary fw-bold me-2">تومان</span>
+                                            </span>
+                                        </p>
+
                                     </div>
                                 </div>
                                 <a target="_blank" href="{{route('client.course',$course->url_slug)}}"
-                                   class="main-btn text-white px-3 py-2 ">مشاهده دوره</a>                            </div>
+                                   class="main-btn text-white px-3 py-2 ">مشاهده دوره</a></div>
                         @endforeach
                     </div>
                     <div class="swiper-pagination"></div>
