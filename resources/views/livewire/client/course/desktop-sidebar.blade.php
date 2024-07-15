@@ -7,7 +7,7 @@
         @endif
         <!-- ======after purchase ====== -->
 
-{{--        @include('livewire.client.course.desktop-video-course')--}}
+        @include('livewire.client.course.desktop-video-course')
         @include('livewire.client.course.features-course')
 
         <!-- ======before purchase ====== -->

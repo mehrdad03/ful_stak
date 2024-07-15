@@ -225,7 +225,7 @@
                                 class="avatar rounded-5 rounded-5 border border-white border-4"/>
                             <div>
                                 <h6 class="text-white m-0">{{@$answer->user->name}}</h6>
-                                <p class="m-0 text-white-50">{{@$answer->created_at->diffForHumans()}}</p>
+                                {{--<p class="m-0 text-white-50">{{@$answer->created_at->diffForHumans()}}</p>--}}
                             </div>
                         </div>
 

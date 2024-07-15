@@ -318,6 +318,12 @@
   width: 20px;
   height: 20px;
 }
+
+#questions pre {
+    text-wrap: wrap;
+    font-family: inherit;
+}
+
 #questions .newQ {
   background: linear-gradient(
     79deg,
