@@ -151,7 +151,7 @@
                 $text = "    Line one\n    Line two\n    Line three";
                 $cleanedText = preg_replace('/^\s+/m', '', $comment->comment);
                 ?>
-            <pre class="m-0 pt-3 p-3 text-white">{{ $cleanedText }}</pre>
+            <pre class="m-0 pt-3 p-3 text-white">{!! $cleanedText !!}</pre>
 
 
             <div class="newA px-4 py-0" id="answer_{{$comment->id}}" wire:ignore.self>
@@ -215,7 +215,7 @@
                     alt="answer"
                     class="ansBorder"/>
                 <!-- answer -->
-                <div class="answer bg-primary btn-innerShadow rounded-4 p-1 p-lg-4 w-75 mb-5">
+                <div class="answer text-white bg-primary btn-innerShadow rounded-4 p-1 p-lg-4 w-75 mb-5">
                     <div
                         class="d-flex justify-content-between align-items-center px-4 pb-3 border-bottom">
                         <div class="d-flex align-items-center column-gap-3">
@@ -230,9 +230,10 @@
                         </div>
 
                     </div>
-                    <p class="m-0 p-3 text-white">
-                        {{@$answer->comment}}
-                    </p>
+
+                      <div class="pt-3">
+                          {!! @$answer->comment !!}
+                      </div>
                 </div>
 
             @empty

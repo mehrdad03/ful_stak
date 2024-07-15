@@ -1,4 +1,5 @@
 <div class="content-wrapper-scroll">
+
     <div class="content-wrapper">
         <div class="row gutters">
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
@@ -24,7 +25,7 @@
                                 <thead>
                                 <tr>
                                     <th>#شماره سفارش</th>
-                                    <th>متن سوال</th>
+                                    <th width="100" s>متن سوال</th>
                                     <th>کاربر</th>
                                     <th>دوره</th>
                                     <th>ثیت شده در</th>
@@ -52,11 +53,11 @@
                                     @endphp
                                     <tr wire:key="{{$loop->index}}">
                                         <td>{{$loop->index+1}}</td>
-                                        <td >
-                                            <p style="  max-width: 200px;overflow: hidden; text-overflow: ellipsis;white-space: nowrap;">
+                                        <td>
+                                            <p style=" max-width: 200px;overflow: hidden; text-overflow: ellipsis;white-space: nowrap;">
                                                 {{$comment->comment}}
                                             </p>
-                                         </td>
+                                        </td>
                                         <td>
                                             <div class="d-flex align-items-center">
                                                 <div><img width="50" src="{{$comment->user->picture}}" alt=""></div>
@@ -93,8 +94,9 @@
                                             </div>
                                         </td>
                                         <td>
-                                            <a class="btn btn-sm btn-success" href="{{route('admin.comments.answer',$comment->id)}}">
-                                            پاسخ دادن
+                                            <a class="btn btn-sm btn-success"
+                                               href="{{route('admin.comments.answer',$comment->id)}}">
+                                                پاسخ دادن
                                             </a>
                                         </td>
                                     </tr>
@@ -116,7 +118,12 @@
                                         @endphp
                                         <tr wire:key="{{$loop->index+rand(500,9644)}}" class="bg-dark">
                                             <td>{{$item->id}}</td>
-                                            <td>{{$item->comment}}</td>
+                                            <td>
+                                                <p style=" max-width: 200px;overflow: hidden; text-overflow: ellipsis;white-space: pre-wrap
+                                                ;">
+                                                    {{$item->comment}}
+                                                </p>
+                                            </td>
                                             <td>
                                                 <div class="d-flex align-items-center">
                                                     <div><img width="50" src="{{@$item->user->picture}}" alt=""></div>
@@ -135,7 +142,7 @@
                                                 {{--<span class="badge bg-{{$class}}">{{$item->status->title}}</span>--}}
                                                 {{jdate($item->created_at)->format('d M Y | h:i')}}
                                                 <br>
-                                                      {{$item->created_at->diffForHumans()}}
+                                                {{$item->created_at->diffForHumans()}}
                                             </td>
                                             <td>
                                                 <i class="fa fa-{{$itemIconClass}} fs-3  text-{{$itemClass}}"></i>
@@ -152,8 +159,9 @@
                                                 </div>
                                             </td>
                                             <td>
-                                                <a class="btn btn-sm btn-secondary" href="{{route('admin.comments.answer',$comment->id)}}">
-                                                   ویرایش جواب
+                                                <a class="btn btn-sm btn-secondary"
+                                                   href="{{route('admin.comments.answer',$comment->id)}}">
+                                                    ویرایش جواب
                                                 </a>
                                             </td>
                                         </tr>

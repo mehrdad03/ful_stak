@@ -31,7 +31,7 @@ class Index extends Component
     {
         $comments = Comment::query()
             ->where('comment_id', '=', 0)
-            ->with('user', 'course:url_slug,id,title', 'answers')
+            ->with('user', 'course:url_slug,id,title', 'answers.user')
             ->latest();
 
 
