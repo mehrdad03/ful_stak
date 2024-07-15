@@ -29,7 +29,6 @@
                                     <th>کاربر</th>
                                     <th>دوره</th>
                                     <th>ثیت شده در</th>
-                                    <th>وضعیت نمایش</th>
                                     <th>وضعیت پرداخت</th>
                                     <th>پاسخ ها</th>
                                 </tr>
@@ -81,9 +80,6 @@
                                             {{$comment->created_at->diffForHumans()}}
                                         </td>
                                         <td>
-                                            <i class="fa fa-{{$iconClass}} fs-3  text-{{$class}}"></i>
-                                        </td>
-                                        <td>
                                             <div class="form-switch">
                                                 <input class="form-check-input" type="checkbox"
                                                        style="width: 3rem;height: 1.5rem;cursor:pointer;"
@@ -92,6 +88,7 @@
                                                     {{$comment->status?'checked=""' : ''}}>
                                                 <label class="form-check-label" for="showEmailNotifications"></label>
                                             </div>
+                                            <i class="fa fa-{{$iconClass}} fs-3  text-{{$class}}"></i>
                                         </td>
                                         <td>
                                             <a class="btn btn-sm btn-success"
@@ -145,9 +142,6 @@
                                                 {{$item->created_at->diffForHumans()}}
                                             </td>
                                             <td>
-                                                <i class="fa fa-{{$itemIconClass}} fs-3  text-{{$itemClass}}"></i>
-                                            </td>
-                                            <td>
                                                 <div class="form-switch">
                                                     <input class="form-check-input" type="checkbox"
                                                            style="width: 3rem;height: 1.5rem;cursor:pointer;"
@@ -157,6 +151,8 @@
                                                     <label class="form-check-label"
                                                            for="showEmailNotifications"></label>
                                                 </div>
+
+                                                <i class="fa fa-{{$itemIconClass}} fs-3  text-{{$itemClass}}"></i>
                                             </td>
                                             <td>
                                                 <a class="btn btn-sm btn-secondary"
