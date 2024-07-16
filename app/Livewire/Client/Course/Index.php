@@ -14,6 +14,7 @@ use App\Models\RequirementCourse;
 use App\Models\SeoItem;
 use App\Models\Story;
 use Artesaos\SEOTools\Traits\SEOTools;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
@@ -255,26 +256,47 @@ class Index extends Component
     public function updateStudents()
     {
 
-        $currentDate = date('Y-m-d');
-
-        // کلیدها برای ذخیره تعداد دانشجویان و تاریخ آخرین به‌روزرسانی
-        $studentsCountKey = 'students_count_' . $this->course->id;
-        $lastUpdateDateKey = 'last_update_date_' . $this->course->id;
-
-        // اگر تاریخ قبلی ذخیره نشده یا متفاوت با تاریخ فعلی است
-        if (!Session::has($lastUpdateDateKey) || Session::get($lastUpdateDateKey) !== $currentDate) {
-            // تعداد دانشجویان فعلی را دریافت کنید
-            $this->studentsCount = Session::get($studentsCountKey, 0);
-
-            // اضافه کردن یک عدد تصادفی بین 1 تا 10 به تعداد دانشجویان
-            $this->studentsCount += rand(10, 20);
-
-            // ذخیره تعداد جدید دانشجویان و تاریخ به‌روزرسانی
-            Session::put($studentsCountKey, $this->studentsCount);
-            Session::put($lastUpdateDateKey, $currentDate);
-        } else {
-            $this->studentsCount = Session::get($studentsCountKey);
+        // چک کردن وجود سیشن
+        if (!Session::has('student_count')) {
+            Session::put('student_count', 61);
+            Session::put('last_update', now()->format('Y-m-d H:i:s'));
+            Session::put('update_count', 0);
         }
+
+        $currentCount = Session::get('student_count');
+        $lastUpdate = Session::get('last_update');
+        $updateCount = Session::get('update_count');
+        $today = now()->format('Y-m-d');
+
+        // محاسبه زمان فعلی و زمان آخرین به‌روزرسانی
+        $lastUpdateDate = \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $lastUpdate);
+        $now = \Carbon\Carbon::now();
+
+        // بررسی اگر روز جدیدی باشد، تعداد به‌روزرسانی‌ها را صفر کنید
+        if ($lastUpdateDate->format('Y-m-d') !== $today) {
+            $updateCount = 0;
+        }
+
+        // چک کردن تعداد به‌روزرسانی‌ها در طول روز با توجه به تایم های رندوم
+        if ($updateCount < 6) {
+            $randomInterval = rand(1, 5); // بازه زمانی رندوم بین 1 تا 5 ساعت
+            $nextUpdate = $lastUpdateDate->copy()->addHours($randomInterval);
+
+            if ($now->gte($nextUpdate)) {
+                $randomIncrease = rand(1, 10); // مقدار رندوم
+                $newCount = $currentCount + $randomIncrease;
+                $updateCount++;
+
+                Session::put('student_count', $newCount);
+                Session::put('last_update', now()->format('Y-m-d H:i:s'));
+                Session::put('update_count', $updateCount);
+            } else {
+                $newCount = $currentCount;
+            }
+        } else {
+            $newCount = $currentCount;
+        }
+        $this->studentsCount=$newCount;
     }
 
     public function getLectureId($lectureId)
