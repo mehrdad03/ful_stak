@@ -63,7 +63,7 @@ class User extends Authenticatable
 
     }
 
-    public function checkUserWithMobile($mobile)
+    public function checkUserWithMobile($mobile,$userName)
     {
 
 
@@ -71,7 +71,8 @@ class User extends Authenticatable
 
         if (!$check) {
             $newUser = User::query()->create([
-                'mobile'=>$mobile
+                'mobile'=>$mobile,
+                'name'=>$userName
             ]);
 
             Auth::login($newUser, true);

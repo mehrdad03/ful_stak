@@ -231,7 +231,7 @@
 
                     </div>
 
-                      <div class="pt-3">
+                      <div class="p-3">
                           {!! @$answer->comment !!}
                       </div>
                 </div>

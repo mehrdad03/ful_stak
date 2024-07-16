@@ -12,13 +12,13 @@
                     <img src="/frontend/assets/images/menu.png" alt="menu"/>
                 </div>
                 <!-- logo -->
-                <a class="navbar-brand" wire:navigate href="{{route('client.home')}}">
+                <a class="navbar-brand"  href="{{route('client.home')}}">
                     <img src="/frontend/assets/images/logo.png" alt="logo" class="logo"/>
                 </a>
                 <ul class="navbar-nav d-none d-lg-flex gap-4">
 
                     <li class="nav-item">
-                        <a class="nav-link text-white fs-6" wire:navigate href="{{route('client.home')}}">صفحه اصلی</a>
+                        <a class="nav-link text-white fs-6"  href="{{route('client.home')}}">صفحه اصلی</a>
                         <span class="nav-border"></span>
                     </li>
 
@@ -33,7 +33,7 @@
                         </li>
 {{--
                     <li class="nav-item">
-                        <a class="nav-link text-white fs-6" wire:navigate href="#">بلاگ</a>
+                        <a class="nav-link text-white fs-6"  href="#">بلاگ</a>
                         <span class="nav-border"></span>
                     </li>--}}
                 </ul>
@@ -77,7 +77,7 @@
 
                     <!-- ===== User logged in ===== -->
                     <div class="profile position-relative d-flex align-items-center column-gap-3">
-                        <a wire:navigate href="{{route('client.basket')}}" class="position-relative">
+                        <a  href="{{route('client.basket')}}" class="position-relative">
                             <span
                                 class="header-basket d-flex align-items-center justify-content-center fw-normal">{{$basket}}</span>
                             <svg
@@ -124,7 +124,7 @@
                                 <ul class="d-flex flex-column p-0 mt-2 mb-0">
                                     <!-- profile -->
                                     <li class=" pe-3 fw-medium">
-                                        <a wire:navigate href="{{route('client.profile.dashboard')}}"
+                                        <a  href="{{route('client.profile.dashboard')}}"
                                            class="d-flex align-items-center column-gap-2 py-3">
                                             <svg
                                                 width="24"
@@ -148,7 +148,7 @@
                                     </li>
                                     <!-- my Course -->
                                     <li class="pe-3 fw-medium">
-                                        <a wire:navigate href="{{route('client.profile.my-courses')}}"
+                                        <a  href="{{route('client.profile.my-courses')}}"
                                            class=" py-3  d-flex align-items-center column-gap-2">
                                             <svg
                                                 width="24"
@@ -192,7 +192,7 @@
                                     </li>
                                     <!-- logout -->
                                     <li class=" pe-3 fw-medium">
-                                        <a wire:navigate href="{{route('client.logout')}}"
+                                        <a  href="{{route('client.logout')}}"
                                            class=" py-3 d-flex align-items-center column-gap-2">
                                             <svg
                                                 width="24"
