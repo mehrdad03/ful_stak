@@ -48,19 +48,6 @@
             <div class="my-1 mt-4 my-md-3">
                 <h1 class="text-white fs-4 text-center">ورود یا عضویت در فول استک</h1>
                 <div class="d-flex flex-column my-2 ">
-                    <label for="phoneNumber" class="m-2 fw-bold text-white">نام کاربری :</label>
-                    <input class="text-center"
-                           type="text"
-                           name="userName"
-                           id="phoneNumber"
-                           maxlength="20"
-                           placeholder=""/>
-                    @error('userName')
-                    <span
-                        class="text-danger d-block mt-2">{{ $message }}</span>
-                    @enderror
-                </div>
-                <div class="d-flex flex-column my-2 ">
                     <label for="phoneNumber" class="m-2 fw-bold text-white">شماره موبایل :</label>
                     <input class="text-center"
                            type="text"
@@ -76,7 +63,6 @@
                         class="text-danger d-block mt-2">{{ $message }}</span>
                     @enderror
                 </div>
-
                 <div class="d-flex justify-content-center align-items-center">
                     <button class="my-2 py-2" type="submit" id="submit" style="text-align: -webkit-center;height: 45px ">
                         <span wire:loading.remove>
