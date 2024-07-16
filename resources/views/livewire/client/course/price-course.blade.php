@@ -11,7 +11,7 @@
         <div class="d-block text-center fs-6 m-0 discount-percentage align-content-center px-2 ms-4">
             <span class="text-white fs-5 ">{{ number_format(@$discountPercentage) }}%</span>
         </div>
-        <span class="d-block text-center fs-3 m-0">{{number_format($course->price)}}</span>
+        <span class="d-block text-center fs-4 m-0">{{number_format($course->price)}}</span>
     </div>
 @endif
 
@@ -49,7 +49,7 @@
         @auth
 
             @if($checkCourseInBasket)
-                <a wire:navigate href="{{route('client.basket')}}"
+                <a href="{{route('client.basket')}}"
                    class="   w-100 mt-3 ">
                     <span style="height: 60px"
                           class="afterAddedToBasketBtn rounded-5 flex-grow-1 text-center px-3 py-2 text-light fw-normal d-flex justify-content-between align-items-center px-5">
@@ -76,14 +76,10 @@
             @endif
         @else
 
-            <a wire:navigate href="{{route('auth.client')}}" class="productBuy btn-innerShadow w-100 mt-3"
-               style="height: 60px">
-                    <span
-                        class="main-btn flex-grow-1 text-center px-3 py-2 text-light fw-normal "
-                    >
+            <a href="{{route('auth.client')}}" class="productBuy w-100 mt-3">
+                    <span style="height: 60px;align-content: center" class="main-btn d-block w-100 text-center px-3 py-2 text-secondary fw-bold">
                         شرکت در دوره
-                    </span
-                    >
+                    </span>
             </a>
         @endauth
 

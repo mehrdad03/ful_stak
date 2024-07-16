@@ -522,12 +522,13 @@ iframe {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #0b141b;
+  /*background-color: #0b141b;*/
   border-radius: 20px;
 }
 
 .courseDet .price {
-  font-size: 3rem;
+  font-size: 2.5rem;
+    letter-spacing: 2px;
 }
 .courseDet .productBuy div {
   padding: 8px;
