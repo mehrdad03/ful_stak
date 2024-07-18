@@ -38,9 +38,10 @@ class Transaction extends Model
                 'order_id' => $orderId,
             ]);
 
-
             Order::query()->where('id', $orderId)->update(['pay_status' => $status]);
             OrderItem::query()->where('order_id', $orderId)->update(['pay_status' => $status]);
+
+
 
 
         });
@@ -65,5 +66,10 @@ class Transaction extends Model
 
         return $randomCode;
 
+    }
+
+    public function order()
+    {
+       return $this->belongsTo(Order::class);
     }
 }

@@ -15,9 +15,6 @@
     </div>
 @endif
 
-
-
-
 <div class="d-flex flex-column justify-content-between align-items-center px-3 mb-4">
     <!-- == Buy Course == -->
 
@@ -60,7 +57,7 @@
                     </span>
                 </a>
             @else
-                <button wire:click="addToBasket('null')" class="btn main-btn fw-bold w-100 mt-3 p-3"
+                <button wire:click="addToBasket('null')" class="btn main-btn fw-bold w-100 mt-3 p-3" id="addToBasket"
                         style="height: 60px"
                         data-bs-toggle="modal"
                         data-toggle="modal"
@@ -76,7 +73,7 @@
             @endif
         @else
 
-            <a href="{{route('auth.client')}}" class="productBuy w-100 mt-3">
+            <a href="{{route('auth.client')}}" class="productBuy w-100 mt-3" id="addToBasketBeforeLogin">
                     <span style="height: 60px;align-content: center" class="main-btn d-block w-100 text-center px-3 py-2 text-secondary fw-bold">
                         شرکت در دوره
                     </span>

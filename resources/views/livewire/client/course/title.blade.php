@@ -6,7 +6,7 @@
     @endphp
     <h1 class="fw-bold text-end fs-2">
         {{@$title[0]}}
-        <span class="me-2 text-primary">
+        <span class="me-2 text-primary d-inline-block">
         {{@$title[1]}}
         </span>
         {{@$title[2]}}

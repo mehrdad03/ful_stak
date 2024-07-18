@@ -12,7 +12,7 @@ class Index extends Component
     public $search = '';
     public function render()
     {
-        $orders = Order::query()->with('orderItems.course','transaction','user');
+        $orders = Order::query()->with('orderItems.course','transaction','user')->latest();
 
         if ($_GET and $_GET['status'] != 'all') {
             $orders = $orders->where('status_id', $_GET['status'])->latest();
@@ -32,6 +32,7 @@ class Index extends Component
                     $query->where('name', 'like', '%' . $this->search . '%');
                 });
         }
+
         return view('livewire.admin.order.index', [
             'orders' => $orders->paginate(10),
         ])->layout('layouts.app-admin');

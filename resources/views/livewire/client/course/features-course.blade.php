@@ -41,7 +41,12 @@
             <p>
                 بیش از
                 <strong class="fs-4" style="color: #23bf65">
-                    {{$hours}}
+                    @if($course->url_slug=='laravel-tutorial-digikala')
+                       72
+                    @else
+                        {{$hours}}
+                    @endif
+
                 </strong>
                 ساعت ویدیو آموزشی</p>
         </li>
@@ -64,7 +69,12 @@
             <p>
                 بیش از
                 <strong class="fs-4" style="color: #23bf65">
-                    {{$lecturesCount}}
+                    @if($course->url_slug=='laravel-tutorial-digikala')
+                        180
+                    @else
+                        {{$lecturesCount}}
+                    @endif
+
                 </strong>
                 جلسه آموزشی
             </p>

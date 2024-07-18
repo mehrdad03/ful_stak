@@ -43,8 +43,8 @@ class Index extends Component
             ->send();
 
         $transactions = new Transaction();
-        if (!$response->success()) {
 
+        if (!$response->success()) {
             $transactions->savePaymentInfo($response, false, $amount, $orderId);
 
 
@@ -52,7 +52,7 @@ class Index extends Component
             $this->status = true;
             $transactions->savePaymentInfo($response, $this->status, $amount, $orderId);
         }
-        return redirect()->route('payment.status');
+        return redirect()->to(route('payment.status') . '?status='.$status);
 
     }
 

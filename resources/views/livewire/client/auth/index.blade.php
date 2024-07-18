@@ -64,7 +64,7 @@
                     @enderror
                 </div>
                 <div class="d-flex justify-content-center align-items-center">
-                    <button class="my-2 py-2" type="submit" id="submit" style="text-align: -webkit-center;height: 45px ">
+                    <button class="my-2 py-2 authWithSms" type="submit" id="submit" style="text-align: -webkit-center;height: 45px ">
                         <span wire:loading.remove>
                             دریافت کد تایید
                         </span>
@@ -79,7 +79,7 @@
         <div class="d-flex gap-2 align-items-center justify-content-between w-100">
             <!-- Gmail Login -->
             <a
-                href="{{route('auth.client.gmail')}}"
+                href="{{route('auth.client.gmail')}}" id="authWithGmail"
                 class="d-flex bg-white align-items-center p-3 rounded-3 w-100 justify-content-center">
                 <svg
                     width="24"
