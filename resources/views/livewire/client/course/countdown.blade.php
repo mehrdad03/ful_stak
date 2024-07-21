@@ -37,7 +37,7 @@
 
     <script>
         // تاریخ و زمان پایان تخفیف
-        var endTime = new Date("Jul 15, 2024 23:59:59").getTime();
+        var endTime = new Date("Jul 27, 2024 23:59:59").getTime();
 
         // تابع کمکی برای افزودن صفر به اعداد کمتر از 10
         function padZero(num) {
