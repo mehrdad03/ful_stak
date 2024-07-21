@@ -4,7 +4,11 @@ document.addEventListener('livewire:navigated', () => {
 
         if (scroll >= 100) {
             $("#header").addClass("header");
-        } else $("#header").removeClass("header");
+            $("#story").addClass("sticky");
+        } else{
+            $("#header").removeClass("header");
+            $("#story").removeClass("sticky");
+        }
     });
 
     // Roadmap Popup
@@ -112,6 +116,28 @@ document.addEventListener('livewire:navigated', () => {
             );
         }
     });
+
+
+    window.onscroll = function () {
+        scrollFunction()
+    };
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            document.getElementById("scrollTopBtn").style.display = "flex";
+        } else {
+            document.getElementById("scrollTopBtn").style.display = "none";
+        }
+    }
+
+    function scrollToTop() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+
+    document.getElementById("scrollTopBtn").addEventListener("click", scrollToTop);
+
+
 });
 
 //Profile After Auth
@@ -124,4 +150,7 @@ $("body").on("click", function (event) {
     if (!$(event.target).closest(".profile").length) {
         $(".popover").removeClass("active");
     }
+
+
 });
+

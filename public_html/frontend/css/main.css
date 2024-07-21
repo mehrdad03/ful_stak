@@ -143,7 +143,7 @@ main{
     margin: 120px auto 90px;;
 }
 .modal{
-    z-index: 100000;
+    z-index: 100002;
 }
 
 /* ===== Scrollbar CSS ===== */
@@ -174,7 +174,7 @@ header {
     height: 40px;
     right: 0;
     top: 0;
-    z-index: 99999;
+    z-index: 100001;
     transition: all 0.1s ease-in;
 }
 
@@ -644,7 +644,7 @@ header .header-basket {
 }
 
 .swiper-slide h3 span {
-    height: 120px;
+    height: 80px;
     line-height: 1.7;
 }
 
@@ -663,7 +663,7 @@ header .header-basket {
 
 .swiper-slide .roadIcon {
     position: absolute;
-    top: -70px;
+    top: -80px;
 }
 
 .swiper-slide .course-cover {
@@ -720,7 +720,11 @@ header .header-basket {
 }
 
 #projects .swiper-slide h3 {
-    margin-top: 5.5rem;
+    margin-top: 80px;
+}
+
+#roadmap .swiper-slide h3 {
+    margin-top: 40px;
 }
 
 @media screen and (max-width: 768px) {
@@ -843,6 +847,7 @@ header .header-basket {
 .show {
     cursor: pointer;
     margin-bottom: -35px;
+    background: rgba(0, 0, 0, 0.8);
 }
 .exText.open {
     height: auto;
@@ -1025,3 +1030,25 @@ footer ul .link::before {
     content: "-";
     margin: 0 4px;
 }
+
+footer #scrollTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    left: 35px;
+    z-index: 99;
+    font-size: 58px;
+    border: none;
+    outline: none;
+    background-color: #0b141b;
+    color: white;
+    cursor: pointer;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+}
+
+footer #scrollTopBtn:hover {
+    background-color: #333;
+}
+
