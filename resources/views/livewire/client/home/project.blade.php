@@ -24,7 +24,7 @@
                 </a>
             </div>
             <div class="col-12 col-lg-10 col-xl-9">
-                <div class="swiper mySwiper">
+                <div class="swiper mySwiper" >
                     <div class="swiper-wrapper">
                         @foreach ($categories['master-courses']->courses as $course)
                             @php
@@ -49,13 +49,13 @@
                                 </a>
                                 <a target="_blank" href="{{route('client.course',$course->url_slug)}}"
                                    class="course-cover">
-                                    <h3 class="fw-bolder text-white w-100 m-0">
+                                    <h3 class="fw-bolder text-white w-100">
                                         <span
-                                            class="text-primary pt-5 d-block">{{str_replace('_',' ', $course->title)}}</span>
+                                            class="text-primary d-block">{{str_replace('_',' ', $course->title)}}</span>
                                     </h3>
                                 </a>
                                 <p class="text-white flex-grow-1">
-                                    {{mb_substr($course->short_description, 0, 100)}} ...
+                                    {{mb_substr($course->short_description, 0, 150)}} ...
                                 </p>
                                 <div class="d-flex flex-wrap mb-2 align-items-end justify-content-around gap-3">
                                     <!-- course duration -->
