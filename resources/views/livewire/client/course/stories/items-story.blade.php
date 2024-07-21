@@ -1,7 +1,7 @@
-<div class="row mb-3">
+<div class="row">
     <div class="col-12">
 
-        <div class="stories d-flex justify-content-start">
+        <div class="stories d-flex justify-content-between">
 
             <div
                 class="item text-center mx-2 {{!$checkPurchase?'msgBeforePurchase':''}} {{$latestStory && $checkPurchase ?'msgLatestStory':''}}"
@@ -13,11 +13,11 @@
 
             @if($firstStory)
 
-                <div class="item text-center mx-2" data-toggle="modal" data-target="#show-story" wire:click=""
+                <div class="item text-center mx-2" data-toggle="modal" data-target="#show-story"
                      data-video="{{config('app.ftp_url').@$firstStory->media->path}}">
                     <img src="{{@$firstStory->user->picture}}" alt="{{$course->title}}"
                          class="img-fluid rounded-circle">
-                    <p class="username">{{@$firstStory->user->name}}</p>
+                    <p class="username">{{$firstStory->title}}</p>
                 </div>
             @endif
 
@@ -27,9 +27,10 @@
                      data-story="{{$story->id}}"
                      data-video="{{config('app.ftp_url').@$story->media->path}}">
                     <img src="{{@$story->user->picture}}" alt="Story 1" class="img-fluid rounded-circle">
-                    <p class="username">{{$story->user->name}}</p>
+                    <p class="username">{{$story->title}}</p>
                 </div>
             @endforeach
         </div>
     </div>
 </div>
+<hr class="text-white mb-5">
