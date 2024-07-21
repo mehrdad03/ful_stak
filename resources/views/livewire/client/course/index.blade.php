@@ -26,8 +26,11 @@
 @endpush
 <div>
 
-    <!-- Stories -->
-    @include('livewire.client.course.stories.index')
+    @if(count($otherStories)>0)
+        <!-- Stories -->
+        @include('livewire.client.course.stories.index')
+    @endif
+
     <!-- video on mobile -->
     @include('livewire.client.course.mobile-video')
     <!-- Main Row -->
