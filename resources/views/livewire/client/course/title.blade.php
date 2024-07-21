@@ -67,6 +67,9 @@
         <a class="text-dark p-2 scroll-btn" href="#description">
             توضیحات دوره
         </a>
+        <a class="text-dark p-2 scroll-btn" href="#questions">
+          پرسش و پاسخ
+        </a>
     </div>
 
 </div>
