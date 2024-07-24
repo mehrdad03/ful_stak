@@ -13,11 +13,11 @@
                         $title=explode('_',$item->course->title);
                         $currentYear=date('Y');
                     @endphp
-                    <a href="{{route('client.course',$item->course->url_slug)}}" style="color: initial" class=" d-flex align-items-start justify-content-between">
-                        <div class="course-cover w-25">
-                            <img src="/{{@$item->course->coverImage->path }}" class="w-100" alt="">
+                    <a href="{{route('client.course',$item->course->url_slug)}}" style="color: initial" class=" d-flex align-items-start justify-content-start">
+                        <div class="course-cover align-items-center justify-content-center d-flex">
+                               <img loading="lazy"  src="/{{@$item->course->coverImage->path }}" width="70" alt="">
                         </div>
-                        <div class="course-cover w-75 pe-3">
+                        <div class="course-cover w-100 pe-3">
                             <p class="title py-2 m-0">
                                 {{$title[0]}}
                                 <span class="text-primary">{{$title[1]}}</span>

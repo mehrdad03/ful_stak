@@ -8,6 +8,13 @@ main {
     margin: 4% 0;
     border-radius: 100%;
 }
+
+.sidebar .profileEmail {
+    text-overflow: ellipsis;
+    overflow-x: hidden;
+    max-width: 210px;
+    direction: ltr;
+}
 .sidebar > div {
     border-bottom: 2px dashed #23bf64;
 }

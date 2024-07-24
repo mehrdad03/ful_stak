@@ -14,7 +14,7 @@
         <div class="course mb-4 bg-secondary">
             <a  href="{{route('client.course',$item->course->url_slug)}}"
                class="d-flex align-items-center right ">
-                <img src="{{@$item->course->coverImage->path}}" alt="{{$item->title}}" class="d-none d-md-block w-100"/>
+                   <img loading="lazy"  src="{{@$item->course->coverImage->path}}" alt="{{$item->title}}" width="70" class="d-none d-md-block"/>
                 <!-- course & master name -->
                 <div class="me-4">
                     <h5 class="text-white fw-bold">

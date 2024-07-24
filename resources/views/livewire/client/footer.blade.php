@@ -8,7 +8,7 @@
         <div class="row">
             <!-- logo -->
             <div class="col-12 text-center mb-5 col-lg-2">
-                <img src="/frontend/assets/images/logo.png" alt="logo" class="logo"/>
+              <img loading="lazy"  src="/frontend/assets/images/logo.png" alt="logo" class="logo"/>
             </div>
             <!-- navigation -->
             <div class="col-6 col-md-3 col-lg-3">
@@ -49,14 +49,14 @@
             </div>
             <!-- eNamad -->
             <a href="javascript:0" id="enamad" class="col-6 col-md-3 col-lg-2">
-                <img
+              <img loading="lazy"
                     src="/frontend/assets/images/eNamad.png"
                     alt="eNmad logo"
                     class="w-75"/>
             </a>
             <!-- zarinPal -->
             <div class="col-6 col-md-3 col-lg-2">
-                <img
+              <img loading="lazy"
                     src="/frontend/assets/images/zplogo.png"
                     alt="zarinpal logo"
                     class="w-50"/>

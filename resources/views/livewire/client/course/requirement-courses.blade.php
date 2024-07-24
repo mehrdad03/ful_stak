@@ -16,7 +16,7 @@
                     <div class="col-md-4">
                         <a href="{{route('client.course',$item->course->url_slug)}}"
                            class="d-block cover text-center text-white p-2">
-                            <img src="/{{@$item->course->coverImage->path }}" class="w-50" alt="">
+                               <img loading="lazy"  src="/{{@$item->course->coverImage->path }}" width="70" alt="">
                         </a>
                         <a href="{{route('client.course',$item->course->url_slug)}}"
                            class="d-block title text-center text-white my-2">

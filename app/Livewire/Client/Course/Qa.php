@@ -7,35 +7,20 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\ValidationException;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class Qa extends Component
 {
+    use WithPagination;
 
-    public $comments;
+
     public $courseId;
-
-    public function mount()
-    {
-        $this->comments = Comment::query()
-            ->where([
-                'course_id' => $this->courseId,
-                'status' => true,
-                'comment_id' => 0,
-            ])
-            ->with('answers',function ($query) {
-                $query->where('status', true);
-            }, 'user:id,name,picture')
-            ->latest()
-            ->get();
-
-    }
 
     /**
      * @throws ValidationException
      */
     public function submitCourseComment($formData, Comment $comment): void
     {
-
         $validator = Validator::make($formData, [
             'comment' => 'required|min:10|max: 700',
         ], [
@@ -48,9 +33,7 @@ class Qa extends Component
         $validator->validate();
         $this->resetValidation();
 
-        //session output is
-        $comment->submitCourseComment($formData, $this->courseId);
-
+        $comment->submitCourseComment($formData, $this->course->id);
         session()->flash('message', 'نظر شما با موفقیت ثبت شد بعد از تایید نمایش داده خواهد شد!');
 
 
@@ -62,7 +45,7 @@ class Qa extends Component
     public function submitCourseCommentAnswer($formData, $comment_id, Comment $comment): void
     {
 
-        $formData['comment_id']=$comment_id;
+        $formData['comment_id'] = $comment_id;
 
         $validator = Validator::make($formData, [
             'answer' => 'required|min:10|max: 700',
@@ -79,8 +62,7 @@ class Qa extends Component
         $this->resetValidation();
 
         //session output is
-        $comment->submitCourseCommentAnswer($formData,$comment_id, $this->courseId);
-
+        $comment->submitCourseCommentAnswer($formData, $comment_id, $this->course->id);
         session()->flash('answer_message', 'نظر شما با موفقیت ثبت شد بعد از تایید نمایش داده خواهد شد!');
 
 
@@ -88,6 +70,22 @@ class Qa extends Component
 
     public function render()
     {
-        return view('livewire.client.course.qa');
+        $comments = Comment::query()
+            ->where([
+                'course_id' => $this->courseId,
+                'status' => true,
+                'comment_id' => 0,
+            ])
+            ->with(['answers' => function ($query) {
+                $query->where('status', true)->with('user');
+            }, 'user:id,name,picture'])
+            ->latest()
+            ->paginate(10);
+
+        /*dd($comments);*/
+
+        return view('livewire.client.course.qa',[
+            'comments' => $comments,
+        ]);
     }
 }

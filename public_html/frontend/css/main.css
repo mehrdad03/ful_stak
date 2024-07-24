@@ -387,7 +387,6 @@ header .header-basket {
     height: 100vh;
     display: flex;
     align-items: start;
-    padding-top: 80px ;
 }
 
 .vertical-slider {
@@ -1040,15 +1039,10 @@ footer #scrollTopBtn {
     font-size: 58px;
     border: none;
     outline: none;
-    background-color: #0b141b;
+    background-color: transparent;
     color: white;
     cursor: pointer;
     border-radius: 50%;
     align-items: center;
     justify-content: center;
 }
-
-footer #scrollTopBtn:hover {
-    background-color: #333;
-}
-

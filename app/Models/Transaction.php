@@ -41,9 +41,6 @@ class Transaction extends Model
             Order::query()->where('id', $orderId)->update(['pay_status' => $status]);
             OrderItem::query()->where('order_id', $orderId)->update(['pay_status' => $status]);
 
-
-
-
         });
 
         Session::put('paymentStatus', $status);
@@ -59,7 +56,7 @@ class Transaction extends Model
     function transactionNumber(): int
     {
         do {
-            $randomCode = rand(1000, 100000000);
+            $randomCode = rand(10000, 1000000000);
 
             $checkCode = Transaction::query()->where('trans_number', $randomCode)->first();
         } while ($checkCode);

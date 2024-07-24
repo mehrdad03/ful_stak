@@ -4,11 +4,11 @@
 
 
     <!-- Step 1 -->
-    <img
+     <img loading="lazy"
         src="/frontend/assets/images/step1.png"
         alt="first step"
         class="road d-none d-md-block"/>
-    <img
+     <img loading="lazy"
         src="/frontend/assets/images/step1M.png"
         alt="mobile step Line"
         class="d-md-none"/>
@@ -84,7 +84,7 @@
                             <div class="swiper-slide borderSlider">
                                 <a target="_blank" href="{{route('client.course',$course->url_slug)}}"
                                    class="course-cover">
-                                    <img
+                                     <img loading="lazy"
                                         src="{{@$course->coverImage->path }}"
                                         alt="html"
                                         class="roadIcon"
@@ -94,11 +94,11 @@
                                    class="course-cover">
                                     <h3 class="fw-bolder text-white w-100 pt-2">
                                         <span
-                                            class="text-primary pt-5 d-block">{{str_replace('_',' ', $course->title)}}</span>
+                                            class="text-primary d-block">{{str_replace('_',' ', $course->title)}}</span>
                                     </h3>
                                 </a>
                                 <p class="text-white flex-grow-1 w-100">
-                                    {{mb_substr($course->short_description, 0, 100)}} ...
+                                    {{mb_substr($course->short_description, 0, 150)}} ...
                                 </p>
                                 <div class="d-flex align-items-center justify-content-between mb-2 w-100 ps-2 pe-2">
                                     <!-- course duration -->
@@ -125,11 +125,11 @@
     @endif
 
     <!-- Step 2 -->
-    <img
+     <img loading="lazy"
         src="/frontend/assets/images/step2.png"
         alt="step 2"
         class="d-none d-md-block"/>
-    <img
+     <img loading="lazy"
         src="/frontend/assets/images/step2M.png"
         alt="mobile Step Line"
         class="d-md-none"/>
@@ -157,7 +157,7 @@
                             <div class="swiper-slide borderSlider">
                                 <a target="_blank" href="{{route('client.course',$course->url_slug)}}"
                                    class="course-cover">
-                                    <img
+                                     <img loading="lazy"
                                         src="{{@$course->coverImage->path }}"
                                         alt="html"
                                         class="roadIcon"
@@ -165,11 +165,11 @@
                                 </a>
                                 <a target="_blank" href="{{route('client.course',$course->url_slug)}}">
                                     <h3 class="fw-bolder text-white w-100 pt-2"><span
-                                            class="text-primary pt-5 d-block">{{str_replace('_',' ', $course->title)}}</span>
+                                            class="text-primary d-block">{{str_replace('_',' ', $course->title)}}</span>
                                     </h3>
                                 </a>
                                 <p class="text-white flex-grow-1 w-100">
-                                    {{mb_substr($course->short_description, 0, 100)}} ...
+                                    {{mb_substr($course->short_description, 0, 150)}} ...
                                 </p>
                                 <div class="d-flex align-items-center justify-content-between mb-2 w-100 ps-2 pe-2">
                                     <!-- course duration -->
@@ -243,11 +243,11 @@
     @endif
 
     <!-- Step 3 -->
-    <img
+     <img loading="lazy"
         src="/frontend/assets/images/step3.png"
         alt="step 3"
         class="d-none d-md-block"/>
-    <img
+     <img loading="lazy"
         src="/frontend/assets/images/step3M.png"
         alt="mobile Step Line"
         class="d-md-none"/>
@@ -300,7 +300,7 @@
                 </div>
             </div>
             <!-- Fullstack Courses -->
-            <div class="col-12 col-xl-10 mt-4 mt-sm-0 p-0">
+            <div class="col-12 col-xl-10 mt-4 mt-sm-0 p-0" id="full-stack">
                 <div class="swiper mySwiper">
                     <div class="swiper-wrapper">
                         @foreach ($categories['fullstack-road-map']->courses as $course)
@@ -313,24 +313,29 @@
 
                                 // نمایش با فرمت ساعت:دقیقه:ثانیه
                                $formattedTime = sprintf('%02d:%02d:%02d', $hours, $minutes, $seconds);
+
+                               $href='javascript:0';
+                              if ($course->total_duration!=0){
+                                  $href=route('client.course',$course->url_slug);
+                              }
                             @endphp
                             <div  class="swiper-slide borderSlider">
-                                <a target="_blank" href="{{route('client.course',$course->url_slug)}}"
+                                <a target="_blank" href="{{$href}}"
                                    class="course-cover">
-                                    <img
+                                     <img loading="lazy"
                                         src="{{@$course->coverImage->path }}"
                                         alt="html"
                                         class="roadIcon"
                                         {{$course->url_slug=='docker-tutorial'?'width=210':'width=125'}}
                                        />
                                 </a>
-                                <a target="_blank" href="{{route('client.course',$course->url_slug)}}">
+                                <a target="_blank" href="{{$href}}">
                                     <h3 class="fw-bolder text-white w-100 pt-2"><span
-                                            class="text-primary pt-5 d-block">{{str_replace('_',' ', $course->title)}}</span>
+                                            class="text-primary d-block">{{str_replace('_',' ', $course->title)}}</span>
                                     </h3>
                                 </a>
                                 <p class="text-white flex-grow-1 w-100">
-                                    {{mb_substr($course->short_description, 0, 100)}} ...
+                                    {{mb_substr($course->short_description, 0, 150)}} ...
                                 </p>
                                 <div class="d-flex justify-content-between w-100 mb-2">
                                     <!-- course duration -->
@@ -359,7 +364,7 @@
                                     @endif
 
                                 </div>
-                                <a target="_blank" href="{{route('client.course',$course->url_slug)}}"
+                                <a target="_blank" href="{{$href}}"
                                    class="main-btn text-white px-3 py-2 ">مشاهده دوره</a>
                             </div>
                         @endforeach
@@ -372,11 +377,11 @@
     @endif
 
     <!-- Last Step -->
-    <img
+     <img loading="lazy"
         src="/frontend/assets/images/lastStep.png"
         alt="last step"
         class="lastRoad d-none d-md-block"/>
-    <img
+     <img loading="lazy"
         src="/frontend/assets/images/lastStepM.png"
         alt="mobile Step Line"
         class="d-md-none"/>

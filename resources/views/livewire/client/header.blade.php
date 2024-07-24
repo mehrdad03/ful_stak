@@ -9,11 +9,11 @@
         <div class="container">
             <div class="w-100 d-flex justify-content-between align-items-center">
                 <div class="d-block d-lg-none mx-sm-4" id="openMenu">
-                    <img src="/frontend/assets/images/menu.png" alt="menu"/>
+                       <img loading="lazy"  src="/frontend/assets/images/menu.png" alt="menu"/>
                 </div>
                 <!-- logo -->
                 <a class="navbar-brand"  href="{{route('client.home')}}">
-                    <img src="/frontend/assets/images/logo.png" alt="logo" class="logo"/>
+                       <img loading="lazy"  src="/frontend/assets/images/logo.png" alt="logo" class="logo"/>
                 </a>
                 <ul class="navbar-nav d-none d-lg-flex gap-4">
 
@@ -107,14 +107,14 @@
                             </svg>
                         </a>
                         <button type="button" class="bg-transparent">
-                            <img src="{{$user->picture ?? '/frontend/assets/images/default.png'}}" alt="user picture"/>
+                               <img loading="lazy"  src="{{$user->picture ?? '/frontend/assets/images/default.png'}}" alt="user picture"/>
                         </button>
                         @if($prefix!='profile')
                             <!-- popover -->
                             <div class="popover position-absolute bg-secondary">
                                 <!-- avatar & phoneNumber -->
                                 <div class="d-flex  py-3">
-                                    <img src="{{$user->picture ?? '/frontend/assets/images/default.png'}}"
+                                       <img loading="lazy"  src="{{$user->picture ?? '/frontend/assets/images/default.png'}}"
                                          alt="user picture"/>
                                     <div class="text-right me-3">
                                         <h6 class="m-0 pb-2 text-white fw-bold user_name"> مهرداد داداش </h6>
@@ -243,7 +243,7 @@
         <div class="mobileMenu">
             <!-- logo -->
             <div class="d-flex justify-content-around py-4">
-                <img src="/frontend/assets/images/logo.png" alt="logo" class="logo"/>
+                   <img loading="lazy"  src="/frontend/assets/images/logo.png" alt="logo" class="logo"/>
                 <div id="closeMenu">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"

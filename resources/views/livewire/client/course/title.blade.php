@@ -46,7 +46,7 @@
                     fill="currentColor"></path>
             </svg>
 
-            شرکت کنندگان :<span class="text-primary me-1">{{number_format($studentsCount)}}</span> دانشجو )
+            شرکت کنندگان :<span class="text-primary me-1">{{number_format(241)}}</span> دانشجو )
         </p>
         <!-- Updated on -->
         <div class="d-flex justify-content-center fw-medium date">
@@ -58,17 +58,17 @@
         @include('livewire.client.course.countdown')
     @endif
     <div class=" d-flex justify-content-between w-100 main-btn text-white fw-medium d-none d-lg-flex ">
-        <a class="text-dark p-2 scroll-btn" href="#season">
-            سرفصل های دوره
-        </a>
         <a class="text-dark p-2 scroll-btn" href="#requirements">
             پیش نیاز ها
         </a>
-        <a class="text-dark p-2 scroll-btn" href="#description">
-            توضیحات دوره
+        <a class="text-dark p-2 scroll-btn" href="#season">
+            سرفصل های دوره
         </a>
         <a class="text-dark p-2 scroll-btn" href="#questions">
-          پرسش و پاسخ
+            پرسش و پاسخ
+        </a>
+        <a class="text-dark p-2 scroll-btn" href="#description">
+            توضیحات دوره
         </a>
     </div>
 

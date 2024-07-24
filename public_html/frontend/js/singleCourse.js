@@ -45,4 +45,10 @@ document.addEventListener('livewire:navigated', () => {
         var formParent = $(this).parents(".question");
         formParent.find(".newA").toggle();
     });
+
+        $('.page-item').on('click', function () {
+        const section = document.getElementById('questions');
+        section.scrollIntoView({behavior: 'smooth', block: 'start'});
+    })
+
 });

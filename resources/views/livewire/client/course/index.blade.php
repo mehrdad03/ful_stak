@@ -55,6 +55,7 @@
                 @include('livewire.client.course.mobile-course-detail')
             @endif
             <!-- ======= Q & A ======= -->
+            {{--<livewire:client.course.qa :courseId="$course->id" lazy />--}}
             @include('livewire.client.course.qa')
             <!-- ======= video modal ======= -->
             @include('livewire.client.course.video-modal')

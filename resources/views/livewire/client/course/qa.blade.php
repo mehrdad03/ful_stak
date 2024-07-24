@@ -125,6 +125,7 @@
         @endauth
     </div>
 
+
     @forelse($comments as $comment)
 
         <!-- question -->
@@ -132,7 +133,7 @@
             <div
                 class="d-flex justify-content-between align-items-center px-1 px-lg-4 pb-3 border-bottom">
                 <div class="d-flex align-items-center column-gap-3">
-                    <img
+                    <img loading="lazy"
                         src="/frontend/assets/images/default.png"
                         alt="avatar"
                         class="avatar rounded-5 rounded-5 border border-white border-4"/>
@@ -210,7 +211,7 @@
 
         <div>
             @forelse($comment->answers as $answer)
-                <img
+                <img loading="lazy"
                     src="/frontend/assets/images/ans.png"
                     alt="answer"
                     class="ansBorder"/>
@@ -219,7 +220,7 @@
                     <div
                         class="d-flex justify-content-between align-items-center px-4 pb-3 border-bottom">
                         <div class="d-flex align-items-center column-gap-3">
-                            <img
+                            <img loading="lazy"
                                 src="{{@$answer->user->picture}}"
                                 alt="avatar"
                                 class="avatar rounded-5 rounded-5 border border-white border-4"/>
@@ -249,6 +250,7 @@
                 const section = document.getElementById('questions');
                 section.scrollIntoView({behavior: 'smooth', block: 'start'});
             })
+
         </script>
     @endpush
 </section>

@@ -13,12 +13,12 @@
             </svg>
           </span>
     <div class="d-flex flex-column align-items-center mb-3 mb-md-5">
-        <img
+           <img loading="lazy"
             src="{{$user->picture ?? '/frontend/assets/images/default.png'}}"
             alt="User Profile"
             class="profileImg" />
         <h5 class="text-white fw-bold my-2">{{$user->name}}</h5>
-        <p class="text-primary">{{$user->mobile??$user->email}}</p>
+        <p  class="profileEmail text-primary">{{$user->mobile??$user->email}}</p>
     </div>
 
     <ul class="p-0">

@@ -38,7 +38,7 @@ class Index extends Component
     public function seoConfing()
     {
         $this->seo()
-            ->setTitle('آموزش برنامه نویسی از صفر تا صد')
+            ->setTitle('آموزش برنامه نویسی (رایگان) از صفر تا صد')
             ->setDescription('آموزش برنامه نویسی فول استک  پروژه محور در جهت ورود به بازار کار ');
     }
 

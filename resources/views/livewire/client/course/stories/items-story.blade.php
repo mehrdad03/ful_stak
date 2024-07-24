@@ -15,7 +15,7 @@
 
                 <div class="item text-center mx-2" data-toggle="modal" data-target="#show-story"
                      data-video="{{config('app.ftp_url').@$firstStory->media->path}}">
-                    <img src="{{@$firstStory->user->picture}}" alt="{{$course->title}}"
+                       <img loading="lazy"  src="{{@$firstStory->user->picture}}" alt="{{$course->title}}"
                          class="img-fluid rounded-circle">
                     <p class="username">{{$firstStory->title}}</p>
                 </div>
@@ -26,7 +26,7 @@
                 <div class="item text-center mx-2" data-toggle="modal" data-target="#show-story"
                      data-story="{{$story->id}}"
                      data-video="{{config('app.ftp_url').@$story->media->path}}">
-                    <img src="{{@$story->user->picture}}" alt="Story 1" class="img-fluid rounded-circle">
+                       <img loading="lazy"  src="{{@$story->user->picture}}" alt="Story 1" class="img-fluid rounded-circle">
                     <p class="username">{{$story->title}}</p>
                 </div>
             @endforeach
