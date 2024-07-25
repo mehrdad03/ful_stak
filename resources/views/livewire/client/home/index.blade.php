@@ -3,8 +3,8 @@
 
     @include('livewire.client.home.hero')
 
-    <!-- ========== intro Section ========== -->
-    @include('livewire.client.home.intro')
+   {{-- <!-- ========== intro Section ========== -->
+    @include('livewire.client.home.intro')--}}
 
     <!-- ========== Target Section ========== -->
     @include('livewire.client.home.target')

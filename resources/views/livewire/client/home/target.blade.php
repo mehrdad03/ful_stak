@@ -1,3 +1,6 @@
+<!-- hr -->
+<img src="/frontend/assets/images/hr.png" alt="HR" class="hr mt-0" />
+
 <section id="target">
     <h2 class="d-none d-xl-block title-text fs-2">هدف تیم ما</h2>
     <h5 class="d-none d-xl-block text-white fw-semibold my-4">

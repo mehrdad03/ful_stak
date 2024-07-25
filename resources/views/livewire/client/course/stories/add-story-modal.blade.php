@@ -30,7 +30,7 @@
                 <form wire:submit.prevent="addStory(Object.fromEntries(new FormData($event.target)))">
                     <div class="form-group">
                         <div class="form-group">
-                            <label for="title" class="mb-2 text-white">عنوان</label>
+                            <label for="title" class="mb-2 text-white">عنوان (اختیاری)</label>
                             <input name="title" class="form-control" id="title">
                         </div>
                         @error('title')

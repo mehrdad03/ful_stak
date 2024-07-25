@@ -88,7 +88,7 @@
                                         src="{{@$course->coverImage->path }}"
                                         alt="html"
                                         class="roadIcon"
-                                        width="125"/>
+                                        width="125" style="top: -80px"/>
                                 </a>
                                 <a target="_blank" href="{{route('client.course',$course->url_slug)}}"
                                    class="course-cover">
@@ -161,7 +161,7 @@
                                         src="{{@$course->coverImage->path }}"
                                         alt="html"
                                         class="roadIcon"
-                                        width="125"/>
+                                        width="125" style="top: -80px"/>
                                 </a>
                                 <a target="_blank" href="{{route('client.course',$course->url_slug)}}">
                                     <h3 class="fw-bolder text-white w-100 pt-2"><span
@@ -325,7 +325,7 @@
                                      <img loading="lazy"
                                         src="{{@$course->coverImage->path }}"
                                         alt="html"
-                                        class="roadIcon"
+                                        class="roadIcon" style="top: -80px"
                                         {{$course->url_slug=='docker-tutorial'?'width=210':'width=125'}}
                                        />
                                 </a>

@@ -3,14 +3,14 @@
     <section id="projects" class="position-relative">
         <div class="row flex-column flex-lg-row row-gap-3 align-items-center">
             <div
-                class="col-12 col-lg-2 col-xl-3 z-3 d-flex flex-wrap align-items-center justify-content-between d-lg-block">
-                <h2 class="title-text fs-2">مستر کلاس ها</h2>
+                class="col-12 col-lg-2 col-xl-3 z-3 d-flex flex-wrap mb-5 align-items-center justify-content-between d-lg-block">
+                <h2 class="title-text fs-2 m-0">مستر کلاس ها</h2>
                 <img
                     src="/frontend/assets/images/brain.webp"
                     alt="brain"
                     class="d-none d-lg-block w-75"/>
                 <a href="#" class="d-flex align-items-center column-gap-2">
-                    <h4 class="text-primary m-0">مشاهده همه پروژه ها</h4>
+                    <h4 class="text-primary m-0"> همه پروژه ها</h4>
                     <svg
                         width="14"
                         height="24"
@@ -44,8 +44,8 @@
                                     <img
                                         src="{{@$course->coverImage->path }}"
                                         alt="html"
-                                        class="roadIcon rounded-2"
-                                        width="230"/>
+                                        class="roadIcon rounded-5"
+                                        width="260"/>
                                 </a>
                                 <a target="_blank" href="{{route('client.course',$course->url_slug)}}"
                                    class="course-cover">
@@ -66,8 +66,9 @@
                                     <!-- Course Liked -->
                                     <div class="d-flex align-items-center">
                                         <p class="m-0 text-white fw-medium">
-
-                                            <span class="d-block text-decoration-line-through text-danger">{{number_format(@$course->price)}}</span>
+                                            @if($course->discount!=0)
+                                                <span class="d-block text-decoration-line-through text-danger">{{number_format(@$course->price)}}</span>
+                                            @endif
                                             <span class="d-block">{{number_format(@$course->price-@$course->discount)}}
                                             <span class="m-0 text-primary fw-bold me-2">تومان</span>
                                             </span>

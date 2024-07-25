@@ -14,7 +14,7 @@
                 <!-- table title -->
                 <table id="table" class="w-100 responsive_table" border="1">
                     <!-- thead -->
-
+                    
                     <!-- tbody -->
                     <tbody class="">
                     @forelse($transaction->order->orderItems as $item)

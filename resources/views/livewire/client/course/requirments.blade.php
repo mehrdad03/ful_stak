@@ -24,7 +24,7 @@
                     <div class="swiper-slide borderSlider">
                         <a target="_blank" href="{{route('client.course',$item->course->url_slug)}}"
                            class="course-cover">
-                              <img loading="lazy"
+                              <img loading="lazy" style="top: -60px;"
                                 src="/{{@$item->course->coverImage->path }}"
                                 alt="html"
                                 class="roadIcon"

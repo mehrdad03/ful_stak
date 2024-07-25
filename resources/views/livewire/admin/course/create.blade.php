@@ -184,7 +184,7 @@
                                         class="text-danger d-block mb-2">{{ $message }}</span> @enderror
                                     @if(@$course->coverImage->path)
                                         <div class="w-100 mb-4">
-                                            <img src="{{config('app.ftp_url').@$course->coverImage->path }}"
+                                            <img src="/{{@$course->coverImage->path }}"
                                                  style="width: 307px;border-radius: 5%"
                                                  class=" ms-2 media-avatar"
                                                  alt="Product">

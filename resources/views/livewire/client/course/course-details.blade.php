@@ -1,4 +1,4 @@
-<section class="explain position-relative lh-lg" id="description">
+<section class="explain position-relative" id="details">
     <h3 class="text-primary fs-2">توضیحات دوره</h3>
 
     <!-- explain Text -->
