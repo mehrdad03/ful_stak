@@ -16,6 +16,7 @@ use App\Models\Story;
 use Artesaos\SEOTools\Traits\SEOTools;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\ValidationException;
@@ -62,50 +63,44 @@ class Index extends Component
 
     public function mount(Course $course): void
     {
-        $agent = new Agent();
-        $agent->isMobile();
-        if ($agent->isMobile()) {
-            $this->mobile = true;
-        }
+        $this->mobile = (new Agent())->isMobile();
 
-
-        $this->course = $course->load([
-            'sections.sectionLectures.video',
-            'category:id,title,url_slug',
-            'requirementsCourses.course' => function($query) {
-                $query->select('id', 'title','price','short_description', 'url_slug')->with('coverImage');
-            }
-        ]);
+        $this->course = Cache::remember("course_{$course->id}", 3600, function () use ($course) {
+            return $course->load([
+                'sections.sectionLectures.video',
+                'category:id,title,url_slug',
+                'requirementsCourses.course' => function($query) {
+                    $query->select('id', 'title', 'price', 'short_description', 'url_slug')->with('coverImage');
+                }
+            ]);
+        });
 
         $this->lecturesCount = $course->lectures->count();
-        /*$this->sameCourses = Course::query()
-            ->where('category_id', $this->course->category_id)
-            ->with('coverImage:id,path,course_id')
-            ->select('id', 'title', 'short_description', 'url_slug')->get();*/
         $this->courseTotalDuration = CourseSectionLecture::query()
             ->where('course_id', $this->course->id)
             ->sum('duration');
 
+        $this->checkPurchase = Cache::remember("purchase_check_{$this->course->id}", 3600, function () {
+            return OrderItem::query()
+                ->where([
+                    'user_id' => Auth::id(),
+                    'course_id' => $this->course->id,
+                    'pay_status' => true
+                ])->exists();
+        });
 
-        $this->checkPurchase = OrderItem::query()
-            ->where([
+        $this->progress = Cache::remember("course_progress_" . Auth::id() . "_" . $course->id, 3600, function () use ($course) {
+            return CourseUserProgress::query()->where([
                 'user_id' => Auth::id(),
-                'course_id' => $this->course->id,
-                'pay_status' => true
-            ])->exists();
-
-        $this->progress = CourseUserProgress::query()->where([
-            'user_id' => Auth::id(),
-            'course_id' => $course->id,
-        ])->pluck('progress')->first();
+                'course_id' => $course->id,
+            ])->pluck('progress')->first();
+        });
 
         $this->updateStudents();
         $this->checkLatestStory();
         $this->getCourseStories();
         $this->seoConfing();
         $this->freeLectures();
-        /*   dd($this->course->requirementsCourses);*/
-
     }
 
 
@@ -540,17 +535,19 @@ class Index extends Component
         ])->exists();
 
 
-        $comments = Comment::query()
-            ->where([
-                'course_id' => $this->course->id,
-                'status' => true,
-                'comment_id' => 0,
-            ])
-            ->with(['answers' => function ($query) {
-                $query->where('status', true)->with('user');
-            }, 'user:id,name,picture'])
-            ->latest()
-            ->paginate(10);
+        $comments = Cache::remember("course_comments_{$this->course->id}", 3600, function () {
+            return Comment::query()
+                ->where([
+                    'course_id' => $this->course->id,
+                    'status' => true,
+                    'comment_id' => 0,
+                ])
+                ->with(['answers' => function ($query) {
+                    $query->where('status', true)->with('user');
+                }, 'user:id,name,picture'])
+                ->latest()
+                ->paginate(10);
+        });
 
         return view('livewire.client.course.index', [
             'comments' => $comments,

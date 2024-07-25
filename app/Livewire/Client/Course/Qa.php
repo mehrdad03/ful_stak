@@ -7,28 +7,15 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\ValidationException;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class Qa extends Component
 {
+    use WithPagination;
 
-    public $comments;
+    /*public $comments;*/
     public $courseId;
 
-    public function mount()
-    {
-        $this->comments = Comment::query()
-            ->where([
-                'course_id' => $this->courseId,
-                'status' => true,
-                'comment_id' => 0,
-            ])
-            ->with('answers',function ($query) {
-                $query->where('status', true);
-            }, 'user:id,name,picture')
-            ->latest()
-            ->get();
-
-    }
 
     /**
      * @throws ValidationException
@@ -62,7 +49,7 @@ class Qa extends Component
     public function submitCourseCommentAnswer($formData, $comment_id, Comment $comment): void
     {
 
-        $formData['comment_id']=$comment_id;
+        $formData['comment_id'] = $comment_id;
 
         $validator = Validator::make($formData, [
             'answer' => 'required|min:10|max: 700',
@@ -79,7 +66,7 @@ class Qa extends Component
         $this->resetValidation();
 
         //session output is
-        $comment->submitCourseCommentAnswer($formData,$comment_id, $this->courseId);
+        $comment->submitCourseCommentAnswer($formData, $comment_id, $this->courseId);
 
         session()->flash('answer_message', 'نظر شما با موفقیت ثبت شد بعد از تایید نمایش داده خواهد شد!');
 
@@ -88,6 +75,20 @@ class Qa extends Component
 
     public function render()
     {
-        return view('livewire.client.course.qa');
+        $comments = Comment::query()
+            ->where([
+                'course_id' => $this->courseId,
+                'status' => true,
+                'comment_id' => 0,
+            ])
+            ->with(['answers' => function ($query) {
+                $query->where('status', true)->with('user');
+            }, 'user:id,name,picture'])
+            ->latest()
+            ->paginate(10);
+
+        return view('livewire.client.course.qa', [
+            'comments' => $comments,
+        ]);
     }
 }
