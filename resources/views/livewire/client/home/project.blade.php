@@ -5,7 +5,7 @@
             <div
                 class="col-12 col-lg-2 col-xl-3 z-3 d-flex flex-wrap mb-5 align-items-center justify-content-between d-lg-block">
                 <h2 class="title-text fs-2 m-0">مستر کلاس ها</h2>
-                <img
+                <img loading="lazy"
                     src="/frontend/assets/images/brain.webp"
                     alt="brain"
                     class="d-none d-lg-block w-75"/>
@@ -41,7 +41,7 @@
                                 <!-- course banner -->
                                 <a target="_blank" href="{{route('client.course',$course->url_slug)}}"
                                    class="course-cover">
-                                    <img
+                                    <img loading="lazy"
                                         src="{{@$course->coverImage->path }}"
                                         alt="html"
                                         class="roadIcon rounded-5"
@@ -84,12 +84,12 @@
                 </div>
             </div>
         </div>
-        <img
+        <img loading="lazy"
             src="/frontend/assets/images/projectBg.png"
             alt="projectBg"
             class="d-none d-lg-block"/>
     </section>
     <!-- hr -->
-    <img src="/frontend/assets/images/hr.png" alt="HR" class="hr"/>
+    <img loading="lazy"  src="/frontend/assets/images/hr.png" alt="HR" class="hr"/>
 
 @endif

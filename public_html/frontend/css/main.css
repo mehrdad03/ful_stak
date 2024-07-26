@@ -348,6 +348,9 @@ header .header-basket {
 #roadmapPopup.active {
     opacity: 1;
     height: 140px;
+    box-shadow: 0px 26px 42px -9px rgba(0, 0, 0, 0.64);
+    -webkit-box-shadow: 0px 26px 42px -9px rgba(0, 0, 0, 0.64);
+    -moz-box-shadow: 0px 26px 42px -9px rgba(0, 0, 0, 0.64);
 }
 
 #roadmapPopup .front {
