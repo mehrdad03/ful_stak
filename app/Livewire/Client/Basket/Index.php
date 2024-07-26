@@ -47,7 +47,6 @@ class Index extends Component
         if (!$response->success()) {
             $transactions->savePaymentInfo($response, false, $amount, $orderId);
 
-
         } else {
             $this->status = true;
             $transactions->savePaymentInfo($response, $this->status, $amount, $orderId);

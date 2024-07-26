@@ -14,7 +14,6 @@ use App\Models\RequirementCourse;
 use App\Models\SeoItem;
 use App\Models\Story;
 use Artesaos\SEOTools\Traits\SEOTools;
-use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Session;
@@ -245,7 +244,7 @@ class Index extends Component
 
             //برای زمانی که دوره اصلی به سبد خرید اضاف میشه
 
-            $basket = $basket->addToBasket($this->course->id);
+           // $basket = $basket->addToBasket($this->course->id);
 
             if (count($allRequirementCourses) == 0) {
                 $this->redirect('/cart', navigate: true);
