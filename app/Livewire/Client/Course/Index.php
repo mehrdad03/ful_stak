@@ -30,7 +30,7 @@ use Livewire\WithPagination;
 
 class Index extends Component
 {
-    use WithFileUploads, SEOTools,WithPagination;
+    use WithFileUploads, SEOTools, WithPagination;
 
     public $course;
     public $sameCourses;
@@ -65,6 +65,7 @@ class Index extends Component
     // for pagination
     public $page = 1;
     protected $queryString = ['page'];
+
     public function updatingPage($value): void
     {
         $this->page = $value;
@@ -78,20 +79,42 @@ class Index extends Component
             return $course->load([
                 'sections.sectionLectures.video',
                 'category:id,title,url_slug',
-                'requirementsCourses.course' => function($query) {
+                'requirementsCourses.course' => function ($query) {
                     $query->select('id', 'title', 'price', 'short_description', 'url_slug')->with('coverImage');
                 }
             ]);
         });
 
 
+        $this->lecturesCount($course);
+        $this->courseTotalDuration($course->id);
+        $this->checkPurchase();
+        $this->userprogress($course->id);
+        $this->updateStudents();
+        $this->checkLatestStory();
+        $this->getCourseStories();
+        $this->seoConfing();
+        $this->freeLectures();
+    }
+
+    public function lecturesCount($course)
+    {
         $this->lecturesCount = Cache::remember("course_lectures_count_{$course->id}", 3600, function () use ($course) {
             return $course->lectures->count();
         });
 
+
+    }
+
+    public function courseTotalDuration($courseId)
+    {
         $this->courseTotalDuration = CourseSectionLecture::query()
-            ->where('course_id', $this->course->id)
+            ->where('course_id', $courseId)
             ->sum('duration');
+    }
+
+    public function checkPurchase()
+    {
 
         $this->checkPurchase = Cache::remember("purchase_check_{$this->course->id}", 3600, function () {
             return OrderItem::query()
@@ -102,20 +125,19 @@ class Index extends Component
                 ])->exists();
         });
 
-        $this->progress = Cache::remember("course_progress_" . Auth::id() . "_" . $course->id, 3600, function () use ($course) {
+    }
+
+    public function userProgress()
+    {
+        $this->progress = Cache::remember("course_progress_" . Auth::id() . "_" . $this->course->id, 3600, function () {
             return CourseUserProgress::query()->where([
                 'user_id' => Auth::id(),
-                'course_id' => $course->id,
+                'course_id' => $this->course->id,
             ])->pluck('progress')->first();
         });
 
-        $this->updateStudents();
-        $this->checkLatestStory();
-        $this->getCourseStories();
-        $this->seoConfing();
-        $this->freeLectures();
-    }
 
+    }
 
     public function freeLectures()
     {
@@ -210,8 +232,6 @@ class Index extends Component
         $allRequirementCourses = $this->getRequirementsCourses()->pluck('prerequisite_course_id')->toArray();
 
 
-
-
         if ($requirementsCourses === 'all') {
 
 //برای زمانی که کل دور های پیش نیاز به سبد خرید اضافه میشن
@@ -227,7 +247,7 @@ class Index extends Component
 
             $basket = $basket->addToBasket($this->course->id);
 
-            if (count($allRequirementCourses)==0){
+            if (count($allRequirementCourses) == 0) {
                 $this->redirect('/cart', navigate: true);
             }
 
@@ -315,7 +335,7 @@ class Index extends Component
         } else {
             $newCount = $currentCount;
         }
-        $this->studentsCount=$newCount;
+        $this->studentsCount = $newCount;
     }
 
     public function getLectureId($lectureId): void
