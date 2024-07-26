@@ -3,12 +3,29 @@
     <div class="modal-dialog modal-dialog-centered 	modal-lg ">
         <div class="modal-content" style="background: #20222F">
             <div class="modal-header px-4">
-                <h5 class="modal-title text-white" id="exampleModalLabel" wire:ignore>دوره های پیش نیاز این دوره</h5>
+                <h5 class="modal-title text-white" id="exampleModalLabel" wire:ignore>
+                    دوره های پیش نیاز این دوره
+                    @if($isMasterCourse)
+                        <span class="text-danger">(رایگان)</span>
+                    @endif
+
+
+                </h5>
                 <button type="button" class="close px-2 fs-4 rounded-1" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">×</span>
                 </button>
             </div>
             <div class="modal-body row text-white">
+
+        <div class="col-12">
+            <div class="alert alert-primary" role="alert">
+                 درصورت خرید دوره مستر کلاس
+                پیش نیاز این دوره به ملبغ
+               <strong> {{number_format($masterCourseRequirementsTotalPrice)}}</strong>
+                تومان
+                برای شما <span class="text-danger fw-bold">رایگان</span> خواهد بود.
+            </div>
+        </div>
                 @foreach($course->requirementsCourses as $item)
                     @php
                         $title=explode('_',$item->course->title);
@@ -26,13 +43,22 @@
                             </span>
                             {{@$title[2]}}
                         </a>
-                        <div class="mb-2 text-white text-center fw-medium">
-                            <span class="m-0 text-danger fw-bold me-1">رایگان</span>
-                        </div>
-                        <div class="mb-2 text-white text-center fw-medium text-decoration-line-through" >
-                            {{number_format($item->course->price)}}
-                            <span class="m-0 text-white fw-bold me-1">تومان</span>
-                        </div>
+                        @if($isMasterCourse)
+                            <div class="mb-2 text-white text-center fw-medium">
+                                <span class="m-0 text-danger fw-bold me-1">رایگان</span>
+                            </div>
+                            <div class="mb-2 text-white text-center fw-medium text-decoration-line-through" >
+                                {{number_format($item->course->price)}}
+                                <span class="m-0 text-white fw-bold me-1">تومان</span>
+                            </div>
+
+                        @else
+                            <div class="mb-2 text-white text-center fw-medium" >
+                                {{number_format($item->course->price)}}
+                                <span class="m-0 text-white fw-bold me-1">تومان</span>
+                            </div>
+                        @endif
+
 
                         <div class="action text-center" wire:ignore>
                             <button class=" btn btn-outline-success"

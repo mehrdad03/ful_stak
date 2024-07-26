@@ -61,9 +61,15 @@ class Index extends Component
     public $freeLectures = [];
 
 
-    // for pagination
+    // for pagination in the caching query
     public $page = 1;
     protected $queryString = ['page'];
+
+// for pagination in the caching query
+
+//for set free requirements course do master class
+    public $isMasterCourse = false;
+    public $masterCourseRequirementsTotalPrice = 0;
 
     public function updatingPage($value): void
     {
@@ -84,11 +90,19 @@ class Index extends Component
             ]);
         });
 
+        // محاسبه مجموع قیمت دوره‌های پیش‌نیاز
+        $requiredCourses = $this->course->requirementsCourses->pluck('course.price');
+        $this->masterCourseRequirementsTotalPrice = $requiredCourses->sum();
+
+        if ($this->course->category->url_slug == 'master-courses') {
+            $this->isMasterCourse = true;
+        }
+
 
         $this->lecturesCount($course);
         $this->courseTotalDuration($course->id);
         $this->checkPurchase();
-        $this->userprogress($course->id);
+        $this->userprogress();
         $this->updateStudents();
         $this->checkLatestStory();
         $this->getCourseStories();
@@ -244,7 +258,7 @@ class Index extends Component
 
             //برای زمانی که دوره اصلی به سبد خرید اضاف میشه
 
-           // $basket = $basket->addToBasket($this->course->id);
+            // $basket = $basket->addToBasket($this->course->id);
 
             if (count($allRequirementCourses) == 0) {
                 $this->redirect('/cart', navigate: true);
