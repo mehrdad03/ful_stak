@@ -61,6 +61,15 @@ class Index extends Component
     //free lectures properties
     public $freeLectures = [];
 
+
+    // for pagination
+    public $page = 1;
+    protected $queryString = ['page'];
+    public function updatingPage($value): void
+    {
+        $this->page = $value;
+    }
+
     public function mount(Course $course): void
     {
         $this->mobile = (new Agent())->isMobile();
@@ -75,7 +84,11 @@ class Index extends Component
             ]);
         });
 
-        $this->lecturesCount = $course->lectures->count();
+
+        $this->lecturesCount = Cache::remember("course_lectures_count_{$course->id}", 3600, function () use ($course) {
+            return $course->lectures->count();
+        });
+
         $this->courseTotalDuration = CourseSectionLecture::query()
             ->where('course_id', $this->course->id)
             ->sum('duration');
@@ -106,23 +119,34 @@ class Index extends Component
 
     public function freeLectures()
     {
-        $this->freeLectures = CourseSectionLecture::query()
-            ->where([
-                'free' => true,
-                'course_id' => $this->course->id,
-            ])
-            ->with('video')
-            ->get();
+        $this->freeLectures = Cache::remember("free_lectures_course_{$this->course->id}", 3600, function () {
+            return CourseSectionLecture::query()
+                ->where([
+                    'free' => true,
+                    'course_id' => $this->course->id,
+                ])
+                ->with('video')
+                ->get();
+        });
 
     }
 
     public function seoConfing()
     {
-        $courseSeo = SeoItem::query()->where('ref_id', $this->course->id)->select('id', 'meta_name', 'meta_description')->first();
+        $courseSeoCacheKey = "course_seo_{$this->course->id}";
 
-        @$this->seo()
-            ->setTitle($courseSeo->meta_name)
-            ->setDescription($courseSeo->meta_description);
+        $courseSeo = Cache::remember($courseSeoCacheKey, 3600, function () {
+            return SeoItem::query()
+                ->where('ref_id', $this->course->id)
+                ->select('id', 'meta_name', 'meta_description')
+                ->first();
+        });
+
+        if ($courseSeo) {
+            $this->seo()
+                ->setTitle($courseSeo->meta_name)
+                ->setDescription($courseSeo->meta_description);
+        }
     }
 
 
@@ -248,7 +272,7 @@ class Index extends Component
         $this->dispatch('videoModal', $videoPath);
     }*/
 
-    public function updateStudents()
+    public function updateStudents(): void
     {
 
         // چک کردن وجود سیشن
@@ -294,7 +318,7 @@ class Index extends Component
         $this->studentsCount=$newCount;
     }
 
-    public function getLectureId($lectureId)
+    public function getLectureId($lectureId): void
     {
         $this->lessonCompleted = false;
         $lectureCheck = CourseSectionLecture::query()->where('id', $lectureId)->exists();
@@ -318,7 +342,7 @@ class Index extends Component
 
     }
 
-    public function getAdjacentLecturePaths()
+    public function getAdjacentLecturePaths(): void
     {
         $courseId = $this->course->id;
         // پیدا کردن درس قبلی
@@ -336,7 +360,7 @@ class Index extends Component
 
     }
 
-    public function goToNextLecture()
+    public function goToNextLecture(): void
     {
 
 
@@ -344,14 +368,14 @@ class Index extends Component
 
     }
 
-    public function goToPreviousLecture()
+    public function goToPreviousLecture(): void
     {
         $this->dispatch('adjacentVideoPath', config('app.ftp_url') . $this->previousLecture);
 
 
     }
 
-    public function completeLesson(CourseUserProgress $courseUserProgress, LectureUser $lectureUser)
+    public function completeLesson(CourseUserProgress $courseUserProgress, LectureUser $lectureUser): void
     {
 
         $userId = Auth::id();
@@ -369,7 +393,7 @@ class Index extends Component
         $this->lessonCompleted = true;
     }
 
-    public function getRequirementsCourses()
+    public function getRequirementsCourses(): \Illuminate\Database\Eloquent\Collection|array
     {
         return RequirementCourse::query()
             ->where('course_id', $this->course->id)
@@ -380,12 +404,12 @@ class Index extends Component
 
     // stories functions
 
-    public function deleteTempleFile()
+    public function deleteTempleFile(): void
     {
         Session::forget('filepond');
     }
 
-    public function uploadTempFileStory(Request $request)
+    public function uploadTempFileStory(Request $request): void
     {
 
 
@@ -429,7 +453,7 @@ class Index extends Component
         }
     }
 
-    public function addStory($formData, Story $story)
+    public function addStory($formData, Story $story): void
     {
         //شرط if صرفا برای زمانی هست هکر جاوااسکریپت رو غرفعال کنه
         // و بخواد آپلود فایل سنگین انجام بده تا پدر سرور رو در بیاره
@@ -470,7 +494,7 @@ class Index extends Component
 
     }
 
-    public function checkLatestStory()
+    public function checkLatestStory(): void
     {
         $latestStory = Story::query()->where([
             'user_id' => Auth::id(),
@@ -486,28 +510,37 @@ class Index extends Component
 
     }
 
-    public function getCourseStories()
+    public function getCourseStories(): void
     {
-        $firstStory = $this->firstStory = Story::query()
-            ->where('status', true)
-            ->where('course_id', $this->course->id)
-            ->where('user_id', 1)
-            ->with('user', 'media')
-            ->latest()
-            ->first();
-        $this->otherStories = Story::query()
-            ->where('status', true)
-            ->where('course_id', $this->course->id)
-            ->when($firstStory, function ($query) use ($firstStory) {
-                return $query->where('id', '!=', $firstStory->id);
-            })
-            ->latest()
-            ->with('user', 'media')
-            ->limit(10)
-            ->get();
+        $firstStoryCacheKey = "first_story_course_{$this->course->id}";
+        $this->firstStory = Cache::remember($firstStoryCacheKey, 3600, function () {
+            return Story::query()
+                ->where('status', true)
+                ->where('course_id', $this->course->id)
+                ->where('user_id', 1)
+                ->with('user', 'media')
+                ->latest()
+                ->first();
+        });
+
+        $otherStoriesCacheKey = "other_stories_course_{$this->course->id}";
+        $this->otherStories = Cache::remember($otherStoriesCacheKey, 3600, function () {
+            $firstStory = $this->firstStory;
+            return Story::query()
+                ->where('status', true)
+                ->where('course_id', $this->course->id)
+                ->when($firstStory, function ($query) use ($firstStory) {
+                    return $query->where('id', '!=', $firstStory->id);
+                })
+                ->latest()
+                ->with('user', 'media')
+                ->limit(10)
+                ->get();
+        });
+
     }
 
-    public function submitStoryView($videoSrc)
+    public function submitStoryView($videoSrc): void
     {
 
         //در $videoSrc چون همرا باهاست دانلود میاد
@@ -534,8 +567,7 @@ class Index extends Component
             'user_id' => Auth::id(),
         ])->exists();
 
-
-        $comments = Cache::remember("course_comments_{$this->course->id}", 3600, function () {
+        $comments = Cache::remember("course_comments_{$this->course->id}_page_{$this->page}", 3600, function () {
             return Comment::query()
                 ->where([
                     'course_id' => $this->course->id,
@@ -546,7 +578,7 @@ class Index extends Component
                     $query->where('status', true)->with('user');
                 }, 'user:id,name,picture'])
                 ->latest()
-                ->paginate(10);
+                ->paginate(10, ['*'], 'page', $this->page); // اضافه کردن پارامترهای صفحه‌بندی
         });
 
         return view('livewire.client.course.index', [
