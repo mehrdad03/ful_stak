@@ -19,7 +19,7 @@
 
         <div class="col-12">
             <div class="alert alert-primary" role="alert">
-                 درصورت خرید دوره مستر کلاس
+                 در صورت شرکت در دوره مستر کلاس
                 پیش نیاز این دوره به ملبغ
                <strong> {{number_format($masterCourseRequirementsTotalPrice)}}</strong>
                 تومان
