@@ -9,12 +9,12 @@ trait calculation
     protected function CalculateUserBasketPrice($basket)
     {
         Session::forget('amount');
-        $userBasketTotalPrice = 0;
-        $userBasketTotalDiscount = 0;
-        foreach ($basket as $item) {
-            $userBasketTotalPrice += $item->course->price;
-            $userBasketTotalDiscount += $item->course->discount;
-        }
+
+        $coursesPrice=$basket->pluck('course.price');
+        $userBasketTotalPrice= $coursesPrice->sum();
+
+        $coursesDiscount=$basket->pluck('course.discount');
+        $userBasketTotalDiscount=$coursesDiscount->sum();
 
         $payment = [
             'userBasketTotalPrice' => $userBasketTotalPrice,
