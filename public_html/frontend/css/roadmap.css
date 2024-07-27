@@ -79,6 +79,10 @@ color:#f16529 ;
     color: #000000;
 }#mainRoadmap .RoadCourse .course-title-vue {
     color: #35495e;
+}#mainRoadmap .RoadCourse .course-title-php {
+    color: #8892BF;
+}#mainRoadmap .RoadCourse .course-title-livewire {
+    color: #FB70A9;
 }
 #mainRoadmap .leftRoadmap {
   margin-top: 320px;

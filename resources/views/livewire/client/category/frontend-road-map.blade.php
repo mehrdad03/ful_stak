@@ -328,8 +328,7 @@
                             آموزش <span class="course-title-bootstrap">Bootstrap</span>
                         </h3>
                         <p class="text-white fw-medium">
-                            در ایستگاه سوم از مسیر آموزش فرانت اند به آموزش Boot strap
-                            میرسیم که به طور کامل برای شما توضیح داده خواهد شد
+                        با Bootstrap آشنا شوید. این فریمورک CSS به شما امکان می‌دهد تا به سرعت وب‌سایت‌های واکنش‌گرا و زیبا بسازید. Bootstrap شامل مجموعه‌ای از اجزا و ابزارهای آماده است که طراحی و توسعه وب را ساده‌تر می‌کند.
                         </p>
                         <button class="main-btn px-3 py-2  text-white">
                             مشاهده دوره
@@ -431,8 +430,7 @@
                             آموزش <span class="course-title-github">Github</span>
                         </h3>
                         <p class="text-white fw-medium">
-                            در ایستگاه پنجم از مسیر آموزش فرانت اند به آموزش Github میرسیم
-                            که به طور کامل برای شما توضیح داده خواهد شد
+                        یاد بگیرید که چگونه کدهای خود را مدیریت و نسخه‌بندی کنید. Git برای کنترل نسخه‌ها و GitHub برای به اشتراک‌گذاری پروژه‌ها و همکاری با دیگران استفاده می‌شود.
                         </p>
                         <button class="main-btn px-3 py-2  text-white">
                             مشاهده دوره
@@ -525,8 +523,7 @@
                             آموزش <span class="course-title-css">CSS</span>
                         </h3>
                         <p class="text-white fw-medium">
-                            در ایستگاه دوم از مسیر آموزش فرانت اند به آموزش css میرسیم که
-                            به طور کامل برای شما توضیح داده خواهد شد
+                        بعد از HTML، CSS را یاد بگیرید. CSS ظاهر و استایل صفحات وب را زیباتر می‌کند. با CSS می‌توانید رنگ‌ها، فونت‌ها و طراحی‌های جذاب ایجاد کنید.
                         </p>
                         <button class="main-btn px-3 py-2  text-white">
                             مشاهده دوره
@@ -632,8 +629,7 @@
                             آموزش <span class="course-title-js">javascript</span>
                         </h3>
                         <p class="text-white fw-medium">
-                            در ایستگاه چهارم از مسیر آموزش فرانت اند به آموزش js میرسیم که
-                            به طور کامل برای شما توضیح داده خواهد شد
+                        JavaScript را یاد بگیرید. این زبان برنامه‌نویسی پرقدرت به شما امکان می‌دهد تا وب‌سایت‌های تعاملی و دینامیک بسازید. با JavaScript، می‌توانید عناصر صفحه را به‌روز کنید، انیمیشن‌ها ایجاد کنید و با کاربران به صورت بلادرنگ تعامل داشته باشید.
                         </p>
                         <button class="main-btn px-3 py-2  text-white">
                             مشاهده دوره
@@ -725,8 +721,7 @@
                             آموزش <span class="course-title-vue">Vue Js</span>
                         </h3>
                         <p class="text-white fw-medium">
-                            در ایستگاه آخر از مسیر آموزش فرانت اند به آموزش Vue.jsمیرسیم
-                            که به طور کامل برای شما توضیح داده خواهد شد
+                        با Vue.js آشنا شوید. این فریمورک جاوااسکریپت به شما امکان می‌دهد تا رابط‌های کاربری تعاملی و پیشرفته بسازید. Vue.js ساده، انعطاف‌پذیر و قدرتمند است و به شما کمک می‌کند تا به سرعت پروژه‌های وب پیچیده و مدرن را توسعه دهید.
                         </p>
                         <button class="main-btn px-3 py-2  text-white">
                             مشاهده دوره
@@ -860,8 +855,8 @@
                         <div
                             class="RoadCourse rounded-4 d-flex flex-column p-4 justify-content-center align-items-center">
                             <svg
-                                width="33"
-                                height="33"
+                                width="48"
+                                height="48"
                                 viewBox="0 0 43 43"
                                 fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -886,11 +881,10 @@
                             </svg>
 
                             <h3 class="text-white fw-bold my-3">
-                                آموزش <span class="course-title-html">CSS</span>
+                                آموزش <span class="course-title-css">CSS</span>
                             </h3>
                             <p class="text-white fw-medium text-center">
-                                در ایستگاه اول از مسیر آموزش فرانت اند به آموزش html میرسیم
-                                که به طور کامل برای شما توضیح داده خواهد شد
+                            بعد از HTML، CSS را یاد بگیرید. CSS ظاهر و استایل صفحات وب را زیباتر می‌کند. با CSS می‌توانید رنگ‌ها، فونت‌ها و طراحی‌های جذاب ایجاد کنید.
                             </p>
                             <button class="main-btn px-3 py-2  text-white">
                                 مشاهده دوره
@@ -946,8 +940,8 @@
                         <div
                             class="RoadCourse rounded-4 d-flex flex-column p-4 justify-content-center align-items-center">
                             <svg
-                                width="33"
-                                height="33"
+                                width="42"
+                                height="42"
                                 viewBox="0 0 43 43"
                                 fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -971,11 +965,10 @@
                                     fill="white" />
                             </svg>
                             <h3 class="text-white fw-bold my-3">
-                                آموزش <span class="course-title-html">Bootstrap</span>
+                                آموزش <span class="course-title-bootstrap">Bootstrap</span>
                             </h3>
                             <p class="text-white fw-medium text-center">
-                                در ایستگاه اول از مسیر آموزش فرانت اند به آموزش html میرسیم
-                                که به طور کامل برای شما توضیح داده خواهد شد
+                            با Bootstrap آشنا شوید. این فریمورک CSS به شما امکان می‌دهد تا به سرعت وب‌سایت‌های واکنش‌گرا و زیبا بسازید. Bootstrap شامل مجموعه‌ای از اجزا و ابزارهای آماده است که طراحی و توسعه وب را ساده‌تر می‌کند.
                             </p>
                             <button class="main-btn px-3 py-2  text-white">
                                 مشاهده دوره
@@ -1032,8 +1025,8 @@
                         <div
                             class="RoadCourse rounded-4 d-flex flex-column p-4 justify-content-center align-items-center">
                             <svg
-                                width="33"
-                                height="33"
+                                width="48"
+                                height="48"
                                 viewBox="0 0 43 43"
                                 fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -1060,11 +1053,10 @@
                             </svg>
 
                             <h3 class="text-white fw-bold my-3">
-                                آموزش <span class="course-title-html">Javascript</span>
+                                آموزش <span class="course-title-js">Javascript</span>
                             </h3>
                             <p class="text-white fw-medium text-center">
-                                در ایستگاه اول از مسیر آموزش فرانت اند به آموزش html میرسیم
-                                که به طور کامل برای شما توضیح داده خواهد شد
+                            JavaScript را یاد بگیرید. این زبان برنامه‌نویسی پرقدرت به شما امکان می‌دهد تا وب‌سایت‌های تعاملی و دینامیک بسازید. با JavaScript، می‌توانید عناصر صفحه را به‌روز کنید، انیمیشن‌ها ایجاد کنید و با کاربران به صورت بلادرنگ تعامل داشته باشید.
                             </p>
                             <button class="main-btn px-3 py-2  text-white">
                                 مشاهده دوره
@@ -1120,8 +1112,8 @@
                         <div
                             class="RoadCourse rounded-4 d-flex flex-column p-4 justify-content-center align-items-center">
                             <svg
-                                width="33"
-                                height="33"
+                                width="48"
+                                height="48"
                                 viewBox="0 0 43 43"
                                 fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -1145,11 +1137,10 @@
                             </svg>
 
                             <h3 class="text-white fw-bold my-3">
-                                آموزش <span class="course-title-html">Github</span>
+                                آموزش <span class="course-title-github">Github</span>
                             </h3>
                             <p class="text-white fw-medium text-center">
-                                در ایستگاه اول از مسیر آموزش فرانت اند به آموزش html میرسیم
-                                که به طور کامل برای شما توضیح داده خواهد شد
+                            یاد بگیرید که چگونه کدهای خود را مدیریت و نسخه‌بندی کنید. Git برای کنترل نسخه‌ها و GitHub برای به اشتراک‌گذاری پروژه‌ها و همکاری با دیگران استفاده می‌شود
                             </p>
                             <button class="main-btn px-3 py-2  text-white">
                                 مشاهده دوره
@@ -1205,8 +1196,8 @@
                         <div
                             class="RoadCourse rounded-4 d-flex flex-column p-4 justify-content-center align-items-center">
                             <svg
-                                width="33"
-                                height="33"
+                                width="48"
+                                height="48"
                                 viewBox="0 0 43 43"
                                 fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -1219,11 +1210,10 @@
                             </svg>
 
                             <h3 class="text-white fw-bold my-3">
-                                آموزش <span class="course-title-html">Vue Js</span>
+                                آموزش <span class="course-title-vue">Vue Js</span>
                             </h3>
                             <p class="text-white fw-medium text-center">
-                                در ایستگاه اول از مسیر آموزش فرانت اند به آموزش html میرسیم
-                                که به طور کامل برای شما توضیح داده خواهد شد
+                            با Vue.js آشنا شوید. این فریمورک جاوااسکریپت به شما امکان می‌دهد تا رابط‌های کاربری تعاملی و پیشرفته بسازید. Vue.js ساده، انعطاف‌پذیر و قدرتمند است و به شما کمک می‌کند تا به سرعت پروژه‌های وب پیچیده و مدرن را توسعه دهید.
                             </p>
                             <button class="main-btn px-3 py-2  text-white">
                                 مشاهده دوره
