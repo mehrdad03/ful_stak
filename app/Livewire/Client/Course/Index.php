@@ -242,7 +242,7 @@ class Index extends Component
     {
 
 
-        $allRequirementCourses = $this->getRequirementsCourses()->pluck('prerequisite_course_id')->toArray();
+        $allRequirementCourses = $this->getRequirementsCourses();
 
 
         if ($requirementsCourses === 'all') {
@@ -250,18 +250,25 @@ class Index extends Component
 //برای زمانی که کل دور های پیش نیاز به سبد خرید اضافه میشن
 
             foreach ($allRequirementCourses as $item) {
-                $basket = $basket->addToBasket($item);
+
+                $price = $item->course->price;
+                if ($this->course->category->url_slug == 'master-courses') {
+                    $price = 0;
+                }
+
+                $basket = $basket->addToBasket($item->course->id, $price);
             }
-            $this->redirect('/cart', navigate: true);
+
+            $this->redirect('/cart');
 
         } else if ($requirementsCourses === 'null') {
 
             //برای زمانی که دوره اصلی به سبد خرید اضاف میشه
 
-            // $basket = $basket->addToBasket($this->course->id);
+            $basket = $basket->addToBasket($this->course->id, $this->course->price);
 
             if (count($allRequirementCourses) == 0) {
-                $this->redirect('/cart', navigate: true);
+                $this->redirect('/cart');
             }
 
         } else {
@@ -269,8 +276,7 @@ class Index extends Component
             //برای زمانی که یکی از دوره های پیش نیاز به سبد خرید اضاف میشه
 
             $courseId = Course::query()->where('url_slug', $requirementsCourses)->pluck('id')->first();
-            $basket = $basket->addToBasket($courseId);
-
+            $basket = $basket->addToBasket($courseId, $this->course->price);
         }
 
 
@@ -372,7 +378,6 @@ class Index extends Component
             $this->lessonCompleted = true;
         }
 
-
     }
 
     public function getAdjacentLecturePaths(): void
@@ -430,7 +435,7 @@ class Index extends Component
     {
         return RequirementCourse::query()
             ->where('course_id', $this->course->id)
-            ->with('course:id,title,url_slug')
+            ->with('course:id,title,url_slug,price')
             ->get();
     }
 

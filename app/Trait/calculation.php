@@ -10,7 +10,7 @@ trait calculation
     {
         Session::forget('amount');
 
-        $coursesPrice=$basket->pluck('course.price');
+        $coursesPrice=$basket->pluck('price');
         $userBasketTotalPrice= $coursesPrice->sum();
 
         $coursesDiscount=$basket->pluck('course.discount');

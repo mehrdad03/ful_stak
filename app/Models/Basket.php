@@ -9,16 +9,21 @@ use Illuminate\Support\Facades\Auth;
 
 class Basket extends Model
 {
-    use HasFactory,SoftDeletes;
+    use HasFactory, SoftDeletes;
 
     protected $guarded = [];
 
-    public function addToBasket($courseId)
+    public function addToBasket($courseId, $price)
     {
-       return Basket::query()->updateOrCreate(
+
+        return Basket::query()->updateOrCreate(
             [
-                'user_id'=>Auth::id(),
-                'course_id'=>$courseId
+                'user_id' => Auth::id(),
+                'course_id' => $courseId,
+            ],
+            [
+
+                'price' => $price,
             ],
         );
 

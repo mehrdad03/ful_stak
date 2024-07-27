@@ -106,7 +106,7 @@
                             <div class="d-flex column-gap-2 align-items-center justify-content-between lecture-info w-25" wire:ignore>
 
                                 <p class="m-0 text-primary ">{{@date('s : i',$lecture->duration)}}</p>
-                                @if($checkPurchase and \Illuminate\Support\Facades\Auth::id()==1)
+                                @if($checkPurchase or \Illuminate\Support\Facades\Auth::id()==1)
                                     <button data-path="https://statics.ful-stak.dev/courses/24/stories/FTtHRYcGP7Kc8sOY3QYxp7xsvKEQcqnLdbCLZYIS.mp4"
                                             data-title="{{$lecture->title }}" data-bs-toggle="modal"
                                             data-bs-target="#videoModal"
@@ -220,7 +220,7 @@
                                             type="button">
                                         مشاهده
                                     </button>
-                                @elseif($lecture->free)
+                               {{-- @elseif($lecture->free)
 
                                         <button data-path="{{config('app.ftp_url').@$lecture->video->path }}"
                                                 data-title="{{$lecture->title }}" data-bs-toggle="modal"
@@ -229,7 +229,7 @@
                                                 class="text-white bg-secondary main-btn videoModal  rounded-2 px-2 py-1"
                                                 type="button">
                                             مشاهده
-                                        </button>
+                                        </button>--}}
                                     @else
 
                                     <div style="background: rgb(232 28 77)" class="px-1 rounded-2">

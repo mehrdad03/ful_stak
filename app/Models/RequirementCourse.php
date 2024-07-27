@@ -15,4 +15,5 @@ class RequirementCourse extends Model
         return $this->belongsTo(Course::class,'prerequisite_course_id','id');
 
     }
+
 }

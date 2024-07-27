@@ -45,7 +45,7 @@
                                         src="{{@$course->coverImage->path }}"
                                         alt="html"
                                         class="roadIcon rounded-5"
-                                        width="260"/>
+                                        width="260" style="top: -110px"/>
                                 </a>
                                 <a target="_blank" href="{{route('client.course',$course->url_slug)}}"
                                    class="course-cover">
@@ -59,10 +59,10 @@
                                 </p>
                                 <div class="d-flex flex-wrap mb-2 align-items-end justify-content-around gap-3">
                                     <!-- course duration -->
-                                    <div class="d-flex align-items-center">
+                                 {{--   <div class="d-flex align-items-center">
                                         <p class="m-0 text-white ms-2 pt-1">{{$formattedTime}}</p>
                                         <i class="fa fa-clock-o text-primary"></i>
-                                    </div>
+                                    </div>--}}
                                     <!-- Course Liked -->
                                     <div class="d-flex align-items-center">
                                         <p class="m-0 text-white fw-medium">

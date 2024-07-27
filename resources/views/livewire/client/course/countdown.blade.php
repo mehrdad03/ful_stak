@@ -24,9 +24,9 @@
     </div>
 </div>
 <div class="w-100">
-    <p>ظرفیت باقیمانده : <span>12</span> </p>
+    <p>ظرفیت باقیمانده : <span>5</span> </p>
     <div class="progress-container mb-5">
-        <div class="progress-bar" style="width: 70%;"></div>
+        <div class="progress-bar" style="width: 80%;"></div>
     </div>
 </div>
 
@@ -37,7 +37,7 @@
 
     <script>
         // تاریخ و زمان پایان تخفیف
-        var endTime = new Date("Jul 27, 2024 23:59:59").getTime();
+        var endTime = new Date("Jul 28, 2024 23:59:59").getTime();
 
         // تابع کمکی برای افزودن صفر به اعداد کمتر از 10
         function padZero(num) {

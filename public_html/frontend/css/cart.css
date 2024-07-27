@@ -92,3 +92,7 @@
         width: 40px;
     }
 }
+.swal2-title{
+    font-size: 1.3rem!important;
+    line-height: 40px;
+}
