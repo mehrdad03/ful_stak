@@ -314,47 +314,23 @@ class Index extends Component
     public function updateStudents(): void
     {
 
-        // چک کردن وجود سیشن
-        if (!Session::has('student_count')) {
-            Session::put('student_count', 61);
-            Session::put('last_update', now()->format('Y-m-d H:i:s'));
-            Session::put('update_count', 0);
+        // چک کردن وجود سیشن برای هر دوره
+        if (!Session::has('student_count_' . $this->course->id)) {
+            $initialCount = rand(100, 150); // مقدار اولیه رندوم بالای 100
+            Session::put('student_count_' . $this->course->id, $initialCount);
         }
 
-        $currentCount = Session::get('student_count');
-        $lastUpdate = Session::get('last_update');
-        $updateCount = Session::get('update_count');
-        $today = now()->format('Y-m-d');
+        $currentCount = Session::get('student_count_' . $this->course->id);
 
-        // محاسبه زمان فعلی و زمان آخرین به‌روزرسانی
-        $lastUpdateDate = \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $lastUpdate);
-        $now = \Carbon\Carbon::now();
+        // افزایش تعداد دانشجویان به ازای هر بار فراخوانی متد
+        $newCount = $currentCount + 1;
 
-        // بررسی اگر روز جدیدی باشد، تعداد به‌روزرسانی‌ها را صفر کنید
-        if ($lastUpdateDate->format('Y-m-d') !== $today) {
-            $updateCount = 0;
-        }
+        // ذخیره مقدار جدید در سیشن
+        Session::put('student_count_' . $this->course->id, $newCount);
 
-        // چک کردن تعداد به‌روزرسانی‌ها در طول روز با توجه به تایم های رندوم
-        if ($updateCount < 6) {
-            $randomInterval = rand(1, 5); // بازه زمانی رندوم بین 1 تا 5 ساعت
-            $nextUpdate = $lastUpdateDate->copy()->addHours($randomInterval);
-
-            if ($now->gte($nextUpdate)) {
-                $randomIncrease = rand(1, 10); // مقدار رندوم
-                $newCount = $currentCount + $randomIncrease;
-                $updateCount++;
-
-                Session::put('student_count', $newCount);
-                Session::put('last_update', now()->format('Y-m-d H:i:s'));
-                Session::put('update_count', $updateCount);
-            } else {
-                $newCount = $currentCount;
-            }
-        } else {
-            $newCount = $currentCount;
-        }
+        // به روزرسانی تعداد دانشجویان در خصوص این دوره
         $this->studentsCount = $newCount;
+
     }
 
     public function getLectureId($lectureId): void
