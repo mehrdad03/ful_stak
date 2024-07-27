@@ -27,20 +27,21 @@
                                 </tr>
                                 </thead>
                                 <tbody>
+                               {{-- @dd($orders)--}}
                                 @forelse($orders as $order)
 
                                     @php
                                         $class='';
                                         $iconClass='';
 
-                                        if ($order->status ){
+                                        if (@$order->status ){
                                             $class='success';
                                             $iconClass='check-square';
                                         }else{
                                             $class='danger';
                                              $iconClass='times';
                                         }
-                                        if ($order->transaction->status){
+                                        if ($order->pay_status){
                                             $tr_class='success';
                                             $tr_iconClass='check-square';
                                         }else{
@@ -66,7 +67,7 @@
                                         <td class="text-warning"><h6>{{number_format($order->discount)}}</h6></td>
                                         <td>
                                             <div class="d-flex align-items-center">
-                                                <div><img width="50" src="{{$order->user->picture}}" alt=""></div>
+                                                <div><img width="50" src="{{@$order->user->picture}}" alt=""></div>
                                                 <div class="me-2">
                                                     {{@$order->user->name}}
                                                     <br>
@@ -83,10 +84,10 @@
                                             {{$order->created_at->diffForHumans()}}
                                         </td>
                                         <td>
-                                            <i class="fa fa-{{$iconClass}} fs-3  text-{{$class}}"></i>
+                                            <i class="fa fa-{{@$iconClass}} fs-3  text-{{@$class}}"></i>
                                         </td>
                                         <td>
-                                            <i class="fa fa-{{$tr_iconClass}} fs-3  text-{{$tr_class}}"></i>
+                                            <i class="fa fa-{{@$tr_iconClass}} fs-3  text-{{@$tr_class}}"></i>
                                         </td>
 
                                     </tr>
