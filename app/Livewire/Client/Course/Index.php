@@ -128,15 +128,12 @@ class Index extends Component
 
     public function checkPurchase()
     {
-
-        $this->checkPurchase = Cache::remember("purchase_check_{$this->course->id}", 3600, function () {
-            return OrderItem::query()
-                ->where([
-                    'user_id' => Auth::id(),
-                    'course_id' => $this->course->id,
-                    'pay_status' => true
-                ])->exists();
-        });
+        $this->checkPurchase = OrderItem::query()
+            ->where([
+                'user_id' => Auth::id(),
+                'course_id' => $this->course->id,
+                'pay_status' => true
+            ])->exists();
 
     }
 
