@@ -24,6 +24,7 @@ use App\Livewire\Admin\Course\Create as adminCourseCreate;
 use App\Livewire\Admin\Course\Seo as adminCourseSeo;
 use App\Livewire\Admin\User\Index as adminUserIndex;
 use App\Livewire\Admin\Order\Index as adminOrderIndex;
+use App\Livewire\Admin\Basket\Index as adminBasketIndex;
 use App\Livewire\Admin\Transaction\Index as adminTransactionIndex;
 use App\Livewire\Admin\Comment\Index as adminCommentIndex;
 use App\Livewire\Admin\Comment\Answer as adminCommentAnswer;
@@ -91,6 +92,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth:admin'], function () {
         Route::post('/ck-upload', [adminVideoCkUpload::class, 'upload'])->name('ck-upload');
         Route::get('/users', adminUserIndex::class)->name('users');
         Route::get('/orders', adminOrderIndex::class)->name('orders');
+        Route::get('/basket', adminBasketIndex::class)->name('basket');
         Route::get('/transactions', adminTransactionIndex::class)->name('transactions');
         Route::get('/comments', adminCommentIndex::class)->name('comments');
         Route::get('/comments/{comment}/answer', adminCommentAnswer::class)->name('comments.answer');

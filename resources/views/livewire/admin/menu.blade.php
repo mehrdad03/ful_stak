@@ -56,6 +56,12 @@
                             <span class="menu-text">سفارشات</span>
                         </a>
                     </li>
+                    <li class="{{$rout_name=='admin.basket'?'active':''}}">
+                        <a wire:navigate="" href="{{route('admin.basket')}}" class="current-page">
+                            <i class="fa fa-users"></i>
+                            <span class="menu-text">سبد خرید</span>
+                        </a>
+                    </li>
                     <li class="default-sidebar-dropdown {{$rout_name=='admin.transactions.index'?'active':''}}">
                         <a class="position-relative" href="#">
                             <i class="icon-list"></i>
