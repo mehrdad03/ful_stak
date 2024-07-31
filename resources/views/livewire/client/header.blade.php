@@ -9,7 +9,7 @@
         <div class="container">
             <div class="w-100 d-flex justify-content-between align-items-center">
                 <div class="d-block d-lg-none mx-sm-4" id="openMenu">
-                       <img loading="lazy"  src="/frontend/assets/images/menu.png" alt="menu"/>
+                      <i class="fa fa-bars text-primary fs-4 pe-1"></i>
                 </div>
                 <!-- logo -->
                 <a class="navbar-brand"  href="{{route('client.home')}}">
