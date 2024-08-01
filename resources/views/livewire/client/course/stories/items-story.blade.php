@@ -6,7 +6,7 @@
             <div
                 class="item text-center mx-2 {{!$checkPurchase?'msgBeforePurchase':''}} {{$latestStory && $checkPurchase ?'msgLatestStory':''}}"
                 data-msg="هنوز تو دروه شرکت نکردی!" data-toggle="modal"
-                data-target="{{$checkPurchase?'#add-story':''}}">
+                data-target="{{$checkPurchase || \Illuminate\Support\Facades\Auth::id()==1?'#add-story':''}}">
                 <button class="add-btn rounded-circle fw-bold fs-1">+</button>
                 <p class="username">افزودن</p>
             </div>

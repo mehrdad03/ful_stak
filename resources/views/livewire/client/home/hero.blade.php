@@ -44,7 +44,7 @@
                         <img loading="lazy"  src="/frontend/assets/images/Ellipse 31.png" alt="people" />
                         <img loading="lazy"  src="/frontend/assets/images/Ellipse 32.png" alt="people" />
                         <img loading="lazy"  src="/frontend/assets/images/Ellipse 33.png" alt="people" />
-                        <img loading="lazy"  src="/frontend/assets/images/Ellipse 34.png" alt="people" />
+                       {{-- <img loading="lazy"  src="/frontend/assets/images/Ellipse 34.png" alt="people" />--}}
                         <img loading="lazy"  src="/frontend/assets/images/Ellipse 35.png" alt="people" />
                     </div>
                 </div>

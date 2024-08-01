@@ -1,6 +1,5 @@
 @push('links')
     <link rel="stylesheet" href="/frontend/css/singleCourse.css"/>
-    <link rel="stylesheet" href="/frontend/css/swiper-bundle.min.css"/>
     @php
         $seconds = $courseTotalDuration; // تعداد ثانیه‌های ویدیو
 
@@ -43,6 +42,7 @@
             <!-- Course Features -->
             @include('livewire.client.course.features')
             <!-- Course Season -->
+            {{--<livewire:client.course.qa :courseId="$course->id" lazy />--}}
             @include('livewire.client.course.season')
             <!-- course Needs -->
             @include('livewire.client.course.requirments')
@@ -73,9 +73,7 @@
     </div>
 </div>
 @push('scripts')
-    <script src="/frontend/js/swiper-bundle.min.js"></script>
     <script src="/frontend/js/singleCourse.js"></script>
-
 
     @if($checkPurchase)
         <script>

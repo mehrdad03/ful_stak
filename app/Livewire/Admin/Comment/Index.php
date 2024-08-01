@@ -3,6 +3,7 @@
 namespace App\Livewire\Admin\Comment;
 
 use App\Models\Comment;
+use App\Notifications\SendSmsNotification;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -14,17 +15,22 @@ class Index extends Component
 
     public function changeStatus($commentId): void
     {
-
         $comment = Comment::query()->where([
             'id' => $commentId,
         ])->first();
+
+        $user = $comment->user;
 
         if ($comment->status) {
             $comment->update(['status' => false]);
         } else {
             $comment->update(['status' => true]);
-        }
 
+            if ($user->mobile) {
+
+                $user->notify(new SendSmsNotification($user->mobile, 'submitAnswer', 'مهندسجوان'));
+            }
+        }
     }
 
     public function render()

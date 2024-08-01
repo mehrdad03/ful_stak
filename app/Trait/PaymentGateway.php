@@ -15,7 +15,7 @@ trait PaymentGateway
             ->amount($amount) // مبلغ تراکنش
             ->request()
             ->description('تراکنش تستی') // توضیحات تراکنش
-            ->callbackUrl('https://ful-stak.dev/payment/verify') // آدرس برگشت پس از پرداخت
+            ->callbackUrl('https://ful-stak.com/payment/verify') // آدرس برگشت پس از پرداخت
             ->mobile('') // شماره موبایل مشتری - اختیاری
             ->email('') // ایمیل مشتری - اختیاری
             ->send();

@@ -1,0 +1,53 @@
+{
+  "public_html/backend/fonts/fontawesome-webfont.eot": {
+    "file": "fontawesome-webfont.eot",
+    "src": "public_html/backend/fonts/fontawesome-webfont.eot"
+  },
+  "public_html/backend/fonts/fontawesome-webfont.svg": {
+    "file": "fontawesome-webfont.svg",
+    "src": "public_html/backend/fonts/fontawesome-webfont.svg"
+  },
+  "public_html/backend/fonts/fontawesome-webfont.ttf": {
+    "file": "fontawesome-webfont.ttf",
+    "src": "public_html/backend/fonts/fontawesome-webfont.ttf"
+  },
+  "public_html/backend/fonts/fontawesome-webfont.woff": {
+    "file": "fontawesome-webfont.woff",
+    "src": "public_html/backend/fonts/fontawesome-webfont.woff"
+  },
+  "public_html/backend/fonts/fontawesome-webfont.woff2": {
+    "file": "fontawesome-webfont.woff2",
+    "src": "public_html/backend/fonts/fontawesome-webfont.woff2"
+  },
+  "public_html/frontend/assets/fonts/Peyda-ExtraBold.ttf": {
+    "file": "Peyda-ExtraBold.ttf",
+    "src": "public_html/frontend/assets/fonts/Peyda-ExtraBold.ttf"
+  },
+  "public_html/frontend/assets/fonts/Peyda-Medium.ttf": {
+    "file": "Peyda-Medium.ttf",
+    "src": "public_html/frontend/assets/fonts/Peyda-Medium.ttf"
+  },
+  "public_html/frontend/assets/fonts/Peyda-Regular.ttf": {
+    "file": "Peyda-Regular.ttf",
+    "src": "public_html/frontend/assets/fonts/Peyda-Regular.ttf"
+  },
+  "public_html/frontend/assets/fonts/Peyda-SemiBold.ttf": {
+    "file": "Peyda-SemiBold.ttf",
+    "src": "public_html/frontend/assets/fonts/Peyda-SemiBold.ttf"
+  },
+  "public_html/frontend/assets/fonts/peyda-extralight.ttf": {
+    "file": "peyda-extralight.ttf",
+    "src": "public_html/frontend/assets/fonts/peyda-extralight.ttf"
+  },
+  "resources/css/app.css": {
+    "file": "app.css",
+    "src": "resources/css/app.css",
+    "isEntry": true
+  },
+  "resources/js/app.js": {
+    "file": "app.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true
+  }
+}

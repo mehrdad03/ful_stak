@@ -7,7 +7,7 @@
     <!-- course name -->
     <div class="d-flex align-items-center" >
 
-        <a wire:navigate href="{{route('client.course',$item->course->url_slug)}}" class="m-0 fw-bold text-white mb-4 mt-3">
+        <a href="{{route('client.course',$item->course->url_slug)}}" class="m-0 fw-bold text-white mb-4 mt-3">
             {{$title[0]}}
             <span class="text-primary">{{$title[1]}}</span>
             {{$title[2]}}|<span class="me-1 text-primary">{{$currentYear}}</span>

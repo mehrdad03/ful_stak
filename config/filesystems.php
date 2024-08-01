@@ -60,8 +60,8 @@ return [
         'ftp' => [
             'driver' => 'ftp',
             'host' => '185.255.90.105',
-            'username' => 'Istest@statics.ful-stak.dev',
-            'password' => 'jaHXhqYMVsbssngwSm4w',
+            'username' => 'fulstakd',
+            'password' => 'P9]Hx066DGt)cz',
             'visibility' => 'public',
             'root' => '/public_html/',
             'timeout' => 90,

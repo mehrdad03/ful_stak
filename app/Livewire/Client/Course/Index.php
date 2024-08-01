@@ -311,7 +311,25 @@ class Index extends Component
     public function updateStudents(): void
     {
 
-        // چک کردن وجود سیشن برای هر دوره
+        if ($this->course->id==33){
+            $this->studentsCount=257;
+        }else if($this->course->id==12){
+            $this->studentsCount=100;
+        }else if($this->course->id==24){
+            $this->studentsCount=112;
+        } else if ($this->course->id == 25) {
+            $this->studentsCount = 79;
+        } else if ($this->course->id == 26) {
+            $this->studentsCount = 102;
+        } else if ($this->course->id == 27) {
+            $this->studentsCount = 313;
+        } else if ($this->course->id == 28) {
+            $this->studentsCount = 208;
+        } else if ($this->course->id == 29) {
+            $this->studentsCount = 141;
+        }
+
+      /*  // چک کردن وجود سیشن برای هر دوره
         if (!Session::has('student_count_' . $this->course->id)) {
             $initialCount = rand(100, 150); // مقدار اولیه رندوم بالای 100
             Session::put('student_count_' . $this->course->id, $initialCount);
@@ -326,7 +344,7 @@ class Index extends Component
         Session::put('student_count_' . $this->course->id, $newCount);
 
         // به روزرسانی تعداد دانشجویان در خصوص این دوره
-        $this->studentsCount = $newCount;
+        $this->studentsCount = $newCount;*/
 
     }
 

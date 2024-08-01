@@ -6,10 +6,10 @@
     <section
         class="row flex-column-reverse flex-lg-row align-items-center justify-content-center row-gap-5">
         <!-- text -->
-        <div class="col col-lg-6">
+        <div class="col col-lg-12">
             <!-- main text -->
-            <h1 class="text-white fw-bold d-flex">
-                آموزش فرانت اند با
+            <h1 class="text-white fw-bold fs-3 d-flex">
+                نقشه راه فرانت اند
                 <span
                     class="tRoad px-1 d-flex flex-column justify-content-center align-items-center">
               <svg
@@ -35,7 +35,7 @@
             </span>
                 مشخص
             </h1>
-            <p class="text-white fw-medium w-75">
+            <p class="text-white fw-medium">
                 در دورهٔ فرانت اند ما، با دنیای جذاب طراحی و توسعهٔ وب آشنا شده و از
                 مسیر آموزشی ما گام به گام بهره خواهید برد. از اصول اولیه HTML، CSS،
                 و JavaScript شروع کرده و به تسلط بر چارچوب‌های مدرن مانند بوت استرپ
@@ -70,14 +70,14 @@
             </div>
         </div>
         <!-- video -->
-        <div class="col col-lg-6 d-flex justify-content-center">
+        {{--<div class="col col-lg-6 d-flex justify-content-center">
             <iframe
                 src="https://www.youtube.com/embed/QHBVA_7bSRg?si=8WJSsEfdxlxMKZ_5"
                 title="YouTube video player"
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowfullscreen></iframe>
-        </div>
+        </div>--}}
     </section>
 
     <!-- First Roadmap -->
@@ -193,14 +193,14 @@
                                 d="M249.998 127L229.998 117.453V140.547L249.998 131V127ZM247.998 131H332.998V127H247.998V131Z"
                                 fill="#23BF65" />
                         </svg>
-                       <span class="video">
+                       {{--<span class="video">
                          <iframe
                             src="https://www.youtube.com/embed/QHBVA_7bSRg?si=8WJSsEfdxlxMKZ_5"
                             title="YouTube video player"
                             frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             allowfullscreen></iframe>
-                       </span>
+                       </span>--}}
                     </div>
                     <!-- Course -->
                     <div
@@ -284,15 +284,15 @@
                                 stroke-width="11" />
                         </svg>
 
-                       <span class="video">
+                       {{--<span class="video">
                          <iframe
-                            
+
                             src="https://www.youtube.com/embed/QHBVA_7bSRg?si=8WJSsEfdxlxMKZ_5"
                             title="YouTube video player"
                             frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             allowfullscreen></iframe>
-                       </span>
+                       </span>--}}
                     </div>
                     <!-- Course -->
                     <div id="bootstrap"
@@ -389,15 +389,15 @@
                                 stroke="#23BF65"
                                 stroke-width="11" />
                         </svg>
-                       <span class="video">
+                       {{--<span class="video">
                          <iframe
-                            
+
                             src="https://www.youtube.com/embed/QHBVA_7bSRg?si=8WJSsEfdxlxMKZ_5"
                             title="YouTube video player"
                             frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             allowfullscreen></iframe>
-                       </span>
+                       </span>--}}
                     </div>
                     <!-- Course -->
                     <div
@@ -496,15 +496,15 @@
                                 stroke="#23BF65"
                                 stroke-width="11" />
                         </svg>
-                       <span class="video">
+                       {{--<span class="video">
                          <iframe
-                            
+
                             src="https://www.youtube.com/embed/QHBVA_7bSRg?si=8WJSsEfdxlxMKZ_5"
                             title="YouTube video player"
                             frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             allowfullscreen></iframe>
-                       </span>
+                       </span>--}}
                     </div>
                     <!-- Course -->
                     <div
@@ -584,15 +584,15 @@
                                 stroke="#23BF65"
                                 stroke-width="11" />
                         </svg>
-                       <span class="video">
+                       {{--<span class="video">
                          <iframe
-                            
+
                             src="https://www.youtube.com/embed/QHBVA_7bSRg?si=8WJSsEfdxlxMKZ_5"
                             title="YouTube video player"
                             frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             allowfullscreen></iframe>
-                       </span>
+                       </span>--}}
                     </div>
                     <!-- Course -->
                     <div
@@ -691,15 +691,15 @@
                                 stroke-width="11" />
                         </svg>
 
-                       <span class="video">
+                       {{--<span class="video">
                          <iframe
-                            
+
                             src="https://www.youtube.com/embed/QHBVA_7bSRg?si=8WJSsEfdxlxMKZ_5"
                             title="YouTube video player"
                             frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             allowfullscreen></iframe>
-                       </span>
+                       </span>--}}
                     </div>
                     <!-- Course -->
                     <div

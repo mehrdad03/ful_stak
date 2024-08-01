@@ -46,7 +46,7 @@
                     fill="currentColor"></path>
             </svg>
 
-            شرکت کنندگان :<span class="text-primary me-1">{{number_format(241)}}</span> دانشجو )
+            شرکت کنندگان :<span class="text-primary me-1">{{number_format($studentsCount)}}</span> دانشجو )
         </p>
         <!-- Updated on -->
         <div class="d-flex justify-content-center fw-medium date">
