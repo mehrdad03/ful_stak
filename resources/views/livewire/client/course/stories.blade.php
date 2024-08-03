@@ -1,8 +1,3 @@
-@push('links')
-    <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
-    <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css"
-          rel="stylesheet">
-@endpush
 <section id="story">
 
     @include('livewire.client.course.stories.items-story')

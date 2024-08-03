@@ -1,8 +1,7 @@
 @if(\Illuminate\Support\Facades\Auth::check())
     @push('links')
-        <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
-        <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css"
-              rel="stylesheet">
+        <link href="/frontend/css/filepond.css" rel="stylesheet">
+        <link href="/frontend/css/filepond-plugin-image-preview.css" rel="stylesheet">
     @endpush
 @endif
 
@@ -58,11 +57,11 @@
             });
         </script>
         @if(\Illuminate\Support\Facades\Auth::check())
-            <script src="/frontend/js/filepond.js" defer></script>
-            <script src="/frontend/js/filepond.jquery.js" defer></script>
-            <script src="/frontend/js/filepond-plugin-image-preview.js" defer></script>
-            <script src="/frontend/js/filepond-plugin-file-validate-size.js" defer></script>
-            <script src="/frontend/js/filepond-plugin-file-validate-type.js" defer></script>
+            <script src="/frontend/js/filepond.js" ></script>
+            <script src="/frontend/js/filepond.jquery.js" ></script>
+            <script src="/frontend/js/filepond-plugin-image-preview.js" ></script>
+            <script src="/frontend/js/filepond-plugin-file-validate-size.js" ></script>
+            <script src="/frontend/js/filepond-plugin-file-validate-type.js" ></script>
             <script>
 
                 FilePond.registerPlugin(

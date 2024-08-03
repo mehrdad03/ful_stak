@@ -107,7 +107,7 @@
 
                                 <p class="m-0 text-primary ">{{@date('s : i',$lecture->duration)}}</p>
                                 @if($checkPurchase or \Illuminate\Support\Facades\Auth::id()==1)
-                                    <button data-path="https://statics.ful-stak.dev/courses/24/stories/FTtHRYcGP7Kc8sOY3QYxp7xsvKEQcqnLdbCLZYIS.mp4"
+                                    <button data-path="{{config('app.ftp_url').@$lecture->video->path }}"
                                             data-title="{{$lecture->title }}" data-bs-toggle="modal"
                                             data-bs-target="#videoModal"
                                             data-toggle="modal"
