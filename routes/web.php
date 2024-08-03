@@ -33,11 +33,11 @@ use Illuminate\Support\Facades\Route;
 
 /*********** Client  *************/
 
-Route::get('/', Index::class)->name('client.home');
+Route::get('/', Index::class)->name('client.home')->middleware('TrackVisitor');
 Route::get('/pricing', pricingIndex::class)->name('client.pricing');
-Route::get('/course/{course:url_slug}', courseIndex::class)->name('client.course');
-Route::get('/auth/client/logout', [authIndex::class, 'clientLogout'])->name('client.logout')->middleware('auth:web');
-Route::get('/road-map/{category:url_slug}', RoadMap::class)->name('client.category.road-map');
+Route::get('/course/{course:url_slug}', courseIndex::class)->name('client.course')->middleware('TrackVisitor');
+Route::get('/auth/client/logout', [authIndex::class, 'clientLogout'])->name('client.logout')->middleware('auth:web')->middleware('TrackVisitor');
+Route::get('/road-map/{category:url_slug}', RoadMap::class)->name('client.category.road-map')->middleware('TrackVisitor');
 Route::get('/cart', basketIndex::class)->name('client.basket')->middleware('auth');
 Route::get('/payment/verify', [basketIndex::class, 'zarinPalPayment'])->name('client.zarinpal.verify')->middleware('auth');
 Route::get('/payment/status', paymentIndex::class)->name('payment.status');
