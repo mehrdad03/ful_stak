@@ -5,7 +5,7 @@
 
 @endphp
 <header id="header">
-    <nav class="navbar container navbar-expand-lg fixed-top my-3">
+    <nav class="navbar container navbar-expand-lg  my-3">
         <div class="container">
             <div class="w-100 d-flex justify-content-between align-items-center">
                 <div class="d-block d-lg-none mx-sm-4" id="openMenu">

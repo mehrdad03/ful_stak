@@ -140,7 +140,7 @@ body.notScroll {
     overflow: hidden;
 }
 main{
-    margin: 120px auto 90px;;
+    margin: 70px auto 90px;;
 }
 .modal{
     z-index: 100002;
@@ -168,7 +168,7 @@ main{
 }
 
 /* Header  */
-header {
+/*header {
     position: fixed;
     width: 100%;
     height: 40px;
@@ -176,7 +176,7 @@ header {
     top: 0;
     z-index: 100001;
     transition: all 0.1s ease-in;
-}
+}*/
 
 header .header-basket {
     position: absolute;

@@ -3,10 +3,10 @@ document.addEventListener('livewire:navigated', () => {
         var scroll = $(window).scrollTop();
 
         if (scroll >= 100) {
-            $("#header").addClass("header");
+            /*$("#header").addClass("header");*/
             $("#story").addClass("sticky");
         } else{
-            $("#header").removeClass("header");
+           /* $("#header").removeClass("header");*/
             $("#story").removeClass("sticky");
         }
     });
