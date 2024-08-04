@@ -140,7 +140,7 @@ body.notScroll {
     overflow: hidden;
 }
 main{
-    margin: 70px auto 90px;;
+    margin: 40px auto 90px;;
 }
 .modal{
     z-index: 100002;

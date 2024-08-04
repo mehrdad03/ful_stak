@@ -1,4 +1,18 @@
 document.addEventListener('livewire:navigated', () => {
+
+    $(window).scroll(function () {
+        var scroll = $(window).scrollTop();
+
+        if (scroll >= 700) {
+            /*$("#header").addClass("header");*/
+            $(".scroll-add-to-basket").addClass("fixed");
+        } else{
+            /* $("#header").removeClass("header");*/
+            $(".scroll-add-to-basket").removeClass("fixed");
+        }
+    });
+
+
     var d = new Date().toLocaleDateString("fa-IR");
     $("#date").text(d);
 

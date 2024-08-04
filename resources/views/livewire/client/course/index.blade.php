@@ -70,6 +70,9 @@
         @endif
 
 
+        <!-- ========= scroll-add-to-basket ========= -->
+        @include('livewire.client.course.scroll-add-to-basket')
+
     </div>
 </div>
 @push('scripts')
