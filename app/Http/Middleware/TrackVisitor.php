@@ -19,6 +19,10 @@ class TrackVisitor
     {
         $agent = (new Agent());
 
+
+        /*Visitor::query()->where('ip_address','=','216.144.248.29')->delete();*/
+
+
         // تشخیص نوع دستگاه
         if ($agent->isMobile()) {
             $deviceType = 'Mobile';
@@ -47,7 +51,7 @@ class TrackVisitor
                 ->latest()
                 ->first();
 
-            if (!$existingVisitor) {
+            if (!$existingVisitor && $request->ip() !== '216.144.248.29') {
                 $visitor = new Visitor();
                 $visitor->ip_address = $request->ip();
                 $visitor->referer = $request->headers->get('referer');
