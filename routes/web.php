@@ -28,6 +28,7 @@ use App\Livewire\Admin\Basket\Index as adminBasketIndex;
 use App\Livewire\Admin\Transaction\Index as adminTransactionIndex;
 use App\Livewire\Admin\Comment\Index as adminCommentIndex;
 use App\Livewire\Admin\Comment\Answer as adminCommentAnswer;
+use App\Livewire\Admin\Visitors\Index as adminVisitor;
 use Illuminate\Support\Facades\Route;
 
 
@@ -81,7 +82,6 @@ Route::get('auth/admin/logout', [adminAuthIndex::class, 'adminLogout'])->name('a
 Route::get('on5H)D;ES;EWWJ&/auth', adminAuthIndex::class)->name('auth.admin');
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth:admin'], function () {
-
     Route::name('admin.')->group(function () {
         Route::get('/dashboard', adminDashboardIndex::class)->name('dashboard');
         Route::get('/courses', adminCourseIndex::class)->name('course.index');
@@ -96,6 +96,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth:admin'], function () {
         Route::get('/transactions', adminTransactionIndex::class)->name('transactions');
         Route::get('/comments', adminCommentIndex::class)->name('comments');
         Route::get('/comments/{comment}/answer', adminCommentAnswer::class)->name('comments.answer');
+        Route::get('/visitors', adminVisitor::class)->name('visitors');
         Route::post('/upload-video/{courseId?}/{lectureId?}/{sectionId?}', [adminCourseVideoUpload::class, 'uploadVideo'])->name('upload-video');
     });
 });

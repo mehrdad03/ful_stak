@@ -27,7 +27,7 @@
     <link href="/frontend/css/lightbox.css" rel="stylesheet"/>
     <link rel="stylesheet" href="/backend/css/font-awesome.css">
     <link rel="stylesheet" href="/frontend/css/video-js.css">
-
+    @stack('styles')
 
 </head>
 <body style="direction: rtl">
